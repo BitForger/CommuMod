@@ -23,7 +23,7 @@ group= "io.cyb3rwarri0r8.commumod" // http://maven.apache.org/guides/mini/guide-
 archivesBaseName = "commumod"
 
 minecraft {
-    version = "1.7.10-10.13.0.1180"
+    version = "1.7.10-10.13.2.1230"
     assetDir = "eclipse/assets"
 }
 

@@ -2,7 +2,7 @@ package io.cyb3rwarri0r8.commumod.blocks;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 import io.cyb3rwarri0r8.commumod.fluids.ModFluids;
-import io.cyb3rwarri0r8.commumod.lib.RegisterHelper;
+import io.cyb3rwarri0r8.commumod.lib.helpers.RegisterHelper;
 import io.cyb3rwarri0r8.commumod.items.ModItems;
 import io.cyb3rwarri0r8.commumod.main;
 import net.minecraft.block.Block;
@@ -43,7 +43,7 @@ public class ModBlocks {
 
     public static Block appleBlock;
 
-    public static Material materialRetaw = new MaterialLiquid(MapColor.blueColor);
+    public static Material materialRetaw = new MaterialLiquid(MapColor.emeraldColor);
 
 
 
@@ -151,8 +151,8 @@ public class ModBlocks {
         pureWaterBlock = new BlockPureWater(ModFluids.pureWater, Material.water);
         RegisterHelper.registerBlock(pureWaterBlock);
 
-       /* retawBlock = new BlockRetaw(ModFluids.retaw, materialRetaw);
-        RegisterHelper.registerBlock(retawBlock);*/
+        retawBlock = new BlockRetaw(ModFluids.retaw, materialRetaw);
+        RegisterHelper.registerBlock(retawBlock);
 
 
     }

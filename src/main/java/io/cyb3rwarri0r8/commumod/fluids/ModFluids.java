@@ -15,7 +15,7 @@ public class ModFluids {
         pureWater = new FluidPureWater("pureWater");
         FluidRegistry.registerFluid(pureWater);
 
-        /*retaw = new FluidRetaw("retaw");
-        FluidRegistry.registerFluid(retaw);*/
+        retaw = new FluidRetaw("retaw");
+        FluidRegistry.registerFluid(retaw);
     }
 }

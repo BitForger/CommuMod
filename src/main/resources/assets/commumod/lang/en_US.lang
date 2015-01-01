@@ -59,8 +59,11 @@ item.rubyHelmet.name=Ruby Helmet
 item.rubyChestplate.name=Ruby Chestplate
 item.rubyLeggings.name=Ruby Leggings
 item.rubyBoots.name=Ruby Boots
+item.ticTac.name=TicTac
 
 tile.cobaltOre.name=Cobalt Ore
 
 tile.purifierIdle.name=Purifier
 
+item.retawBucket.name=Retaw Bucket
+tile.retaw.name=Retaw

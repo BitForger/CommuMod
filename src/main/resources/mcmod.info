@@ -2,15 +2,15 @@
 {
   "modid": "commumod",
   "name": "Community Mod",
-  "description": "",
-  "version": "v1.4.1",
+  "description": "A smash up of different ideas in one mod.",
+  "version": "v1.5",
   "mcversion": "1.7.10",
-  "url": "http://kaminocoding.github.io/commumod/",
+  "url": "http://cyb3rwarri0r8.github.io/CommuMod/",
   "updateUrl": "",
   "authorList": [
-  "Endergreifer153"
+  "Cyb3rWarri0r8"
   ],
-  "credits": "The Modding community for helping me when I run into problems and the Minecraft community for giving me suggestions on what to add to the mod.",
+  "credits": "UltraX7",
   "logoFile": "",
   "screenshots": [
   ],

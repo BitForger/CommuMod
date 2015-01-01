@@ -6,7 +6,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import io.cyb3rwarri0r8.commumod.blocks.ModBlocks;
 import io.cyb3rwarri0r8.commumod.entity.EntityCobaltBoat;
 import io.cyb3rwarri0r8.commumod.fluids.ModFluids;
-import io.cyb3rwarri0r8.commumod.lib.RegisterHelper;
+import io.cyb3rwarri0r8.commumod.lib.helpers.RegisterHelper;
 import io.cyb3rwarri0r8.commumod.main;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
@@ -303,7 +303,7 @@ public class ModItems {
         RegisterHelper.registerItem(pureWaterBucket);
         RegisterHelper.addPurifying(Items.water_bucket, new ItemStack(ModItems.pureWaterBucket, 1), 35F);
 
-        /*retawBucket = new ItemRetawBucket(ModBlocks.retawBlock);
+        retawBucket = new ItemRetawBucket(ModBlocks.retawBlock);
         FluidContainerRegistry.registerFluidContainer(ModFluids.retaw, new ItemStack(retawBucket), new ItemStack(Items.bucket));
         RegisterHelper.registerItem(retawBucket);
         GameRegistry.addRecipe(new ItemStack(ModItems.retawBucket), new Object[]{
@@ -312,7 +312,7 @@ public class ModItems {
                 "XXX",
                 'x', ModItems.enderDust, 'y', Items.water_bucket
 
-        });*/
+        });
 
     }
 

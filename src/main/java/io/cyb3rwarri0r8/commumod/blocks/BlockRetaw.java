@@ -3,10 +3,13 @@ package io.cyb3rwarri0r8.commumod.blocks;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+import io.cyb3rwarri0r8.commumod.fluids.ModFluidBase;
 import io.cyb3rwarri0r8.commumod.fluids.ModFluids;
 import io.cyb3rwarri0r8.commumod.lib.Reference;
-import io.cyb3rwarri0r8.commumod.lib.ServerHelper;
+import io.cyb3rwarri0r8.commumod.lib.helpers.ServerHelper;
+import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.material.MaterialLiquid;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
@@ -16,7 +19,6 @@ import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
-import net.minecraftforge.fluids.BlockFluidClassic;
 import net.minecraftforge.fluids.Fluid;
 
 import java.util.Random;
@@ -24,7 +26,7 @@ import java.util.Random;
 /**
  * Created by noah on 10/29/14.
  */
-public class BlockRetaw extends BlockFluidClassic
+public class BlockRetaw extends ModFluidBase
 {
     @SideOnly(Side.CLIENT)
     private IIcon stillIcon;
@@ -37,8 +39,10 @@ public class BlockRetaw extends BlockFluidClassic
     private static int maxGlowstoneHeight = 120;
     public int LEVELS = 6;
 
+    public static final Material materialRetaw = new MaterialLiquid(MapColor.emeraldColor);
+
     public BlockRetaw(Fluid fluid, Material material) {
-        super(fluid, material);
+        super(ModFluids.retaw, materialRetaw, Reference.MODID + ":" + "retaw");
         setBlockName("retaw");
         setHardness(1F);
         setQuantaPerBlock(LEVELS);
@@ -124,7 +128,7 @@ public class BlockRetaw extends BlockFluidClassic
                 maxQuanta = getLargerQuanta(world, x, y, z + 1, maxQuanta);
                 expQuanta = maxQuanta - 1;
             }
-// decay calculation
+            // decay calculation
             if (expQuanta != quantaRemaining) {
                 quantaRemaining = expQuanta;
                 if (expQuanta <= 0) {

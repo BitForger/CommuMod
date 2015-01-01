@@ -8,7 +8,7 @@ import net.minecraft.item.Item;
  * Created by noah on 9/28/14.
  */
 public class ItemCobaltIngot extends Item {
-    //TODO Add a texture for the cobalt ingot
+
     public ItemCobaltIngot()
     {
         super();

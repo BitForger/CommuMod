@@ -11,14 +11,15 @@ import cpw.mods.fml.common.registry.EntityRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 import io.cyb3rwarri0r8.commumod.blocks.ModBlocks;
 import io.cyb3rwarri0r8.commumod.client.CreativeTabsCommuMod;
-import io.cyb3rwarri0r8.commumod.lib.handler.ConfigHandler;
 import io.cyb3rwarri0r8.commumod.entity.EntityMiner;
 import io.cyb3rwarri0r8.commumod.entity.ModEntities;
 import io.cyb3rwarri0r8.commumod.fluids.ModFluids;
+import io.cyb3rwarri0r8.commumod.items.ModItems;
+import io.cyb3rwarri0r8.commumod.items.food_items.foodItems;
+import io.cyb3rwarri0r8.commumod.lib.Reference;
+import io.cyb3rwarri0r8.commumod.lib.handler.ConfigHandler;
 import io.cyb3rwarri0r8.commumod.lib.handler.ModBucketHandler;
 import io.cyb3rwarri0r8.commumod.lib.handler.ModEventHandler;
-import io.cyb3rwarri0r8.commumod.lib.Reference;
-import io.cyb3rwarri0r8.commumod.items.ModItems;
 import io.cyb3rwarri0r8.commumod.lib.proxy.proxyCommon;
 import io.cyb3rwarri0r8.commumod.world.modWorld;
 import net.minecraft.creativetab.CreativeTabs;
@@ -47,15 +48,19 @@ public class main
     public static main instance;
 
 
+
+
     @Mod.EventHandler
     public void preinit(FMLPreInitializationEvent event) {
 
         configFile = new Configuration(event.getSuggestedConfigurationFile());
 
+
         ModFluids.init();
         ModBlocks.loadBlocks();
 
         ModItems.loadItems();
+        foodItems.loadFood();
         modWorld.initWorldGen();
         ModEntities.init();
         ConfigHandler.init(configFile.getConfigFile());
@@ -75,6 +80,7 @@ public class main
     @Mod.EventHandler
     public void init(FMLInitializationEvent event)
     {
+
         LanguageRegistry.instance().addStringLocalization("itemGroup.modTab", "en_US", "CommuMod");
         EntityRegistry.addSpawn(EntityMiner.class, 2, 1, 3, EnumCreatureType.creature, new BiomeGenBase[]{BiomeGenBase.extremeHills});
     }
@@ -88,6 +94,9 @@ public class main
         //Load the bucket handler here
         ModBucketHandler.INSTANCE.buckets.put(ModBlocks.pureWaterBlock, ModItems.pureWaterBucket);
         MinecraftForge.EVENT_BUS.register(ModBucketHandler.INSTANCE);
+
+        ModBucketHandler.INSTANCE.buckets.put(ModBlocks.retawBlock, ModItems.retawBucket);
+//        MinecraftForge.EVENT_BUS.register(ModBucketHandler.INSTANCE);
 
     }
 

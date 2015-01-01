@@ -1,5 +1,6 @@
 package io.cyb3rwarri0r8.commumod.items.food_items;
 
+import io.cyb3rwarri0r8.commumod.lib.Reference;
 import io.cyb3rwarri0r8.commumod.main;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemFood;
@@ -30,11 +31,11 @@ public class FoodTicTac extends ItemFood {
         super(hunger, saturation, isWolfFood);
         setUnlocalizedName("ticTac");
         setCreativeTab(main.modTab);
+        setTextureName(Reference.MODID + ":" + getUnlocalizedName().substring(5));
     }
 
     @Override
-    protected void onFoodEaten(ItemStack p_77849_1_, World p_77849_2_, EntityPlayer p_77849_3_) {
-        super.onFoodEaten(p_77849_1_, p_77849_2_, p_77849_3_);
-        p_77849_3_.addPotionEffect(new PotionEffect(Potion.moveSpeed.id, 5, 300));
+    protected void onFoodEaten(ItemStack itemStack, World world, EntityPlayer entityPlayer) {
+        entityPlayer.addPotionEffect(new PotionEffect(Potion.moveSpeed.id, 3500, 3));
     }
 }
