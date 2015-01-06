@@ -15,6 +15,7 @@ public class foodItems {
 
     public static Item superCarrot = new FoodSuperCarrot(5, 5, false);
     public static Item ticTac = new FoodTicTac(3,3,false);
+    public static Item ticTacCase = new FoodTicTacCase();
 
 
 
@@ -35,5 +36,7 @@ public class foodItems {
                 " X ",
                 'y', Items.dye, 'x', Items.sugar
         });
+
+        RegisterHelper.registerItem(ticTacCase);
     }
 }
