@@ -33,48 +33,48 @@ public class RegisterHelper {
     {
         if (toolType == "pickaxe")
         {
-            GameRegistry.addRecipe(new ItemStack(item), new Object[]{
+            GameRegistry.addRecipe(new ItemStack(item), 
                     "XXX",
                     " Y ",
                     " Y ",
-                    'X', x, 'Y', y,
-            });
+                    'X', x, 'Y', y
+            );
         }
         else if (toolType == "axe")
         {
-            GameRegistry.addRecipe(new ItemStack(item), new Object[]{
+            GameRegistry.addRecipe(new ItemStack(item), 
                     "XX ",
                     "XY ",
                     " Y ",
-                    'X', x, 'Y', y,
-            });
+                    'X', x, 'Y', y
+            );
         }
         else if (toolType == "shovel")
         {
-            GameRegistry.addRecipe(new ItemStack(item), new Object[]{
-                    " X ",
-                    " Y ",
-                    " Y ",
-                    'X', x, 'Y', y,
-            });
+            GameRegistry.addRecipe(new ItemStack(item), 
+                    "X",
+                    "Y",
+                    "Y",
+                    'X', x, 'Y', y
+            );
         }
         else if (toolType == "hoe")
         {
-            GameRegistry.addRecipe(new ItemStack(item), new Object[]{
-                    "XX ",
-                    " Y ",
-                    " Y ",
-                    'X', x, 'Y', y,
-            });
+            GameRegistry.addRecipe(new ItemStack(item), 
+                    "XX",
+                    " Y",
+                    " Y",
+                    'X', x, 'Y', y
+            );
         }
         else if (toolType == "sword")
         {
-            GameRegistry.addRecipe(new ItemStack(item), new Object[]{
-                    " X ",
-                    " X ",
-                    " Y ",
-                    'X', x, 'Y', y,
-            });
+            GameRegistry.addRecipe(new ItemStack(item), 
+                    "X",
+                    "X",
+                    "Y",
+                    'X', x, 'Y', y
+            );
         }
         else
         {
@@ -88,34 +88,34 @@ public class RegisterHelper {
     {
         if (armortype == "helmet")
         {
-            GameRegistry.addRecipe(new ItemStack(item), new Object[]{
+            GameRegistry.addRecipe(new ItemStack(item), 
                     "XXX",
                     "X X",
                     'X', x
-            });
+            );
         }else if (armortype == "chestplate")
         {
-            GameRegistry.addRecipe(new ItemStack(item), new Object[]{
+            GameRegistry.addRecipe(new ItemStack(item), 
                     "X X",
                     "XXX",
                     "XXX",
-                    'X', x,
-            });
+                    'X', x
+            );
         }else if (armortype == "leggings")
         {
-            GameRegistry.addRecipe(new ItemStack(item), new Object[]{
+            GameRegistry.addRecipe(new ItemStack(item), 
                     "XXX",
-                    "X X",
-                    "X X",
-                    'X', x,
-            });
-        } else if (armortype == "boots")
-        {
-            GameRegistry.addRecipe(new ItemStack(item), new Object[]{
                     "X X",
                     "X X",
                     'X', x
-            });
+            );
+        } else if (armortype == "boots")
+        {
+            GameRegistry.addRecipe(new ItemStack(item), 
+                    "X X",
+                    "X X",
+                    'X', x
+            );
         } else
         {
             System.out.println("Error: Invalid Armor type!");
@@ -146,12 +146,12 @@ public class RegisterHelper {
 
     public static void addBlockRecipe(Item item, ItemStack output)
     {
-        GameRegistry.addRecipe(output, new Object[]{
+        GameRegistry.addRecipe(output,
                 "XXX",
                 "XXX",
                 "XXX",
-                'x',item
-        });
+                'x', item
+        );
 
 
     }

@@ -118,9 +118,9 @@ public class ModItems {
         //Recipe
         GameRegistry.addRecipe(new ItemStack(superbiumAxe), new Object[]
                 {
-                        "XX ",
-                        "XY ",
-                        " Y ",
+                        "XX",
+                        "XY",
+                        " Y",
                         'X', superbiumIngot, 'Y', Items.stick,
                 });
 
@@ -131,9 +131,9 @@ public class ModItems {
         // Recipe
         GameRegistry.addRecipe(new ItemStack(superbiumSword), new Object[]
                 {
-                        " X ",
-                        " X ",
-                        " Y ",
+                        "X",
+                        "X",
+                        "Y",
                         'X', superbiumIngot, 'Y', Items.stick,
                 });
         //*******************************************************************************
@@ -186,36 +186,36 @@ public class ModItems {
         RegisterHelper.registerItem(aradactiteAxe);
         GameRegistry.addRecipe(new ItemStack(aradactiteAxe), new Object[]
                 {
-                        "XX ",
-                        "XY ",
-                        " Y ",
+                        "XX",
+                        "XY",
+                        " Y",
                         'X', aradactiteIngot, 'Y', Items.stick,
                 });
         // ******************************************************************************
         aradactiteShovel = new ItemAradactiteShovel(aradactiteToolMaterial);
         RegisterHelper.registerItem(aradactiteShovel);
         GameRegistry.addRecipe(new ItemStack(aradactiteShovel), new Object[]{
-                " X ",
-                " Y ",
-                " Y ",
+                "X",
+                "Y",
+                "Y",
                 'X', aradactiteIngot, 'Y', Items.stick,
         });
         // ******************************************************************************
         aradactiteHoe = new ItemAradactiteHoe(aradactiteToolMaterial);
         RegisterHelper.registerItem(aradactiteHoe);
         GameRegistry.addRecipe(new ItemStack(aradactiteHoe), new Object[]{
-                "XX ",
-                " Y ",
-                " Y ",
+                "XX",
+                " Y",
+                " Y",
                 'X', aradactiteIngot, 'Y', Items.stick,
         });
         // ******************************************************************************
         aradactiteSword = new ItemAradactiteSword(aradactiteToolMaterial);
         RegisterHelper.registerItem(aradactiteSword);
         GameRegistry.addRecipe(new ItemStack(aradactiteSword), new Object[]{
-                " X ",
-                " X ",
-                " Y ",
+                "X",
+                "X",
+                "Y",
                 'X', aradactiteIngot, 'Y', Items.stick,
         });
         // Aradactite Armor
@@ -285,7 +285,6 @@ public class ModItems {
         RegisterHelper.registerItem(cobaltBoat);
         EntityRegistry.registerModEntity(EntityCobaltBoat.class, "cobaltBoat", EntityRegistry.findGlobalUniqueEntityId(), main.instance, 80, 3, false);
         GameRegistry.addRecipe(new ItemStack(cobaltBoat,1), new Object[]{
-                "   ",
                 "X X",
                 "XXX",
                 'x', ModItems.cobaltIngot
@@ -308,12 +307,9 @@ public class ModItems {
         FluidContainerRegistry.registerFluidContainer(ModFluids.retaw, new ItemStack(retawBucket), new ItemStack(Items.bucket));
         RegisterHelper.registerItem(retawBucket);
         GameRegistry.addRecipe(new ItemStack(ModItems.retawBucket), new Object[]{
-                "XXX",
-                "XYX",
-                "XXX",
-                'x', ModItems.enderDust, 'y', Items.water_bucket
-
-        });
+                        "XXX","XYX","XXX",
+                        'x', ModItems.enderDust, 'y', ModItems.pureWaterBucket
+                });
 
         plastic = new ItemPlastic();
         RegisterHelper.registerItem(plastic);

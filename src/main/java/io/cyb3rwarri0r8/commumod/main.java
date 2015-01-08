@@ -93,10 +93,8 @@ public class main
         FMLCommonHandler.instance().bus().register(new ModEventHandler());
         //Load the bucket handler here
         ModBucketHandler.INSTANCE.buckets.put(ModBlocks.pureWaterBlock, ModItems.pureWaterBucket);
-        MinecraftForge.EVENT_BUS.register(ModBucketHandler.INSTANCE);
-
         ModBucketHandler.INSTANCE.buckets.put(ModBlocks.retawBlock, ModItems.retawBucket);
-//        MinecraftForge.EVENT_BUS.register(ModBucketHandler.INSTANCE);
+        MinecraftForge.EVENT_BUS.register(ModBucketHandler.INSTANCE);
 
     }
 
