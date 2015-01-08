@@ -2,6 +2,7 @@ package io.cyb3rwarri0r8.commumod.items.food_items;
 
 
 import cpw.mods.fml.common.registry.GameRegistry;
+import io.cyb3rwarri0r8.commumod.items.ModItems;
 import io.cyb3rwarri0r8.commumod.lib.helpers.RegisterHelper;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -38,5 +39,6 @@ public class foodItems {
         });
 
         RegisterHelper.registerItem(ticTacCase);
+        GameRegistry.addShapelessRecipe(new ItemStack(ticTacCase), new Object[]{ModItems.plastic,ModItems.plastic,ModItems.plastic,ModItems.plastic});
     }
 }

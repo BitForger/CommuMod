@@ -11,6 +11,8 @@ import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.world.World;
 
+import java.util.List;
+
 /**
  * Created by noah on 5/14/14.
  */
@@ -46,5 +48,11 @@ public class ItemSuperbiumSword extends ItemSword {
     public boolean hasEffect(ItemStack item)
     {
         return true;
+    }
+
+    @Override
+    public void addInformation(ItemStack itemStack, EntityPlayer entityPlayer, List list, boolean b) {
+        list.add("Adds amazing buffs");
+        super.addInformation(itemStack, entityPlayer, list, b);
     }
 }

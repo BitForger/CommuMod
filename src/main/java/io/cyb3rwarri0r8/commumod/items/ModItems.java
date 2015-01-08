@@ -85,6 +85,7 @@ public class ModItems {
     public static Item retawBucket;
 
     public static Item appleBlock;
+    public static Item plastic;
 
 
 
@@ -313,6 +314,10 @@ public class ModItems {
                 'x', ModItems.enderDust, 'y', Items.water_bucket
 
         });
+
+        plastic = new ItemPlastic();
+        RegisterHelper.registerItem(plastic);
+        RegisterHelper.addPurifying(Items.coal, new ItemStack(plastic), 20F);
 
     }
 
