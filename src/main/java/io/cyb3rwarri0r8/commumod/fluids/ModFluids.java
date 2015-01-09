@@ -1,6 +1,16 @@
 package io.cyb3rwarri0r8.commumod.fluids;
 
+import cpw.mods.fml.common.registry.GameRegistry;
+import io.cyb3rwarri0r8.commumod.blocks.ModBlocks;
+import io.cyb3rwarri0r8.commumod.items.ItemPureWaterBucket;
+import io.cyb3rwarri0r8.commumod.items.ItemRetawBucket;
+import io.cyb3rwarri0r8.commumod.items.ModItems;
+import io.cyb3rwarri0r8.commumod.lib.helpers.RegisterHelper;
+import net.minecraft.init.Items;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.Fluid;
+import net.minecraftforge.fluids.FluidContainerRegistry;
 import net.minecraftforge.fluids.FluidRegistry;
 
 /**
@@ -10,6 +20,10 @@ public class ModFluids {
 
     public static Fluid pureWater;
     public static Fluid retaw;
+
+    public static Item pureWaterBucket;
+    public static Item retawBucket;
+
     public static void init()
     {
         pureWater = new FluidPureWater("pureWater");
@@ -17,5 +31,17 @@ public class ModFluids {
 
         retaw = new FluidRetaw("retaw");
         FluidRegistry.registerFluid(retaw);
+
+        pureWaterBucket = new ItemPureWaterBucket(ModBlocks.pureWaterBlock);
+        FluidContainerRegistry.registerFluidContainer(ModFluids.pureWater, new ItemStack(pureWaterBucket), new ItemStack(Items.bucket));
+        RegisterHelper.registerItem(pureWaterBucket);
+        RegisterHelper.addPurifying(Items.water_bucket, new ItemStack(ModFluids.pureWaterBucket, 1), 35F);
+
+        retawBucket = new ItemRetawBucket(ModBlocks.retawBlock);
+        FluidContainerRegistry.registerFluidContainer(ModFluids.retaw, new ItemStack(retawBucket), new ItemStack(Items.bucket));
+        RegisterHelper.registerItem(retawBucket);
+        GameRegistry.addRecipe(new ItemStack(ModFluids.retawBucket), "XXX", "XYX", "XXX",
+                'x', ModItems.enderDust, 'y', ModFluids.pureWaterBucket
+        );
     }
 }

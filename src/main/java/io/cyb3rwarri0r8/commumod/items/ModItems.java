@@ -5,7 +5,6 @@ import cpw.mods.fml.common.registry.EntityRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 import io.cyb3rwarri0r8.commumod.blocks.ModBlocks;
 import io.cyb3rwarri0r8.commumod.entity.EntityCobaltBoat;
-import io.cyb3rwarri0r8.commumod.fluids.ModFluids;
 import io.cyb3rwarri0r8.commumod.lib.helpers.RegisterHelper;
 import io.cyb3rwarri0r8.commumod.main;
 import net.minecraft.init.Items;
@@ -13,7 +12,6 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.util.EnumHelper;
-import net.minecraftforge.fluids.FluidContainerRegistry;
 
 /**
  * Created by noah on 5/14/14.
@@ -81,8 +79,7 @@ public class ModItems {
 
     public static Item enderDust;
 
-    public static Item pureWaterBucket;
-    public static Item retawBucket;
+
 
     public static Item appleBlock;
     public static Item plastic;
@@ -103,39 +100,36 @@ public class ModItems {
         superbiumPick = new ItemSuperbiumPick(myToolMaterial);
         RegisterHelper.registerItem(superbiumPick);
         //Recipe
-        GameRegistry.addRecipe(new ItemStack(superbiumPick), new Object[]
-                {
+        GameRegistry.addRecipe(new ItemStack(superbiumPick),
                         "XXX",
                         " Y ",
                         " Y ",
-                        'X', superbiumIngot, 'Y', Items.stick,
-                });
+                        'X', superbiumIngot, 'Y', Items.stick
+                );
 
         // ******************************************************************************
         // First Axe
         superbiumAxe = new ItemSuperbiumAxe(myToolMaterial);
         RegisterHelper.registerItem(superbiumAxe);
         //Recipe
-        GameRegistry.addRecipe(new ItemStack(superbiumAxe), new Object[]
-                {
+        GameRegistry.addRecipe(new ItemStack(superbiumAxe),
                         "XX",
                         "XY",
                         " Y",
-                        'X', superbiumIngot, 'Y', Items.stick,
-                });
+                        'X', superbiumIngot, 'Y', Items.stick
+                );
 
         // ******************************************************************************
         // First Sword
         superbiumSword = new ItemSuperbiumSword(myToolMaterial);
         RegisterHelper.registerItem(superbiumSword);
         // Recipe
-        GameRegistry.addRecipe(new ItemStack(superbiumSword), new Object[]
-                {
+        GameRegistry.addRecipe(new ItemStack(superbiumSword),
                         "X",
                         "X",
                         "Y",
-                        'X', superbiumIngot, 'Y', Items.stick,
-                });
+                        'X', superbiumIngot, 'Y', Items.stick
+                );
         //*******************************************************************************
         superbiumShovel = new ItemSuperbiumShovel(myToolMaterial);
         RegisterHelper.registerItem(superbiumShovel);
@@ -174,50 +168,48 @@ public class ModItems {
         // Aradactite tools
         aradactitePick = new ItemAradactitePick(aradactiteToolMaterial);
         RegisterHelper.registerItem(aradactitePick);
-        GameRegistry.addRecipe(new ItemStack(aradactitePick), new Object[]
-                {
+        GameRegistry.addRecipe(new ItemStack(aradactitePick),
                         "XXX",
                         " Y ",
                         " Y ",
-                        'X', aradactiteIngot, 'Y', Items.stick,
-                });
+                        'X', aradactiteIngot, 'Y', Items.stick
+                );
         // ******************************************************************************
         aradactiteAxe = new ItemAradactiteAxe(aradactiteToolMaterial);
         RegisterHelper.registerItem(aradactiteAxe);
-        GameRegistry.addRecipe(new ItemStack(aradactiteAxe), new Object[]
-                {
+        GameRegistry.addRecipe(new ItemStack(aradactiteAxe),
                         "XX",
                         "XY",
                         " Y",
-                        'X', aradactiteIngot, 'Y', Items.stick,
-                });
+                        'X', aradactiteIngot, 'Y', Items.stick
+                );
         // ******************************************************************************
         aradactiteShovel = new ItemAradactiteShovel(aradactiteToolMaterial);
         RegisterHelper.registerItem(aradactiteShovel);
-        GameRegistry.addRecipe(new ItemStack(aradactiteShovel), new Object[]{
+        GameRegistry.addRecipe(new ItemStack(aradactiteShovel), 
                 "X",
                 "Y",
                 "Y",
-                'X', aradactiteIngot, 'Y', Items.stick,
-        });
+                'X', aradactiteIngot, 'Y', Items.stick
+        );
         // ******************************************************************************
         aradactiteHoe = new ItemAradactiteHoe(aradactiteToolMaterial);
         RegisterHelper.registerItem(aradactiteHoe);
-        GameRegistry.addRecipe(new ItemStack(aradactiteHoe), new Object[]{
+        GameRegistry.addRecipe(new ItemStack(aradactiteHoe), 
                 "XX",
                 " Y",
                 " Y",
-                'X', aradactiteIngot, 'Y', Items.stick,
-        });
+                'X', aradactiteIngot, 'Y', Items.stick
+        );
         // ******************************************************************************
         aradactiteSword = new ItemAradactiteSword(aradactiteToolMaterial);
         RegisterHelper.registerItem(aradactiteSword);
-        GameRegistry.addRecipe(new ItemStack(aradactiteSword), new Object[]{
+        GameRegistry.addRecipe(new ItemStack(aradactiteSword), 
                 "X",
                 "X",
                 "Y",
-                'X', aradactiteIngot, 'Y', Items.stick,
-        });
+                'X', aradactiteIngot, 'Y', Items.stick
+        );
         // Aradactite Armor
         aradactiteHelmet = new ItemAradactiteArmor(aradactiteArmorMaterial, 0, "aradactiteHelmet");
         RegisterHelper.registerItem(aradactiteHelmet);
@@ -284,11 +276,11 @@ public class ModItems {
         cobaltBoat = new ItemCobaltBoat().setUnlocalizedName("cobaltBoat");
         RegisterHelper.registerItem(cobaltBoat);
         EntityRegistry.registerModEntity(EntityCobaltBoat.class, "cobaltBoat", EntityRegistry.findGlobalUniqueEntityId(), main.instance, 80, 3, false);
-        GameRegistry.addRecipe(new ItemStack(cobaltBoat,1), new Object[]{
+        GameRegistry.addRecipe(new ItemStack(cobaltBoat,1), 
                 "X X",
                 "XXX",
                 'x', ModItems.cobaltIngot
-        });
+        );
         cobaltIngot = new ItemCobaltIngot();
         RegisterHelper.registerItem(cobaltIngot);
         GameRegistry.addSmelting(ModBlocks.cobaltOre, new ItemStack(ModItems.cobaltIngot, 1), 10F);
@@ -298,18 +290,7 @@ public class ModItems {
         RegisterHelper.addPurifying(Items.ender_pearl, new ItemStack(ModItems.enderDust, 1), 15F);
 
 
-        pureWaterBucket = new ItemPureWaterBucket(ModBlocks.pureWaterBlock);
-        FluidContainerRegistry.registerFluidContainer(ModFluids.pureWater, new ItemStack(pureWaterBucket), new ItemStack(Items.bucket));
-        RegisterHelper.registerItem(pureWaterBucket);
-        RegisterHelper.addPurifying(Items.water_bucket, new ItemStack(ModItems.pureWaterBucket, 1), 35F);
 
-        retawBucket = new ItemRetawBucket(ModBlocks.retawBlock);
-        FluidContainerRegistry.registerFluidContainer(ModFluids.retaw, new ItemStack(retawBucket), new ItemStack(Items.bucket));
-        RegisterHelper.registerItem(retawBucket);
-        GameRegistry.addRecipe(new ItemStack(ModItems.retawBucket), new Object[]{
-                        "XXX","XYX","XXX",
-                        'x', ModItems.enderDust, 'y', ModItems.pureWaterBucket
-                });
 
         plastic = new ItemPlastic();
         RegisterHelper.registerItem(plastic);
