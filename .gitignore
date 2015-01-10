@@ -6,6 +6,6 @@ CommuMod.ipr
 
 CommuMod.iws
 
-eclipse/*
+eclipse/
 
 *.txt
