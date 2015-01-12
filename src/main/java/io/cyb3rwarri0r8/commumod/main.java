@@ -56,10 +56,17 @@ public class main
         configFile = new Configuration(event.getSuggestedConfigurationFile());
 
 
-        ModItems.loadItems();
-
         ModBlocks.loadBlocks();
+
+        ModItems.loadItems();
+        
         ModFluids.init();
+
+        ModBlocks.addBlockRecipes();
+
+
+
+
 
         foodItems.loadFood();
         modWorld.initWorldGen();
@@ -93,8 +100,8 @@ public class main
         MinecraftForge.EVENT_BUS.register(new ModEventHandler());
         FMLCommonHandler.instance().bus().register(new ModEventHandler());
         //Load the bucket handler here
-        ModBucketHandler.INSTANCE.buckets.put(ModBlocks.pureWaterBlock, ModFluids.pureWaterBucket);
-        ModBucketHandler.INSTANCE.buckets.put(ModBlocks.retawBlock, ModFluids.retawBucket);
+        ModBucketHandler.INSTANCE.buckets.put(ModFluids.pureWaterBlock, ModFluids.pureWaterBucket);
+        ModBucketHandler.INSTANCE.buckets.put(ModFluids.retawBlock, ModFluids.retawBucket);
         MinecraftForge.EVENT_BUS.register(ModBucketHandler.INSTANCE);
 
     }

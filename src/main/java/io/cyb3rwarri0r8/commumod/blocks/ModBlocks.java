@@ -1,9 +1,8 @@
 package io.cyb3rwarri0r8.commumod.blocks;
 
 import cpw.mods.fml.common.registry.GameRegistry;
-import io.cyb3rwarri0r8.commumod.fluids.ModFluids;
-import io.cyb3rwarri0r8.commumod.lib.helpers.RegisterHelper;
 import io.cyb3rwarri0r8.commumod.items.ModItems;
+import io.cyb3rwarri0r8.commumod.lib.helpers.RegisterHelper;
 import io.cyb3rwarri0r8.commumod.main;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.MapColor;
@@ -47,10 +46,7 @@ public class ModBlocks {
 
 
 
-    /**************************************************************************************
-    ************************Water/Liquid blocks********************************************/
-    public static Block pureWaterBlock;
-    public static Block retawBlock;
+
 
     public static void loadBlocks()
     {
@@ -64,8 +60,7 @@ public class ModBlocks {
 
         superbiumBlock = new BlockSuperbiumBlock(Material.rock);
         RegisterHelper.registerBlock(superbiumBlock);
-        RegisterHelper.addBlockRecipe(ModItems.superbiumIngot, new ItemStack(superbiumBlock));
-        GameRegistry.addShapelessRecipe(new ItemStack(ModItems.superbiumIngot, 9), new Object[]{superbiumBlock});
+
 
 
         // ******************************************************************************
@@ -79,19 +74,13 @@ public class ModBlocks {
         // Aradactite block
         aradactiteBlock = new BlockAradactiteBlock(Material.anvil);
         RegisterHelper.registerBlock(aradactiteBlock);
-        RegisterHelper.addBlockRecipe(ModItems.aradactiteIngot, new ItemStack(aradactiteBlock));
-        GameRegistry.addShapelessRecipe(new ItemStack(ModItems.aradactiteIngot, 9), new Object[]{aradactiteBlock});
+
 
 
         // Superbium TNT
         superbiumTNT = new BlockSuperbiumTNT();
         RegisterHelper.registerBlock(superbiumTNT);
-        GameRegistry.addRecipe(new ItemStack(superbiumTNT, 2), new Object[]{
-                "XYX",
-                "YZY",
-                "XYX",
-                'x', ModItems.superbiumDust, 'y', Items.stick, 'z', Items.gunpowder
-        });
+
         // Instant structures generation
         minerShack = new BlockMinerShack(Material.rock);
         RegisterHelper.registerBlock(minerShack);
@@ -99,12 +88,7 @@ public class ModBlocks {
         // Superbium torch
         superbiumTorch = new BlockSuperbiumTorch();
         RegisterHelper.registerBlock(superbiumTorch);
-        GameRegistry.addRecipe(new ItemStack(superbiumTorch, 4), new Object[]{
-                "   ",
-                " Y ",
-                " X ",
-                'y', ModItems.superbiumDust, 'x', Items.stick
-        });
+
         // ******************************************************************************
         // Ruby ore
         rubyOre = new BlockRubyOre(Material.rock);
@@ -112,8 +96,7 @@ public class ModBlocks {
 
         rubyBlock = new BlockRuby(Material.rock);
         RegisterHelper.registerBlock(rubyBlock);
-        RegisterHelper.addBlockRecipe(ModItems.ruby, new ItemStack(rubyBlock));
-        GameRegistry.addShapelessRecipe(new ItemStack(ModItems.ruby, 9), new Object[]{rubyBlock});
+
 
 
 
@@ -122,12 +105,7 @@ public class ModBlocks {
 
         purifier_idle = new BlockPurifier(false).setBlockName("purifierIdle").setCreativeTab(main.modTab);
         RegisterHelper.registerBlock(purifier_idle);
-        GameRegistry.addRecipe(new ItemStack(purifier_idle,1), new Object[]{
-                "XXX",
-                "X X",
-                "XXX",
-                'x', ModItems.cobaltIngot
-        });
+
 
 
 
@@ -136,24 +114,61 @@ public class ModBlocks {
 
         appleBlock = new BlockOfApple();
         RegisterHelper.registerBlock(appleBlock);
-        RegisterHelper.addBlockRecipe(Items.apple, new ItemStack(appleBlock));
-        GameRegistry.addShapelessRecipe(new ItemStack(Items.apple,9), new ItemStack(appleBlock));
+
 
         hydrogenTNT = new BlockHydrogenTNT();
         RegisterHelper.registerBlock(hydrogenTNT);
-        GameRegistry.addRecipe(new ItemStack(hydrogenTNT,1), new Object[]{
+
+
+
+
+
+
+    }
+
+    public static void addBlockRecipes()
+    {
+        RegisterHelper.addBlockRecipe(ModItems.superbiumIngot, new ItemStack(superbiumBlock));
+        GameRegistry.addShapelessRecipe(new ItemStack(ModItems.superbiumIngot, 9), superbiumBlock);
+
+        RegisterHelper.addBlockRecipe(ModItems.aradactiteIngot, new ItemStack(aradactiteBlock));
+        GameRegistry.addShapelessRecipe(new ItemStack(ModItems.aradactiteIngot, 9), aradactiteBlock);
+
+        GameRegistry.addRecipe(new ItemStack(superbiumTNT, 2),
+                "XYX",
+                "YZY",
+                "XYX",
+                'x', ModItems.superbiumDust, 'y', Items.stick, 'z', Items.gunpowder
+        );
+
+        GameRegistry.addRecipe(new ItemStack(superbiumTorch, 4),
+            "   ",
+            " Y ",
+            " X ",
+            'y', ModItems.superbiumDust, 'x', Items.stick
+    );
+
+        RegisterHelper.addBlockRecipe(ModItems.ruby, new ItemStack(rubyBlock));
+
+        GameRegistry.addShapelessRecipe(new ItemStack(ModItems.ruby, 9), rubyBlock);
+
+        GameRegistry.addRecipe(new ItemStack(purifier_idle,1),
+                "XXX",
+                "X X",
+                "XXX",
+                'x', ModItems.cobaltIngot
+        );
+
+        RegisterHelper.addBlockRecipe(Items.apple, new ItemStack(appleBlock));
+
+        GameRegistry.addShapelessRecipe(new ItemStack(Items.apple,9), new ItemStack(appleBlock));
+
+        GameRegistry.addRecipe(new ItemStack(hydrogenTNT,1),
                 "XYX",
                 "YXY",
                 "XYX",
                 'x', ModItems.enderDust, 'y', Blocks.sand
-        });
-
-        pureWaterBlock = new BlockPureWater(ModFluids.pureWater, Material.water);
-        RegisterHelper.registerBlock(pureWaterBlock);
-
-        retawBlock = new BlockRetaw(ModFluids.retaw, materialRetaw);
-        RegisterHelper.registerBlock(retawBlock);
-
+        );
 
     }
 
