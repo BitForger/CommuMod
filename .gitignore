@@ -42,3 +42,7 @@ eclipse/saves/New World/region/r.-1.0.mca
 eclipse/saves/New World/region/r.0.0.mca
 
 eclipse/saves/New World/session.lock
+
+*.log
+
+.gradle/gradle.log

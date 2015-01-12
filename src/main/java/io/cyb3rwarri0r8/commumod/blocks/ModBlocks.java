@@ -138,14 +138,13 @@ public class ModBlocks {
                 "XYX",
                 "YZY",
                 "XYX",
-                'x', ModItems.superbiumDust, 'y', Items.stick, 'z', Items.gunpowder
+                'X', ModItems.superbiumDust, 'Y', Items.stick, 'Z', Items.gunpowder
         );
 
         GameRegistry.addRecipe(new ItemStack(superbiumTorch, 4),
-            "   ",
-            " Y ",
-            " X ",
-            'y', ModItems.superbiumDust, 'x', Items.stick
+            "Y",
+            "X",
+            'Y', ModItems.superbiumDust, 'X', Items.stick
     );
 
         RegisterHelper.addBlockRecipe(ModItems.ruby, new ItemStack(rubyBlock));
@@ -156,7 +155,7 @@ public class ModBlocks {
                 "XXX",
                 "X X",
                 "XXX",
-                'x', ModItems.cobaltIngot
+                'X', ModItems.cobaltIngot
         );
 
         RegisterHelper.addBlockRecipe(Items.apple, new ItemStack(appleBlock));
@@ -167,7 +166,7 @@ public class ModBlocks {
                 "XYX",
                 "YXY",
                 "XYX",
-                'x', ModItems.enderDust, 'y', Blocks.sand
+                'X', ModItems.enderDust, 'Y', Blocks.sand
         );
 
     }

@@ -150,7 +150,7 @@ public class RegisterHelper {
                 "XXX",
                 "XXX",
                 "XXX",
-                'x', item
+                'X', item
         );
 
 

@@ -66,7 +66,7 @@ public class ModFluids {
         RegisterHelper.registerItem(retawBucket);
 
         GameRegistry.addRecipe(new ItemStack(ModFluids.retawBucket), "XXX", "XYX", "XXX",
-                'x', ModItems.enderDust, 'y', ModFluids.pureWaterBucket
+                'X', ModItems.enderDust, 'Y', ModFluids.pureWaterBucket
         );
 
 

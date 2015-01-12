@@ -23,22 +23,22 @@ public class foodItems {
     public static void loadFood()
     {
         RegisterHelper.registerItem(superCarrot);
-        GameRegistry.addRecipe(new ItemStack(superCarrot), new Object[]{
+        GameRegistry.addRecipe(new ItemStack(superCarrot),
                 "XXX",
                 "XYX",
                 "XXX",
-                'X', Blocks.gold_block, 'Y', Items.apple,
-        });
+                'X', Blocks.gold_block, 'Y', Items.apple
+        );
 
         RegisterHelper.registerItem(ticTac);
-        GameRegistry.addRecipe(new ItemStack(ticTac), new Object[]{
+        GameRegistry.addRecipe(new ItemStack(ticTac),
                 "   ",
                 " Y ",
                 " X ",
-                'y', Items.dye, 'x', Items.sugar
-        });
+                'Y', Items.dye, 'X', Items.sugar
+        );
 
         RegisterHelper.registerItem(ticTacCase);
-        GameRegistry.addShapelessRecipe(new ItemStack(ticTacCase), new Object[]{ModItems.plastic,ModItems.plastic,ModItems.plastic,ModItems.plastic});
+        GameRegistry.addShapelessRecipe(new ItemStack(ticTacCase), ModItems.plastic,ModItems.plastic,ModItems.plastic,ModItems.plastic);
     }
 }

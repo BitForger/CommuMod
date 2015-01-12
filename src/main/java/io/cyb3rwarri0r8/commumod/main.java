@@ -55,11 +55,11 @@ public class main
 
         configFile = new Configuration(event.getSuggestedConfigurationFile());
 
-
+        ModItems.loadItems();
         ModBlocks.loadBlocks();
 
-        ModItems.loadItems();
-        
+
+
         ModFluids.init();
 
         ModBlocks.addBlockRecipes();
