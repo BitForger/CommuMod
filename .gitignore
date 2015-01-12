@@ -6,7 +6,7 @@ CommuMod.ipr
 
 CommuMod.iws
 
-/eclipse/
+eclipse/
 
 *.txt
 eclipse/logs/fml-client-1.log
