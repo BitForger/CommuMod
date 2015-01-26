@@ -90,7 +90,7 @@ public class main
     {
 
         LanguageRegistry.instance().addStringLocalization("itemGroup.modTab", "en_US", "CommuMod");
-        EntityRegistry.addSpawn(EntityMiner.class, 2, 1, 3, EnumCreatureType.creature, new BiomeGenBase[]{BiomeGenBase.extremeHills});
+        EntityRegistry.addSpawn(EntityMiner.class, 2, 1, 3, EnumCreatureType.creature, BiomeGenBase.extremeHills);
     }
 
     @Mod.EventHandler

@@ -36,8 +36,8 @@ public class ModItems {
     // Add dust that is returned when mined out
     public static Item superbiumDust;
     //Tool material
-    static Item.ToolMaterial myToolMaterial = EnumHelper.addToolMaterial("myToolMaterial", 2, 1200, 8, 10.0F, 50);
-    static ItemArmor.ArmorMaterial superbiumArmorMaterial = EnumHelper.addArmorMaterial("myArmorMaterial", 30, new int[]{3,6,5,3}, 30);
+    static Item.ToolMaterial superbiumToolMaterial = EnumHelper.addToolMaterial("superbiumToolMaterial", 2, 1200, 8, 10.0F, 50);
+    static ItemArmor.ArmorMaterial superbiumArmorMaterial = EnumHelper.addArmorMaterial("superbiumArmorMaterial", 30, new int[]{3,6,5,3}, 30);
 
     //===================================================================================
     //Aradactite
@@ -97,7 +97,7 @@ public class ModItems {
         GameRegistry.addSmelting(superbiumDust, new ItemStack(superbiumIngot), 400F);
         // ******************************************************************************
         // First Pick
-        superbiumPick = new ItemSuperbiumPick(myToolMaterial);
+        superbiumPick = new ItemSuperbiumPick(superbiumToolMaterial);
         RegisterHelper.registerItem(superbiumPick);
         //Recipe
         GameRegistry.addRecipe(new ItemStack(superbiumPick),
@@ -109,7 +109,7 @@ public class ModItems {
 
         // ******************************************************************************
         // First Axe
-        superbiumAxe = new ItemSuperbiumAxe(myToolMaterial);
+        superbiumAxe = new ItemSuperbiumAxe(superbiumToolMaterial);
         RegisterHelper.registerItem(superbiumAxe);
         //Recipe
         GameRegistry.addRecipe(new ItemStack(superbiumAxe),
@@ -121,7 +121,7 @@ public class ModItems {
 
         // ******************************************************************************
         // First Sword
-        superbiumSword = new ItemSuperbiumSword(myToolMaterial);
+        superbiumSword = new ItemSuperbiumSword(superbiumToolMaterial);
         RegisterHelper.registerItem(superbiumSword);
         // Recipe
         GameRegistry.addRecipe(new ItemStack(superbiumSword),
@@ -131,11 +131,11 @@ public class ModItems {
                         'X', superbiumIngot, 'Y', Items.stick
                 );
         //*******************************************************************************
-        superbiumShovel = new ItemSuperbiumShovel(myToolMaterial);
+        superbiumShovel = new ItemSuperbiumShovel(superbiumToolMaterial);
         RegisterHelper.registerItem(superbiumShovel);
         RegisterHelper.regToolRecipe(superbiumShovel, superbiumIngot, Items.stick, "shovel");
         // ******************************************************************************
-        superbiumHoe = new ItemSuperbiumHoe(myToolMaterial);
+        superbiumHoe = new ItemSuperbiumHoe(superbiumToolMaterial);
         RegisterHelper.registerItem(superbiumHoe);
         RegisterHelper.regToolRecipe(superbiumHoe, superbiumIngot, Items.stick, "hoe");
         //Armor
