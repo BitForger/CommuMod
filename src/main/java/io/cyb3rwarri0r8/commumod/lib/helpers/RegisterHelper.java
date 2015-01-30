@@ -156,4 +156,13 @@ public class RegisterHelper {
 
     }
 
+    public static void addStickRecipe(Item item, ItemStack output)
+    {
+        GameRegistry.addRecipe(output,
+                "X",
+                "X",
+                'X', item
+        );
+    }
+
 }

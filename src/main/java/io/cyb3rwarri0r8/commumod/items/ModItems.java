@@ -7,6 +7,7 @@ import io.cyb3rwarri0r8.commumod.blocks.ModBlocks;
 import io.cyb3rwarri0r8.commumod.entity.EntityCobaltBoat;
 import io.cyb3rwarri0r8.commumod.lib.helpers.RegisterHelper;
 import io.cyb3rwarri0r8.commumod.main;
+import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemArmor;
@@ -84,10 +85,14 @@ public class ModItems {
     public static Item appleBlock;
     public static Item plastic;
 
+    public static Item goldToolRod;
+    public static Item stoneToolRod;
+    public static Item ironToolRod;
+    public static Item diamondToolRod;
 
 
-    public static void loadItems()
-    {
+
+    public static void loadItems() {
         //Load all necessary items
         superbiumIngot = new ItemSuperbiumIngot();
         RegisterHelper.registerItem(superbiumIngot);
@@ -101,11 +106,11 @@ public class ModItems {
         RegisterHelper.registerItem(superbiumPick);
         //Recipe
         GameRegistry.addRecipe(new ItemStack(superbiumPick),
-                        "XXX",
-                        " Y ",
-                        " Y ",
-                        'X', superbiumIngot, 'Y', Items.stick
-                );
+                "XXX",
+                " Y ",
+                " Y ",
+                'X', superbiumIngot, 'Y', Items.stick
+        );
 
         // ******************************************************************************
         // First Axe
@@ -113,11 +118,11 @@ public class ModItems {
         RegisterHelper.registerItem(superbiumAxe);
         //Recipe
         GameRegistry.addRecipe(new ItemStack(superbiumAxe),
-                        "XX",
-                        "XY",
-                        " Y",
-                        'X', superbiumIngot, 'Y', Items.stick
-                );
+                "XX",
+                "XY",
+                " Y",
+                'X', superbiumIngot, 'Y', Items.stick
+        );
 
         // ******************************************************************************
         // First Sword
@@ -125,11 +130,11 @@ public class ModItems {
         RegisterHelper.registerItem(superbiumSword);
         // Recipe
         GameRegistry.addRecipe(new ItemStack(superbiumSword),
-                        "X",
-                        "X",
-                        "Y",
-                        'X', superbiumIngot, 'Y', Items.stick
-                );
+                "X",
+                "X",
+                "Y",
+                'X', superbiumIngot, 'Y', Items.stick
+        );
         //*******************************************************************************
         superbiumShovel = new ItemSuperbiumShovel(superbiumToolMaterial);
         RegisterHelper.registerItem(superbiumShovel);
@@ -169,24 +174,24 @@ public class ModItems {
         aradactitePick = new ItemAradactitePick(aradactiteToolMaterial);
         RegisterHelper.registerItem(aradactitePick);
         GameRegistry.addRecipe(new ItemStack(aradactitePick),
-                        "XXX",
-                        " Y ",
-                        " Y ",
-                        'X', aradactiteIngot, 'Y', Items.stick
-                );
+                "XXX",
+                " Y ",
+                " Y ",
+                'X', aradactiteIngot, 'Y', Items.stick
+        );
         // ******************************************************************************
         aradactiteAxe = new ItemAradactiteAxe(aradactiteToolMaterial);
         RegisterHelper.registerItem(aradactiteAxe);
         GameRegistry.addRecipe(new ItemStack(aradactiteAxe),
-                        "XX",
-                        "XY",
-                        " Y",
-                        'X', aradactiteIngot, 'Y', Items.stick
-                );
+                "XX",
+                "XY",
+                " Y",
+                'X', aradactiteIngot, 'Y', Items.stick
+        );
         // ******************************************************************************
         aradactiteShovel = new ItemAradactiteShovel(aradactiteToolMaterial);
         RegisterHelper.registerItem(aradactiteShovel);
-        GameRegistry.addRecipe(new ItemStack(aradactiteShovel), 
+        GameRegistry.addRecipe(new ItemStack(aradactiteShovel),
                 "X",
                 "Y",
                 "Y",
@@ -195,7 +200,7 @@ public class ModItems {
         // ******************************************************************************
         aradactiteHoe = new ItemAradactiteHoe(aradactiteToolMaterial);
         RegisterHelper.registerItem(aradactiteHoe);
-        GameRegistry.addRecipe(new ItemStack(aradactiteHoe), 
+        GameRegistry.addRecipe(new ItemStack(aradactiteHoe),
                 "XX",
                 " Y",
                 " Y",
@@ -204,7 +209,7 @@ public class ModItems {
         // ******************************************************************************
         aradactiteSword = new ItemAradactiteSword(aradactiteToolMaterial);
         RegisterHelper.registerItem(aradactiteSword);
-        GameRegistry.addRecipe(new ItemStack(aradactiteSword), 
+        GameRegistry.addRecipe(new ItemStack(aradactiteSword),
                 "X",
                 "X",
                 "Y",
@@ -234,41 +239,41 @@ public class ModItems {
         // Ruby tools
         rubyPick = new ItemRubyPickaxe(rubyToolMaterial);
         RegisterHelper.registerItem(rubyPick);
-        RegisterHelper.regToolRecipe(rubyPick,ruby,Items.stick,"pickaxe");
+        RegisterHelper.regToolRecipe(rubyPick, ruby, Items.stick, "pickaxe");
 
         rubyAxe = new ItemRubyAxe(rubyToolMaterial);
         RegisterHelper.registerItem(rubyAxe);
-        RegisterHelper.regToolRecipe(rubyAxe,ruby,Items.stick,"axe");
+        RegisterHelper.regToolRecipe(rubyAxe, ruby, Items.stick, "axe");
 
         rubyShovel = new ItemRubyShovel(rubyToolMaterial);
         RegisterHelper.registerItem(rubyShovel);
-        RegisterHelper.regToolRecipe(rubyShovel,ruby,Items.stick,"shovel");
+        RegisterHelper.regToolRecipe(rubyShovel, ruby, Items.stick, "shovel");
 
         rubyHoe = new ItemRubyHoe(rubyToolMaterial);
         RegisterHelper.registerItem(rubyHoe);
-        RegisterHelper.regToolRecipe(rubyHoe,ruby,Items.stick,"hoe");
+        RegisterHelper.regToolRecipe(rubyHoe, ruby, Items.stick, "hoe");
 
         rubySword = new ItemRubySword(rubyToolMaterial);
         RegisterHelper.registerItem(rubySword);
-        RegisterHelper.regToolRecipe(rubySword,ruby,Items.stick,"sword");
+        RegisterHelper.regToolRecipe(rubySword, ruby, Items.stick, "sword");
 
         /* Armor */
 
-        rubyHelmet = new ItemRubyArmor(rubyArmorMaterial,0,"rubyHelmet");
+        rubyHelmet = new ItemRubyArmor(rubyArmorMaterial, 0, "rubyHelmet");
         RegisterHelper.registerItem(rubyHelmet);
-        RegisterHelper.regArmorRecipe(rubyHelmet,ruby,"helmet");
+        RegisterHelper.regArmorRecipe(rubyHelmet, ruby, "helmet");
 
-        rubyChestplate = new ItemRubyArmor(rubyArmorMaterial,1,"rubyChestplate");
+        rubyChestplate = new ItemRubyArmor(rubyArmorMaterial, 1, "rubyChestplate");
         RegisterHelper.registerItem(rubyChestplate);
-        RegisterHelper.regArmorRecipe(rubyChestplate,ruby,"chestplate");
+        RegisterHelper.regArmorRecipe(rubyChestplate, ruby, "chestplate");
 
-        rubyLeggings = new ItemRubyArmor(rubyArmorMaterial,2,"rubyLeggings");
+        rubyLeggings = new ItemRubyArmor(rubyArmorMaterial, 2, "rubyLeggings");
         RegisterHelper.registerItem(rubyLeggings);
-        RegisterHelper.regArmorRecipe(rubyLeggings,ruby,"leggings");
+        RegisterHelper.regArmorRecipe(rubyLeggings, ruby, "leggings");
 
-        rubyBoots = new ItemRubyArmor(rubyArmorMaterial,3,"rubyBoots");
+        rubyBoots = new ItemRubyArmor(rubyArmorMaterial, 3, "rubyBoots");
         RegisterHelper.registerItem(rubyBoots);
-        RegisterHelper.regArmorRecipe(rubyBoots,ruby,"boots");
+        RegisterHelper.regArmorRecipe(rubyBoots, ruby, "boots");
         /* *********************************************************************************************************************************************
         ===============================================COBALT===========================================================================================
         ************************************************************************************************************************************************
@@ -280,7 +285,7 @@ public class ModItems {
         cobaltBoat = new ItemCobaltBoat().setUnlocalizedName("cobaltBoat");
         RegisterHelper.registerItem(cobaltBoat);
         EntityRegistry.registerModEntity(EntityCobaltBoat.class, "cobaltBoat", EntityRegistry.findGlobalUniqueEntityId(), main.instance, 80, 3, false);
-        GameRegistry.addRecipe(new ItemStack(cobaltBoat,1),
+        GameRegistry.addRecipe(new ItemStack(cobaltBoat, 1),
                 "X X",
                 "XXX",
                 'X', ModItems.cobaltIngot
@@ -291,12 +296,25 @@ public class ModItems {
         RegisterHelper.addPurifying(Items.ender_pearl, new ItemStack(ModItems.enderDust, 1), 15F);
 
 
-
-
         plastic = new ItemPlastic();
         RegisterHelper.registerItem(plastic);
         RegisterHelper.addPurifying(Items.coal, new ItemStack(plastic), 20F);
 
-    }
+        goldToolRod = new ItemGoldToolRod();
+        RegisterHelper.registerItem(goldToolRod);
+        RegisterHelper.addStickRecipe(Items.gold_ingot, new ItemStack(goldToolRod, 1));
 
+        stoneToolRod = new ItemStoneToolRod();
+        RegisterHelper.registerItem(stoneToolRod);
+        RegisterHelper.addStickRecipe(Item.getItemFromBlock(Blocks.stone), new ItemStack(stoneToolRod,1));
+
+        ironToolRod = new ItemIronToolRod();
+        RegisterHelper.registerItem(ironToolRod);
+        RegisterHelper.addStickRecipe(Items.iron_ingot, new ItemStack(ironToolRod, 1));
+
+        diamondToolRod = new ItemDiamondToolRod();
+        RegisterHelper.registerItem(diamondToolRod);
+        RegisterHelper.addStickRecipe(Items.diamond, new ItemStack(diamondToolRod, 1));
+
+    }
 }

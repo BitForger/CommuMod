@@ -1,5 +1,6 @@
 package io.cyb3rwarri0r8.commumod.entity;
 
+import cofh.api.energy.TileEnergyHandler;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -14,12 +15,12 @@ import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.item.*;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
-import net.minecraft.tileentity.TileEntity;
+import net.minecraftforge.common.util.ForgeDirection;
 
 /**
  * Created by noah on 9/10/14.
  */
-public class TileEntityPurifier extends TileEntity implements ISidedInventory
+public class TileEntityPurifier extends TileEnergyHandler implements ISidedInventory
 {
 
     private static final int[] slotsTop = new int[]{0};
@@ -397,5 +398,15 @@ public class TileEntityPurifier extends TileEntity implements ISidedInventory
     public boolean isItemValidForSlot(int p_94041_1_, ItemStack p_94041_2_)
     {
         return p_94041_1_ == 2 ? false : (p_94041_1_ == 1 ? isItemFuel(p_94041_2_) : true);
+    }
+
+    @Override
+    public boolean canConnectEnergy(ForgeDirection from) {
+        return true;
+    }
+
+    @Override
+    public int receiveEnergy(ForgeDirection from, int maxReceive, boolean simulate) {
+        return storage.receiveEnergy(maxReceive, simulate);
     }
 }
