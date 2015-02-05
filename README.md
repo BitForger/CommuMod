@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/Cyb3rWarri0r8/CommuMod.png?label=ready&title=Ready)](https://waffle.io/Cyb3rWarri0r8/CommuMod)
 CommuMod [![Build Status](https://travis-ci.org/Cyb3rWarri0r8/CommuMod.svg)](https://travis-ci.org/Cyb3rWarri0r8/CommuMod)
 =====
 
