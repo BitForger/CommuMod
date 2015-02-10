@@ -90,6 +90,8 @@ public class ModItems {
     public static Item ironToolRod;
     public static Item diamondToolRod;
 
+    public static Item modularTool;
+
 
 
     public static void loadItems() {
@@ -315,6 +317,9 @@ public class ModItems {
         diamondToolRod = new ItemDiamondToolRod();
         RegisterHelper.registerItem(diamondToolRod);
         RegisterHelper.addStickRecipe(Items.diamond, new ItemStack(diamondToolRod, 1));
+
+        modularTool = new ItemModularTool();
+        RegisterHelper.registerItem(modularTool);
 
     }
 }
