@@ -11,13 +11,13 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.CraftingManager;
 
-public class ItemModularTool extends Item {
+public class ItemModularPickaxe extends Item {
 
-    public ItemModularTool()
+    public ItemModularPickaxe()
     {
         super();
         setHasSubtypes(true);
-        setUnlocalizedName("modularTool");
+        setUnlocalizedName("modularPickaxe");
         setTextureName(Reference.MODID + ":" + getUnlocalizedName().substring(5));
         setCreativeTab(main.modTab);
     }

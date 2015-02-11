@@ -1,5 +1,6 @@
 package io.cyb3rwarri0r8.commumod.lib;
 
+
 import io.cyb3rwarri0r8.commumod.items.ModItems;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -26,11 +27,30 @@ import net.minecraft.world.World;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-public class CraftingHandler implements IRecipe{
+public class IRecipeModularPickaxe implements IRecipe{
 
     @Override
-    public boolean matches(InventoryCrafting p_77569_1_, World p_77569_2_) {
-        return false;
+    public boolean matches(InventoryCrafting crafting, World world) {
+        ItemStack item1 = crafting.getStackInRowAndColumn(0,0);
+        ItemStack item2 = crafting.getStackInRowAndColumn(1,0);
+        ItemStack item3 = crafting.getStackInRowAndColumn(2,0);
+        ItemStack stick1 = crafting.getStackInRowAndColumn(1,1);
+        ItemStack stick2 = crafting.getStackInRowAndColumn(1,2);
+
+        if(stick1.getItem() == ModItems.diamondToolRod | stick1.getItem() == ModItems.goldToolRod | stick1.getItem() == ModItems.ironToolRod | stick1.getItem() == ModItems.stoneToolRod
+                && stick2.getItem() == ModItems.diamondToolRod | stick2.getItem() == ModItems.stoneToolRod | stick2.getItem() == ModItems.ironToolRod | stick2.getItem() == ModItems.goldToolRod)
+        {
+            if(item1.getItem() == Items.iron_ingot | item1.getItem() == Items.emerald | item1.getItem() == Items.diamond | item1.getItem() == Item.getItemFromBlock(Blocks.gold_block) | item1.getItem() == Item.getItemFromBlock(Blocks.stone)
+                    && item2.getItem() == Items.iron_ingot | item2.getItem() == Items.emerald | item2.getItem() == Items.diamond | item2.getItem() == Item.getItemFromBlock(Blocks.gold_block) | item2.getItem() == Item.getItemFromBlock(Blocks.stone)
+                    && item3.getItem() == Items.iron_ingot | item3.getItem() == Items.emerald | item3.getItem() == Items.diamond | item3.getItem() == Item.getItemFromBlock(Blocks.gold_block) | item3.getItem() == Item.getItemFromBlock(Blocks.stone))
+            {
+                return true;
+            }else {
+                return false;
+            }
+        }else{
+            return false;
+        }
     }
 
     @Override
@@ -64,7 +84,7 @@ public class CraftingHandler implements IRecipe{
                 finalDurability -= 50;
             }
         }
-        ItemStack result = new ItemStack(ModItems.modularTool);
+        ItemStack result = new ItemStack(ModItems.modularPickaxe);
         result.getItem().setMaxDamage(finalDurability);
 
         return result;
@@ -73,11 +93,11 @@ public class CraftingHandler implements IRecipe{
 
     @Override
     public int getRecipeSize() {
-        return 0;
+        return 9;
     }
 
     @Override
     public ItemStack getRecipeOutput() {
-        return null;
+        return new ItemStack(ModItems.modularPickaxe);
     }
 }
