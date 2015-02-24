@@ -26,7 +26,7 @@ public class ItemIronToolRod extends Item {
     {
         super();
         setUnlocalizedName("ironToolRod");
-        setCreativeTab(main.modTab);
+//        setCreativeTab(main.modTab);
         setTextureName(Reference.MODID + ":" + getUnlocalizedName().substring(5));
     }
 }

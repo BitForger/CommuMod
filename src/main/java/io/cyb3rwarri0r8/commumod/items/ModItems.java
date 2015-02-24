@@ -91,7 +91,7 @@ public class ModItems {
     public static Item diamondToolRod;
 
     public static Item modularPickaxe;
-
+    static Item.ToolMaterial MODULAR_PICK_MATERIAL = EnumHelper.addToolMaterial("modularPickMaterial",500, 1000, 4.0F, 5.0F, 75);
 
 
     public static void loadItems() {
@@ -295,7 +295,7 @@ public class ModItems {
 
         enderDust = new ItemEnderDust();
         RegisterHelper.registerItem(enderDust);
-        RegisterHelper.addPurifying(Items.ender_pearl, new ItemStack(ModItems.enderDust, 1), 15F);
+        RegisterHelper.addPurifying(Items.ender_pearl, new ItemStack(ModItems.enderDust, 6), 15F);
 
 
         plastic = new ItemPlastic();
@@ -304,22 +304,23 @@ public class ModItems {
 
         goldToolRod = new ItemGoldToolRod();
         RegisterHelper.registerItem(goldToolRod);
-        RegisterHelper.addStickRecipe(Items.gold_ingot, new ItemStack(goldToolRod, 1));
+        RegisterHelper.addStickRecipe(Items.gold_ingot, new ItemStack(goldToolRod, 2));
 
         stoneToolRod = new ItemStoneToolRod();
         RegisterHelper.registerItem(stoneToolRod);
-        RegisterHelper.addStickRecipe(Item.getItemFromBlock(Blocks.stone), new ItemStack(stoneToolRod,1));
+        RegisterHelper.addStickRecipe(Item.getItemFromBlock(Blocks.stone), new ItemStack(stoneToolRod,2));
 
         ironToolRod = new ItemIronToolRod();
         RegisterHelper.registerItem(ironToolRod);
-        RegisterHelper.addStickRecipe(Items.iron_ingot, new ItemStack(ironToolRod, 1));
+        RegisterHelper.addStickRecipe(Items.iron_ingot, new ItemStack(ironToolRod, 2));
 
         diamondToolRod = new ItemDiamondToolRod();
         RegisterHelper.registerItem(diamondToolRod);
-        RegisterHelper.addStickRecipe(Items.diamond, new ItemStack(diamondToolRod, 1));
+        RegisterHelper.addStickRecipe(Items.diamond, new ItemStack(diamondToolRod, 2));
 
-        modularPickaxe = new ItemModularPickaxe();
+        modularPickaxe = new ItemModularPickaxe(MODULAR_PICK_MATERIAL);
         RegisterHelper.registerItem(modularPickaxe);
+
 
     }
 }

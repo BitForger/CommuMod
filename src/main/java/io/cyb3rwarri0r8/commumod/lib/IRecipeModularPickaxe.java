@@ -100,4 +100,5 @@ public class IRecipeModularPickaxe implements IRecipe{
     public ItemStack getRecipeOutput() {
         return new ItemStack(ModItems.modularPickaxe);
     }
+
 }

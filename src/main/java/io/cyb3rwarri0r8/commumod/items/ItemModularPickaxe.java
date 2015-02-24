@@ -8,15 +8,16 @@ import io.cyb3rwarri0r8.commumod.main;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemPickaxe;
 
-public class ItemModularPickaxe extends Item {
+public class ItemModularPickaxe extends ItemPickaxe {
 
-    public ItemModularPickaxe()
+    public ItemModularPickaxe(ToolMaterial material)
     {
-        super();
+        super(material);
 
         setUnlocalizedName("modularPickaxe");
         setTextureName(Reference.MODID + ":" + getUnlocalizedName().substring(5));
-        setCreativeTab(main.modTab);
+//        setCreativeTab(main.modTab);
+
     }
 
 

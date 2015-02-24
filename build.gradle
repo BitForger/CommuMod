@@ -18,6 +18,14 @@ buildscript {
     }
 }
 
+repositories{
+    maven {
+        name = "chickenbones"
+        url = "http://chickenbones.net/maven"
+    }
+}
+
+
 apply plugin: 'forge'
 
 version
@@ -27,6 +35,12 @@ archivesBaseName = "commumod"
 minecraft {
     version = "1.7.10-10.13.2.1230"
     assetDir = "eclipse/assets"
+}
+
+dependencies {
+	compile "codechicken:NotEnoughItems:1.7.10-1.0.3.74:dev"
+	compile "codechicken:CodeChickenLib:1.7.10-1.1.1.99:dev"
+	compile "codechicken:CodeChickenCore:1.7.10-1.0.4.29:dev"
 }
 
 processResources
@@ -347,9 +361,10 @@ task getModData << {
 
 
 build.mustRunAfter getModData
-build.mustRunAfter setDevVersion
 build.dependsOn getModData
-build.dependsOn setDevVersion
+
+//build.mustRunAfter setDevVersion
+//build.dependsOn setDevVersion
 
 sourceSets {
     main { output.resourcesDir = output.classesDir }

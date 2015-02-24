@@ -27,7 +27,7 @@ public class ItemStoneToolRod extends Item {
         super();
         setUnlocalizedName("stoneToolRod");
 
-        setCreativeTab(main.modTab);
+//        setCreativeTab(main.modTab);
         setTextureName(Reference.MODID + ":" + getUnlocalizedName().substring(5));
     }
 }
