@@ -3,7 +3,11 @@ package io.cyb3rwarri0r8.commumod.lib.handler;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import io.cyb3rwarri0r8.commumod.items.ModItems;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Blocks;
 import net.minecraftforge.event.entity.living.LivingEvent;
+import net.minecraftforge.event.terraingen.OreGenEvent;
+import java.util.Random;
+
 
 /**
  * Created by noah on 10/23/14.
@@ -30,7 +34,6 @@ public class ModEventHandler
             }
         }
     }
-
 
 
     /*@SubscribeEvent

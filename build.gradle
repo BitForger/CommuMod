@@ -315,7 +315,7 @@ task setDevVersion << {
         def patch = Integer.parseInt(matcherVersion.group(3))
 
         oldVersion = major + "." + minor + "." + patch
-        newVersion = major + "." + minor + "." + patch + "-dev.1"
+        newVersion = major + "." + minor + "." + patch + "-build.1"
     }
 
     println(":incrementPatch - Current Version: " + oldVersion)
@@ -363,8 +363,8 @@ task getModData << {
 build.mustRunAfter getModData
 build.dependsOn getModData
 
-//build.mustRunAfter setDevVersion
-//build.dependsOn setDevVersion
+build.mustRunAfter setDevVersion
+build.dependsOn setDevVersion
 
 sourceSets {
     main { output.resourcesDir = output.classesDir }
