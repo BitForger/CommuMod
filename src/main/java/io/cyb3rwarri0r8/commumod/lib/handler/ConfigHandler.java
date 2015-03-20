@@ -18,6 +18,9 @@ public class ConfigHandler
     public static int DiamondOreGenAmount;
     public static String friendUserName;
     public static String friendNickName;
+    public static String girlfriendUserName;
+    public static String girlfriendNickName;
+    public static String everyoneElsesNickname;
 
 
     public static void init(File configFile)
@@ -36,9 +39,11 @@ public class ConfigHandler
 
         IronOreGenAmount = configuration.getInt("Iron Ore Generation Amount", Configuration.CATEGORY_GENERAL, 5, 0, 50, "This will change the amount of iron ore spawned into the world. The higher the amount the longer it will take to generate.");
         DiamondOreGenAmount = configuration.getInt("Diamond Ore Generation Amount", Configuration.CATEGORY_GENERAL, 5, 0, 50, "This will change the amount of diamond ore spanwned into the world.");
-//        friendUserName = configuration.getString("Friends Username", Configuration.CATEGORY_GENERAL, "", "Enter your friends username for a cool tag added to their name");
-//        friendNickName = configuration.getString("Friends Nickname", Configuration.CATEGORY_GENERAL, " ", "Enter a title to append to your friends username", "key");
-
+        friendUserName = configuration.getString("Friends Username", Configuration.CATEGORY_GENERAL, "", "Enter your friends username for a cool tag added to their name");
+        friendNickName = configuration.getString("Friends Nickname", Configuration.CATEGORY_GENERAL, " ", "Enter a title to append to your friends username", "key");
+        girlfriendUserName = configuration.getString("Girlfriends Username", Configuration.CATEGORY_GENERAL, "", "Enter your girlfriends username");
+        girlfriendNickName = configuration.getString("Girlfriends Nickname", Configuration.CATEGORY_GENERAL, "", "Enter a nickname/title to append to your girlfriends username");
+        everyoneElsesNickname = configuration.getString("Title for everyone else", Configuration.CATEGORY_GENERAL, "", "Enter a title for every other player in minecraft universe");
         if (configuration.hasChanged())
         {
             configuration.save();

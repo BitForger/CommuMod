@@ -4,7 +4,9 @@ import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import io.cyb3rwarri0r8.commumod.items.ModItems;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
+import net.minecraft.world.World;
 import net.minecraftforge.event.entity.living.LivingEvent;
+import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.event.terraingen.OreGenEvent;
 import java.util.Random;
 
@@ -35,6 +37,43 @@ public class ModEventHandler
         }
     }
 
+    @SubscribeEvent
+    public void onChunkPreLoaded(OreGenEvent.Pre event)
+    {
+        
+    }
+
+    @SubscribeEvent
+    public void onUsernameLoaded(PlayerEvent.NameFormat event)
+    {
+        if(event.username.equals("Adm_Seakiller"))
+        {
+            event.displayname = event.username + " the Goalie Man";
+        }
+        else if(event.username.equals("nathanicus96"))
+        {
+            event.displayname = event.username + " my sk8tr bro";
+        }
+        else if(event.username.equals("tekmeister1"))
+        {
+            event.displayname = event.username + " the Mod Dev";
+        }
+        else if(event.username.equals("UltraX7"))
+        {
+            event.displayname = event.username + " the mega awesome texturer/inspirer";
+        }
+        else if(event.username.equals(ConfigHandler.friendUserName))
+        {
+            event.displayname = event.username + " " + ConfigHandler.friendNickName;
+        }
+        else if(event.username.equals(ConfigHandler.girlfriendUserName))
+        {
+            event.displayname = event.username + " " + ConfigHandler.girlfriendNickName;
+        }
+        else{
+            event.displayname = event.username + " " + ConfigHandler.everyoneElsesNickname;
+        }
+    }
 
     /*@SubscribeEvent
     @SideOnly(Side.CLIENT)
