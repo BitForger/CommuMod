@@ -37,20 +37,21 @@ public class IRecipeModularPickaxe implements IRecipe{
         ItemStack stick1 = crafting.getStackInRowAndColumn(1,1);
         ItemStack stick2 = crafting.getStackInRowAndColumn(1,2);
 
-        if(stick1.getItem() == ModItems.diamondToolRod | stick1.getItem() == ModItems.goldToolRod | stick1.getItem() == ModItems.ironToolRod | stick1.getItem() == ModItems.stoneToolRod
-                && stick2.getItem() == ModItems.diamondToolRod | stick2.getItem() == ModItems.stoneToolRod | stick2.getItem() == ModItems.ironToolRod | stick2.getItem() == ModItems.goldToolRod)
+        if((stick1.getItem() == ModItems.diamondToolRod && stick2.getItem() == ModItems.diamondToolRod)
+        || (stick1.getItem() == ModItems.ironToolRod    && stick2.getItem() == ModItems.ironToolRod)
+        || (stick1.getItem() == ModItems.goldToolRod    && stick2.getItem() == ModItems.goldToolRod)
+        || (stick1.getItem() == ModItems.stoneToolRod   && stick2.getItem() == ModItems.stoneToolRod))
         {
-            if(item1.getItem() == Items.iron_ingot | item1.getItem() == Items.emerald | item1.getItem() == Items.diamond | item1.getItem() == Item.getItemFromBlock(Blocks.gold_block) | item1.getItem() == Item.getItemFromBlock(Blocks.stone)
-                    && item2.getItem() == Items.iron_ingot | item2.getItem() == Items.emerald | item2.getItem() == Items.diamond | item2.getItem() == Item.getItemFromBlock(Blocks.gold_block) | item2.getItem() == Item.getItemFromBlock(Blocks.stone)
-                    && item3.getItem() == Items.iron_ingot | item3.getItem() == Items.emerald | item3.getItem() == Items.diamond | item3.getItem() == Item.getItemFromBlock(Blocks.gold_block) | item3.getItem() == Item.getItemFromBlock(Blocks.stone))
+            if((item1.getItem() == Items.iron_ingot                          && item2.getItem() == Items.iron_ingot                          && item3.getItem() == Items.iron_ingot)
+            || (item1.getItem() == Items.emerald                             && item2.getItem() == Items.emerald                             && item3.getItem() == Items.emerald)
+            || (item1.getItem() == Items.diamond                             && item2.getItem() == Items.diamond                             && item3.getItem() == Items.diamond)
+            || (item1.getItem() == Item.getItemFromBlock(Blocks.gold_block)  && item2.getItem() == Item.getItemFromBlock(Blocks.gold_block)  && item3.getItem() == Item.getItemFromBlock(Blocks.gold_block)
+            || (item1.getItem() == Item.getItemFromBlock(Blocks.cobblestone) && item2.getItem() == Item.getItemFromBlock(Blocks.cobblestone) && item3.getItem() == Item.getItemFromBlock(Blocks.cobblestone))
             {
                 return true;
-            }else {
-                return false;
             }
-        }else{
-            return false;
         }
+        return false;
     }
 
     @Override
