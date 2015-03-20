@@ -6,8 +6,9 @@ jdk:
   - openjdk7
   - openjdk6
   
-./gradlew assemble
-./gradlew build
+script:
+  - ./gradlew assemble
+  - ./gradlew build
 
 
 notifications:
