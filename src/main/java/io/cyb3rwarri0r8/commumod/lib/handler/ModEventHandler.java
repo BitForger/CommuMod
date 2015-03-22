@@ -40,7 +40,8 @@ public class ModEventHandler
     @SubscribeEvent
     public void onChunkPreLoaded(OreGenEvent.Pre event)
     {
-        
+        event.setCanceled(true);
+
     }
 
     @SubscribeEvent
@@ -52,7 +53,7 @@ public class ModEventHandler
         }
         else if(event.username.equals("nathanicus96"))
         {
-            event.displayname = event.username + " my sk8tr bro";
+            event.displayname = event.username + " my Sk8tr Bro";
         }
         else if(event.username.equals("tekmeister1"))
         {
@@ -60,7 +61,7 @@ public class ModEventHandler
         }
         else if(event.username.equals("UltraX7"))
         {
-            event.displayname = event.username + " the mega awesome texturer/inspirer";
+            event.displayname = event.username + " the Mega Awesome Texturer/Inspirer";
         }
         else if(event.username.equals(ConfigHandler.friendUserName))
         {

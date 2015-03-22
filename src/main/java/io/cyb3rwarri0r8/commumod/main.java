@@ -40,13 +40,13 @@ import java.util.Iterator;
 import java.util.List;
 
 
-@Mod(modid = Reference.MODID, version = Reference.VERSION, guiFactory = Reference.GuiFactoryClass)
+@Mod(modid = Reference.MODID, version = Reference.VERSION, guiFactory = Reference.GUI_FACTORY_CLASS)
 
 
 
 public class main
 {
-    @SidedProxy(clientSide="io.cyb3rwarri0r8.commumod.lib.proxy.proxyClient", serverSide="io.cyb3rwarri0r8.commumod.lib.proxy.proxyCommon")
+    @SidedProxy(clientSide=Reference.CLIENT_PROXY, serverSide=Reference.COMMON_PROXY)
     public static proxyCommon proxy;
 
     // Create a new creative tab
@@ -65,27 +65,25 @@ public class main
     public void preinit(FMLPreInitializationEvent event) {
 
         configFile = new Configuration(event.getSuggestedConfigurationFile());
+        ConfigHandler.init(configFile.getConfigFile());
 
         ModItems.loadItems();
+
         ModBlocks.loadBlocks();
-
-
 
         ModFluids.init();
 
         ModBlocks.addBlockRecipes();
 
-
-
-
-
         foodItems.loadFood();
+
         modWorld.initWorldGen();
+
         ModEntities.init();
-        ConfigHandler.init(configFile.getConfigFile());
 
-
-
+        /**
+         * Run all proxy file initiation
+         */
         proxy.registerRenderers();
         proxy.registerEntitySpawn();
         proxy.registerTileEntities();
