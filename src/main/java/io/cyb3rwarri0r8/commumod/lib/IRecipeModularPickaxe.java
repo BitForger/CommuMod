@@ -46,7 +46,8 @@ public class IRecipeModularPickaxe implements IRecipe{
             || (item1.getItem() == Items.emerald                             && item2.getItem() == Items.emerald                             && item3.getItem() == Items.emerald)
             || (item1.getItem() == Items.diamond                             && item2.getItem() == Items.diamond                             && item3.getItem() == Items.diamond)
             || (item1.getItem() == Item.getItemFromBlock(Blocks.gold_block)  && item2.getItem() == Item.getItemFromBlock(Blocks.gold_block)  && item3.getItem() == Item.getItemFromBlock(Blocks.gold_block)
-            || (item1.getItem() == Item.getItemFromBlock(Blocks.cobblestone) && item2.getItem() == Item.getItemFromBlock(Blocks.cobblestone) && item3.getItem() == Item.getItemFromBlock(Blocks.cobblestone))
+            || (item1.getItem() == Item.getItemFromBlock(Blocks.cobblestone) && item2.getItem() == Item.getItemFromBlock(Blocks.cobblestone) && item3.getItem() == Item.getItemFromBlock(Blocks.cobblestone))))
+
             {
                 return true;
             }
