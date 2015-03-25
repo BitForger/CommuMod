@@ -1,8 +1,7 @@
+
+
 package io.cyb3rwarri0r8.commumod.items;
 
-
-import cpw.mods.fml.common.registry.EntityRegistry;
-import cpw.mods.fml.common.registry.GameRegistry;
 import io.cyb3rwarri0r8.commumod.blocks.ModBlocks;
 import io.cyb3rwarri0r8.commumod.entity.EntityCobaltBoat;
 import io.cyb3rwarri0r8.commumod.lib.helpers.RegisterHelper;
@@ -13,10 +12,10 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.util.EnumHelper;
+import net.minecraftforge.fml.common.registry.EntityRegistry;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
-/**
- * Created by noah on 5/14/14.
- */
+
 public class ModItems {
 
 

@@ -1,7 +1,6 @@
 package io.cyb3rwarri0r8.commumod.entity;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
+
 import io.cyb3rwarri0r8.commumod.items.ModItems;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -17,6 +16,8 @@ import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 import java.util.List;
 
@@ -73,7 +74,7 @@ public class EntityCobaltBoat extends Entity {
      */
     public AxisAlignedBB getCollisionBox(Entity p_70114_1_)
     {
-        return p_70114_1_.boundingBox;
+        return p_70114_1_.getBoundingBox();
     }
 
     /**
@@ -81,7 +82,7 @@ public class EntityCobaltBoat extends Entity {
      */
     public AxisAlignedBB getBoundingBox()
     {
-        return this.boundingBox;
+        return this.getBoundingBox();
     }
 
     /**
@@ -95,7 +96,7 @@ public class EntityCobaltBoat extends Entity {
     public EntityCobaltBoat(World p_i1705_1_, double p_i1705_2_, double p_i1705_4_, double p_i1705_6_)
     {
         this(p_i1705_1_);
-        this.setPosition(p_i1705_2_, p_i1705_4_ + (double)this.yOffset, p_i1705_6_);
+        this.setPosition(p_i1705_2_, p_i1705_4_ + (double)this.getYOffset(), p_i1705_6_);
         this.motionX = 0.0D;
         this.motionY = 0.0D;
         this.motionZ = 0.0D;
@@ -117,7 +118,8 @@ public class EntityCobaltBoat extends Entity {
      */
     public boolean attackEntityFrom(DamageSource p_70097_1_, float p_70097_2_)
     {
-        if (this.isEntityInvulnerable())
+        //TODO Find out what isEntityVulnerable has changed to
+        if (this.isEntityVulnerable())
         {
             return false;
         }
@@ -138,6 +140,7 @@ public class EntityCobaltBoat extends Entity {
 
                 if (!flag)
                 {
+                    //TODO Find out what func_145778_a changed to
                     this.func_145778_a(ModItems.cobaltBoat, 1, 0.0F);
                 }
 
@@ -243,9 +246,9 @@ public class EntityCobaltBoat extends Entity {
 
         for (int i = 0; i < b0; ++i)
         {
-            double d1 = this.boundingBox.minY + (this.boundingBox.maxY - this.boundingBox.minY) * (double)(i + 0) / (double)b0 - 0.125D;
-            double d3 = this.boundingBox.minY + (this.boundingBox.maxY - this.boundingBox.minY) * (double)(i + 1) / (double)b0 - 0.125D;
-            AxisAlignedBB axisalignedbb = AxisAlignedBB.getBoundingBox(this.boundingBox.minX, d1, this.boundingBox.minZ, this.boundingBox.maxX, d3, this.boundingBox.maxZ);
+            double d1 = this.getBoundingBox().minY + (this.getBoundingBox().maxY - this.getBoundingBox().minY) * (double)(i + 0) / (double)b0 - 0.125D;
+            double d3 = this.getBoundingBox().minY + (this.getBoundingBox().maxY - this.getBoundingBox().minY) * (double)(i + 1) / (double)b0 - 0.125D;
+            AxisAlignedBB axisalignedbb = AxisAlignedBB.fromBounds(this.getBoundingBox().minX, d1, this.getBoundingBox().minZ, this.getBoundingBox().maxX, d3, this.getBoundingBox().maxZ);
 
             if (this.worldObj.isAABBInMaterial(axisalignedbb, Material.water))
             {
@@ -274,6 +277,7 @@ public class EntityCobaltBoat extends Entity {
                 {
                     d8 = this.posX - d2 * d5 * 0.8D + d4 * d6;
                     d9 = this.posZ - d4 * d5 * 0.8D - d2 * d6;
+                    //TODO Find out whats wrong with spawnParticle
                     this.worldObj.spawnParticle("splash", d8, this.posY - 0.125D, d9, this.motionX, this.motionY, this.motionZ);
                 }
                 else
@@ -384,16 +388,19 @@ public class EntityCobaltBoat extends Entity {
 
                 for (int j1 = 0; j1 < 2; ++j1)
                 {
+                    //TODO Fix getBlock() method
                     int k = MathHelper.floor_double(this.posY) + j1;
                     Block block = this.worldObj.getBlock(i1, k, j);
 
                     if (block == Blocks.snow_layer)
                     {
+                        //TODO Fix setBlockToAir() method
                         this.worldObj.setBlockToAir(i1, k, j);
                         this.isCollidedHorizontally = false;
                     }
                     else if (block == Blocks.waterlily)
                     {
+                        //TODO Fix
                         this.worldObj.func_147480_a(i1, k, j, true);
                         this.isCollidedHorizontally = false;
                     }
@@ -440,7 +447,7 @@ public class EntityCobaltBoat extends Entity {
 
             if (!this.worldObj.isRemote)
             {
-                List<?> list = this.worldObj.getEntitiesWithinAABBExcludingEntity(this, this.boundingBox.expand(0.20000000298023224D, 0.0D, 0.20000000298023224D));
+                List<?> list = this.worldObj.getEntitiesWithinAABBExcludingEntity(this, this.getBoundingBox().expand(0.20000000298023224D, 0.0D, 0.20000000298023224D));
 
                 if (list != null && !list.isEmpty())
                 {
@@ -532,6 +539,7 @@ public class EntityCobaltBoat extends Entity {
 
                     for (l = 0; l < 3; ++l)
                     {
+                        //TODO Fix
                         this.func_145778_a(Item.getItemFromBlock(Blocks.planks), 1, 0.0F);
                     }
 

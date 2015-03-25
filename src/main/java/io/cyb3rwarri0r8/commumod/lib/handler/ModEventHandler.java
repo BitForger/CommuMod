@@ -1,14 +1,17 @@
 package io.cyb3rwarri0r8.commumod.lib.handler;
 
-import cpw.mods.fml.common.eventhandler.SubscribeEvent;
+
 import io.cyb3rwarri0r8.commumod.items.ModItems;
+
+
+import io.cyb3rwarri0r8.commumod.world.VanillaOreOverrideDecorator;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.Blocks;
-import net.minecraft.world.World;
+
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.living.LivingEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.event.terraingen.OreGenEvent;
-import java.util.Random;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 
 /**

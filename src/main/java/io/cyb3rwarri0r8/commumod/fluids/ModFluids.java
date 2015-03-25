@@ -1,6 +1,6 @@
 package io.cyb3rwarri0r8.commumod.fluids;
 
-import cpw.mods.fml.common.registry.GameRegistry;
+
 import io.cyb3rwarri0r8.commumod.blocks.BlockPureWater;
 import io.cyb3rwarri0r8.commumod.blocks.BlockRetaw;
 import io.cyb3rwarri0r8.commumod.blocks.ModBlocks;
@@ -17,6 +17,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidContainerRegistry;
 import net.minecraftforge.fluids.FluidRegistry;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
 /**
  * Created by noah on 10/27/14.

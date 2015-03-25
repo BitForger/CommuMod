@@ -172,7 +172,7 @@ public class ModularPickaxeItemRenderer implements IItemRenderer {
         EntityLivingBase entity = (EntityLivingBase)data[1];
         GL11.glPushMatrix();
 
-        Tessellator tes = Tessellator.instance;
+        Tessellator tes = Tessellator.getInstance();
         IIcon icon = entity.getItemIcon(item, i);
 
         float f = ((IIcon)icon).getMinU();

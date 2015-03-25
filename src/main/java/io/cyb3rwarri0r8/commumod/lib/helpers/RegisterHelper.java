@@ -1,14 +1,15 @@
 package io.cyb3rwarri0r8.commumod.lib.helpers;
 
 
-import cpw.mods.fml.common.registry.EntityRegistry;
-import cpw.mods.fml.common.registry.GameRegistry;
+
 import io.cyb3rwarri0r8.commumod.lib.PurifierRecipes;
 import io.cyb3rwarri0r8.commumod.lib.Reference;
 import net.minecraft.block.Block;
 import net.minecraft.entity.EntityList;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.fml.common.registry.EntityRegistry;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
 import java.util.Random;
 

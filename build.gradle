@@ -33,14 +33,14 @@ group= "io.cyb3rwarri0r8.commumod" // http://maven.apache.org/guides/mini/guide-
 archivesBaseName = "commumod"
 
 minecraft {
-    version = "1.7.10-10.13.2.1230"
+    version = "1.8-11.14.1.1334"
     assetDir = "eclipse/assets"
 }
 
 dependencies {
-	compile "codechicken:NotEnoughItems:1.7.10-1.0.3.74:dev"
-	compile "codechicken:CodeChickenLib:1.7.10-1.1.1.99:dev"
-	compile "codechicken:CodeChickenCore:1.7.10-1.0.4.29:dev"
+//	compile "codechicken:NotEnoughItems:1.7.10-1.0.3.74:dev"
+//	compile "codechicken:CodeChickenLib:1.7.10-1.1.1.99:dev"
+//	compile "codechicken:CodeChickenCore:1.7.10-1.0.4.29:dev"
 }
 
 processResources
