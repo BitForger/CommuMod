@@ -7,8 +7,9 @@ build/
 gradlew.*
 
 
-/CommuMod.iml
+CommuMod.*
 
-/CommuMod.ipr
+eclipse/
 
-/CommuMod.iws
+libs/
+
