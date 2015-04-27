@@ -65,8 +65,7 @@
                 <p>
                     Hi everyone,
                     <br>I have made a mod called CommuMod(Community Mod). It adds three ores, armor and tools for them, and their own blocks with special abilities. There is also the superibumTNT (like mining TNT)along with the superbiumTorch and superbium Dust. The good thing about this is that the user (yes
-                    <strong>YOU</strong>
-                    ) gets a say in what you want next. I know I don't always have the best ideas so I want to hear from you about what is wanted in the next update. There is no limit to the amount of requests per user and you are free to expand on an idea as you feel fit. I will try to implement your requests to the best of my ability.
+                    <strong>YOU</strong> ) gets a say in what you want next. I know I don't always have the best ideas so I want to hear from you about what is wanted in the next update. There is no limit to the amount of requests per user and you are free to expand on an idea as you feel fit. I will try to implement your requests to the best of my ability.
                     <br>
                     <strong>Follow me <a href="http://www.twitter.com/KaminoCoding">@KaminoCoding</a> for updates</strong>
                     <br>
@@ -79,9 +78,9 @@
             <div class="fourteen wide column">
                 <h3 class="ui inverted header">Planned features: What ever you guys want (post in comments below)</h3>
                 <div class="ui inverted bulleted list">
-                    
+
                     <a href="" class="item">Maybe remake The Zipline Mod, and/or port Derpy Squid Mod(have not gotten permision from developers)</a>
-                   
+
                     <a href="" class="item">Potion of Warping; teleport using Ender Pearls without taking fall damage after landing (lasts 1.5 minutes).</a>
                     <a href="" class="item">Splash Potion of Warping; teleports any mobs that it hits to you.</a>
                     <a href="" class="item">Extended Potion of Warping; teleport using Ender Pearls without taking fall damage after landing (lasts 3 minutes).</a>
@@ -123,7 +122,7 @@
             </div>
         </div>
     </div>
-    
+
     <div class="ui inverted vertical segment">
         <div class="ui centered page grid">
             <div class="seven wide column">
@@ -131,15 +130,38 @@
                 <div class="ui list">
                     <div class="item">None AFAIK</div>
                 </div>
-                <a href="https://github.com/Cyb3rwarri0r8/CommuMod/issues">
+                <a href="https://github.com/cyb3rwarri0r8/commumod/issues">
                     <div class="ui blue button">Report a Bug</div>
                 </a>
+
             </div>
+            <!--<div class="ui issue modal">
+                <i class="close icon"></i>
+                <div class="header">Report an Issue</div>
+                <div class="content">
+                    <div class="ui header">Input Issue info</div>
+                    <form action="https://api.github.com/repos/cyb3rwarri0r8/commumod/issues" class="ui form" method="post" id="issueForm">
+                        <div class="field">
+                            <label for="title">Title:</label>
+                            <input type="text" name="title" placeholder="Title">
+                        </div>
+                        <div class="field">
+                            <textarea type="text" name="body" placeholder="Enter issue information..."></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="actions">
+                    <div class="ui positive right labeled icon button" onclick="submitIssue()">
+                        Submit Issue
+                        <i class="checkmark icon"></i>
+                    </div>
+                </div>
+            </div>-->
             <div class="seven wide column">
                 <h2 class="ui inverted header">Changelog:</h2>
                 <div class="ui inverted list">
                     <div class="item">
-                       <div class="header">1.5.0</div>Added tic-tacs, retaw, new textures for aradactite and superbium ore (thanks UltraX7!), added plastic and tic-tac case, fixed recipe issues
+                        <div class="header">1.5.0</div>Added tic-tacs, retaw, new textures for aradactite and superbium ore (thanks UltraX7!), added plastic and tic-tac case, fixed recipe issues
                         <div class="header">1.4.1</div>Fixed some bugs from pr1.4.0
                     </div>
                     <div class="item">
@@ -170,22 +192,22 @@
                 <h2 class="ui header">Modpack Permissions:</h2>
                 <p>You may use this mod in both public and private modpacks without permission. All that needs to be done is to credit me as author of the mod. If there are issues with my mod conflicting with other mods in your modpack open an issue on github and I will try and give you a specially built version without the bug.</p>
                 <div class="ui hidden divider"></div>
-                </div>
-                <div class="seven wide column">
-                    <h2 class="ui header">License:</h2>
+            </div>
+            <div class="seven wide column">
+                <h2 class="ui header">License:</h2>
                 <p>All code is licensed under the GPL v3 license. The license is available for review below:
-                <br>
-                <a href="http://www.gnu.org/licenses/gpl-3.0-standalone.html">
-                    <img src="https://monosnap.com/image/UqGkvJB7jWGkqNmBifoXVYev3XjZwR.png">
-                </a>
+                    <br>
+                    <a href="http://www.gnu.org/licenses/gpl-3.0-standalone.html">
+                        <img src="https://monosnap.com/image/UqGkvJB7jWGkqNmBifoXVYev3XjZwR.png">
+                    </a>
                 </p>
-                </div>
-                <div class="seven wide column">
-                    <h2 class="ui header">Contributing:</h2>
-                    <p>If you would like to help out with the development of this mod feel free to fork my project on Github and make pull requests as you please.</p>
-                </div>
+            </div>
+            <div class="seven wide column">
+                <h2 class="ui header">Contributing:</h2>
+                <p>If you would like to help out with the development of this mod feel free to fork my project on Github and make pull requests as you please.</p>
             </div>
         </div>
+    </div>
 
     <!--    Begin footer section -->
     <div class="ui inverted vertical segment">
@@ -227,6 +249,7 @@
             </div>
         </div>
     </div>
+    <script src="node_modules/octonode/lib/octonode.js"></script>
     <script type="text/javascript">
         $(document)
             .ready(function () {
@@ -239,10 +262,25 @@
 
             });
 
-        function licenseModal() {
-            $('.modal')
-                .modal('show');
-        }
+
+        /* function issueModal() {
+             $('.issue.modal')
+                 .modal('show');
+         }*/
+
+        //        function submitIssue() {
+        //            var github = require('octonode');
+        //
+        //            var client = github.client('327154deca68a56fe6550f7d2b19e04d0f482ad3');
+        //            client.get('/cyb3rwarri0r8', {}, function (err, status, body, headers) {
+        //                console.log(body); //json object
+        //            });
+        //            var ghrepo = client.repo('cyb3rwarri0r8/commumod')
+        //            ghrepo.issue({
+        //                "title": $('.ui.form>input[name="title"]'),
+        //                "body": $('ui.form>input[name="body"]')
+        //            }, callback)
+        //        }
     </script>
 
 </body>
