@@ -1,16 +1,20 @@
 package io.cyb3rwarri0r8.commumod.entity;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
+
 import net.minecraft.block.Block;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.item.EntityTNTPrimed;
 import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.init.Blocks;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.AxisAlignedBB;
+import net.minecraft.util.BlockPos;
 import net.minecraft.util.DamageSource;
+import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 import java.util.List;
 import java.util.Random;
@@ -28,7 +32,8 @@ public class EntityHydrogenTNTPrimed extends EntityTNTPrimed
         super(p_i1729_1_);
         this.preventEntitySpawning = true;
         this.setSize(0.98F, 0.98F);
-        this.yOffset = this.height / 2.0F;
+        BlockPos blockPos = new BlockPos(this.posX, this.posY, this.posZ);
+        blockPos.offsetUp((int) (this.height / 2.0F));
     }
 
     public EntityHydrogenTNTPrimed(World par1World, double par2, double par4, double par6, EntityLivingBase par8EntityLivingBase)
@@ -97,7 +102,7 @@ public class EntityHydrogenTNTPrimed extends EntityTNTPrimed
         }
         else
         {
-            this.worldObj.spawnParticle("smoke", this.posX, this.posY + 0.5D, this.posZ, 0.0D, 0.0D, 0.0D);
+            this.worldObj.spawnParticle(EnumParticleTypes.FIREWORKS_SPARK, this.posX, this.posY + 0.5D, this.posZ, 0.0D, 0.0D, 0.0D);
         }
     }
 
@@ -111,17 +116,20 @@ public class EntityHydrogenTNTPrimed extends EntityTNTPrimed
             {
                 for(int posZ2 = (int)posZ - 5; posZ2 < (int)posZ + 10; posZ2++)
                 {
-                    if(worldObj.getBlock(posX2, posY2, posZ2) != Blocks.bedrock && worldObj.getBlock(posX2, posY2, posZ2) != Blocks.end_portal_frame && worldObj.getBlock(posX2, posY2, posZ2) != Blocks.end_portal)
+                    BlockPos blockPos = new BlockPos(posX2, posY2, posZ2);
+                    if(worldObj.getBlockState(blockPos).getBlock() != Blocks.bedrock && worldObj.getBlockState(blockPos).getBlock() != Blocks.end_portal_frame && worldObj.getBlockState(blockPos).getBlock() != Blocks.end_portal)
                     {
 
 
-                        Block getblock = worldObj.getBlock(posX2, posY2, posZ2);
-                        worldObj.setBlockToAir(posX2, posY2, posZ2);
+                        Block getblock = worldObj.getBlockState(blockPos).getBlock();
+                        worldObj.setBlockToAir(blockPos);
                         Random random = new Random();
                         int lol = 0;
                         int lol2 = 0;
-                        List<EntityMob> entities = this.worldObj.getEntitiesWithinAABB(EntityMob.class, AxisAlignedBB.getBoundingBox(this.posX - 5, this.posY - 5, this.posZ - 5, this.posX + 5, this.posY + 5, this.posZ + 5));
-                        worldObj.setBlock(posX2, posY2, posZ2, Blocks.stone);
+                        int blockStateId = Block.getStateId(worldObj.getBlockState(blockPos));
+                        IBlockState state = (IBlockState) Block.getStateById(blockStateId);
+                        List<EntityMob> entities = this.worldObj.getEntitiesWithinAABB(EntityMob.class, AxisAlignedBB.fromBounds(this.posX - 5, this.posY - 5, this.posZ - 5, this.posX + 5, this.posY + 5, this.posZ + 5));
+                        worldObj.setBlockState(blockPos, state);
 
                         for(int i = 0; i <= entities.size() - 1; i++)
                         {

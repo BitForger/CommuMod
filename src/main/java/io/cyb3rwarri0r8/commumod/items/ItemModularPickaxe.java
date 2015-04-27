@@ -15,7 +15,7 @@ public class ItemModularPickaxe extends ItemPickaxe {
         super(material);
 
         setUnlocalizedName("modularPickaxe");
-        setTextureName(Reference.MODID + ":" + getUnlocalizedName().substring(5));
+//        setTextureName(Reference.MODID + ":" + getUnlocalizedName().substring(5));
 //        setCreativeTab(main.modTab);
 
     }

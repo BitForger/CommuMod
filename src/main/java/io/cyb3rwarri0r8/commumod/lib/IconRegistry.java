@@ -1,9 +1,9 @@
 package io.cyb3rwarri0r8.commumod.lib;
 
-
 import gnu.trove.map.TMap;
 import gnu.trove.map.hash.THashMap;
-import net.minecraft.client.renderer.texture.IIconCreator;
+import net.minecraft.client.renderer.texture.IIconRegister;
+import net.minecraft.util.IIcon;
 
 /**
  * CommuMod - A Minecraft Modification
@@ -23,28 +23,28 @@ import net.minecraft.client.renderer.texture.IIconCreator;
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 public class IconRegistry {
-    private static TMap<String, IIconCreator> icons = new THashMap<String, IIconCreator>();
+    private static TMap<String, IIcon> icons = new THashMap<String, IIcon>();
 
     private IconRegistry() {
 
     }
 
-    public static void addIcon(String iconName, String iconLocation, IIconCreator ir) {
+    public static void addIcon(String iconName, String iconLocation, IIconRegister ir) {
 
-        icons.put(iconName, ir.;
+        icons.put(iconName, ir.registerIcon(iconLocation));
     }
 
-    public static void addIcon(String iconName, IIconCreator icon) {
+    public static void addIcon(String iconName, IIcon icon) {
 
         icons.put(iconName, icon);
     }
 
-    public static IIconCreator getIcon(String iconName) {
+    public static IIcon getIcon(String iconName) {
 
         return icons.get(iconName);
     }
 
-    public static IIconCreator getIcon(String iconName, int iconOffset) {
+    public static IIcon getIcon(String iconName, int iconOffset) {
 
         return icons.get(iconName + iconOffset);
     }

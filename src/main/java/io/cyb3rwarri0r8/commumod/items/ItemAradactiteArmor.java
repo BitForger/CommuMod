@@ -3,6 +3,8 @@ package io.cyb3rwarri0r8.commumod.items;
 
 import io.cyb3rwarri0r8.commumod.lib.Reference;
 import io.cyb3rwarri0r8.commumod.main;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
@@ -15,7 +17,7 @@ public class ItemAradactiteArmor extends ItemArmor {
         super(material, 0, ArmorType);
         setCreativeTab(main.modTab);
         setUnlocalizedName(name);
-        setTextureName(Reference.MODID + ":" + getUnlocalizedName().substring(5));
+        Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(this, 0, new ModelResourceLocation("commumod:textures/items/"+name, "inventory"));
 
     }
     @Override

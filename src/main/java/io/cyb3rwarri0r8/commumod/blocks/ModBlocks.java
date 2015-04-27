@@ -1,6 +1,6 @@
 package io.cyb3rwarri0r8.commumod.blocks;
 
-import cpw.mods.fml.common.registry.GameRegistry;
+
 import io.cyb3rwarri0r8.commumod.items.ModItems;
 import io.cyb3rwarri0r8.commumod.lib.helpers.RegisterHelper;
 import io.cyb3rwarri0r8.commumod.main;
@@ -11,6 +11,7 @@ import net.minecraft.block.material.MaterialLiquid;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
 /**
  * Created by noah on 5/14/14.
@@ -103,13 +104,13 @@ public class ModBlocks {
         cobaltOre = new BlockCobaltOre(Material.rock);
         RegisterHelper.registerBlock(cobaltOre);
 
-        purifier_idle = new BlockPurifier(false).setBlockName("purifierIdle").setCreativeTab(main.modTab);
+        purifier_idle = new BlockPurifier(false).setUnlocalizedName("purifierIdle").setCreativeTab(main.modTab);
         RegisterHelper.registerBlock(purifier_idle);
 
 
 
 
-        purifier_active = new BlockPurifier(true).setBlockName("purifierActive");
+        purifier_active = new BlockPurifier(true).setUnlocalizedName("purifierActive");
         RegisterHelper.registerBlock(purifier_active);
 
         appleBlock = new BlockOfApple();

@@ -5,9 +5,14 @@ import io.cyb3rwarri0r8.commumod.lib.Reference;
 import io.cyb3rwarri0r8.commumod.main;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.init.Blocks;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.BlockPos;
 import net.minecraft.world.World;
 
 /**
@@ -19,17 +24,18 @@ public class BlockMinerShack extends Block {
     {
         super(material);
         setCreativeTab(main.modTab);
-        setBlockName("minerShack");
-        setBlockTextureName(Reference.MODID + ":" + getUnlocalizedName().substring(5));
+        setUnlocalizedName("minerShack");
+        Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(Item.getItemFromBlock(ModBlocks.minerShack), 0, new ModelResourceLocation(Reference.MODID + ":" + getUnlocalizedName().substring(5), "inventory"));
+
 
     }
 
 
 
     @Override
-    public void onBlockPlacedBy(World world, int x, int y, int z, EntityLivingBase entity, ItemStack itemStack) {
-        super.onBlockPlacedBy(world, x, y, z, entity, itemStack);
-        world.setBlockToAir(x,y,z);
+    public void onBlockPlacedBy(World world, BlockPos blockPos, IBlockState blockState, EntityLivingBase entity, ItemStack itemStack) {
+        super.onBlockPlacedBy(world, blockPos, blockState, entity, itemStack);
+        world.setBlockToAir(blockPos);
         // build walls
         world.setBlock(x, y, z, b.cobblestone);
         world.setBlock(x, y + 1, z, b.cobblestone);

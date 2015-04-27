@@ -4,6 +4,8 @@ import io.cyb3rwarri0r8.commumod.lib.Reference;
 import io.cyb3rwarri0r8.commumod.main;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 
 import java.util.Random;
@@ -14,15 +16,16 @@ import java.util.Random;
 public class BlockOfApple extends Block {
     public BlockOfApple() {
         super(Material.leaves);
-        setBlockName("appleBlock");
-        setBlockTextureName(Reference.MODID + ":" + getUnlocalizedName().substring(5));
+        setUnlocalizedName("appleBlock");
+        Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(Item.getItemFromBlock(ModBlocks.appleBlock), 0, new ModelResourceLocation(Reference.MODID + ":" + getUnlocalizedName().substring(5), "inventory"));
+
         setCreativeTab(main.modTab);
         setStepSound(soundTypeGrass);
     }
 
 
 
-    @Override
+
     public Item getItemDropped(int meta, Random rand, int fortune)
     {
         return Item.getItemFromBlock(this);

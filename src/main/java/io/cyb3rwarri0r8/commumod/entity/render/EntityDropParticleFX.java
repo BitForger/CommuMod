@@ -1,12 +1,17 @@
 package io.cyb3rwarri0r8.commumod.entity.render;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
+
 import io.cyb3rwarri0r8.commumod.lib.helpers.MathHelper;
 import net.minecraft.block.BlockLiquid;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.properties.PropertyInteger;
+import net.minecraft.block.state.BlockState;
 import net.minecraft.client.particle.EntityFX;
+import net.minecraft.util.BlockPos;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
+
 
 /**
  * CommuMod - A Minecraft Modification
@@ -82,26 +87,29 @@ public class EntityDropParticleFX extends EntityFX {
             this.motionX *= 0.699999988079071D;
             this.motionZ *= 0.699999988079071D;
         }
+        BlockPos blockPos = new BlockPos(this.posX, this.posY, this.posZ);
         if (this.particleGravity > 0) {
-            Material material = this.worldObj.getBlock(MathHelper.floor(this.posX), MathHelper.floor(this.posY), MathHelper.floor(this.posZ)).getMaterial();
+            Material material = this.worldObj.getBlockState(blockPos).getBlock().getMaterial();
 
             if (material.isLiquid() || material.isSolid()) {
+                int liquidStateId = BlockLiquid.getStateId(worldObj.getBlockState(blockPos));
+                BlockState state = (BlockState) BlockLiquid.getStateById(liquidStateId);
                 double d0 = MathHelper.floor(this.posY)
                         + 1
-                        - BlockLiquid.getLiquidHeightPercent(this.worldObj.getBlockMetadata(MathHelper.floor(this.posX), MathHelper.floor(this.posY),
-                        MathHelper.floor(this.posZ)));
+                        - BlockLiquid.getLiquidHeightPercent((Integer) state.getBaseState().getValue(BlockLiquid.LEVEL));
                 if (this.posY < d0) {
                     this.setDead();
                 }
             }
         } else {
-            Material material = this.worldObj.getBlock(MathHelper.ceil(this.posX), MathHelper.ceil(this.posY), MathHelper.ceil(this.posZ)).getMaterial();
+            Material material = this.worldObj.getBlockState(blockPos).getBlock().getMaterial();
 
             if (material.isLiquid() || material.isSolid()) {
+                int liquidStateId = BlockLiquid.getStateId(worldObj.getBlockState(blockPos));
+                BlockState state = (BlockState) BlockLiquid.getStateById(liquidStateId);
                 double d0 = MathHelper.ceil(this.posY)
                         + 1
-                        - BlockLiquid.getLiquidHeightPercent(this.worldObj.getBlockMetadata(MathHelper.ceil(this.posX), MathHelper.ceil(this.posY),
-                        MathHelper.ceil(this.posZ)));
+                        - BlockLiquid.getLiquidHeightPercent((Integer) state.getBaseState().getValue(BlockLiquid.LEVEL));
                 if (this.posY > d0) {
                     this.setDead();
                 }

@@ -6,6 +6,8 @@ import io.cyb3rwarri0r8.commumod.items.ModItems;
 import io.cyb3rwarri0r8.commumod.main;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 
 import java.util.Random;
@@ -16,8 +18,9 @@ import java.util.Random;
 public class BlockRubyOre extends Block {
     public BlockRubyOre(Material material){
         super(material);
-        setBlockName("rubyOre");
-        setBlockTextureName(Reference.MODID + ":" + getUnlocalizedName().substring(5));
+        setUnlocalizedName("rubyOre");
+        Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(Item.getItemFromBlock(ModBlocks.rubyOre), 0, new ModelResourceLocation(Reference.MODID + ":" + getUnlocalizedName().substring(5), "inventory"));
+
         setCreativeTab(main.modTab);
         setStepSound(soundTypePiston);
         setHardness(3.0F);
@@ -27,7 +30,7 @@ public class BlockRubyOre extends Block {
 
     }
 
-    @Override
+
     public Item getItemDropped(int meta, Random random, int fortune){
         return ModItems.ruby;
     }

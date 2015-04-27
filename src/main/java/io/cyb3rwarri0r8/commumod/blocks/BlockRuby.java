@@ -4,7 +4,9 @@ import io.cyb3rwarri0r8.commumod.lib.Reference;
 import io.cyb3rwarri0r8.commumod.main;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import net.minecraft.util.IIcon;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.resources.model.ModelResourceLocation;
+import net.minecraft.item.Item;
 
 /**
  * Created by noah on 8/22/14.
@@ -14,8 +16,9 @@ public class BlockRuby extends Block
     public BlockRuby(Material material)
     {
         super(material);
-        setBlockName("rubyBlock");
-        setBlockTextureName(Reference.MODID + ":" + getUnlocalizedName().substring(5));
+        setUnlocalizedName("rubyBlock");
+        Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(Item.getItemFromBlock(ModBlocks.rubyBlock), 0, new ModelResourceLocation(Reference.MODID + ":" + getUnlocalizedName().substring(5), "inventory"));
+
         setCreativeTab(main.modTab);
         setStepSound(soundTypePiston);
         setHardness(3.0F);
@@ -23,10 +26,5 @@ public class BlockRuby extends Block
         setHarvestLevel("pickaxe",1);
     }
 
-    //Render block as icon
-    @Override
-    public IIcon getIcon(int par1, int par2)
-    {
-        return super.getIcon(par1, par2);
-    }
+
 }

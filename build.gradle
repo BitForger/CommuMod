@@ -363,8 +363,6 @@ task getModData << {
 build.mustRunAfter getModData
 build.dependsOn getModData
 
-build.mustRunAfter setDevVersion
-build.dependsOn setDevVersion
 
 sourceSets {
     main { output.resourcesDir = output.classesDir }

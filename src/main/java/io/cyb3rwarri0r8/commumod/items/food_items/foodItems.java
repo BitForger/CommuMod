@@ -1,13 +1,14 @@
 package io.cyb3rwarri0r8.commumod.items.food_items;
 
 
-import cpw.mods.fml.common.registry.GameRegistry;
+
 import io.cyb3rwarri0r8.commumod.items.ModItems;
 import io.cyb3rwarri0r8.commumod.lib.helpers.RegisterHelper;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
 /**
  * Created by noah on 5/29/14.

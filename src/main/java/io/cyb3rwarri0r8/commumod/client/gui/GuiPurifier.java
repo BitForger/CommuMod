@@ -1,7 +1,6 @@
 package io.cyb3rwarri0r8.commumod.client.gui;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
+
 import io.cyb3rwarri0r8.commumod.client.container.ContainerPurifier;
 import io.cyb3rwarri0r8.commumod.entity.TileEntityPurifier;
 import io.cyb3rwarri0r8.commumod.lib.Reference;
@@ -9,6 +8,8 @@ import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import org.lwjgl.opengl.GL11;
 
 /**

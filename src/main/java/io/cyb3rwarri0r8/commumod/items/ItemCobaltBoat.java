@@ -3,6 +3,8 @@ package io.cyb3rwarri0r8.commumod.items;
 import io.cyb3rwarri0r8.commumod.entity.EntityCobaltBoat;
 import io.cyb3rwarri0r8.commumod.lib.Reference;
 import io.cyb3rwarri0r8.commumod.main;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
@@ -26,7 +28,7 @@ public class ItemCobaltBoat extends Item {
         this.maxStackSize = 1;
         this.setCreativeTab(main.modTab);
         setUnlocalizedName("cobaltBoat");
-        setTextureName(Reference.MODID + ":" + getUnlocalizedName().substring(5));
+        Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(this, 0, new ModelResourceLocation("commumod:textures/items/cobaltBoat", "inventory"));
     }
 
     /**
@@ -40,6 +42,7 @@ public class ItemCobaltBoat extends Item {
         double d0 = p_77659_3_.prevPosX + (p_77659_3_.posX - p_77659_3_.prevPosX) * (double)f;
         double d1 = p_77659_3_.prevPosY + (p_77659_3_.posY - p_77659_3_.prevPosY) * (double)f + 1.62D - (double)p_77659_3_.yOffset;
         double d2 = p_77659_3_.prevPosZ + (p_77659_3_.posZ - p_77659_3_.prevPosZ) * (double)f;
+        //TODO Fix this
         Vec3 vec3 = Vec3.createVectorHelper(d0, d1, d2);
         float f3 = MathHelper.cos(-f2 * 0.017453292F - (float) Math.PI);
         float f4 = MathHelper.sin(-f2 * 0.017453292F - (float)Math.PI);
@@ -60,7 +63,7 @@ public class ItemCobaltBoat extends Item {
             Vec3 vec32 = p_77659_3_.getLook(f);
             boolean flag = false;
             float f9 = 1.0F;
-            List<?> list = p_77659_2_.getEntitiesWithinAABBExcludingEntity(p_77659_3_, p_77659_3_.boundingBox.addCoord(vec32.xCoord * d3, vec32.yCoord * d3, vec32.zCoord * d3).expand((double)f9, (double)f9, (double)f9));
+            List<?> list = p_77659_2_.getEntitiesWithinAABBExcludingEntity(p_77659_3_, p_77659_3_.getBoundingBox().addCoord(vec32.xCoord * d3, vec32.yCoord * d3, vec32.zCoord * d3).expand((double)f9, (double)f9, (double)f9));
             int i;
 
             for (i = 0; i < list.size(); ++i)
@@ -70,7 +73,7 @@ public class ItemCobaltBoat extends Item {
                 if (entity.canBeCollidedWith())
                 {
                     float f10 = entity.getCollisionBorderSize();
-                    AxisAlignedBB axisalignedbb = entity.boundingBox.expand((double)f10, (double)f10, (double)f10);
+                    AxisAlignedBB axisalignedbb = entity.getBoundingBox().expand((double)f10, (double)f10, (double)f10);
 
                     if (axisalignedbb.isVecInside(vec3))
                     {
@@ -87,6 +90,7 @@ public class ItemCobaltBoat extends Item {
             {
                 if (movingobjectposition.typeOfHit == MovingObjectPosition.MovingObjectType.BLOCK)
                 {
+                    //TODO Fix the MOP block coords
                     i = movingobjectposition.blockX;
                     int j = movingobjectposition.blockY;
                     int k = movingobjectposition.blockZ;
@@ -99,7 +103,7 @@ public class ItemCobaltBoat extends Item {
                     EntityCobaltBoat entityboat = new EntityCobaltBoat(p_77659_2_, (double)((float)i + 0.5F), (double)((float)j + 1.0F), (double)((float)k + 0.5F));
                     entityboat.rotationYaw = (float)(((MathHelper.floor_double((double)(p_77659_3_.rotationYaw * 4.0F / 360.0F) + 0.5D) & 3) - 1) * 90);
 
-                    if (!p_77659_2_.getCollidingBoundingBoxes(entityboat, entityboat.boundingBox.expand(-0.1D, -0.1D, -0.1D)).isEmpty())
+                    if (!p_77659_2_.getCollidingBoundingBoxes(entityboat, entityboat.getBoundingBox().expand(-0.1D, -0.1D, -0.1D)).isEmpty())
                     {
                         return p_77659_1_;
                     }

@@ -3,6 +3,8 @@ package io.cyb3rwarri0r8.commumod.items;
 
 import io.cyb3rwarri0r8.commumod.lib.Reference;
 import io.cyb3rwarri0r8.commumod.main;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemAxe;
 import net.minecraft.item.ItemStack;
@@ -17,7 +19,7 @@ public class ItemRubyAxe extends ItemAxe
     {
         super(material);
         setUnlocalizedName("rubyAxe");
-        setTextureName(Reference.MODID + ":" + getUnlocalizedName().substring(5));
+        Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(this, 0, new ModelResourceLocation("commumod:textures/items/rubyAxe", "inventory"));
         setCreativeTab(main.modTab);
 
     }

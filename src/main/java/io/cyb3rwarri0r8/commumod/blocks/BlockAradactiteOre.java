@@ -4,7 +4,10 @@ import io.cyb3rwarri0r8.commumod.lib.Reference;
 import io.cyb3rwarri0r8.commumod.main;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import net.minecraft.util.IIcon;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.resources.model.ModelResourceLocation;
+import net.minecraft.item.Item;
+
 
 /**
  * Created by noah on 5/17/14.
@@ -14,8 +17,9 @@ public class BlockAradactiteOre extends Block {
     public BlockAradactiteOre()
     {
         super(Material.rock);
-        setBlockName("aradactiteOre");
-        setBlockTextureName(Reference.MODID + ":" +getUnlocalizedName().substring(5));
+        setUnlocalizedName("aradactiteOre");
+        Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(Item.getItemFromBlock(ModBlocks.aradactiteOre), 0, new ModelResourceLocation(Reference.MODID + ":" + getUnlocalizedName().substring(5), "inventory"));
+
         setCreativeTab(main.modTab);
         setStepSound(soundTypePiston);
         setHardness(3.0F);
@@ -24,9 +28,6 @@ public class BlockAradactiteOre extends Block {
 
     }
 
-    @Override
-    public IIcon getIcon(int p_149691_1_, int p_149691_2_) {
-        return super.getIcon(p_149691_1_, p_149691_2_);
-    }
+
 
 }

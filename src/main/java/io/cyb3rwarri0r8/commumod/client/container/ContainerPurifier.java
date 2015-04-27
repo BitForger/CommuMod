@@ -1,7 +1,6 @@
 package io.cyb3rwarri0r8.commumod.client.container;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
+
 import io.cyb3rwarri0r8.commumod.entity.TileEntityPurifier;
 import io.cyb3rwarri0r8.commumod.lib.PurifierRecipes;
 import net.minecraft.entity.player.EntityPlayer;
@@ -9,8 +8,10 @@ import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.ICrafting;
 import net.minecraft.inventory.Slot;
-import net.minecraft.inventory.SlotFurnace;
+
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 /**
  * Created by noah on 9/23/14.
@@ -26,7 +27,7 @@ public class ContainerPurifier extends Container{
         this.tileEntity = tileEntity;
         this.addSlotToContainer(new Slot(tileEntity, 0, 56, 17));
         this.addSlotToContainer(new Slot(tileEntity, 1, 56, 53));
-        this.addSlotToContainer(new SlotFurnace(player.player,tileEntity,2,116,35));
+        this.addSlotToContainer(new SlotFurnace(player.player,tileEntity,2,116,35));//TODO figure out what SlotFurnace changed to
         int i;
         for ( i = 0; i < 3; i++)
         {

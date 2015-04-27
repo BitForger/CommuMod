@@ -27,6 +27,6 @@ public class ItemGoldToolRod extends Item {
         super();
         setUnlocalizedName("goldToolRod");
 //        setCreativeTab(main.modTab);
-        setTextureName(Reference.MODID + ":" + getUnlocalizedName().substring(5));
+//        setTextureName(Reference.MODID + ":" + getUnlocalizedName().substring(5));
     }
 }

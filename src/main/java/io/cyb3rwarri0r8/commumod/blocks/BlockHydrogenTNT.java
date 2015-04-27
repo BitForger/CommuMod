@@ -1,149 +1,169 @@
 package io.cyb3rwarri0r8.commumod.blocks;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
+
 import io.cyb3rwarri0r8.commumod.entity.EntityHydrogenTNTPrimed;
 import io.cyb3rwarri0r8.commumod.lib.Reference;
 import io.cyb3rwarri0r8.commumod.main;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockTNT;
 import net.minecraft.block.material.Material;
-import net.minecraft.client.renderer.texture.IIconRegister;
+import net.minecraft.block.properties.IProperty;
+import net.minecraft.block.properties.PropertyBool;
+import net.minecraft.block.state.BlockState;
+import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.Minecraft;
+
+import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.item.EntityTNTPrimed;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.projectile.EntityArrow;
 import net.minecraft.init.Items;
-import net.minecraft.util.IIcon;
+import net.minecraft.item.Item;
+
+import net.minecraft.util.BlockPos;
+import net.minecraft.util.EnumFacing;
 import net.minecraft.world.Explosion;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 import java.util.Random;
 
 /**
  * Created by noah on 10/22/14.
  */
-public class BlockHydrogenTNT extends Block {
-
-    @SideOnly(Side.CLIENT)
-    public IIcon top;
-    @SideOnly(Side.CLIENT)
-    public IIcon bottom;
+public class BlockHydrogenTNT extends BlockTNT {
+    public static final PropertyBool EXPLODE_PROP = PropertyBool.create("explode");
 
     protected BlockHydrogenTNT() {
-        super(Material.tnt);
-        setCreativeTab(main.modTab);
-        setBlockName("hydrogenTNT");
-        setBlockTextureName(Reference.MODID + ":" + getUnlocalizedName().substring(5));
-        setStepSound(soundTypeGrass);
+        super();
     }
-
-    @SideOnly(Side.CLIENT)
-    public IIcon getIcon(int p_149691_1_, int p_149691_2_)
+    public void onBlockAdded(World worldIn, BlockPos pos, IBlockState state)
     {
-        return p_149691_1_ == 0 ? this.bottom : (p_149691_1_ == 1 ? this.top : this.blockIcon);
-    }
+        super.onBlockAdded(worldIn, pos, state);
 
-    public void onBlockAdded(World world, int x, int y, int z) {
-        super.onBlockAdded(world, x, y, z);
-
-        if (world.isBlockIndirectlyGettingPowered(x, y, z)) {
-            this.onBlockDestroyedByPlayer(world, x, y, z, 1);
-            world.setBlockToAir(x, y, z);
+        if (worldIn.isBlockPowered(pos))
+        {
+            this.onBlockDestroyedByPlayer(worldIn, pos, state.withProperty(EXPLODE_PROP, Boolean.valueOf(true)));
+            worldIn.setBlockToAir(pos);
         }
     }
 
-
-    public void onNeighborBlockChange(World world, int x, int y, int z, Block block)
+    public void onNeighborBlockChange(World worldIn, BlockPos pos, IBlockState state, Block neighborBlock)
     {
-        if (world.isBlockIndirectlyGettingPowered(x, y, z))
+        if (worldIn.isBlockPowered(pos))
         {
-            this.onBlockDestroyedByPlayer(world, x, y, z, 1);
-            world.setBlockToAir(x, y, z);
+            this.onBlockDestroyedByPlayer(worldIn, pos, state.withProperty(EXPLODE_PROP, Boolean.valueOf(true)));
+            worldIn.setBlockToAir(pos);
         }
     }
 
     /**
-     * Returns the quantity of items to drop on block destruction.
+     * Called when this Block is destroyed by an Explosion
      */
-    public int quantityDropped(Random p_149745_1_)
+    public void onBlockDestroyedByExplosion(World worldIn, BlockPos pos, Explosion explosionIn)
     {
-        return 1;
-    }
-
-    /**
-     * Called upon the block being destroyed by an explosion
-     */
-    public void onBlockDestroyedByExplosion(World p_149723_1_, int p_149723_2_, int p_149723_3_, int p_149723_4_, Explosion p_149723_5_)
-    {
-        if (!p_149723_1_.isRemote)
+        if (!worldIn.isRemote)
         {
-            EntityHydrogenTNTPrimed hydrogenTNTPrimed = new EntityHydrogenTNTPrimed(p_149723_1_, (double)((float)p_149723_2_ + 0.5F), (double)((float)p_149723_3_ + 0.5F), (double)((float)p_149723_4_ + 0.5F), p_149723_5_.getExplosivePlacedBy());
-            hydrogenTNTPrimed.fuse = p_149723_1_.rand.nextInt(hydrogenTNTPrimed.fuse / 4) + hydrogenTNTPrimed.fuse / 8;
-            p_149723_1_.spawnEntityInWorld(hydrogenTNTPrimed);
+            EntityTNTPrimed entitytntprimed = new EntityTNTPrimed(worldIn, (double)((float)pos.getX() + 0.5F), (double)((float)pos.getY() + 0.5F), (double)((float)pos.getZ() + 0.5F), explosionIn.getExplosivePlacedBy());
+            entitytntprimed.fuse = worldIn.rand.nextInt(entitytntprimed.fuse / 4) + entitytntprimed.fuse / 8;
+            worldIn.spawnEntityInWorld(entitytntprimed);
         }
     }
 
-    public void onBlockDestroyedByPlayer(World p_149664_1_, int p_149664_2_, int p_149664_3_, int p_149664_4_, int p_149664_5_)
+    /**
+     * Called when a player destroys this Block
+     */
+    public void onBlockDestroyedByPlayer(World worldIn, BlockPos pos, IBlockState state)
     {
-        this.func_150114_a(p_149664_1_, p_149664_2_, p_149664_3_, p_149664_4_, p_149664_5_, (EntityLivingBase)null);
+        this.func_180692_a(worldIn, pos, state, (EntityLivingBase)null);
     }
 
-    public void func_150114_a(World p_150114_1_, int p_150114_2_, int p_150114_3_, int p_150114_4_, int p_150114_5_, EntityLivingBase p_150114_6_)
+    public void func_180692_a(World worldIn, BlockPos p_180692_2_, IBlockState p_180692_3_, EntityLivingBase p_180692_4_)
     {
-        if (!p_150114_1_.isRemote)
+        if (!worldIn.isRemote)
         {
-            if ((p_150114_5_ & 1) == 1)
+            if (((Boolean)p_180692_3_.getValue(EXPLODE_PROP)).booleanValue())
             {
-                EntityHydrogenTNTPrimed hydrogenTNTPrimed = new EntityHydrogenTNTPrimed(p_150114_1_, (double)((float)p_150114_2_ + 0.5F), (double)((float)p_150114_3_ + 0.5F), (double)((float)p_150114_4_ + 0.5F), p_150114_6_);
-                p_150114_1_.spawnEntityInWorld(hydrogenTNTPrimed);
-                p_150114_1_.playSoundAtEntity(hydrogenTNTPrimed, "game.tnt.primed", 1.0F, 1.0F);
+                EntityTNTPrimed entitytntprimed = new EntityTNTPrimed(worldIn, (double)((float)p_180692_2_.getX() + 0.5F), (double)((float)p_180692_2_.getY() + 0.5F), (double)((float)p_180692_2_.getZ() + 0.5F), p_180692_4_);
+                worldIn.spawnEntityInWorld(entitytntprimed);
+                worldIn.playSoundAtEntity(entitytntprimed, "game.tnt.primed", 1.0F, 1.0F);
             }
         }
     }
 
-    public boolean onBlockActivated(World p_149727_1_, int p_149727_2_, int p_149727_3_, int p_149727_4_, EntityPlayer p_149727_5_, int p_149727_6_, float p_149727_7_, float p_149727_8_, float p_149727_9_)
+    public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumFacing side, float hitX, float hitY, float hitZ)
     {
-        if (p_149727_5_.getCurrentEquippedItem() != null && p_149727_5_.getCurrentEquippedItem().getItem() == Items.flint_and_steel)
+        if (playerIn.getCurrentEquippedItem() != null)
         {
-            this.func_150114_a(p_149727_1_, p_149727_2_, p_149727_3_, p_149727_4_, 1, p_149727_5_);
-            p_149727_1_.setBlockToAir(p_149727_2_, p_149727_3_, p_149727_4_);
-            p_149727_5_.getCurrentEquippedItem().damageItem(1, p_149727_5_);
-            return true;
+            Item item = playerIn.getCurrentEquippedItem().getItem();
+
+            if (item == Items.flint_and_steel || item == Items.fire_charge)
+            {
+                this.func_180692_a(worldIn, pos, state.withProperty(EXPLODE_PROP, Boolean.valueOf(true)), playerIn);
+                worldIn.setBlockToAir(pos);
+
+                if (item == Items.flint_and_steel)
+                {
+                    playerIn.getCurrentEquippedItem().damageItem(1, playerIn);
+                }
+                else if (!playerIn.capabilities.isCreativeMode)
+                {
+                    --playerIn.getCurrentEquippedItem().stackSize;
+                }
+
+                return true;
+            }
         }
-        else
-        {
-            return super.onBlockActivated(p_149727_1_, p_149727_2_, p_149727_3_, p_149727_4_, p_149727_5_, p_149727_6_, p_149727_7_, p_149727_8_, p_149727_9_);
-        }
+
+        return super.onBlockActivated(worldIn, pos, state, playerIn, side, hitX, hitY, hitZ);
     }
 
     /**
-     * Triggered whenever an entity collides with this block (enters into the block). Args: world, x, y, z, entity
+     * Called When an Entity Collided with the Block
      */
-    public void onEntityCollidedWithBlock(World p_149670_1_, int p_149670_2_, int p_149670_3_, int p_149670_4_, Entity p_149670_5_)
+    public void onEntityCollidedWithBlock(World worldIn, BlockPos pos, IBlockState state, Entity entityIn)
     {
-        if (p_149670_5_ instanceof EntityArrow && !p_149670_1_.isRemote)
+        if (!worldIn.isRemote && entityIn instanceof EntityArrow)
         {
-            EntityArrow entityarrow = (EntityArrow)p_149670_5_;
+            EntityArrow entityarrow = (EntityArrow)entityIn;
 
             if (entityarrow.isBurning())
             {
-                this.func_150114_a(p_149670_1_, p_149670_2_, p_149670_3_, p_149670_4_, 1, entityarrow.shootingEntity instanceof EntityLivingBase ? (EntityLivingBase)entityarrow.shootingEntity : null);
-                p_149670_1_.setBlockToAir(p_149670_2_, p_149670_3_, p_149670_4_);
+                this.func_180692_a(worldIn, pos, worldIn.getBlockState(pos).withProperty(EXPLODE_PROP, Boolean.valueOf(true)), entityarrow.shootingEntity instanceof EntityLivingBase ? (EntityLivingBase)entityarrow.shootingEntity : null);
+                worldIn.setBlockToAir(pos);
             }
         }
     }
 
-    public boolean canDropFromExplosion(Explosion p_149659_1_)
+    /**
+     * Return whether this block can drop from an explosion.
+     */
+    public boolean canDropFromExplosion(Explosion explosionIn)
     {
         return false;
     }
 
-    @SideOnly(Side.CLIENT)
-    public void registerBlockIcons(IIconRegister p_149651_1_)
+    /**
+     * Convert the given metadata into a BlockState for this Block
+     */
+    public IBlockState getStateFromMeta(int meta)
     {
-        this.blockIcon = p_149651_1_.registerIcon(Reference.MODID + ":" + getUnlocalizedName().substring(5) + "_side");
-        this.top = p_149651_1_.registerIcon(Reference.MODID + ":" + getUnlocalizedName().substring(5) + "_top");
-        this.bottom = p_149651_1_.registerIcon(Reference.MODID + ":" + getUnlocalizedName().substring(5) + "_bottom");
+        return this.getDefaultState().withProperty(EXPLODE_PROP, Boolean.valueOf((meta & 1) > 0));
     }
 
+    /**
+     * Convert the BlockState into the correct metadata value
+     */
+    public int getMetaFromState(IBlockState state)
+    {
+        return ((Boolean)state.getValue(EXPLODE_PROP)).booleanValue() ? 1 : 0;
+    }
+
+    protected BlockState createBlockState()
+    {
+        return new BlockState(this, new IProperty[] {EXPLODE_PROP});
+    }
 }

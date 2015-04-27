@@ -27,6 +27,6 @@ public class ItemDiamondToolRod extends Item {
         super();
 //        setCreativeTab(main.modTab);
         setUnlocalizedName("diamondToolRod");
-        setTextureName(Reference.MODID + ":" + getUnlocalizedName().substring(5));
+//        setTextureName(Reference.MODID + ":" + getUnlocalizedName().substring(5));
     }
 }

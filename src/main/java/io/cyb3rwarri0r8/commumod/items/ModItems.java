@@ -37,13 +37,13 @@ public class ModItems {
     public static Item superbiumDust;
     //Tool material
     static Item.ToolMaterial superbiumToolMaterial = EnumHelper.addToolMaterial("superbiumToolMaterial", 2, 1200, 8, 10.0F, 50);
-    static ItemArmor.ArmorMaterial superbiumArmorMaterial = EnumHelper.addArmorMaterial("superbiumArmorMaterial", 30, new int[]{3,6,5,3}, 30);
+    static ItemArmor.ArmorMaterial superbiumArmorMaterial = EnumHelper.addArmorMaterial("superbiumArmorMaterial", "superbiumArmor", 30, new int[]{3,6,5,3}, 30);
 
     //===================================================================================
     //Aradactite
     // Aradactite Material
     static Item.ToolMaterial aradactiteToolMaterial = EnumHelper.addToolMaterial("aradactiteToolMaterial", 3, 800, 5, 6.0F, 30);
-    static ItemArmor.ArmorMaterial aradactiteArmorMaterial = EnumHelper.addArmorMaterial("aradactiteArmorMaterial", 25, new int[]{2,4,3,3}, 15);
+    static ItemArmor.ArmorMaterial aradactiteArmorMaterial = EnumHelper.addArmorMaterial("aradactiteArmorMaterial", "aradactiteArmor", 25, new int[]{2,4,3,3}, 15);
     // =================================
     public static Item aradactiteIngot;
     // --------------------------------
@@ -68,7 +68,7 @@ public class ModItems {
     public static Item rubyHoe;
     public static Item rubySword;
     //Ruby Armor
-    static ItemArmor.ArmorMaterial rubyArmorMaterial = EnumHelper.addArmorMaterial("rubyArmorMaterial",700,new int[]{2,3,3,3},15);
+    static ItemArmor.ArmorMaterial rubyArmorMaterial = EnumHelper.addArmorMaterial("rubyArmorMaterial", "rubyArmor", 700,new int[]{2,3,3,3},15);
     public static Item rubyChestplate;
     public static Item rubyHelmet;
     public static Item rubyLeggings;

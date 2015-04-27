@@ -28,6 +28,6 @@ public class ItemStoneToolRod extends Item {
         setUnlocalizedName("stoneToolRod");
 
 //        setCreativeTab(main.modTab);
-        setTextureName(Reference.MODID + ":" + getUnlocalizedName().substring(5));
+//        setTextureName(Reference.MODID + ":" + getUnlocalizedName().substring(5));
     }
 }
