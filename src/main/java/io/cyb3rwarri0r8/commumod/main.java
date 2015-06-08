@@ -28,6 +28,8 @@ import io.cyb3rwarri0r8.commumod.client.CreativeTabsCommuMod;
 import io.cyb3rwarri0r8.commumod.entity.EntityMiner;
 import io.cyb3rwarri0r8.commumod.entity.ModEntities;
 import io.cyb3rwarri0r8.commumod.fluids.ModFluids;
+import io.cyb3rwarri0r8.commumod.items.ItemAradactiteArmor;
+import io.cyb3rwarri0r8.commumod.items.ItemAradactiteAxe;
 import io.cyb3rwarri0r8.commumod.items.ModItems;
 import io.cyb3rwarri0r8.commumod.items.food_items.foodItems;
 import io.cyb3rwarri0r8.commumod.lib.ModRecipeHandler;
@@ -128,7 +130,8 @@ public class main
         {
             RenderItem renderItem = Minecraft.getMinecraft().getRenderItem();
 
-            renderItem.getItemModelMesher().register(tutorialItem, 0, new ModelResourceLocation(Reference.MODID + ":" + ((ItemTutorial) tutorialItem).getName(), "inventory"));
+            renderItem.getItemModelMesher().register(ModItems.aradactiteAxe, 0, new ModelResourceLocation(Reference.MODID + ":" + (ModItems.aradactiteAxe.getUnlocalizedName()), "inventory"));
+            
         }
 
     }

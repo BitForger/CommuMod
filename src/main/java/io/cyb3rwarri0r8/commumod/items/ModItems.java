@@ -34,11 +34,21 @@ import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
+import java.util.*;
+
 
 public class ModItems {
-
+    public HashMap<Integer, String> modItems;
 
     public static Item superbiumIngot;
+
+    public void setModItems(HashMap<Integer, String> modItems) {
+        //TODO Work on using the hashmap to set jsons
+        modItems.put(1,blockSuperbium.getUnlocalizedName());
+        modItems.put(2,superbiumPick.getUnlocalizedName());
+        modItems.put(3,superbiumAxe.getUnlocalizedName());
+    }
+
     public static Item blockSuperbium;
 
     //Add Tools
@@ -110,6 +120,10 @@ public class ModItems {
 
     public static Item modularPickaxe;
     static Item.ToolMaterial MODULAR_PICK_MATERIAL = EnumHelper.addToolMaterial("modularPickMaterial",500, 1000, 4.0F, 5.0F, 75);
+
+    public ModItems() {
+        modItems = new HashMap<Integer,String>();
+    }
 
 
     public static void loadItems() {
