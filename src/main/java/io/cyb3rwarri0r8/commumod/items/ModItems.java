@@ -42,12 +42,6 @@ public class ModItems {
 
     public static Item superbiumIngot;
 
-    public void setModItems(HashMap<Integer, String> modItems) {
-        //TODO Work on using the hashmap to set jsons
-        modItems.put(1,blockSuperbium.getUnlocalizedName());
-        modItems.put(2,superbiumPick.getUnlocalizedName());
-        modItems.put(3,superbiumAxe.getUnlocalizedName());
-    }
 
     public static Item blockSuperbium;
 
@@ -65,12 +59,13 @@ public class ModItems {
     // Add dust that is returned when mined out
     public static Item superbiumDust;
     //Tool material
-    static Item.ToolMaterial superbiumToolMaterial = EnumHelper.addToolMaterial("superbiumToolMaterial", 2, 1200, 8, 10.0F, 50);
-    static ItemArmor.ArmorMaterial superbiumArmorMaterial = EnumHelper.addArmorMaterial("superbiumArmorMaterial", "superbiumArmor", 30, new int[]{3,6,5,3}, 30);
+    static Item.ToolMaterial SUPERBIUM_TOOL_MATERIAL = EnumHelper.addToolMaterial("superbiumToolMaterial", 2, 1200, 8, 10.0F, 50);
+    static ItemArmor.ArmorMaterial SUPERBIUM_ARMOR_TUTORIAL = EnumHelper.addArmorMaterial("superbiumArmorMaterial", "superbiumArmor", 30, new int[]{3,6,5,3}, 30);
 
     //===================================================================================
     //Aradactite
     // Aradactite Material
+    //TODO FIX nameing
     static Item.ToolMaterial aradactiteToolMaterial = EnumHelper.addToolMaterial("aradactiteToolMaterial", 3, 800, 5, 6.0F, 30);
     static ItemArmor.ArmorMaterial aradactiteArmorMaterial = EnumHelper.addArmorMaterial("aradactiteArmorMaterial", "aradactiteArmor", 25, new int[]{2,4,3,3}, 15);
     // =================================
@@ -90,14 +85,14 @@ public class ModItems {
     // ==================================================================================
     // Ruby
     public static Item ruby;
-    static Item.ToolMaterial rubyToolMaterial = EnumHelper.addToolMaterial("rubyToolMaterial",3,1800,5.0F,8.25F,100);
+    static Item.ToolMaterial RUBY_TOOL_MATERIAL = EnumHelper.addToolMaterial("rubyToolMaterial",3,1800,5.0F,8.25F,100);
     public static Item rubyPick;
     public static Item rubyAxe;
     public static Item rubyShovel;
     public static Item rubyHoe;
     public static Item rubySword;
     //Ruby Armor
-    static ItemArmor.ArmorMaterial rubyArmorMaterial = EnumHelper.addArmorMaterial("rubyArmorMaterial", "rubyArmor", 700,new int[]{2,3,3,3},15);
+    static ItemArmor.ArmorMaterial RUBY_ARMOR_MATERIAL = EnumHelper.addArmorMaterial("rubyArmorMaterial", "rubyArmor", 700,new int[]{2,3,3,3},15);
     public static Item rubyChestplate;
     public static Item rubyHelmet;
     public static Item rubyLeggings;
@@ -136,7 +131,7 @@ public class ModItems {
         GameRegistry.addSmelting(superbiumDust, new ItemStack(superbiumIngot), 400F);
         // ******************************************************************************
         // First Pick
-        superbiumPick = new ItemSuperbiumPick(superbiumToolMaterial);
+        superbiumPick = new ItemSuperbiumPick(SUPERBIUM_TOOL_MATERIAL);
         RegisterHelper.registerItem(superbiumPick);
         //Recipe
         GameRegistry.addRecipe(new ItemStack(superbiumPick),
@@ -148,7 +143,7 @@ public class ModItems {
 
         // ******************************************************************************
         // First Axe
-        superbiumAxe = new ItemSuperbiumAxe(superbiumToolMaterial);
+        superbiumAxe = new ItemSuperbiumAxe(SUPERBIUM_TOOL_MATERIAL);
         RegisterHelper.registerItem(superbiumAxe);
         //Recipe
         GameRegistry.addRecipe(new ItemStack(superbiumAxe),
@@ -160,7 +155,7 @@ public class ModItems {
 
         // ******************************************************************************
         // First Sword
-        superbiumSword = new ItemSuperbiumSword(superbiumToolMaterial);
+        superbiumSword = new ItemSuperbiumSword(SUPERBIUM_TOOL_MATERIAL);
         RegisterHelper.registerItem(superbiumSword);
         // Recipe
         GameRegistry.addRecipe(new ItemStack(superbiumSword),
@@ -170,27 +165,27 @@ public class ModItems {
                 'X', superbiumIngot, 'Y', Items.stick
         );
         //*******************************************************************************
-        superbiumShovel = new ItemSuperbiumShovel(superbiumToolMaterial);
+        superbiumShovel = new ItemSuperbiumShovel(SUPERBIUM_TOOL_MATERIAL);
         RegisterHelper.registerItem(superbiumShovel);
         RegisterHelper.regToolRecipe(superbiumShovel, superbiumIngot, Items.stick, "shovel");
         // ******************************************************************************
-        superbiumHoe = new ItemSuperbiumHoe(superbiumToolMaterial);
+        superbiumHoe = new ItemSuperbiumHoe(SUPERBIUM_TOOL_MATERIAL);
         RegisterHelper.registerItem(superbiumHoe);
         RegisterHelper.regToolRecipe(superbiumHoe, superbiumIngot, Items.stick, "hoe");
         //Armor
-        superbiumHelmet = new ItemSuperbiumArmor(superbiumArmorMaterial, 0, "superbiumHelmet");
+        superbiumHelmet = new ItemSuperbiumArmor(SUPERBIUM_ARMOR_TUTORIAL, 0, "superbiumHelmet");
         RegisterHelper.registerItem(superbiumHelmet);
         RegisterHelper.regArmorRecipe(superbiumHelmet, superbiumIngot, "helmet");
         // ******************************************************************************
-        superbiumChestPlate = new ItemSuperbiumArmor(superbiumArmorMaterial, 1, "superbiumChestplate");
+        superbiumChestPlate = new ItemSuperbiumArmor(SUPERBIUM_ARMOR_TUTORIAL, 1, "superbiumChestplate");
         RegisterHelper.registerItem(superbiumChestPlate);
         RegisterHelper.regArmorRecipe(superbiumChestPlate, superbiumIngot, "chestplate");
         // ******************************************************************************
-        superbiumLeggings = new ItemSuperbiumArmor(superbiumArmorMaterial, 2, "superbiumLeggings");
+        superbiumLeggings = new ItemSuperbiumArmor(SUPERBIUM_ARMOR_TUTORIAL, 2, "superbiumLeggings");
         RegisterHelper.registerItem(superbiumLeggings);
         RegisterHelper.regArmorRecipe(superbiumLeggings, superbiumIngot, "leggings");
         // ******************************************************************************
-        superbiumBoots = new ItemSuperbiumArmor(superbiumArmorMaterial, 3, "superbiumBoots");
+        superbiumBoots = new ItemSuperbiumArmor(SUPERBIUM_ARMOR_TUTORIAL, 3, "superbiumBoots");
         RegisterHelper.registerItem(superbiumBoots);
         RegisterHelper.regArmorRecipe(superbiumBoots, superbiumIngot, "boots");
         // Superbium block
@@ -271,41 +266,41 @@ public class ModItems {
         ruby = new ItemRuby();
         RegisterHelper.registerItem(ruby);
         // Ruby tools
-        rubyPick = new ItemRubyPickaxe(rubyToolMaterial);
+        rubyPick = new ItemRubyPickaxe(RUBY_TOOL_MATERIAL);
         RegisterHelper.registerItem(rubyPick);
         RegisterHelper.regToolRecipe(rubyPick, ruby, Items.stick, "pickaxe");
 
-        rubyAxe = new ItemRubyAxe(rubyToolMaterial);
+        rubyAxe = new ItemRubyAxe(RUBY_TOOL_MATERIAL);
         RegisterHelper.registerItem(rubyAxe);
         RegisterHelper.regToolRecipe(rubyAxe, ruby, Items.stick, "axe");
 
-        rubyShovel = new ItemRubyShovel(rubyToolMaterial);
+        rubyShovel = new ItemRubyShovel(RUBY_TOOL_MATERIAL);
         RegisterHelper.registerItem(rubyShovel);
         RegisterHelper.regToolRecipe(rubyShovel, ruby, Items.stick, "shovel");
 
-        rubyHoe = new ItemRubyHoe(rubyToolMaterial);
+        rubyHoe = new ItemRubyHoe(RUBY_TOOL_MATERIAL);
         RegisterHelper.registerItem(rubyHoe);
         RegisterHelper.regToolRecipe(rubyHoe, ruby, Items.stick, "hoe");
 
-        rubySword = new ItemRubySword(rubyToolMaterial);
+        rubySword = new ItemRubySword(RUBY_TOOL_MATERIAL);
         RegisterHelper.registerItem(rubySword);
         RegisterHelper.regToolRecipe(rubySword, ruby, Items.stick, "sword");
 
         /* Armor */
 
-        rubyHelmet = new ItemRubyArmor(rubyArmorMaterial, 0, "rubyHelmet");
+        rubyHelmet = new ItemRubyArmor(RUBY_ARMOR_MATERIAL, 0, "rubyHelmet");
         RegisterHelper.registerItem(rubyHelmet);
         RegisterHelper.regArmorRecipe(rubyHelmet, ruby, "helmet");
 
-        rubyChestplate = new ItemRubyArmor(rubyArmorMaterial, 1, "rubyChestplate");
+        rubyChestplate = new ItemRubyArmor(RUBY_ARMOR_MATERIAL, 1, "rubyChestplate");
         RegisterHelper.registerItem(rubyChestplate);
         RegisterHelper.regArmorRecipe(rubyChestplate, ruby, "chestplate");
 
-        rubyLeggings = new ItemRubyArmor(rubyArmorMaterial, 2, "rubyLeggings");
+        rubyLeggings = new ItemRubyArmor(RUBY_ARMOR_MATERIAL, 2, "rubyLeggings");
         RegisterHelper.registerItem(rubyLeggings);
         RegisterHelper.regArmorRecipe(rubyLeggings, ruby, "leggings");
 
-        rubyBoots = new ItemRubyArmor(rubyArmorMaterial, 3, "rubyBoots");
+        rubyBoots = new ItemRubyArmor(RUBY_ARMOR_MATERIAL, 3, "rubyBoots");
         RegisterHelper.registerItem(rubyBoots);
         RegisterHelper.regArmorRecipe(rubyBoots, ruby, "boots");
         /* *********************************************************************************************************************************************

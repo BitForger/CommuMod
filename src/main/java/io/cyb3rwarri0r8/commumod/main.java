@@ -45,6 +45,7 @@ import net.minecraft.client.renderer.entity.RenderItem;
 import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;
 
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.config.Configuration;
@@ -87,7 +88,7 @@ public class main
 
 
 
-        /**
+        /*
          * Run all proxy file initiation
          */
         proxy.registerRenderers();
@@ -130,8 +131,8 @@ public class main
         {
             RenderItem renderItem = Minecraft.getMinecraft().getRenderItem();
 
-            renderItem.getItemModelMesher().register(ModItems.aradactiteAxe, 0, new ModelResourceLocation(Reference.MODID + ":" + (ModItems.aradactiteAxe.getUnlocalizedName()), "inventory"));
-            
+            Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(ModItems.aradactiteAxe, 1, new ModelResourceLocation(Reference.MODID + ":" + ModItems.aradactiteAxe.getUnlocalizedName().substring(5), "inventory"));
+            Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(Item.getItemFromBlock(ModBlocks.appleBlock), 1, new ModelResourceLocation(Reference.MODID + ":" + ModBlocks.appleBlock.getUnlocalizedName().substring(5), "inventory"));
         }
 
     }
