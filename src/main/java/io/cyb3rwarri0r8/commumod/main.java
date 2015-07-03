@@ -25,10 +25,8 @@ import io.cyb3rwarri0r8.commumod.blocks.BlockHydrogenTNT;
 import io.cyb3rwarri0r8.commumod.blocks.BlockSuperbiumTNT;
 import io.cyb3rwarri0r8.commumod.blocks.ModBlocks;
 import io.cyb3rwarri0r8.commumod.client.CreativeTabsCommuMod;
-import io.cyb3rwarri0r8.commumod.entity.EntityMiner;
 import io.cyb3rwarri0r8.commumod.entity.ModEntities;
 import io.cyb3rwarri0r8.commumod.fluids.ModFluids;
-import io.cyb3rwarri0r8.commumod.items.ItemAradactiteArmor;
 import io.cyb3rwarri0r8.commumod.items.ItemAradactiteAxe;
 import io.cyb3rwarri0r8.commumod.items.ModItems;
 import io.cyb3rwarri0r8.commumod.items.food_items.foodItems;
@@ -37,16 +35,13 @@ import io.cyb3rwarri0r8.commumod.lib.Reference;
 import io.cyb3rwarri0r8.commumod.lib.handler.ConfigHandler;
 import io.cyb3rwarri0r8.commumod.lib.handler.ModBucketHandler;
 import io.cyb3rwarri0r8.commumod.lib.handler.ModEventHandler;
-import io.cyb3rwarri0r8.commumod.lib.helpers.RegisterHelper;
 import io.cyb3rwarri0r8.commumod.lib.proxy.proxyCommon;
 import io.cyb3rwarri0r8.commumod.world.modWorld;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.entity.RenderItem;
 import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;
-
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.fml.common.FMLCommonHandler;
@@ -131,7 +126,7 @@ public class main
         {
             RenderItem renderItem = Minecraft.getMinecraft().getRenderItem();
 
-            Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(ModItems.aradactiteAxe, 1, new ModelResourceLocation(Reference.MODID + ":" + ModItems.aradactiteAxe.getUnlocalizedName().substring(5), "inventory"));
+            Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(ModItems.aradactiteAxe, 1, new ModelResourceLocation(Reference.MODID + ":" + ((ItemAradactiteAxe) ModItems.aradactiteAxe).getName(), "inventory"));
             Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(Item.getItemFromBlock(ModBlocks.appleBlock), 1, new ModelResourceLocation(Reference.MODID + ":" + ModBlocks.appleBlock.getUnlocalizedName().substring(5), "inventory"));
         }
 

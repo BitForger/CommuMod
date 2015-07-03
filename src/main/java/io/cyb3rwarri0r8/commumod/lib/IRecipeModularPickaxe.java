@@ -106,6 +106,11 @@ public class IRecipeModularPickaxe implements IRecipe{
     }
 
     @Override
+    public ItemStack[] getRemainingItems(InventoryCrafting p_179532_1_) {
+        return new ItemStack[0];
+    }
+
+
     public ItemStack[] func_179532_b(InventoryCrafting p_179532_1_) {
         return new ItemStack[0];
     }

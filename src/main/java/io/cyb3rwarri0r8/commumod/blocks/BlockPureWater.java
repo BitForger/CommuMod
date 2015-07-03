@@ -20,12 +20,9 @@ package io.cyb3rwarri0r8.commumod.blocks;
  *
  */
 
-import io.cyb3rwarri0r8.commumod.fluids.ModFluids;
-import io.cyb3rwarri0r8.commumod.lib.Reference;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.entity.Entity;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.BlockPos;
 import net.minecraft.world.IBlockAccess;
@@ -160,9 +157,9 @@ public class BlockPureWater extends BlockFluidClassic
         }
 
         // Flow vertically if possible
-        if (canDisplace(world, pos.offsetUp(densityDir)))
+        if (canDisplace(world, pos.up(densityDir)))
         {
-            flowIntoBlock(world, pos.offsetUp(densityDir), 1);
+            flowIntoBlock(world, pos.up(densityDir), 1);
             return;
         }
 
@@ -175,7 +172,7 @@ public class BlockPureWater extends BlockFluidClassic
 
         if (isSourceBlock(world, pos) || !isFlowingVertically(world, pos))
         {
-            if (world.getBlockState(pos.offsetDown(densityDir)).getBlock() == this)
+            if (world.getBlockState(pos.down(densityDir)).getBlock() == this)
             {
                 flowMeta = 1;
             }
@@ -190,8 +187,8 @@ public class BlockPureWater extends BlockFluidClassic
 
     public boolean isFlowingVertically(IBlockAccess world, BlockPos pos)
     {
-        return world.getBlockState(pos.offsetUp(densityDir)).getBlock() == this ||
-                (world.getBlockState(pos).getBlock() == this && canFlowInto(world, pos.offsetUp(densityDir)));
+        return world.getBlockState(pos.up(densityDir)).getBlock() == this ||
+                (world.getBlockState(pos).getBlock() == this && canFlowInto(world, pos.up(densityDir)));
     }
 
     public boolean isSourceBlock(IBlockAccess world, BlockPos pos)

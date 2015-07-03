@@ -52,7 +52,7 @@ public class EntityHydrogenTNTPrimed extends EntityTNTPrimed
         this.preventEntitySpawning = true;
         this.setSize(0.98F, 0.98F);
         BlockPos blockPos = new BlockPos(this.posX, this.posY, this.posZ);
-        blockPos.offsetUp((int) (this.height / 2.0F));
+        blockPos.up((int) (this.height / 2.0F));
     }
 
     public EntityHydrogenTNTPrimed(World par1World, double par2, double par4, double par6, EntityLivingBase par8EntityLivingBase)

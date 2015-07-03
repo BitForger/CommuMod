@@ -34,7 +34,7 @@ import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
-import java.util.*;
+import java.util.HashMap;
 
 
 public class ModItems {

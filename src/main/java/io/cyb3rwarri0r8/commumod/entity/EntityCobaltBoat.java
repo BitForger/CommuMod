@@ -135,7 +135,7 @@ public class EntityCobaltBoat extends Entity {
      */
     public boolean attackEntityFrom(DamageSource source, float amount)
     {
-        if (this.func_180431_b(source))
+        if (this.isEntityInvulnerable(source))
         {
             return false;
         }
@@ -561,7 +561,7 @@ public class EntityCobaltBoat extends Entity {
                 this.fallDistance = 0.0F;
             }
         }
-        else if (this.worldObj.getBlockState((new BlockPos(this)).offsetDown()).getBlock().getMaterial() != Material.water && p_180433_1_ < 0.0D)
+        else if (this.worldObj.getBlockState((new BlockPos(this)).down()).getBlock().getMaterial() != Material.water && p_180433_1_ < 0.0D)
         {
             this.fallDistance = (float)((double)this.fallDistance - p_180433_1_);
         }

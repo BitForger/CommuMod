@@ -21,34 +21,26 @@ package io.cyb3rwarri0r8.commumod.blocks;
  */
 
 import io.cyb3rwarri0r8.commumod.entity.TileEntityPurifier;
-import io.cyb3rwarri0r8.commumod.lib.Reference;
-import io.cyb3rwarri0r8.commumod.main;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
-
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.state.BlockState;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.InventoryHelper;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
-
 import net.minecraft.tileentity.TileEntityFurnace;
 import net.minecraft.util.BlockPos;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumParticleTypes;
-import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
-import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
@@ -90,10 +82,10 @@ public class BlockPurifier extends BlockContainer
     {
         if (!worldIn.isRemote)
         {
-            Block block = worldIn.getBlockState(p_176445_2_.offsetNorth()).getBlock();
-            Block block1 = worldIn.getBlockState(p_176445_2_.offsetSouth()).getBlock();
-            Block block2 = worldIn.getBlockState(p_176445_2_.offsetWest()).getBlock();
-            Block block3 = worldIn.getBlockState(p_176445_2_.offsetEast()).getBlock();
+            Block block = worldIn.getBlockState(p_176445_2_.north()).getBlock();
+            Block block1 = worldIn.getBlockState(p_176445_2_.south()).getBlock();
+            Block block2 = worldIn.getBlockState(p_176445_2_.west()).getBlock();
+            Block block3 = worldIn.getBlockState(p_176445_2_.east()).getBlock();
             EnumFacing enumfacing = (EnumFacing)p_176445_3_.getValue(FACING);
 
             if (enumfacing == EnumFacing.NORTH && block.isFullBlock() && !block1.isFullBlock())
@@ -207,12 +199,12 @@ public class BlockPurifier extends BlockContainer
 
     public IBlockState onBlockPlaced(World worldIn, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer)
     {
-        return this.getDefaultState().withProperty(FACING, placer.func_174811_aO().getOpposite());
+        return this.getDefaultState().withProperty(FACING, placer.getHorizontalFacing().getOpposite());
     }
 
     public void onBlockPlacedBy(World worldIn, BlockPos pos, IBlockState state, EntityLivingBase placer, ItemStack stack)
     {
-        worldIn.setBlockState(pos, state.withProperty(FACING, placer.func_174811_aO().getOpposite()), 2);
+        worldIn.setBlockState(pos, state.withProperty(FACING, placer.getHorizontalFacing().getOpposite()), 2);
 
         if (stack.hasDisplayName())
         {

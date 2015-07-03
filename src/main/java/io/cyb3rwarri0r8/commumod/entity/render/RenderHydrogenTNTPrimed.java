@@ -19,9 +19,7 @@ package io.cyb3rwarri0r8.commumod.entity.render;
  *
  */
 
-import io.cyb3rwarri0r8.commumod.blocks.ModBlocks;
 import io.cyb3rwarri0r8.commumod.entity.EntityHydrogenTNTPrimed;
-import io.cyb3rwarri0r8.commumod.lib.Reference;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.BlockRendererDispatcher;
 import net.minecraft.client.renderer.GlStateManager;
@@ -33,7 +31,6 @@ import net.minecraft.entity.item.EntityTNTPrimed;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.MathHelper;
 import net.minecraft.util.ResourceLocation;
-import org.lwjgl.opengl.GL11;
 
 /**
  * Created by noah on 10/26/14.
@@ -72,25 +69,25 @@ public class RenderHydrogenTNTPrimed extends RenderTNTPrimed
         f2 = (1.0F - ((float)p_76986_1_.fuse - p_76986_9_ + 1.0F) / 100.0F) * 0.8F;
         this.bindEntityTexture(p_76986_1_);
         GlStateManager.translate(-0.5F, -0.5F, 0.5F);
-        blockrendererdispatcher.func_175016_a(Blocks.tnt.getDefaultState(), p_76986_1_.getBrightness(p_76986_9_));
+        blockrendererdispatcher.renderBlockBrightness(Blocks.tnt.getDefaultState(), p_76986_1_.getBrightness(p_76986_9_));
         GlStateManager.translate(0.0F, 0.0F, 1.0F);
 
         if (p_76986_1_.fuse / 5 % 2 == 0)
         {
-            GlStateManager.func_179090_x();
+            GlStateManager.disableAlpha();
             GlStateManager.disableLighting();
             GlStateManager.enableBlend();
             GlStateManager.blendFunc(770, 772);
             GlStateManager.color(1.0F, 1.0F, 1.0F, f2);
             GlStateManager.doPolygonOffset(-3.0F, -3.0F);
             GlStateManager.enablePolygonOffset();
-            blockrendererdispatcher.func_175016_a(Blocks.tnt.getDefaultState(), 1.0F);
+            blockrendererdispatcher.renderBlockBrightness(Blocks.tnt.getDefaultState(), 1.0F);
             GlStateManager.doPolygonOffset(0.0F, 0.0F);
             GlStateManager.disablePolygonOffset();
             GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
             GlStateManager.disableBlend();
             GlStateManager.enableLighting();
-            GlStateManager.func_179098_w();
+            GlStateManager.enableAlpha();
         }
 
         GlStateManager.popMatrix();

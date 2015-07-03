@@ -1,3 +1,22 @@
+/*
+ *  CommuMod - A Minecraft Modification
+ *  Copyright (C) ${YEAR} Cyb3rWarri0r8
+ *
+ *  This program is free software: you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or
+ *  any later version.
+ *
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ */
+
 import java.util.regex.Matcher
 import java.util.regex.Pattern
 
@@ -20,16 +39,23 @@ buildscript {
 
 apply plugin: 'forge'
 
-version = "1.0"
-group= "io.cyb3rwarri0r8"+mod_id // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = mod_id
+version = "2.0"
+group= "io.cyb3rwarri0r8.commumod" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+archivesBaseName = "commumod"
+
+def mod_id = "commumod"
+def mod_name = "CommuMod"
+def mod_desc = "A smash up of different ideas in one mod."
+def mod_url = "http://kaminocoding.github.io/CommuMod"
+def mc_version = version
+def mod_version = "2.0"
 
 minecraft {
     version = "1.8-11.14.3.1450"
     runDir = "eclipse"
 
-    version = mc_version +"-"+ forge_version
-    runDir="eclipse"
+
+
 
     replace "@ID@", mod_id
     replace "@NAME@", mod_name
@@ -308,6 +334,8 @@ processResources
         {
             Matcher matcherVersion
 
+
+
             def configFile = file("config.xml")
             def configText = configFile.getText()
 
@@ -352,7 +380,8 @@ processResources
 
                 // replace version and mcversion
 
-                expand 'id':mod_id, 'name':mod_name, 'description':mod_desc, 'url':mod_url, 'version':project.version, 'mcversion':mc_version
+
+                expand('id': mod_id, 'name': mod_name, 'description': mod_desc, 'url': mod_url, 'version': project.version, 'mcversion': mc_version)
             }
 
             // copy everything else, thats not the mcmod.info

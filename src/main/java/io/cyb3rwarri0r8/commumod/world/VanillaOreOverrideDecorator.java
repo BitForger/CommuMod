@@ -21,18 +21,14 @@ package io.cyb3rwarri0r8.commumod.world;
 
 import net.minecraft.util.BlockPos;
 import net.minecraft.world.World;
-import net.minecraft.world.biome.BiomeDecorator;
 import net.minecraft.world.gen.ChunkProviderSettings;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.terraingen.OreGenEvent;
-import net.minecraftforge.event.terraingen.TerrainGen;
 
 import java.util.Random;
 
-import static net.minecraftforge.event.terraingen.OreGenEvent.GenerateMinable.EventType.DIAMOND;
-import static net.minecraftforge.event.terraingen.OreGenEvent.GenerateMinable.EventType.GOLD;
-import static net.minecraftforge.event.terraingen.OreGenEvent.GenerateMinable.EventType.IRON;
+import static net.minecraftforge.event.terraingen.OreGenEvent.GenerateMinable.EventType.*;
 
 public class VanillaOreOverrideDecorator {
 
@@ -87,11 +83,11 @@ public class VanillaOreOverrideDecorator {
     {
         MinecraftForge.ORE_GEN_BUS.post(new OreGenEvent.Pre(currentWorld, randomGenerator, blockPos));
         if (VanillaOverrideTerrainGen.generateOre(currentWorld, randomGenerator, ironGen, blockPos, IRON))
-            this.genStandardOre1(this.chunkProviderSettings.field_177849_ah, this.ironGen, this.chunkProviderSettings.field_177832_ai, this.chunkProviderSettings.field_177834_aj);
+            this.genStandardOre1(this.chunkProviderSettings.ironCount, this.ironGen, this.chunkProviderSettings.ironMinHeight, this.chunkProviderSettings.ironMaxHeight);
         if (VanillaOverrideTerrainGen.generateOre(currentWorld, randomGenerator, goldGen, blockPos, GOLD))
-            this.genStandardOre1(this.chunkProviderSettings.field_177830_al, this.goldGen, this.chunkProviderSettings.field_177840_am, this.chunkProviderSettings.field_177842_an);
+            this.genStandardOre1(this.chunkProviderSettings.goldCount, this.goldGen, this.chunkProviderSettings.goldMinHeight, this.chunkProviderSettings.goldMaxHeight);
         if (VanillaOverrideTerrainGen.generateOre(currentWorld, randomGenerator, field_180298_q, blockPos, DIAMOND))
-            this.genStandardOre1(this.chunkProviderSettings.field_177812_at, this.field_180298_q, this.chunkProviderSettings.field_177826_au, this.chunkProviderSettings.field_177824_av);
+            this.genStandardOre1(this.chunkProviderSettings.diamondCount, this.field_180298_q, this.chunkProviderSettings.diamondMinHeight, this.chunkProviderSettings.diamondMaxHeight);
         MinecraftForge.ORE_GEN_BUS.post(new OreGenEvent.Post(currentWorld, randomGenerator, blockPos));
     }
 

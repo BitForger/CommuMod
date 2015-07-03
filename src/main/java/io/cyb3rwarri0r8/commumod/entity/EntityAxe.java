@@ -21,7 +21,6 @@ package io.cyb3rwarri0r8.commumod.entity;
 
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.projectile.EntityThrowable;
-import net.minecraft.util.EnumFacing;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.util.MovingObjectPosition.MovingObjectType;
 import net.minecraft.world.World;
@@ -59,25 +58,25 @@ public class EntityAxe extends EntityThrowable {
 * If mop.sideHit == 3 whatever is in
 * case 3 Happens!
 */
-            switch(mop.field_178784_b)
+            switch(mop.sideHit)
             {
                 case DOWN: //BOTTOM
-                    mop.func_178782_a().add(0,-1,0);
+                    mop.getBlockPos().add(0,-1,0);
                     break;
                 case UP: //TOP
-                    mop.func_178782_a().add(0,1,0);
+                    mop.getBlockPos().add(0,1,0);
                     break;
                 case EAST: //EAST
-                    mop.func_178782_a().add(0,0,-1);
+                    mop.getBlockPos().add(0,0,-1);
                     break;
                 case WEST: //WEST
-                    mop.func_178782_a().add(0,0,1);
+                    mop.getBlockPos().add(0,0,1);
                     break;
                 case NORTH: //NORTH
-                    mop.func_178782_a().add(-1,0,0);
+                    mop.getBlockPos().add(-1,0,0);
                     break;
                 case SOUTH: //SOUTH
-                    mop.func_178782_a().add(1,0,0);
+                    mop.getBlockPos().add(1,0,0);
                     break;
             }
 /* This method creates the explosion!
@@ -87,7 +86,7 @@ public class EntityAxe extends EntityThrowable {
 * around after exploding, the last parameter
 * is if it  should spawn smoke particles
 */
-            this.worldObj.newExplosion(this, mop.func_178782_a().getX(), mop.func_178782_a().getY(), mop.func_178782_a().getZ(), 4.0F, false, false);
+            this.worldObj.newExplosion(this, mop.getBlockPos().getX(), mop.getBlockPos().getY(), mop.getBlockPos().getZ(), 4.0F, false, false);
         }
 //If the Server is online and works, kill this entity
         if (!this.worldObj.isRemote)

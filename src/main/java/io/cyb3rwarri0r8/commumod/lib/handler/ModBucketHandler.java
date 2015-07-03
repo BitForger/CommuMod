@@ -61,7 +61,7 @@ public class ModBucketHandler {
 
     private ItemStack fillCustomBucket(World world, MovingObjectPosition pos)
     {
-        BlockPos blockPos = new BlockPos(pos.func_178782_a().getX(), pos.func_178782_a().getY(), pos.func_178782_a().getZ());
+        BlockPos blockPos = new BlockPos(pos.getBlockPos().getX(), pos.getBlockPos().getY(), pos.getBlockPos().getZ());
         Block block = world.getBlockState(blockPos).getBlock();
 
         Item bucket = buckets.get(block);

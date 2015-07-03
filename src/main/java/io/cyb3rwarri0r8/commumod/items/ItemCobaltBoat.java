@@ -20,7 +20,6 @@ package io.cyb3rwarri0r8.commumod.items;
  */
 
 import io.cyb3rwarri0r8.commumod.entity.EntityCobaltBoat;
-import io.cyb3rwarri0r8.commumod.lib.Reference;
 import io.cyb3rwarri0r8.commumod.main;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.resources.model.ModelResourceLocation;
@@ -105,7 +104,7 @@ public class ItemCobaltBoat extends Item {
             {
                 if (movingobjectposition.typeOfHit == MovingObjectPosition.MovingObjectType.BLOCK)
                 {
-                    BlockPos pos = movingobjectposition.func_178782_a();
+                    BlockPos pos = movingobjectposition.getBlockPos();
 
 
                     if (p_77659_2_.getBlockState(pos).getBlock() == Blocks.snow_layer)
