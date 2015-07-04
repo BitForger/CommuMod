@@ -1,6 +1,6 @@
 machine:
     java:
-    version: openjdk7
+        version: openjdk7
   
 deployment:
     build:
