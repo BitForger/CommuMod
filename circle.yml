@@ -2,9 +2,6 @@ machine:
     java:
         version: openjdk7
   
-deployment:
-    build:
-        branch: /release/*
         
 notify:
     webhooks:
