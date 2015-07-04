@@ -1,7 +1,9 @@
 machine:
     java:
         version: openjdk7
-  
+general:
+    artifacts:
+        "build/libs/*"
         
 notify:
     webhooks:
