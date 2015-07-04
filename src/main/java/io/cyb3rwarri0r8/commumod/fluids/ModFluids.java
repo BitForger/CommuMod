@@ -26,7 +26,6 @@ import io.cyb3rwarri0r8.commumod.blocks.ModBlocks;
 import io.cyb3rwarri0r8.commumod.items.ItemPureWaterBucket;
 import io.cyb3rwarri0r8.commumod.items.ItemRetawBucket;
 import io.cyb3rwarri0r8.commumod.items.ModItems;
-import io.cyb3rwarri0r8.commumod.lib.Reference;
 import io.cyb3rwarri0r8.commumod.lib.helpers.RegisterHelper;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -74,7 +73,7 @@ public class ModFluids {
 
 
         retawBlock = new BlockRetaw(ModFluids.retaw, ModBlocks.materialRetaw);
-        GameRegistry.registerBlock(retawBlock, Reference.MODID + ":" + retawBlock.getUnlocalizedName().substring(5));
+        GameRegistry.registerBlock(retawBlock, retawBlock.getUnlocalizedName().substring(5));
 
         retawBucket = new ItemRetawBucket(retawBlock);
 

@@ -101,17 +101,16 @@ task incrementPatch << {
     def isDev = Boolean.parseBoolean(matcherDev.group(1))
 
     if(isDev) {
-        def pattern = Pattern.compile("<version>(\\d+)\\.(\\d+)\\.(\\d+)\\-(\\w+).(\\d+)</version>")
+        def pattern = Pattern.compile("<version>(\\d+)\\.(\\d+)\\.(\\d+)</version>")
         matcherVersion = pattern.matcher(configText)
         matcherVersion.find()
 
         def major = Integer.parseInt(matcherVersion.group(1))
         def minor = Integer.parseInt(matcherVersion.group(2))
         def patch = Integer.parseInt(matcherVersion.group(3))
-        def dev = matcherVersion.group(4)
-        def devVersion = Integer.parseInt(matcherVersion.group(5))
 
-        oldVersion = major + "." + minor + "." + patch + "-" + dev + "." + devVersion
+
+        oldVersion = major + "." + minor + "." + patch
         newVersion = major + "." + minor + "." + (patch + 1)
     }
     else {
@@ -153,17 +152,16 @@ task incrementMinor << {
     def isDev = Boolean.parseBoolean(matcherDev.group(1))
 
     if(isDev) {
-        def pattern = Pattern.compile("<version>(\\d+)\\.(\\d+)\\.(\\d+)\\-(\\w+).(\\d+)</version>")
+        def pattern = Pattern.compile("<version>(\\d+)\\.(\\d+)\\.(\\d+)</version>")
         matcherVersion = pattern.matcher(configText)
         matcherVersion.find()
 
         def major = Integer.parseInt(matcherVersion.group(1))
         def minor = Integer.parseInt(matcherVersion.group(2))
         def patch = Integer.parseInt(matcherVersion.group(3))
-        def dev = matcherVersion.group(4)
-        def devVersion = Integer.parseInt(matcherVersion.group(5))
 
-        oldVersion = major + "." + minor + "." + patch + "-" + dev + "." + devVersion
+
+        oldVersion = major + "." + minor + "." + patch
         newVersion = major + "." + (minor + 1) + ".0"
     }
     else {
@@ -205,17 +203,16 @@ task incrementMajor << {
     def isDev = Boolean.parseBoolean(matcherDev.group(1))
 
     if(isDev) {
-        def pattern = Pattern.compile("<version>(\\d+)\\.(\\d+)\\.(\\d+)\\-(\\w+).(\\d+)</version>")
+        def pattern = Pattern.compile("<version>(\\d+)\\.(\\d+)\\.(\\d+)</version>")
         matcherVersion = pattern.matcher(configText)
         matcherVersion.find()
 
         def major = Integer.parseInt(matcherVersion.group(1))
         def minor = Integer.parseInt(matcherVersion.group(2))
         def patch = Integer.parseInt(matcherVersion.group(3))
-        def dev = matcherVersion.group(4)
-        def devVersion = Integer.parseInt(matcherVersion.group(5))
 
-        oldVersion = major + "." + minor + "." + patch + "-" + dev + "." + devVersion
+
+        oldVersion = major + "." + minor + "." + patch
         newVersion = (major + 1) + ".0.0"
     }
     else {
@@ -258,18 +255,17 @@ task setDevVersion << {
     if(isDev) {
         println(":setDevVersion - Incrementing Dev Version")
 
-        def pattern = Pattern.compile("<version>(\\d+)\\.(\\d+)\\.(\\d+)\\-(\\w+).(\\d+)</version>")
+        def pattern = Pattern.compile("<version>(\\d+)\\.(\\d+)\\.(\\d+)</version>")
         matcherVersion = pattern.matcher(configText)
         matcherVersion.find()
 
         def major = Integer.parseInt(matcherVersion.group(1))
         def minor = Integer.parseInt(matcherVersion.group(2))
         def patch = Integer.parseInt(matcherVersion.group(3))
-        def dev = matcherVersion.group(4)
-        def devVersion = Integer.parseInt(matcherVersion.group(5))
 
-        oldVersion = major + "." + minor + "." + patch + "-" + dev + "." + devVersion
-        newVersion = major + "." + minor + "." + patch + "-" + dev + "." + (devVersion + 1)
+
+        oldVersion = major + "." + minor + "." + patch
+        newVersion = major + "." + minor + "." + (patch+1)
 
     }
     else {
@@ -284,7 +280,7 @@ task setDevVersion << {
         def patch = Integer.parseInt(matcherVersion.group(3))
 
         oldVersion = major + "." + minor + "." + patch
-        newVersion = major + "." + minor + "." + patch + "-build.1"
+        newVersion = major + "." + minor + "." + "1"
     }
 
     println(":incrementPatch - Current Version: " + oldVersion)
@@ -345,17 +341,16 @@ processResources
             def isDev = Boolean.parseBoolean(matcherDev.group(1))
 
             if(isDev) {
-                def pattern = Pattern.compile("<version>(\\d+)\\.(\\d+)\\.(\\d+)\\-(\\w+).(\\d+)</version>")
+                def pattern = Pattern.compile("<version>(\\d+)\\.(\\d+)\\.(\\d+)</version>")
                 matcherVersion = pattern.matcher(configText)
                 matcherVersion.find()
 
                 def major = Integer.parseInt(matcherVersion.group(1))
                 def minor = Integer.parseInt(matcherVersion.group(2))
                 def patch = Integer.parseInt(matcherVersion.group(3))
-                def dev = matcherVersion.group(4)
-                def devVersion = Integer.parseInt(matcherVersion.group(5))
 
-                project.version = major + "." + minor + "." + patch + "-" + dev + "." + devVersion
+
+                project.version = major + "." + minor + "." + patch
             }
             else {
                 def pattern = Pattern.compile("<version>(\\d+)\\.(\\d+)\\.(\\d+)</version>")

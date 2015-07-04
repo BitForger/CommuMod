@@ -22,7 +22,6 @@ package io.cyb3rwarri0r8.commumod.lib.helpers;
  */
 
 import io.cyb3rwarri0r8.commumod.lib.PurifierRecipes;
-import io.cyb3rwarri0r8.commumod.lib.Reference;
 import net.minecraft.block.Block;
 import net.minecraft.entity.EntityList;
 import net.minecraft.item.Item;
@@ -37,21 +36,21 @@ public class RegisterHelper {
 
     public static void registerBlock(Block block)
     {
-        GameRegistry.registerBlock(block, block.getUnlocalizedName());
+        GameRegistry.registerBlock(block, block.getUnlocalizedName().substring(5));
     }
 
     // ********************************************************************************************
 
     public static void registerItem(Item item)
     {
-        GameRegistry.registerItem(item, Reference.MODID + ":" + item.getUnlocalizedName().substring(5));
+        GameRegistry.registerItem(item, item.getUnlocalizedName().substring(5));
     }
 
     // ********************************************************************************************
 
     public static void regToolRecipe(Item item, Item x, Item y, String toolType)
     {
-        if (toolType == "pickaxe")
+        if (toolType.equals("pickaxe"))
         {
             GameRegistry.addRecipe(new ItemStack(item), 
                     "XXX",
@@ -60,7 +59,7 @@ public class RegisterHelper {
                     'X', x, 'Y', y
             );
         }
-        else if (toolType == "axe")
+        else if (toolType.equals("axe"))
         {
             GameRegistry.addRecipe(new ItemStack(item), 
                     "XX ",
@@ -69,7 +68,7 @@ public class RegisterHelper {
                     'X', x, 'Y', y
             );
         }
-        else if (toolType == "shovel")
+        else if (toolType.equals("shovel"))
         {
             GameRegistry.addRecipe(new ItemStack(item), 
                     "X",
@@ -78,7 +77,7 @@ public class RegisterHelper {
                     'X', x, 'Y', y
             );
         }
-        else if (toolType == "hoe")
+        else if (toolType.equals("hoe"))
         {
             GameRegistry.addRecipe(new ItemStack(item), 
                     "XX",
@@ -87,7 +86,7 @@ public class RegisterHelper {
                     'X', x, 'Y', y
             );
         }
-        else if (toolType == "sword")
+        else if (toolType.equals("sword"))
         {
             GameRegistry.addRecipe(new ItemStack(item), 
                     "X",
@@ -106,14 +105,14 @@ public class RegisterHelper {
 
     public static void regArmorRecipe(Item item, Item x, String armortype)
     {
-        if (armortype == "helmet")
+        if (armortype.equals("helmet"))
         {
             GameRegistry.addRecipe(new ItemStack(item), 
                     "XXX",
                     "X X",
                     'X', x
             );
-        }else if (armortype == "chestplate")
+        }else if (armortype.equals("chestplate"))
         {
             GameRegistry.addRecipe(new ItemStack(item), 
                     "X X",
@@ -121,7 +120,7 @@ public class RegisterHelper {
                     "XXX",
                     'X', x
             );
-        }else if (armortype == "leggings")
+        }else if (armortype.equals("leggings"))
         {
             GameRegistry.addRecipe(new ItemStack(item), 
                     "XXX",
@@ -129,7 +128,7 @@ public class RegisterHelper {
                     "X X",
                     'X', x
             );
-        } else if (armortype == "boots")
+        } else if (armortype.equals("boots"))
         {
             GameRegistry.addRecipe(new ItemStack(item), 
                     "X X",

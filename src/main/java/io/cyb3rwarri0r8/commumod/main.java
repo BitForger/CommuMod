@@ -27,21 +27,17 @@ import io.cyb3rwarri0r8.commumod.blocks.ModBlocks;
 import io.cyb3rwarri0r8.commumod.client.CreativeTabsCommuMod;
 import io.cyb3rwarri0r8.commumod.entity.ModEntities;
 import io.cyb3rwarri0r8.commumod.fluids.ModFluids;
-import io.cyb3rwarri0r8.commumod.items.ItemAradactiteAxe;
 import io.cyb3rwarri0r8.commumod.items.ModItems;
 import io.cyb3rwarri0r8.commumod.items.food_items.foodItems;
 import io.cyb3rwarri0r8.commumod.lib.ModRecipeHandler;
 import io.cyb3rwarri0r8.commumod.lib.Reference;
+import io.cyb3rwarri0r8.commumod.lib.RegisterItemRenders;
 import io.cyb3rwarri0r8.commumod.lib.handler.ConfigHandler;
 import io.cyb3rwarri0r8.commumod.lib.handler.ModBucketHandler;
 import io.cyb3rwarri0r8.commumod.lib.handler.ModEventHandler;
 import io.cyb3rwarri0r8.commumod.lib.proxy.proxyCommon;
 import io.cyb3rwarri0r8.commumod.world.modWorld;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.entity.RenderItem;
-import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.item.Item;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.fml.common.FMLCommonHandler;
@@ -72,7 +68,7 @@ public class main
     @Mod.Instance(Reference.MODID)
     public static main instance;
 
-
+    public static RegisterItemRenders itemRenders;
 
 
     @Mod.EventHandler
@@ -88,7 +84,7 @@ public class main
          */
         proxy.registerRenderers();
         proxy.registerEntitySpawn();
-        proxy.registerTileEntities();
+        proxyCommon.registerTileEntities();
         proxy.registerNetwork();
         proxy.preinit();
 
@@ -122,13 +118,13 @@ public class main
         GameRegistry.registerBlock(ModBlocks.superbiumTNT, ModBlocks.superbiumTNT.getUnlocalizedName());
         GameRegistry.registerBlock(ModBlocks.hydrogenTNT, ModBlocks.hydrogenTNT.getUnlocalizedName());
 
-        if(event.getSide() == Side.CLIENT)
-        {
-            RenderItem renderItem = Minecraft.getMinecraft().getRenderItem();
+//        RegisterItemRenders.addItemsToMap();
 
-            Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(ModItems.aradactiteAxe, 1, new ModelResourceLocation(Reference.MODID + ":" + ((ItemAradactiteAxe) ModItems.aradactiteAxe).getName(), "inventory"));
-            Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(Item.getItemFromBlock(ModBlocks.appleBlock), 1, new ModelResourceLocation(Reference.MODID + ":" + ModBlocks.appleBlock.getUnlocalizedName().substring(5), "inventory"));
+        if (event.getSide() == Side.CLIENT){
+            RegisterItemRenders.registerItemsToRender();
+            RegisterItemRenders.registerBlockItemsToRender();
         }
+
 
     }
 
