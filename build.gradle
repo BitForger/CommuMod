@@ -293,8 +293,7 @@ task setDevVersion << {
         def major = Integer.parseInt(matcherVersion.group(1))
         def minor = Integer.parseInt(matcherVersion.group(2))
         def patch = Integer.parseInt(matcherVersion.group(3))
-        def dev = matcherVersion.group(4)
-        def devVersion = Integer.parseInt(matcherVersion.group(5))
+
 
         oldVersion = major + "." + minor + "." + patch
         newVersion = major + "." + minor + "." + (patch + 1)
