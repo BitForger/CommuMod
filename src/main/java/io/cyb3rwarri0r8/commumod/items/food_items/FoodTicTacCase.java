@@ -1,7 +1,7 @@
 package io.cyb3rwarri0r8.commumod.items.food_items;
 
+import io.cyb3rwarri0r8.commumod.Commumod;
 import io.cyb3rwarri0r8.commumod.lib.Reference;
-import io.cyb3rwarri0r8.commumod.main;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -33,7 +33,7 @@ public class FoodTicTacCase extends Item {
         setUnlocalizedName("ticTacCase");
         setTextureName(Reference.MODID + ":" + getUnlocalizedName().substring(5));
         setMaxDamage(20);
-        setCreativeTab(main.modTab);
+        setCreativeTab(Commumod.modTab);
     }
 
     @Override

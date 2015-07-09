@@ -2,9 +2,9 @@ package io.cyb3rwarri0r8.commumod.blocks;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+import io.cyb3rwarri0r8.commumod.Commumod;
 import io.cyb3rwarri0r8.commumod.entity.TileEntityPurifier;
 import io.cyb3rwarri0r8.commumod.lib.Reference;
-import io.cyb3rwarri0r8.commumod.main;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
@@ -62,7 +62,7 @@ public class BlockPurifier extends BlockContainer
     public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int par6, float par7, float par8, float par9)
     {
 
-        player.openGui(main.instance, 0, world, x, y, z);
+        player.openGui(Commumod.instance, 0, world, x, y, z);
         return true;
     }
 

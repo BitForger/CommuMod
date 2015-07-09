@@ -1,8 +1,8 @@
 package io.cyb3rwarri0r8.commumod.items;
 
+import io.cyb3rwarri0r8.commumod.Commumod;
 import io.cyb3rwarri0r8.commumod.entity.EntityCobaltBoat;
 import io.cyb3rwarri0r8.commumod.lib.Reference;
-import io.cyb3rwarri0r8.commumod.main;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
@@ -24,7 +24,7 @@ public class ItemCobaltBoat extends Item {
     public ItemCobaltBoat()
     {
         this.maxStackSize = 1;
-        this.setCreativeTab(main.modTab);
+        this.setCreativeTab(Commumod.modTab);
         setUnlocalizedName("cobaltBoat");
         setTextureName(Reference.MODID + ":" + getUnlocalizedName().substring(5));
     }

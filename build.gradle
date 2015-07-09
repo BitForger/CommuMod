@@ -18,12 +18,12 @@ buildscript {
     }
 }
 
-repositories{
+/*repositories{
     maven {
         name = "chickenbones"
         url = "http://chickenbones.net/maven"
     }
-}
+}*/
 
 
 apply plugin: 'forge'
@@ -33,7 +33,7 @@ group= "io.cyb3rwarri0r8.commumod" // http://maven.apache.org/guides/mini/guide-
 archivesBaseName = "commumod"
 
 minecraft {
-    version = "1.7.10-10.13.2.1230"
+    version = "1.7.10-10.13.4.1448-1.7.10"
     assetDir = "eclipse/assets"
 }
 

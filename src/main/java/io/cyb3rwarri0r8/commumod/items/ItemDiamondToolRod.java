@@ -1,7 +1,6 @@
 package io.cyb3rwarri0r8.commumod.items;
 
 import io.cyb3rwarri0r8.commumod.lib.Reference;
-import io.cyb3rwarri0r8.commumod.main;
 import net.minecraft.item.Item;
 
 /**
@@ -25,7 +24,7 @@ public class ItemDiamondToolRod extends Item {
     public ItemDiamondToolRod()
     {
         super();
-//        setCreativeTab(main.modTab);
+//        setCreativeTab(Commumod.modTab);
         setUnlocalizedName("diamondToolRod");
         setTextureName(Reference.MODID + ":" + getUnlocalizedName().substring(5));
     }

@@ -1,7 +1,7 @@
 package io.cyb3rwarri0r8.commumod.blocks;
 
+import io.cyb3rwarri0r8.commumod.Commumod;
 import io.cyb3rwarri0r8.commumod.lib.Reference;
-import io.cyb3rwarri0r8.commumod.main;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 
@@ -14,7 +14,7 @@ public class BlockAradactiteBlock extends Block {
         super(Material.anvil);
         this.setBlockName("aradactiteBlock");
         this.setBlockTextureName(Reference.MODID + ":" + getUnlocalizedName().substring(5));
-        this.setCreativeTab(main.modTab);
+        this.setCreativeTab(Commumod.modTab);
         this.setStepSound(soundTypePiston);
         setHardness(3.5F);
         setResistance(5.5F);

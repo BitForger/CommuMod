@@ -1,7 +1,7 @@
 package io.cyb3rwarri0r8.commumod.blocks;
 
+import io.cyb3rwarri0r8.commumod.Commumod;
 import io.cyb3rwarri0r8.commumod.lib.Reference;
-import io.cyb3rwarri0r8.commumod.main;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.IIcon;
@@ -16,7 +16,7 @@ public class BlockRuby extends Block
         super(material);
         setBlockName("rubyBlock");
         setBlockTextureName(Reference.MODID + ":" + getUnlocalizedName().substring(5));
-        setCreativeTab(main.modTab);
+        setCreativeTab(Commumod.modTab);
         setStepSound(soundTypePiston);
         setHardness(3.0F);
         setResistance(15F);

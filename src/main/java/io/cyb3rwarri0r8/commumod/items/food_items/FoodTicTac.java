@@ -1,7 +1,7 @@
 package io.cyb3rwarri0r8.commumod.items.food_items;
 
+import io.cyb3rwarri0r8.commumod.Commumod;
 import io.cyb3rwarri0r8.commumod.lib.Reference;
-import io.cyb3rwarri0r8.commumod.main;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
@@ -30,7 +30,7 @@ public class FoodTicTac extends ItemFood {
     public FoodTicTac(int hunger, int saturation, boolean isWolfFood) {
         super(hunger, saturation, isWolfFood);
         setUnlocalizedName("ticTac");
-        setCreativeTab(main.modTab);
+        setCreativeTab(Commumod.modTab);
         setTextureName(Reference.MODID + ":" + getUnlocalizedName().substring(5));
     }
 

@@ -1,7 +1,6 @@
 package io.cyb3rwarri0r8.commumod.items;
 
 import io.cyb3rwarri0r8.commumod.lib.Reference;
-import io.cyb3rwarri0r8.commumod.main;
 import net.minecraft.item.Item;
 
 /**
@@ -26,7 +25,7 @@ public class ItemGoldToolRod extends Item {
     {
         super();
         setUnlocalizedName("goldToolRod");
-//        setCreativeTab(main.modTab);
+//        setCreativeTab(Commumod.modTab);
         setTextureName(Reference.MODID + ":" + getUnlocalizedName().substring(5));
     }
 }

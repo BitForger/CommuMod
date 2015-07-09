@@ -9,7 +9,7 @@ import io.cyb3rwarri0r8.commumod.lib.handler.ModGuiHandler;
 import io.cyb3rwarri0r8.commumod.entity.EntityMiner;
 import io.cyb3rwarri0r8.commumod.entity.TileEntityPurifier;
 import io.cyb3rwarri0r8.commumod.lib.Reference;
-import io.cyb3rwarri0r8.commumod.main;
+import io.cyb3rwarri0r8.commumod.Commumod;
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.world.biome.BiomeGenBase;
 
@@ -52,7 +52,7 @@ public abstract class proxyCommon{
 
     public void registerNetwork()
     {
-        NetworkRegistry.INSTANCE.registerGuiHandler(main.instance, new ModGuiHandler());
+        NetworkRegistry.INSTANCE.registerGuiHandler(Commumod.instance, new ModGuiHandler());
     }
 
 }

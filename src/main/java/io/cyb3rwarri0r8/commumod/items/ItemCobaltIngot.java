@@ -1,7 +1,7 @@
 package io.cyb3rwarri0r8.commumod.items;
 
 import io.cyb3rwarri0r8.commumod.lib.Reference;
-import io.cyb3rwarri0r8.commumod.main;
+import io.cyb3rwarri0r8.commumod.Commumod;
 import net.minecraft.item.Item;
 
 /**
@@ -14,6 +14,6 @@ public class ItemCobaltIngot extends Item {
         super();
         setUnlocalizedName("cobaltIngot");
         setTextureName(Reference.MODID + ":" + getUnlocalizedName().substring(5));
-        setCreativeTab(main.modTab);
+        setCreativeTab(Commumod.modTab);
     }
 }

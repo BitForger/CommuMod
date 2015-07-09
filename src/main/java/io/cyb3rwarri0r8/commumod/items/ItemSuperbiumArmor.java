@@ -2,7 +2,7 @@ package io.cyb3rwarri0r8.commumod.items;
 
 
 import io.cyb3rwarri0r8.commumod.lib.Reference;
-import io.cyb3rwarri0r8.commumod.main;
+import io.cyb3rwarri0r8.commumod.Commumod;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemArmor;
@@ -17,7 +17,7 @@ public class ItemSuperbiumArmor extends ItemArmor {
     public ItemSuperbiumArmor(ArmorMaterial material, int armorType, String name) {
         super(material, 0, armorType );
 
-        setCreativeTab(main.modTab);
+        setCreativeTab(Commumod.modTab);
         setUnlocalizedName(name);
         setTextureName(Reference.MODID + ":" + getUnlocalizedName().substring(5));
 
@@ -38,9 +38,7 @@ public class ItemSuperbiumArmor extends ItemArmor {
     @Override
     public void onArmorTick(World world, EntityPlayer player, ItemStack itemStack)
     {
-        if(player.capabilities.allowFlying == false){
-            player.capabilities.allowFlying=true;
-        }
+        if(!player.capabilities.allowFlying) player.capabilities.allowFlying = true;
     }
 
 }

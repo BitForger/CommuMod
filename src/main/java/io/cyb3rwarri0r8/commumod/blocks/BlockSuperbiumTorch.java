@@ -2,8 +2,8 @@ package io.cyb3rwarri0r8.commumod.blocks;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+import io.cyb3rwarri0r8.commumod.Commumod;
 import io.cyb3rwarri0r8.commumod.lib.Reference;
-import io.cyb3rwarri0r8.commumod.main;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockTorch;
 import net.minecraft.util.AxisAlignedBB;
@@ -23,7 +23,7 @@ public class BlockSuperbiumTorch extends BlockTorch {
         super();
         setLightLevel(10.0F);
         setTickRandomly(true);
-        setCreativeTab(main.modTab);
+        setCreativeTab(Commumod.modTab);
         setBlockName("superbiumTorch");
         setBlockTextureName(Reference.MODID + ":" + getUnlocalizedName().substring(5));
     }

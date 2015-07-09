@@ -1,7 +1,7 @@
 package io.cyb3rwarri0r8.commumod.items;
 
+import io.cyb3rwarri0r8.commumod.Commumod;
 import io.cyb3rwarri0r8.commumod.lib.Reference;
-import io.cyb3rwarri0r8.commumod.main;
 import net.minecraft.item.ItemSword;
 
 /**
@@ -14,7 +14,7 @@ public class ItemRubySword extends ItemSword
         super(material);
         setUnlocalizedName("rubySword");
         setTextureName(Reference.MODID + ":" + getUnlocalizedName().substring(5));
-        setCreativeTab(main.modTab);
+        setCreativeTab(Commumod.modTab);
 
     }
 }

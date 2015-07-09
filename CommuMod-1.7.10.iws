@@ -1,14 +1,274 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5327bc5a-db2b-470d-b92b-c7ad3f22de35" name="Default" comment="">
+    <list default="true" id="5327bc5a-db2b-470d-b92b-c7ad3f22de35" name="Default" comment="Some gradle tweaks and version number fixes&#10;- Introduced bug of mod not loading in development environment&#10;- Fixed some readme badges">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CommuMod-1.7.10.iml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/api/CoFHAPIProps.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/api/block/IBlockAppearance.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/api/block/IBlockConfigGui.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/api/block/IBlockDebug.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/api/block/IBlockInfo.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/api/block/IDismantleable.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/api/block/package-info.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/api/core/ICustomInventory.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/api/core/IInitializer.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/api/core/package-info.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/api/energy/EnergyStorage.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/api/energy/IEnergyConnection.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/api/energy/IEnergyContainerItem.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/api/energy/IEnergyHandler.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/api/energy/IEnergyProvider.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/api/energy/IEnergyReceiver.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/api/energy/IEnergyStorage.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/api/energy/ItemEnergyContainer.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/api/energy/TileEnergyHandler.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/api/energy/package-info.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/api/fluid/ITankContainerBucketable.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/api/fluid/package-info.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/api/inventory/IInventoryConnection.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/api/inventory/IInventoryHandler.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/api/inventory/IInventoryRetainer.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/api/inventory/package-info.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/api/item/IAugmentItem.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/api/item/IEmpowerableItem.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/api/item/IInventoryContainerItem.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/api/item/IToolHammer.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/api/item/package-info.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/api/modhelpers/ThaumcraftHelper.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/api/modhelpers/ThermalExpansionHelper.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/api/modhelpers/package-info.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/api/package-info.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/api/tileentity/IAugmentable.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/api/tileentity/IEnergyInfo.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/api/tileentity/IPlacedTile.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/api/tileentity/IPortableData.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/api/tileentity/IReconfigurableFacing.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/api/tileentity/IReconfigurableSides.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/api/tileentity/IRedstoneCache.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/api/tileentity/IRedstoneControl.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/api/tileentity/ISecurable.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/api/tileentity/ISidedTexture.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/api/tileentity/ITileInfo.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/api/tileentity/package-info.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/api/transport/IEnderAttuned.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/api/transport/IEnderEnergyHandler.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/api/transport/IEnderFluidHandler.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/api/transport/IEnderItemHandler.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/api/transport/IItemDuct.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/api/transport/RegistryEnderAttuned.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/api/transport/package-info.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/api/world/IFeatureGenerator.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/api/world/IFeatureHandler.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/api/world/IFeatureParser.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/api/world/IGeneratorParser.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/api/world/package-info.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/CoFHLibProps.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/audio/ISoundSource.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/audio/SoundBase.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/audio/SoundTile.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/audio/package-info.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/gui/GuiBase.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/gui/GuiBook.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/gui/GuiColor.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/gui/GuiProps.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/gui/TabTracker.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/gui/container/ContainerFalse.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/gui/container/ContainerInventoryItem.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/gui/container/CustomInventoryWrapper.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/gui/container/IAugmentableContainer.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/gui/container/InventoryContainerItemWrapper.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/gui/container/package-info.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/gui/element/ElementBase.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/gui/element/ElementButton.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/gui/element/ElementButtonManaged.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/gui/element/ElementButtonOption.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/gui/element/ElementDualScaled.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/gui/element/ElementEnergyStored.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/gui/element/ElementFluid.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/gui/element/ElementFluidTank.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/gui/element/ElementIcon.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/gui/element/ElementListBox.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/gui/element/ElementSimple.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/gui/element/ElementSimpleToolTip.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/gui/element/ElementSlider.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/gui/element/ElementTextField.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/gui/element/TabBase.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/gui/element/listbox/IListBoxElement.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/gui/element/listbox/ListBoxElementText.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/gui/element/listbox/SliderHorizontal.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/gui/element/listbox/SliderVertical.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/gui/element/listbox/package-info.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/gui/element/package-info.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/gui/package-info.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/gui/slot/ISlotValidator.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/gui/slot/SlotAcceptAssignable.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/gui/slot/SlotAcceptInsertable.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/gui/slot/SlotAcceptValid.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/gui/slot/SlotCraftingLocked.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/gui/slot/SlotCustomInventory.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/gui/slot/SlotEnergy.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/gui/slot/SlotFalseCopy.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/gui/slot/SlotInvisible.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/gui/slot/SlotPotion.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/gui/slot/SlotPotionIngredient.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/gui/slot/SlotRemoveOnly.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/gui/slot/SlotSpecificItem.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/gui/slot/SlotValidated.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/gui/slot/SlotViewOnly.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/gui/slot/package-info.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/inventory/ComparableItemStack.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/inventory/ComparableItemStackNBT.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/inventory/ComparableItemStackSafe.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/inventory/IInventoryManager.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/inventory/InventoryCraftingCustom.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/inventory/InventoryCraftingFalse.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/inventory/InventoryManager.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/inventory/InventoryManagerSided.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/inventory/InventoryManagerStandard.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/inventory/package-info.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/package-info.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/render/IFluidOverlayItem.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/render/RenderFluidOverlayItem.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/render/RenderHelper.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/render/RenderItemAsBlock.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/render/package-info.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/render/particle/EntityDropParticleFX.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/render/particle/package-info.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/util/ArrayHashList.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/util/BlockWrapper.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/util/ComparableItem.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/util/ItemWrapper.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/util/LinkedHashList.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/util/OreDictionaryProxy.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/util/Rectangle4i.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/util/RegistryUtils.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/util/TimeTracker.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/util/UtilLiquidMover.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/util/WeightedRandomBlock.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/util/WeightedRandomItemStack.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/util/WeightedRandomNBTTag.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/util/WeightedRandomWorldGenerator.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/util/helpers/AugmentHelper.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/util/helpers/BlockHelper.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/util/helpers/ColorHelper.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/util/helpers/DamageHelper.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/util/helpers/EnergyHelper.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/util/helpers/EntityHelper.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/util/helpers/FireworksHelper.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/util/helpers/FluidHelper.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/util/helpers/HolidayHelper.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/util/helpers/InventoryHelper.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/util/helpers/ItemHelper.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/util/helpers/MathHelper.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/util/helpers/RedstoneControlHelper.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/util/helpers/SecurityHelper.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/util/helpers/ServerHelper.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/util/helpers/SoundHelper.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/util/helpers/StringHelper.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/util/helpers/package-info.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/util/package-info.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/util/position/Area.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/util/position/BlockPosition.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/util/position/ChunkCoord.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/util/position/IRotateableTile.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/util/position/package-info.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/world/WorldGenAdvLakes.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/world/WorldGenBoulder.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/world/WorldGenDecoration.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/world/WorldGenDungeon.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/world/WorldGenGeode.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/world/WorldGenMassiveTree.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/world/WorldGenMinableCluster.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/world/WorldGenMinableLargeVein.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/world/WorldGenMulti.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/world/WorldGenSmallTree.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/world/WorldGenSparseMinableCluster.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/world/WorldGenSpike.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/world/WorldGenStalactite.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/world/WorldGenStalagmite.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/world/biome/BiomeDictionaryArbiter.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/world/biome/BiomeInfo.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/world/biome/BiomeInfoRarity.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/world/biome/BiomeInfoSet.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/world/feature/FeatureBase.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/world/feature/FeatureGenCave.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/world/feature/FeatureGenLargeVein.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/world/feature/FeatureGenNormal.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/world/feature/FeatureGenSurface.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/world/feature/FeatureGenTopBlock.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/world/feature/FeatureGenUnderfluid.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/world/feature/FeatureGenUniform.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/world/feature/package-info.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/world/package-info.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/resources/cofhlib_at.cfg" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/main.java" afterPath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/Commumod.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.0/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/2.0/taskArtifacts/cache.properties.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.0/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/2.0/taskArtifacts/fileHashes.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.0/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.0/taskArtifacts/fileSnapshots.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.0/taskArtifacts/outputFileStates.bin" afterPath="$PROJECT_DIR$/.gradle/2.0/taskArtifacts/outputFileStates.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.0/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/2.0/taskArtifacts/taskArtifacts.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/blocks/BlockAradactiteBlock.java" afterPath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/blocks/BlockAradactiteBlock.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/blocks/BlockAradactiteOre.java" afterPath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/blocks/BlockAradactiteOre.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/blocks/BlockCobaltOre.java" afterPath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/blocks/BlockCobaltOre.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/blocks/BlockHydrogenTNT.java" afterPath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/blocks/BlockHydrogenTNT.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/blocks/BlockMinerShack.java" afterPath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/blocks/BlockMinerShack.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/blocks/BlockOfApple.java" afterPath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/blocks/BlockOfApple.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/blocks/BlockPurifier.java" afterPath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/blocks/BlockPurifier.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/blocks/BlockRuby.java" afterPath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/blocks/BlockRuby.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/blocks/BlockRubyOre.java" afterPath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/blocks/BlockRubyOre.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/blocks/BlockSuperbiumBlock.java" afterPath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/blocks/BlockSuperbiumBlock.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/blocks/BlockSuperbiumOre.java" afterPath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/blocks/BlockSuperbiumOre.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/blocks/BlockSuperbiumTNT.java" afterPath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/blocks/BlockSuperbiumTNT.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/blocks/BlockSuperbiumTorch.java" afterPath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/blocks/BlockSuperbiumTorch.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CommuMod-1.7.10.ipr" afterPath="$PROJECT_DIR$/CommuMod-1.7.10.ipr" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CommuMod-1.7.10.iws" afterPath="$PROJECT_DIR$/CommuMod-1.7.10.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/lib/Reference.java" afterPath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/lib/Reference.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/entity/EntityAradactiteGolem.java" afterPath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/entity/EntityAradactiteGolem.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/entity/EntitySuperbiumGolem.java" afterPath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/entity/EntitySuperbiumGolem.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/food_items/FoodSuperCarrot.java" afterPath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/food_items/FoodSuperCarrot.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/food_items/FoodTicTac.java" afterPath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/food_items/FoodTicTac.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/food_items/FoodTicTacCase.java" afterPath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/food_items/FoodTicTacCase.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemAradactiteArmor.java" afterPath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemAradactiteArmor.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemAradactiteAxe.java" afterPath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemAradactiteAxe.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemAradactiteHoe.java" afterPath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemAradactiteHoe.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemAradactiteIngot.java" afterPath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemAradactiteIngot.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemAradactitePick.java" afterPath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemAradactitePick.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemAradactiteShovel.java" afterPath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemAradactiteShovel.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemAradactiteSword.java" afterPath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemAradactiteSword.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemCobaltBoat.java" afterPath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemCobaltBoat.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemCobaltIngot.java" afterPath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemCobaltIngot.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemDiamondToolRod.java" afterPath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemDiamondToolRod.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemEnderDust.java" afterPath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemEnderDust.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemGoldToolRod.java" afterPath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemGoldToolRod.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemIronToolRod.java" afterPath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemIronToolRod.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemModularPickaxe.java" afterPath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemModularPickaxe.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemPlastic.java" afterPath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemPlastic.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemPureWaterBucket.java" afterPath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemPureWaterBucket.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemRetawBucket.java" afterPath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemRetawBucket.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemRuby.java" afterPath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemRuby.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemRubyArmor.java" afterPath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemRubyArmor.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemRubyAxe.java" afterPath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemRubyAxe.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemRubyHoe.java" afterPath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemRubyHoe.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemRubyPickaxe.java" afterPath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemRubyPickaxe.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemRubyShovel.java" afterPath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemRubyShovel.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemRubySword.java" afterPath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemRubySword.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemStoneToolRod.java" afterPath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemStoneToolRod.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemSuperbiumArmor.java" afterPath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemSuperbiumArmor.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemSuperbiumAxe.java" afterPath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemSuperbiumAxe.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemSuperbiumDust.java" afterPath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemSuperbiumDust.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemSuperbiumHoe.java" afterPath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemSuperbiumHoe.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemSuperbiumIngot.java" afterPath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemSuperbiumIngot.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemSuperbiumPick.java" afterPath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemSuperbiumPick.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemSuperbiumShovel.java" afterPath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemSuperbiumShovel.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemSuperbiumSword.java" afterPath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemSuperbiumSword.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/blocks/ModBlocks.java" afterPath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/blocks/ModBlocks.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ModItems.java" afterPath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ModItems.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/lib/helpers/RegisterHelper.java" afterPath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/lib/helpers/RegisterHelper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/entity/TileEntityPurifier.java" afterPath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/entity/TileEntityPurifier.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.gradle" afterPath="$PROJECT_DIR$/build.gradle" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config.xml" afterPath="$PROJECT_DIR$/config.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/main.java" afterPath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/main.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/mcmod.info" afterPath="$PROJECT_DIR$/src/main/resources/mcmod.info" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/lib/proxy/proxyCommon.java" afterPath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/lib/proxy/proxyCommon.java" />
     </list>
     <ignored path="CommuMod-1.7.10.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -62,6 +322,20 @@
                 <option name="myItemType" value="com.intellij.openapi.externalSystem.view.TasksNode$1" />
               </PATH_ELEMENT>
             </PATH>
+            <PATH>
+              <PATH_ELEMENT>
+                <option name="myItemId" value="" />
+                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.ExternalProjectsStructure$RootNode" />
+              </PATH_ELEMENT>
+              <PATH_ELEMENT>
+                <option name="myItemId" value="CommuMod-1.7.10" />
+                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.ProjectNode" />
+              </PATH_ELEMENT>
+              <PATH_ELEMENT>
+                <option name="myItemId" value="Tasks" />
+                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.TasksNode" />
+              </PATH_ELEMENT>
+            </PATH>
           </tree_state>
         </projects_view>
       </state>
@@ -72,11 +346,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="true">
+      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6765464">
-              <caret line="295" column="0" selection-start-line="295" selection-start-column="0" selection-end-line="295" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="35" column="41" selection-start-line="35" selection-start-column="41" selection-end-line="35" selection-end-column="41" />
               <folding>
                 <element signature="e#0#30#0" expanded="true" />
               </folding>
@@ -84,12 +358,65 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/main.java">
+      <file leaf-file-name="Commumod.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/Commumod.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="65" column="31" selection-start-line="65" selection-start-column="31" selection-end-line="65" selection-end-column="31" />
-              <folding />
+              <caret line="27" column="3" selection-start-line="27" selection-start-column="3" selection-end-line="27" selection-end-column="3" />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ItemRubyShovel.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemRubyShovel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.5128866">
+              <caret line="37" column="37" selection-start-line="37" selection-start-column="37" selection-end-line="37" selection-end-column="37" />
+              <folding>
+                <element signature="e#1445#1446#0" expanded="true" />
+                <element signature="e#1472#1473#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ItemSuperbiumSword.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemSuperbiumSword.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="37" column="50" selection-start-line="37" selection-start-column="50" selection-end-line="37" selection-end-column="50" />
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#1391#1392#0" expanded="false" />
+                <element signature="e#1418#1419#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ItemAradactiteShovel.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemAradactiteShovel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ModItems.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ModItems.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="193" column="62" selection-start-line="193" selection-start-column="62" selection-end-line="193" selection-end-column="62" />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -437,7 +764,7 @@
       <map>
         <entry key="$PROJECT_DIR$/../CCUUID" value="1429712037000" />
         <entry key="$PROJECT_DIR$/../CommuMod" value="1422849252000" />
-        <entry key="$PROJECT_DIR$" value="1436049958000" />
+        <entry key="$PROJECT_DIR$" value="1436064227000" />
         <entry key="$PROJECT_DIR$/../Invincible Hamster" value="1434584618000" />
         <entry key="$PROJECT_DIR$/../PeripheralsPlusPlus" value="1424235170000" />
       </map>
@@ -454,10 +781,97 @@
                       <ExternalModuleBuildClasspathPojo>
                         <option name="entries">
                           <list>
+                            <option value="$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1448-1.7.10/forgeSrc-1.7.10-10.13.4.1448-1.7.10.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.minecraft/launchwrapper/1.11/9c0592c6e1e9ea296a70948081bd4cc84dda1289/launchwrapper-1.11.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/jsr305/1.3.9/40719ea6961c0cb6afaeb6a921eaa1f6afd4cfdf/jsr305-1.3.9.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm-debug-all/5.0.3/f0f24f6666c1a15c7e202e91610476bd4ce59368/asm-debug-all-5.0.3-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm-debug-all/5.0.3/f9e364ae2a66ce2a543012a4668856e84e5dab74/asm-debug-all-5.0.3.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.typesafe.akka/akka-actor_2.11/2.3.3/9dbceb71c4fd943b4eb4607847261075a989d47f/akka-actor_2.11-2.3.3-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.typesafe.akka/akka-actor_2.11/2.3.3/ed62e9fc709ca0f2ff1a3220daa8b70a2870078e/akka-actor_2.11-2.3.3.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.typesafe/config/1.2.1/bdacf4f82ce9b29cd474bfde2e91eeb0ca623d28/config-1.2.1-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.typesafe/config/1.2.1/f771f71fdae3df231bcd54d5ca2d57f0bf93f467/config-1.2.1.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.scala-lang/scala-actors-migration_2.11/1.1.0/6bccac72dae4d369537e313d12087c1ca295e84f/scala-actors-migration_2.11-1.1.0-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.scala-lang/scala-actors-migration_2.11/1.1.0/dfa8bc42b181d5b9f1a5dd147f8ae308b893eb6f/scala-actors-migration_2.11-1.1.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.scala-lang/scala-compiler/2.11.1/b031d401aabbf7f5f725db500575da3dff90065f/scala-compiler-2.11.1-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.scala-lang/scala-compiler/2.11.1/56ea2e6c025e0821f28d73ca271218b8dd04926a/scala-compiler-2.11.1.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.scala-lang.plugins/scala-continuations-library_2.11/1.0.2/495afc106eeaa1b3367f6be0bc3768c398e4d360/scala-continuations-library_2.11-1.0.2-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.scala-lang.plugins/scala-continuations-library_2.11/1.0.2/e517c53a7e9acd6b1668c5a35eccbaa3bab9aac/scala-continuations-library_2.11-1.0.2.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.scala-lang.plugins/scala-continuations-plugin_2.11.1/1.0.2/c6f3c092ab731f3cf83fdb376ebc465a243c1f4c/scala-continuations-plugin_2.11.1-1.0.2-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.scala-lang.plugins/scala-continuations-plugin_2.11.1/1.0.2/f361a3283452c57fa30c1ee69448995de23c60f7/scala-continuations-plugin_2.11.1-1.0.2.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.scala-lang/scala-library/2.11.1/8355e4b6841f772a287167666bad6e9860ac4d3c/scala-library-2.11.1-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.scala-lang/scala-library/2.11.1/e11da23da3eabab9f4777b9220e60d44c1aab6a/scala-library-2.11.1.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.scala-lang/scala-parser-combinators_2.11/1.0.1/f05d7345bf5a58924f2837c6c1f4d73a938e1ff0/scala-parser-combinators_2.11-1.0.1.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.scala-lang/scala-reflect/2.11.1/d4c5628e197a0d6af8e9b93a9be32190c547bc8a/scala-reflect-2.11.1-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.scala-lang/scala-reflect/2.11.1/6580347e61cc7f8e802941e7fde40fa83b8badeb/scala-reflect-2.11.1.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.scala-lang/scala-swing_2.11/1.0.1/b1cdd92bd47b1e1837139c1c53020e86bb9112ae/scala-swing_2.11-1.0.1.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.scala-lang/scala-xml_2.11/1.0.2/7a80ec00aec122fba7cd4e0d4cdd87ff7e4cb6d0/scala-xml_2.11-1.0.2.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.sf.jopt-simple/jopt-simple/4.5/3cf4c3c1a6f565419bfd53a0e564d6fb128deeea/jopt-simple-4.5-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.sf.jopt-simple/jopt-simple/4.5/6065cc95c661255349c1d0756657be17c29a4fd3/jopt-simple-4.5.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/lzma/lzma/0.0.1/521616dc7487b42bef0e803bd2fa3faf668101d7/lzma-0.0.1.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.mojang/realms/1.3.5/807ae355ee63583becd7ea60e76aab1532bb42e/realms-1.3.5.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-compress/1.8.1/3caea4421428752206c7a94c3e3097f0c47f1bb8/commons-compress-1.8.1-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-compress/1.8.1/a698750c16740fd5b3871425f4cb3bbaa87f529d/commons-compress-1.8.1.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpclient/4.3.3/65cba03c4f6207f2885f88206fcf52c53f8d111b/httpclient-4.3.3-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpclient/4.3.3/18f4247ff4572a074444572cee34647c43e7c9c7/httpclient-4.3.3.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/commons-logging/commons-logging/1.1.3/28bb0405fddaf04f15058fbfbe01fe2780d7d3b6/commons-logging-1.1.3-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/commons-logging/commons-logging/1.1.3/f6f66e966c70a83ffbdb6f17a0919eaf7c8aca7f/commons-logging-1.1.3.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpcore/4.3.2/4809f38359edeea9487f747e09aa58ec8d3a54c5/httpcore-4.3.2-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpcore/4.3.2/31fbbff1ddbf98f3aa7377c94d33b0447c646b6e/httpcore-4.3.2.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/java3d/vecmath/1.3.1/a0ae4f51da409fa0c20fa0ca59e6bbc9413ae71d/vecmath-1.3.1.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.sf.trove4j/trove4j/3.0.3/109c5be93362e6e651e417c51d1863477a22969c/trove4j-3.0.3-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.sf.trove4j/trove4j/3.0.3/42ccaf4761f0dfdfa805c9e340d99a755907e2dd/trove4j-3.0.3.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.ibm.icu/icu4j-core-mojang/51.2/63d216a9311cca6be337c1e458e587f99d382b84/icu4j-core-mojang-51.2.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.paulscode/codecjorbis/20101023/c73b5636faf089d9f00e8732a829577de25237ee/codecjorbis-20101023.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.paulscode/codecwav/20101023/12f031cfe88fef5c1dd36c563c0a3a69bd7261da/codecwav-20101023.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.paulscode/libraryjavasound/20101123/5c5e304366f75f9eaa2e8cca546a1fb6109348b3/libraryjavasound-20101123.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.paulscode/librarylwjglopenal/20100824/73e80d0794c39665aec3f62eee88ca91676674ef/librarylwjglopenal-20100824.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.paulscode/soundsystem/20120107/419c05fe9be71f792b2d76cfc9b67f1ed0fec7f6/soundsystem-20120107.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.netty/netty-all/4.0.10.Final/9a214bc1e6350ead5234e4dd5eb3a2a802d1c658/netty-all-4.0.10.Final-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.netty/netty-all/4.0.10.Final/9e50bd52ffe257a0e2cd8d971688d6ce7d174325/netty-all-4.0.10.Final.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.guava/guava/17.0/7ca0efbeb87ca845b5d7a0ac9c21a4b7b95f7b28/guava-17.0-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.guava/guava/17.0/9c6ef172e8de35fd8d4d8783e4821e57cdef7445/guava-17.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-lang3/3.3.2/d2a489573c0ed2c4942b3660decad5d65087b406/commons-lang3-3.3.2-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-lang3/3.3.2/90a3822c38ec8c996e84c16a3477ef632cbc87a3/commons-lang3-3.3.2.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/commons-io/commons-io/2.4/f2d8698c46d1167ff24b06a840a87d91a02db891/commons-io-2.4-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/commons-io/commons-io/2.4/b1b6ea3b7e4aa4f492509a4952029cd8e48019ad/commons-io-2.4.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/commons-codec/commons-codec/1.9/3f15fff45d57656685abfee9e8302bf14580044c/commons-codec-1.9-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/commons-codec/commons-codec/1.9/9ce04e34240f674bc72680f8b843b1457383161a/commons-codec-1.9.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.java.jinput/jinput/2.0.5/82604cfeb87b9ab70ed70aa19a137de8ceb21504/jinput-2.0.5-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.java.jinput/jinput/2.0.5/39c7796b469a600f72380316f6b1f11db6c2c7c4/jinput-2.0.5.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.java.jutils/jutils/1.0.0/d18678a00b216863206a1bb6190507e02a32971b/jutils-1.0.0-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.java.jutils/jutils/1.0.0/e12fe1fda814bd348c1579329c86943d2cd3c6a6/jutils-1.0.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.2.4/a6dc5db8a12928e583bd3f23e72d3ab611ecd58f/gson-2.2.4-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.2.4/a60a5e993c98c864010053cb901b7eab25306568/gson-2.2.4.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.mojang/authlib/1.5.16/ef1582b11fd0943d069cdcb72e99008ac209a283/authlib-1.5.16.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.logging.log4j/log4j-api/2.0-beta9/c6682b8a47ddd9f29108838aed0dc8e0ffdedf68/log4j-api-2.0-beta9-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.logging.log4j/log4j-api/2.0-beta9/1dd66e68cccd907880229f9e2de1314bd13ff785/log4j-api-2.0-beta9.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.logging.log4j/log4j-core/2.0-beta9/c7da50fd52d6ee6991a0e16e2df1431f7656a7f4/log4j-core-2.0-beta9-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.logging.log4j/log4j-core/2.0-beta9/678861ba1b2e1fccb594bb0ca03114bb05da9695/log4j-core-2.0-beta9.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.lwjgl.lwjgl/lwjgl/2.9.1/ccedb5b6f96913c6f78bc10249e747ded90baa51/lwjgl-2.9.1-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.lwjgl.lwjgl/lwjgl/2.9.1/f58c5aabcef0e41718a564be9f8e412fff8db847/lwjgl-2.9.1.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.lwjgl.lwjgl/lwjgl_util/2.9.1/9f350d8a760247f2ae88e996b55f8f7121346c79/lwjgl_util-2.9.1-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.lwjgl.lwjgl/lwjgl_util/2.9.1/290d7ba8a1bd9566f5ddf16ad06f09af5ec9b20e/lwjgl_util-2.9.1.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/tv.twitch/twitch/5.16/1f55f009c61637c10c0acfb8b5ffc600f30044b4/twitch-5.16.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.scala-lang/scala-actors/2.11.0/e1dfa274766d5278166b0d660294fe96396693b2/scala-actors-2.11.0-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.scala-lang/scala-actors/2.11.0/8ccfb6541de179bb1c4d45cf414acee069b7f78b/scala-actors-2.11.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.scala-lang.modules/scala-xml_2.11/1.0.2/312c3557d1ca0b34820f3b3fc5404a47936ceb26/scala-xml_2.11-1.0.2-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.scala-lang.modules/scala-xml_2.11/1.0.2/820fbca7e524b530fdadc594c39d49a21ea0337e/scala-xml_2.11-1.0.2.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.scala-lang.modules/scala-parser-combinators_2.11/1.0.1/34d013c02d0b73794ba2911552896dd9c00f34c3/scala-parser-combinators_2.11-1.0.1-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.scala-lang.modules/scala-parser-combinators_2.11/1.0.1/f05d7345bf5a58924f2837c6c1f4d73a938e1ff0/scala-parser-combinators_2.11-1.0.1.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.java.jinput/jinput-platform/2.0.5/7ff832a6eb9ab6a767f1ade2b548092d0fa64795/jinput-platform-2.0.5-natives-linux.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.java.jinput/jinput-platform/2.0.5/385ee093e01f587f30ee1c8a2ee7d408fd732e16/jinput-platform-2.0.5-natives-windows.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.java.jinput/jinput-platform/2.0.5/53f9c919f34d2ca9de8c51fc4e1e8282029a9232/jinput-platform-2.0.5-natives-osx.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/tv.twitch/twitch-platform/5.16/7c6affe439099806a4f552da14c42f9d643d8b23/twitch-platform-5.16-natives-windows-32.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/tv.twitch/twitch-platform/5.16/39d0c3d363735b4785598e0e7fbf8297c706a9f9/twitch-platform-5.16-natives-windows-64.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/tv.twitch/twitch-platform/5.16/62503ee712766cf77f97252e5902786fd834b8c5/twitch-platform-5.16-natives-osx.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/tv.twitch/twitch-external-platform/4.5/18215140f010c05b9f86ef6f0f8871954d2ccebf/twitch-external-platform-4.5-natives-windows-32.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/tv.twitch/twitch-external-platform/4.5/c3cde57891b935d41b6680a9c5e1502eeab76d86/twitch-external-platform-4.5-natives-windows-64.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.lwjgl.lwjgl/lwjgl-platform/2.9.1/4c517eca808522457dd95ee8fc1fbcdbb602efbe/lwjgl-platform-2.9.1-natives-windows.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.lwjgl.lwjgl/lwjgl-platform/2.9.1/aa9aae879af8eb378e22cfc64db56ec2ca9a44d1/lwjgl-platform-2.9.1-natives-linux.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.lwjgl.lwjgl/lwjgl-platform/2.9.1/2d12c83fdfbc04ecabf02c7bc8cc54d034f0daac/lwjgl-platform-2.9.1-natives-osx.jar" />
                             <option value="$MODULE_DIR$/unresolved dependency - codechicken NotEnoughItems 1.7.10-1.0.3.74" />
                             <option value="$MODULE_DIR$/unresolved dependency - codechicken CodeChickenLib 1.7.10-1.1.1.99" />
                             <option value="$MODULE_DIR$/unresolved dependency - codechicken CodeChickenCore 1.7.10-1.0.4.29" />
-                            <option value="$MODULE_DIR$/unresolved dependency -  forgeBin 1.7.10-10.13.2.1230" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.minecraftforge.gradle/ForgeGradle/1.2-SNAPSHOT/824a082566ff58c10ad2ec7fd927634da4f42bfc/ForgeGradle-1.2-SNAPSHOT.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/de.oceanlabs.mcp/RetroGuard/3.6.6/ffd69fcab06b928cf76144f08b7209ccf0656b6d/RetroGuard-3.6.6.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.sf.opencsv/opencsv/2.3/c23708cdb9e80a144db433e23344a788a1fd6599/opencsv-2.3.jar" />
@@ -467,11 +881,8 @@
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.cloudbees/diff4j/1.1/645329c0d4ebbea5f73758929c6e63bab9e77204/diff4j-1.1.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.md-5/SpecialSource/1.7.3/43f9434f08b3647affccfd151a9b437e07e6bff0/SpecialSource-1.7.3.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.tony19/named-regexp/0.2.3/370846bf3837952d981deb8f91e81da8c65b09e1/named-regexp-0.2.3.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm-debug-all/5.0.3/f9e364ae2a66ce2a543012a4668856e84e5dab74/asm-debug-all-5.0.3.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.nothome/javaxdelta/2.0.1/d4f5d077f1b15c6f67595015d69572303ad3f66d/javaxdelta-2.0.1.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.minecraftforge.srg2source/Srg2Source/3.2-SNAPSHOT/1b66b012733f12d052e18b0b71581acfdca53ee8/Srg2Source-3.2-SNAPSHOT.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpclient/4.3.3/18f4247ff4572a074444572cee34647c43e7c9c7/httpclient-4.3.3.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.2.4/a60a5e993c98c864010053cb901b7eab25306568/gson-2.2.4.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.guava/guava/18.0/cce0823396aa693798f8882e64213b1772032b09/guava-18.0.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpmime/4.3.3/e02368d7b56c0c376f227378a4f77de62864d020/httpmime-4.3.3.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/de.oceanlabs.mcp/mcinjector/3.2-SNAPSHOT/edce969ee85a6402825b1e5d23e67b645852e912/mcinjector-3.2-SNAPSHOT.jar" />
@@ -483,8 +894,6 @@
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.equinox/common/3.6.200-v20130402-1505/5354112138f6e420a8152fc9526b15f25ed5f163/common-3.6.200-v20130402-1505.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.text/org.eclipse.text/3.5.101/54a442442c575e6809c18f7dfc848755a58ab955/org.eclipse.text-3.5.101.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.jgit/org.eclipse.jgit/3.2.0.201312181205-r/4b99546e8c8a04597b7a4564003e3b554ec12b5c/org.eclipse.jgit-3.2.0.201312181205-r.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpcore/4.3.2/31fbbff1ddbf98f3aa7377c94d33b0447c646b6e/httpcore-4.3.2.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/commons-logging/commons-logging/1.1.3/f6f66e966c70a83ffbdb6f17a0919eaf7c8aca7f/commons-logging-1.1.3.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/commons-codec/commons-codec/1.6/b7f0fc8f61ecadeb3695f0b9464755eee44374d4/commons-codec-1.6.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.equinox/registry/3.5.400-v20140428-1507/5f933a7fbea4c96c74c50b4d453e59b3185e6aec/registry-3.5.400-v20140428-1507.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.core.runtime/compatibility/3.1.200-v20070502/8b371f1ce208f82314b6afe9cad768d87d53142c/compatibility-3.1.200-v20070502.jar" />
@@ -611,12 +1020,19 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/config.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemRubyShovel.java" />
-        <option value="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/main.java" />
-        <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/lib/Reference.java" />
+        <option value="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/main.java" />
+        <option value="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/Commumod.java" />
+        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/main/resources/mcmod.info" />
+        <option value="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/entity/TileEntityPurifier.java" />
+        <option value="$PROJECT_DIR$/build.gradle" />
+        <option value="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemSuperbiumSword.java" />
+        <option value="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/lib/helpers/RegisterHelper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ModItems.java" />
+        <option value="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemSuperbiumArmor.java" />
+        <option value="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemRubyShovel.java" />
       </list>
     </option>
   </component>
@@ -659,6 +1075,8 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -751,28 +1169,12 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CommuMod-1.7.10" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CommuMod-1.7.10" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
+              <option name="myItemId" value="items" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -788,6 +1190,7 @@
     <property name="recentsLimit" value="5" />
     <property name="restartRequiresConfirmation" value="true" />
     <property name="dynamic.classpath" value="false" />
+    <property name="FullScreen" value="false" />
   </component>
   <component name="RunManager" selected="Application.Minecraft Client">
     <configuration default="false" name="CommuMod-1.7.10 [setupDecompWorkspace]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
@@ -1068,7 +1471,13 @@
       <option name="project" value="LOCAL" />
       <updated>1436054931873</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Some gradle tweaks and version number fixes&#10;- Introduced bug of mod not loading in development environment&#10;- Fixed some readme badges">
+      <created>1436062191677</created>
+      <option name="number" value="00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1436062191677</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1085,7 +1494,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329602" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298611" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1097,11 +1506,19 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329602" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette " active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -1109,7 +1526,9 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="New Branch for bugfixes" />
     <MESSAGE value="Fix gradle problems" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix gradle problems" />
+    <MESSAGE value="Some gradle tweaks and version number fixes&#10;- Introduced bug of mod not loading in development environment&#10;- Fixed some readme badges" />
+    <option name="LAST_COMMIT_MESSAGE" value="Some gradle tweaks and version number fixes&#10;- Introduced bug of mod not loading in development environment&#10;- Fixed some readme badges" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1120,6 +1539,97 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="35" column="41" selection-start-line="35" selection-start-column="41" selection-end-line="35" selection-end-column="41" />
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/Commumod.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="27" column="3" selection-start-line="27" selection-start-column="3" selection-end-line="27" selection-end-column="3" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemRubyShovel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#1445#1446#0" expanded="true" />
+            <element signature="e#1472#1473#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemSuperbiumSword.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="37" column="50" selection-start-line="37" selection-start-column="50" selection-end-line="37" selection-end-column="50" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#1391#1392#0" expanded="false" />
+            <element signature="e#1418#1419#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemAradactiteShovel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ModItems.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="193" column="62" selection-start-line="193" selection-start-column="62" selection-end-line="193" selection-end-column="62" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="295" column="0" selection-start-line="295" selection-start-column="0" selection-end-line="295" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/Commumod.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="34" column="32" selection-start-line="34" selection-start-column="32" selection-end-line="34" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1152,15 +1662,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.189433">
           <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemRubyShovel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.78350514">
-          <caret line="39" column="4" selection-start-line="39" selection-start-column="4" selection-end-line="39" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1168,15 +1669,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-3.4652061">
           <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/lib/helpers/RegisterHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1188,18 +1680,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mcmod.info">
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/lib/proxy/proxyClient.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.13530928">
-          <caret line="5" column="18" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
-          <folding />
+        <state vertical-scroll-proportion="0.21649484">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/main.java">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="65" column="31" selection-start-line="65" selection-start-column="31" selection-end-line="65" selection-end-column="31" />
+        <state vertical-scroll-proportion="0.16304348">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1208,16 +1699,128 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="1103" selection-start-line="0" selection-start-column="1103" selection-end-line="0" selection-end-column="1103" />
-          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="MarkdownPreviewEditor">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mcmod.info">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.739726">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/lib/proxy/proxyCommon.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="49" column="20" selection-start-line="49" selection-start-column="20" selection-end-line="49" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/client/container/ContainerPurifier.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.21907216">
+          <caret line="28" column="32" selection-start-line="28" selection-start-column="32" selection-end-line="28" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/blocks/BlockPurifier.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.21907216">
+          <caret line="175" column="91" selection-start-line="175" selection-start-column="91" selection-end-line="175" selection-end-column="91" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/entity/TileEntityPurifier.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.78350514">
+          <caret line="402" column="0" selection-start-line="402" selection-start-column="0" selection-end-line="402" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6765464">
-          <caret line="295" column="0" selection-start-line="295" selection-start-column="0" selection-end-line="295" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="35" column="41" selection-start-line="35" selection-start-column="41" selection-end-line="35" selection-end-column="41" />
           <folding>
             <element signature="e#0#30#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/lib/helpers/RegisterHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="3.4097939">
+          <caret line="136" column="50" selection-start-line="136" selection-start-column="50" selection-end-line="136" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/Commumod.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="27" column="3" selection-start-line="27" selection-start-column="3" selection-end-line="27" selection-end-column="3" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.4.1448-1.7.10/forgeSrc-1.7.10-10.13.4.1448-1.7.10-sources.jar!/net/minecraft/potion/PotionEffect.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33247423">
+          <caret line="36" column="11" selection-start-line="36" selection-start-column="11" selection-end-line="36" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemSuperbiumArmor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.48582473">
+          <caret line="31" column="9" selection-start-line="31" selection-start-column="9" selection-end-line="31" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemAradactiteShovel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ModItems.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="193" column="62" selection-start-line="193" selection-start-column="62" selection-end-line="193" selection-end-column="62" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemSuperbiumSword.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="37" column="50" selection-start-line="37" selection-start-column="50" selection-end-line="37" selection-end-column="50" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#1391#1392#0" expanded="false" />
+            <element signature="e#1418#1419#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemRubyShovel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5128866">
+          <caret line="37" column="37" selection-start-line="37" selection-start-column="37" selection-end-line="37" selection-end-column="37" />
+          <folding>
+            <element signature="e#1445#1446#0" expanded="true" />
+            <element signature="e#1472#1473#0" expanded="true" />
           </folding>
         </state>
       </provider>

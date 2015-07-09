@@ -3,10 +3,10 @@ package io.cyb3rwarri0r8.commumod.items;
 
 import cpw.mods.fml.common.registry.EntityRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
+import io.cyb3rwarri0r8.commumod.Commumod;
 import io.cyb3rwarri0r8.commumod.blocks.ModBlocks;
 import io.cyb3rwarri0r8.commumod.entity.EntityCobaltBoat;
 import io.cyb3rwarri0r8.commumod.lib.helpers.RegisterHelper;
-import io.cyb3rwarri0r8.commumod.main;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
@@ -193,12 +193,13 @@ public class ModItems {
         // ******************************************************************************
         aradactiteShovel = new ItemAradactiteShovel(aradactiteToolMaterial);
         RegisterHelper.registerItem(aradactiteShovel);
-        GameRegistry.addRecipe(new ItemStack(aradactiteShovel),
+        /*GameRegistry.addRecipe(new ItemStack(aradactiteShovel),
                 "X",
                 "Y",
                 "Y",
                 'X', aradactiteIngot, 'Y', Items.stick
-        );
+        );*/
+        RegisterHelper.regToolRecipe(aradactiteShovel, aradactiteIngot, Items.stick, "shovel");
         // ******************************************************************************
         aradactiteHoe = new ItemAradactiteHoe(aradactiteToolMaterial);
         RegisterHelper.registerItem(aradactiteHoe);
@@ -286,7 +287,7 @@ public class ModItems {
 
         cobaltBoat = new ItemCobaltBoat().setUnlocalizedName("cobaltBoat");
         RegisterHelper.registerItem(cobaltBoat);
-        EntityRegistry.registerModEntity(EntityCobaltBoat.class, "cobaltBoat", EntityRegistry.findGlobalUniqueEntityId(), main.instance, 80, 3, false);
+        EntityRegistry.registerModEntity(EntityCobaltBoat.class, "cobaltBoat", EntityRegistry.findGlobalUniqueEntityId(), Commumod.instance, 80, 3, false);
         GameRegistry.addRecipe(new ItemStack(cobaltBoat, 1),
                 "X X",
                 "XXX",
