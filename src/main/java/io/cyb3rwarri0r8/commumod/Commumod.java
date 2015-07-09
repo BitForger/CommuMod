@@ -27,9 +27,7 @@ import net.minecraftforge.common.config.Configuration;
 
 @Mod(modid = Reference.MODID, version = Reference.VERSION, guiFactory = Reference.GuiFactoryClass)
 
-
-
-public class main
+public class Commumod
 {
     @SidedProxy(clientSide="io.cyb3rwarri0r8.commumod.lib.proxy.proxyClient", serverSide="io.cyb3rwarri0r8.commumod.lib.proxy.proxyCommon")
     public static proxyCommon proxy;
@@ -40,7 +38,7 @@ public class main
     public static Configuration configFile;
     // Mod Instance
     @Mod.Instance(Reference.MODID)
-    public static main instance;
+    public static Commumod instance;
 
     @Mod.EventHandler
     public void preinit(FMLPreInitializationEvent event) {
