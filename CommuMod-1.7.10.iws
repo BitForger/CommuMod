@@ -2,273 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5327bc5a-db2b-470d-b92b-c7ad3f22de35" name="Default" comment="Some gradle tweaks and version number fixes&#10;- Introduced bug of mod not loading in development environment&#10;- Fixed some readme badges">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CommuMod-1.7.10.iml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/api/CoFHAPIProps.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/api/block/IBlockAppearance.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/api/block/IBlockConfigGui.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/api/block/IBlockDebug.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/api/block/IBlockInfo.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/api/block/IDismantleable.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/api/block/package-info.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/api/core/ICustomInventory.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/api/core/IInitializer.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/api/core/package-info.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/api/energy/EnergyStorage.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/api/energy/IEnergyConnection.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/api/energy/IEnergyContainerItem.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/api/energy/IEnergyHandler.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/api/energy/IEnergyProvider.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/api/energy/IEnergyReceiver.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/api/energy/IEnergyStorage.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/api/energy/ItemEnergyContainer.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/api/energy/TileEnergyHandler.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/api/energy/package-info.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/api/fluid/ITankContainerBucketable.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/api/fluid/package-info.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/api/inventory/IInventoryConnection.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/api/inventory/IInventoryHandler.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/api/inventory/IInventoryRetainer.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/api/inventory/package-info.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/api/item/IAugmentItem.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/api/item/IEmpowerableItem.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/api/item/IInventoryContainerItem.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/api/item/IToolHammer.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/api/item/package-info.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/api/modhelpers/ThaumcraftHelper.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/api/modhelpers/ThermalExpansionHelper.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/api/modhelpers/package-info.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/api/package-info.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/api/tileentity/IAugmentable.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/api/tileentity/IEnergyInfo.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/api/tileentity/IPlacedTile.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/api/tileentity/IPortableData.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/api/tileentity/IReconfigurableFacing.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/api/tileentity/IReconfigurableSides.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/api/tileentity/IRedstoneCache.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/api/tileentity/IRedstoneControl.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/api/tileentity/ISecurable.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/api/tileentity/ISidedTexture.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/api/tileentity/ITileInfo.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/api/tileentity/package-info.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/api/transport/IEnderAttuned.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/api/transport/IEnderEnergyHandler.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/api/transport/IEnderFluidHandler.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/api/transport/IEnderItemHandler.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/api/transport/IItemDuct.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/api/transport/RegistryEnderAttuned.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/api/transport/package-info.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/api/world/IFeatureGenerator.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/api/world/IFeatureHandler.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/api/world/IFeatureParser.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/api/world/IGeneratorParser.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/api/world/package-info.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/CoFHLibProps.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/audio/ISoundSource.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/audio/SoundBase.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/audio/SoundTile.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/audio/package-info.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/gui/GuiBase.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/gui/GuiBook.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/gui/GuiColor.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/gui/GuiProps.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/gui/TabTracker.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/gui/container/ContainerFalse.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/gui/container/ContainerInventoryItem.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/gui/container/CustomInventoryWrapper.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/gui/container/IAugmentableContainer.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/gui/container/InventoryContainerItemWrapper.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/gui/container/package-info.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/gui/element/ElementBase.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/gui/element/ElementButton.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/gui/element/ElementButtonManaged.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/gui/element/ElementButtonOption.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/gui/element/ElementDualScaled.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/gui/element/ElementEnergyStored.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/gui/element/ElementFluid.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/gui/element/ElementFluidTank.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/gui/element/ElementIcon.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/gui/element/ElementListBox.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/gui/element/ElementSimple.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/gui/element/ElementSimpleToolTip.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/gui/element/ElementSlider.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/gui/element/ElementTextField.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/gui/element/TabBase.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/gui/element/listbox/IListBoxElement.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/gui/element/listbox/ListBoxElementText.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/gui/element/listbox/SliderHorizontal.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/gui/element/listbox/SliderVertical.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/gui/element/listbox/package-info.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/gui/element/package-info.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/gui/package-info.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/gui/slot/ISlotValidator.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/gui/slot/SlotAcceptAssignable.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/gui/slot/SlotAcceptInsertable.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/gui/slot/SlotAcceptValid.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/gui/slot/SlotCraftingLocked.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/gui/slot/SlotCustomInventory.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/gui/slot/SlotEnergy.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/gui/slot/SlotFalseCopy.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/gui/slot/SlotInvisible.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/gui/slot/SlotPotion.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/gui/slot/SlotPotionIngredient.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/gui/slot/SlotRemoveOnly.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/gui/slot/SlotSpecificItem.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/gui/slot/SlotValidated.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/gui/slot/SlotViewOnly.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/gui/slot/package-info.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/inventory/ComparableItemStack.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/inventory/ComparableItemStackNBT.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/inventory/ComparableItemStackSafe.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/inventory/IInventoryManager.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/inventory/InventoryCraftingCustom.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/inventory/InventoryCraftingFalse.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/inventory/InventoryManager.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/inventory/InventoryManagerSided.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/inventory/InventoryManagerStandard.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/inventory/package-info.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/package-info.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/render/IFluidOverlayItem.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/render/RenderFluidOverlayItem.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/render/RenderHelper.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/render/RenderItemAsBlock.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/render/package-info.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/render/particle/EntityDropParticleFX.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/render/particle/package-info.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/util/ArrayHashList.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/util/BlockWrapper.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/util/ComparableItem.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/util/ItemWrapper.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/util/LinkedHashList.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/util/OreDictionaryProxy.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/util/Rectangle4i.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/util/RegistryUtils.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/util/TimeTracker.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/util/UtilLiquidMover.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/util/WeightedRandomBlock.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/util/WeightedRandomItemStack.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/util/WeightedRandomNBTTag.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/util/WeightedRandomWorldGenerator.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/util/helpers/AugmentHelper.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/util/helpers/BlockHelper.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/util/helpers/ColorHelper.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/util/helpers/DamageHelper.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/util/helpers/EnergyHelper.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/util/helpers/EntityHelper.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/util/helpers/FireworksHelper.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/util/helpers/FluidHelper.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/util/helpers/HolidayHelper.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/util/helpers/InventoryHelper.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/util/helpers/ItemHelper.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/util/helpers/MathHelper.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/util/helpers/RedstoneControlHelper.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/util/helpers/SecurityHelper.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/util/helpers/ServerHelper.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/util/helpers/SoundHelper.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/util/helpers/StringHelper.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/util/helpers/package-info.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/util/package-info.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/util/position/Area.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/util/position/BlockPosition.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/util/position/ChunkCoord.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/util/position/IRotateableTile.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/util/position/package-info.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/world/WorldGenAdvLakes.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/world/WorldGenBoulder.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/world/WorldGenDecoration.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/world/WorldGenDungeon.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/world/WorldGenGeode.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/world/WorldGenMassiveTree.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/world/WorldGenMinableCluster.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/world/WorldGenMinableLargeVein.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/world/WorldGenMulti.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/world/WorldGenSmallTree.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/world/WorldGenSparseMinableCluster.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/world/WorldGenSpike.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/world/WorldGenStalactite.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/world/WorldGenStalagmite.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/world/biome/BiomeDictionaryArbiter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/world/biome/BiomeInfo.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/world/biome/BiomeInfoRarity.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/world/biome/BiomeInfoSet.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/world/feature/FeatureBase.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/world/feature/FeatureGenCave.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/world/feature/FeatureGenLargeVein.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/world/feature/FeatureGenNormal.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/world/feature/FeatureGenSurface.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/world/feature/FeatureGenTopBlock.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/world/feature/FeatureGenUnderfluid.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/world/feature/FeatureGenUniform.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/world/feature/package-info.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/cofh/lib/world/package-info.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/resources/cofhlib_at.cfg" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/main.java" afterPath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/Commumod.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.0/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/2.0/taskArtifacts/cache.properties.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.0/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/2.0/taskArtifacts/fileHashes.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.0/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.0/taskArtifacts/fileSnapshots.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.0/taskArtifacts/outputFileStates.bin" afterPath="$PROJECT_DIR$/.gradle/2.0/taskArtifacts/outputFileStates.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.0/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/2.0/taskArtifacts/taskArtifacts.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/blocks/BlockAradactiteBlock.java" afterPath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/blocks/BlockAradactiteBlock.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/blocks/BlockAradactiteOre.java" afterPath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/blocks/BlockAradactiteOre.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/blocks/BlockCobaltOre.java" afterPath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/blocks/BlockCobaltOre.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/blocks/BlockHydrogenTNT.java" afterPath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/blocks/BlockHydrogenTNT.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/blocks/BlockMinerShack.java" afterPath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/blocks/BlockMinerShack.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/blocks/BlockOfApple.java" afterPath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/blocks/BlockOfApple.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/blocks/BlockPurifier.java" afterPath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/blocks/BlockPurifier.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/blocks/BlockRuby.java" afterPath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/blocks/BlockRuby.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/blocks/BlockRubyOre.java" afterPath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/blocks/BlockRubyOre.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/blocks/BlockSuperbiumBlock.java" afterPath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/blocks/BlockSuperbiumBlock.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/blocks/BlockSuperbiumOre.java" afterPath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/blocks/BlockSuperbiumOre.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/blocks/BlockSuperbiumTNT.java" afterPath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/blocks/BlockSuperbiumTNT.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/blocks/BlockSuperbiumTorch.java" afterPath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/blocks/BlockSuperbiumTorch.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CommuMod-1.7.10.ipr" afterPath="$PROJECT_DIR$/CommuMod-1.7.10.ipr" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CommuMod-1.7.10.iws" afterPath="$PROJECT_DIR$/CommuMod-1.7.10.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/entity/EntityAradactiteGolem.java" afterPath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/entity/EntityAradactiteGolem.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/entity/EntitySuperbiumGolem.java" afterPath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/entity/EntitySuperbiumGolem.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/food_items/FoodSuperCarrot.java" afterPath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/food_items/FoodSuperCarrot.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/food_items/FoodTicTac.java" afterPath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/food_items/FoodTicTac.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/food_items/FoodTicTacCase.java" afterPath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/food_items/FoodTicTacCase.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemAradactiteArmor.java" afterPath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemAradactiteArmor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemAradactiteAxe.java" afterPath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemAradactiteAxe.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemAradactiteHoe.java" afterPath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemAradactiteHoe.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemAradactiteIngot.java" afterPath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemAradactiteIngot.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemAradactitePick.java" afterPath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemAradactitePick.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemAradactiteShovel.java" afterPath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemAradactiteShovel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemAradactiteSword.java" afterPath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemAradactiteSword.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemCobaltBoat.java" afterPath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemCobaltBoat.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemCobaltIngot.java" afterPath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemCobaltIngot.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemDiamondToolRod.java" afterPath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemDiamondToolRod.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemEnderDust.java" afterPath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemEnderDust.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemGoldToolRod.java" afterPath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemGoldToolRod.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemIronToolRod.java" afterPath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemIronToolRod.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemModularPickaxe.java" afterPath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemModularPickaxe.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemPlastic.java" afterPath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemPlastic.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemPureWaterBucket.java" afterPath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemPureWaterBucket.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemRetawBucket.java" afterPath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemRetawBucket.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemRuby.java" afterPath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemRuby.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemRubyArmor.java" afterPath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemRubyArmor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemRubyAxe.java" afterPath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemRubyAxe.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemRubyHoe.java" afterPath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemRubyHoe.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemRubyPickaxe.java" afterPath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemRubyPickaxe.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemRubyShovel.java" afterPath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemRubyShovel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemRubySword.java" afterPath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemRubySword.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemStoneToolRod.java" afterPath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemStoneToolRod.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemSuperbiumArmor.java" afterPath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemSuperbiumArmor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemSuperbiumAxe.java" afterPath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemSuperbiumAxe.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemSuperbiumDust.java" afterPath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemSuperbiumDust.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemSuperbiumHoe.java" afterPath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemSuperbiumHoe.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemSuperbiumIngot.java" afterPath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemSuperbiumIngot.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemSuperbiumPick.java" afterPath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemSuperbiumPick.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemSuperbiumShovel.java" afterPath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemSuperbiumShovel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemSuperbiumSword.java" afterPath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemSuperbiumSword.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/blocks/ModBlocks.java" afterPath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/blocks/ModBlocks.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ModItems.java" afterPath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ModItems.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/lib/helpers/RegisterHelper.java" afterPath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/lib/helpers/RegisterHelper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/entity/TileEntityPurifier.java" afterPath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/entity/TileEntityPurifier.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.gradle" afterPath="$PROJECT_DIR$/build.gradle" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config.xml" afterPath="$PROJECT_DIR$/config.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/mcmod.info" afterPath="$PROJECT_DIR$/src/main/resources/mcmod.info" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/lib/proxy/proxyCommon.java" afterPath="$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/lib/proxy/proxyCommon.java" />
     </list>
     <ignored path="CommuMod-1.7.10.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -350,9 +86,10 @@
         <entry file="file://$PROJECT_DIR$/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="35" column="41" selection-start-line="35" selection-start-column="41" selection-end-line="35" selection-end-column="41" />
+              <caret line="32" column="41" selection-start-line="32" selection-start-column="41" selection-end-line="32" selection-end-column="41" />
               <folding>
                 <element signature="e#0#30#0" expanded="true" />
+                <marker date="1436414006000" expanded="true" signature="468:484" placeholder="/*...*/" />
               </folding>
             </state>
           </provider>
@@ -363,9 +100,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="27" column="3" selection-start-line="27" selection-start-column="3" selection-end-line="27" selection-end-column="3" />
-              <folding>
-                <element signature="imports" expanded="false" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -373,11 +108,11 @@
       <file leaf-file-name="ItemRubyShovel.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemRubyShovel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5128866">
-              <caret line="37" column="37" selection-start-line="37" selection-start-column="37" selection-end-line="37" selection-end-column="37" />
+            <state vertical-scroll-proportion="0.45876288">
+              <caret line="28" column="63" selection-start-line="28" selection-start-column="63" selection-end-line="28" selection-end-column="63" />
               <folding>
-                <element signature="e#1445#1446#0" expanded="true" />
-                <element signature="e#1472#1473#0" expanded="true" />
+                <element signature="e#1195#1196#0" expanded="true" />
+                <element signature="e#1222#1223#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -388,11 +123,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="37" column="50" selection-start-line="37" selection-start-column="50" selection-end-line="37" selection-end-column="50" />
-              <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#1391#1392#0" expanded="false" />
-                <element signature="e#1418#1419#0" expanded="false" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -402,9 +133,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="false" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -414,9 +143,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="193" column="62" selection-start-line="193" selection-start-column="62" selection-end-line="193" selection-end-column="62" />
-              <folding>
-                <element signature="imports" expanded="false" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -1075,7 +802,6 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -1175,6 +901,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1392,6 +1119,19 @@
       <listeners />
       <method />
     </configuration>
+    <configuration default="true" type="executeSpecs" factoryName="Gauge Execution">
+      <setting name="environment" value="" />
+      <setting name="specsToExecute" value="" />
+      <setting name="tags" value="" />
+      <setting name="parallelNodes" value="" />
+      <setting name="execInParallel" value="false" />
+      <setting name="programParameters" value="" />
+      <setting name="workingDirectory" value="" />
+      <setting name="moduleName" value="" />
+      <envMap />
+      <setting name="rowsRange" value="" />
+      <method />
+    </configuration>
     <configuration default="false" name="Minecraft Client" type="Application" factoryName="Application">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" value="GradleStart" />
@@ -1542,9 +1282,10 @@
     <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="35" column="41" selection-start-line="35" selection-start-column="41" selection-end-line="35" selection-end-column="41" />
+          <caret line="32" column="41" selection-start-line="32" selection-start-column="41" selection-end-line="32" selection-end-column="41" />
           <folding>
             <element signature="e#0#30#0" expanded="true" />
+            <marker date="1436414006000" expanded="true" signature="468:484" placeholder="/*...*/" />
           </folding>
         </state>
       </provider>
@@ -1553,9 +1294,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="27" column="3" selection-start-line="27" selection-start-column="3" selection-end-line="27" selection-end-column="3" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1564,8 +1303,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#1445#1446#0" expanded="true" />
-            <element signature="e#1472#1473#0" expanded="true" />
+            <element signature="e#1195#1196#0" expanded="true" />
+            <element signature="e#1222#1223#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1574,11 +1313,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="37" column="50" selection-start-line="37" selection-start-column="50" selection-end-line="37" selection-end-column="50" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1391#1392#0" expanded="false" />
-            <element signature="e#1418#1419#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1586,9 +1321,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1596,9 +1329,115 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="193" column="62" selection-start-line="193" selection-start-column="62" selection-end-line="193" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="35" column="41" selection-start-line="35" selection-start-column="41" selection-end-line="35" selection-end-column="41" />
           <folding>
-            <element signature="imports" expanded="false" />
+            <element signature="e#0#30#0" expanded="true" />
+            <marker date="1436414006000" expanded="true" signature="468:484" placeholder="/*...*/" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/Commumod.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="27" column="3" selection-start-line="27" selection-start-column="3" selection-end-line="27" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemRubyShovel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#1195#1196#0" expanded="true" />
+            <element signature="e#1222#1223#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemSuperbiumSword.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="37" column="50" selection-start-line="37" selection-start-column="50" selection-end-line="37" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemAradactiteShovel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ModItems.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="193" column="62" selection-start-line="193" selection-start-column="62" selection-end-line="193" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="35" column="41" selection-start-line="35" selection-start-column="41" selection-end-line="35" selection-end-column="41" />
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+            <marker date="1436414006000" expanded="true" signature="468:484" placeholder="/*...*/" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/Commumod.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="27" column="3" selection-start-line="27" selection-start-column="3" selection-end-line="27" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemRubyShovel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#1195#1196#0" expanded="true" />
+            <element signature="e#1222#1223#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemSuperbiumSword.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="37" column="50" selection-start-line="37" selection-start-column="50" selection-end-line="37" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemAradactiteShovel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ModItems.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="193" column="62" selection-start-line="193" selection-start-column="62" selection-end-line="193" selection-end-column="62" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1608,6 +1447,7 @@
           <caret line="295" column="0" selection-start-line="295" selection-start-column="0" selection-end-line="295" selection-end-column="0" />
           <folding>
             <element signature="e#0#30#0" expanded="true" />
+            <marker date="1436414006000" expanded="true" signature="468:484" placeholder="/*...*/" />
           </folding>
         </state>
       </provider>
@@ -1624,8 +1464,17 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="34" column="32" selection-start-line="34" selection-start-column="32" selection-end-line="34" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="false" />
+            <element signature="e#0#30#0" expanded="true" />
+            <marker date="1436414006000" expanded="true" signature="468:484" placeholder="/*...*/" />
           </folding>
         </state>
       </provider>
@@ -1636,16 +1485,7 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#30#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#30#0" expanded="true" />
+            <marker date="1436414006000" expanded="true" signature="468:484" placeholder="/*...*/" />
           </folding>
         </state>
       </provider>
@@ -1743,9 +1583,10 @@
     <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="35" column="41" selection-start-line="35" selection-start-column="41" selection-end-line="35" selection-end-column="41" />
+          <caret line="32" column="41" selection-start-line="32" selection-start-column="41" selection-end-line="32" selection-end-column="41" />
           <folding>
             <element signature="e#0#30#0" expanded="true" />
+            <marker date="1436414006000" expanded="true" signature="468:484" placeholder="/*...*/" />
           </folding>
         </state>
       </provider>
@@ -1761,9 +1602,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="27" column="3" selection-start-line="27" selection-start-column="3" selection-end-line="27" selection-end-column="3" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1786,9 +1625,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1796,9 +1633,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="193" column="62" selection-start-line="193" selection-start-column="62" selection-end-line="193" selection-end-column="62" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1806,21 +1641,17 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="37" column="50" selection-start-line="37" selection-start-column="50" selection-end-line="37" selection-end-column="50" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1391#1392#0" expanded="false" />
-            <element signature="e#1418#1419#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/io/cyb3rwarri0r8/commumod/items/ItemRubyShovel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5128866">
-          <caret line="37" column="37" selection-start-line="37" selection-start-column="37" selection-end-line="37" selection-end-column="37" />
+        <state vertical-scroll-proportion="0.45876288">
+          <caret line="28" column="63" selection-start-line="28" selection-start-column="63" selection-end-line="28" selection-end-column="63" />
           <folding>
-            <element signature="e#1445#1446#0" expanded="true" />
-            <element signature="e#1472#1473#0" expanded="true" />
+            <element signature="e#1195#1196#0" expanded="true" />
+            <element signature="e#1222#1223#0" expanded="true" />
           </folding>
         </state>
       </provider>
