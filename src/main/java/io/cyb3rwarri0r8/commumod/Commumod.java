@@ -59,7 +59,7 @@ public class Commumod
 
         proxy.registerRenderers();
         proxy.registerEntitySpawn();
-        proxy.registerTileEntities();
+        proxyCommon.registerTileEntities();
         proxy.registerNetwork();
         proxy.preinit();
 
