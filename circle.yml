@@ -1,0 +1,10 @@
+machine:
+    java:
+        version: openjdk7
+general:
+    artifacts:
+        - "build/libs"
+        
+notify:
+    webhooks:
+        - url: https://webhooks.gitter.im/e/6bae975df1afe91d26fe
