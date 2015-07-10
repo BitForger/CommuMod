@@ -4,7 +4,7 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import io.cyb3rwarri0r8.commumod.entity.EntitySuperbiumTNTPrimed;
 import io.cyb3rwarri0r8.commumod.lib.Reference;
-import io.cyb3rwarri0r8.commumod.main;
+import io.cyb3rwarri0r8.commumod.Commumod;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
@@ -34,7 +34,7 @@ public class BlockSuperbiumTNT extends Block {
     public BlockSuperbiumTNT()
     {
         super(Material.tnt);
-        setCreativeTab(main.modTab);
+        setCreativeTab(Commumod.modTab);
         setBlockName("superbiumTNT");
         setBlockTextureName(Reference.MODID + ":" + getUnlocalizedName().substring(5));
         setStepSound(soundTypeGrass);

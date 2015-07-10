@@ -1,7 +1,7 @@
 package io.cyb3rwarri0r8.commumod.items.food_items;
 
+import io.cyb3rwarri0r8.commumod.Commumod;
 import io.cyb3rwarri0r8.commumod.lib.Reference;
-import io.cyb3rwarri0r8.commumod.main;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
@@ -18,7 +18,7 @@ public class FoodSuperCarrot extends ItemFood {
         super(hunger, saturation, isWolffood);
         setUnlocalizedName("superCarrot");
         setTextureName(Reference.MODID + ":" + getUnlocalizedName().substring(5));
-        setCreativeTab(main.modTab);
+        setCreativeTab(Commumod.modTab);
         setPotionEffect(Potion.heal.id, 5, 5, 5);
     }
 

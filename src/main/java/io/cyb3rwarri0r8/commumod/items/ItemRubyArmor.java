@@ -2,7 +2,7 @@ package io.cyb3rwarri0r8.commumod.items;
 
 
 import io.cyb3rwarri0r8.commumod.lib.Reference;
-import io.cyb3rwarri0r8.commumod.main;
+import io.cyb3rwarri0r8.commumod.Commumod;
 import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
@@ -14,7 +14,7 @@ public class ItemRubyArmor extends ItemArmor {
 
     public ItemRubyArmor(ArmorMaterial material, int armorType, String name) {
         super(material, 0, armorType);
-        setCreativeTab(main.modTab);
+        setCreativeTab(Commumod.modTab);
         setUnlocalizedName(name);
         setTextureName(Reference.MODID + ":" + getUnlocalizedName().substring(5));
 

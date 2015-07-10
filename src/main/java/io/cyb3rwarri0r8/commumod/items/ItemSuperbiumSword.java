@@ -2,7 +2,7 @@ package io.cyb3rwarri0r8.commumod.items;
 
 
 import io.cyb3rwarri0r8.commumod.lib.Reference;
-import io.cyb3rwarri0r8.commumod.main;
+import io.cyb3rwarri0r8.commumod.Commumod;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
@@ -20,13 +20,10 @@ public class ItemSuperbiumSword extends ItemSword {
 
     public ItemSuperbiumSword(ToolMaterial material)
     {
-
         super(material);
         setUnlocalizedName("superbiumSword");
         setTextureName(Reference.MODID + ":" + getUnlocalizedName().substring(5));
-        setCreativeTab(main.modTab);
-
-
+        setCreativeTab(Commumod.modTab);
     }
 
     @Override

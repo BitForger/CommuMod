@@ -3,7 +3,7 @@ package io.cyb3rwarri0r8.commumod.blocks;
 
 import io.cyb3rwarri0r8.commumod.lib.Reference;
 import io.cyb3rwarri0r8.commumod.items.ModItems;
-import io.cyb3rwarri0r8.commumod.main;
+import io.cyb3rwarri0r8.commumod.Commumod;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.Item;
@@ -18,7 +18,7 @@ public class BlockRubyOre extends Block {
         super(material);
         setBlockName("rubyOre");
         setBlockTextureName(Reference.MODID + ":" + getUnlocalizedName().substring(5));
-        setCreativeTab(main.modTab);
+        setCreativeTab(Commumod.modTab);
         setStepSound(soundTypePiston);
         setHardness(3.0F);
         setResistance(5.0F);

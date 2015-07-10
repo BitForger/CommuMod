@@ -1,8 +1,8 @@
 package io.cyb3rwarri0r8.commumod.blocks;
 
 
+import io.cyb3rwarri0r8.commumod.Commumod;
 import io.cyb3rwarri0r8.commumod.lib.Reference;
-import io.cyb3rwarri0r8.commumod.main;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.IIcon;
@@ -15,7 +15,7 @@ public class BlockSuperbiumBlock extends Block {
         super(material);
         this.setBlockName("superbiumBlock");
         this.setBlockTextureName(Reference.MODID + ":" + getUnlocalizedName().substring(5));
-        this.setCreativeTab(main.modTab);
+        this.setCreativeTab(Commumod.modTab);
         this.setStepSound(soundTypeMetal);
         setHardness(4.0F);
         setResistance(80F);

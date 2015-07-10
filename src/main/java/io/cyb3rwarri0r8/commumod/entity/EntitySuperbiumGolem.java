@@ -65,7 +65,7 @@ public class EntitySuperbiumGolem extends EntityGolem {
     }
 
     /**
-     * main AI tick function, replaces updateEntityActionState
+     * Commumod AI tick function, replaces updateEntityActionState
      */
     protected void updateAITick()
     {
