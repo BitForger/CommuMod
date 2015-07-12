@@ -91,20 +91,21 @@ public class RegisterItemRenders {
             foodItems.superCarrot,
             foodItems.ticTac,
             foodItems.ticTacCase,
-            /*ModItems.aradactiteHelmet,
-            ModItems.aradactiteChestplate, //TODO Figure out how to add textures to armor
+            //TODO Figure out how to add textures to armor
+            ModItems.aradactiteHelmet,
+            ModItems.aradactiteChestplate,
             ModItems.aradactiteLeggings,
-            ModItems.aradactiteBoots,*/
-//            ModItems.appleBlock,
-            /*ModItems.rubyHelmet,
+            ModItems.aradactiteBoots,
+            ModItems.blockSuperbium,
+            ModItems.rubyHelmet,
             ModItems.rubyChestplate,
             ModItems.rubyLeggings,
             ModItems.rubyBoots,
             ModItems.superbiumHelmet,
             ModItems.superbiumChestPlate,
             ModItems.superbiumLeggings,
-            ModItems.superbiumBoots,*/
-//            ModItems.blockSuperbium
+            ModItems.superbiumBoots
+
     };
 
     public static Item[] blocks = {
@@ -123,7 +124,8 @@ public class RegisterItemRenders {
             Item.getItemFromBlock(ModBlocks.purifier_idle),
             Item.getItemFromBlock(ModBlocks.appleBlock),
             Item.getItemFromBlock(ModBlocks.superbiumTNT),
-            Item.getItemFromBlock(ModBlocks.hydrogenTNT)
+            Item.getItemFromBlock(ModBlocks.hydrogenTNT),
+            Item.getItemFromBlock(ModBlocks.appleBlock)
     };
 
     public static HashMap<Item,String> map = new HashMap<Item, String>();

@@ -36,7 +36,7 @@ public class BlockOfApple extends Block {
     public BlockOfApple() {
         super(Material.leaves);
         setUnlocalizedName("appleBlock");
-        Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(Item.getItemFromBlock(ModBlocks.appleBlock), 0, new ModelResourceLocation(Reference.MODID + ":" + getUnlocalizedName().substring(5), "inventory"));
+
 
         setCreativeTab(main.modTab);
         setStepSound(soundTypeGrass);

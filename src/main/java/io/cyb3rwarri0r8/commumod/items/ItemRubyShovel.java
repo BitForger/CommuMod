@@ -20,7 +20,6 @@ package io.cyb3rwarri0r8.commumod.items;
  *
  */
 
-import io.cyb3rwarri0r8.commumod.lib.Reference;
 import io.cyb3rwarri0r8.commumod.main;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.resources.model.ModelResourceLocation;
@@ -32,9 +31,7 @@ import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.world.World;
 
-/**
- * Created by noah on 8/22/14.
- */
+
 public class ItemRubyShovel extends ItemSpade {
     public ItemRubyShovel(ToolMaterial material)
     {
@@ -54,7 +51,7 @@ public class ItemRubyShovel extends ItemSpade {
             ItemStack equipped = player.getCurrentEquippedItem();
             if (equipped == itemStack)
             {
-                player.addPotionEffect(new PotionEffect(Potion.digSpeed.id,6,4));
+                player.addPotionEffect(new PotionEffect(Potion.digSpeed.id,1,2));
             }
         }
     }

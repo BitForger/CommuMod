@@ -23,10 +23,13 @@ package io.cyb3rwarri0r8.commumod.items;
 import io.cyb3rwarri0r8.commumod.lib.Reference;
 import io.cyb3rwarri0r8.commumod.main;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.model.ModelBiped;
 import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.fml.common.FMLLog;
 
 /**
  * Created by noah on 5/18/14.
@@ -42,13 +45,22 @@ public class ItemAradactiteArmor extends ItemArmor {
     @Override
     public String getArmorTexture(ItemStack stack, Entity entity, int slot, String type)
     {
-        if (stack.getItem() == ModItems.aradactiteHelmet || stack.getItem() == ModItems.aradactiteChestplate || stack.getItem() == ModItems.aradactiteBoots){
+        if (stack.getItem() == ModItems.aradactiteHelmet
+                || stack.getItem() == ModItems.aradactiteChestplate
+                || stack.getItem() == ModItems.aradactiteBoots){
+
             return Reference.MODID + ":" + "textures/models/armor/aradactiteLayer_1.png";
-        }else if(stack.getItem() == ModItems.aradactiteLeggings){
+
+        }
+        else if(stack.getItem() == ModItems.aradactiteLeggings){
+
             return Reference.MODID + ":" + "textures/models/armor/aradactiteLayer_2.png";
-        }else {
-            System.out.println("Error: Texture not found! Check spelling!");
+
+        }
+        else {
+            FMLLog.severe("Error: Texture not found! Check spelling!");
             return null;
         }
     }
+
 }

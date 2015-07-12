@@ -32,7 +32,7 @@ public class ItemBlockSuperbium extends net.minecraft.item.Item {
     {
         super();
         setUnlocalizedName("itemSuperbiumBlock");
-        Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(this, 0, new ModelResourceLocation("commumod:textures/items/superbiumBlock", "inventory"));
+
 
     }
 }
