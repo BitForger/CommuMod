@@ -6,13 +6,18 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import io.cyb3rwarri0r8.commumod.Commumod;
 import io.cyb3rwarri0r8.commumod.blocks.ModBlocks;
 import io.cyb3rwarri0r8.commumod.entity.EntityCobaltBoat;
+import io.cyb3rwarri0r8.commumod.entity.EntityMiner;
 import io.cyb3rwarri0r8.commumod.lib.helpers.RegisterHelper;
+import net.minecraft.client.Minecraft;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
+import net.minecraft.world.World;
 import net.minecraftforge.common.util.EnumHelper;
+
+import java.util.Random;
 
 /**
  * Created by noah on 5/14/14.
@@ -93,6 +98,8 @@ public class ModItems {
     public static Item modularPickaxe;
     static Item.ToolMaterial MODULAR_PICK_MATERIAL = EnumHelper.addToolMaterial("modularPickMaterial",500, 1000, 4.0F, 5.0F, 75);
 
+
+    public static Item minerEgg;
 
     public static void loadItems() {
         //Load all necessary items
@@ -309,7 +316,7 @@ public class ModItems {
 
         stoneToolRod = new ItemStoneToolRod();
         RegisterHelper.registerItem(stoneToolRod);
-        RegisterHelper.addStickRecipe(Item.getItemFromBlock(Blocks.stone), new ItemStack(stoneToolRod,2));
+        RegisterHelper.addStickRecipe(Item.getItemFromBlock(Blocks.stone), new ItemStack(stoneToolRod, 2));
 
         ironToolRod = new ItemIronToolRod();
         RegisterHelper.registerItem(ironToolRod);
@@ -322,6 +329,11 @@ public class ModItems {
         modularPickaxe = new ItemModularPickaxe(MODULAR_PICK_MATERIAL);
         RegisterHelper.registerItem(modularPickaxe);
 
+        Random rand = new Random();
+        int primary = rand.nextInt() * 16777215;
+        int secondary = rand.nextInt() * 16777215;
 
+        minerEgg = new ItemMinerEgg("miner", primary, secondary);
+        RegisterHelper.registerItem(minerEgg);
     }
 }

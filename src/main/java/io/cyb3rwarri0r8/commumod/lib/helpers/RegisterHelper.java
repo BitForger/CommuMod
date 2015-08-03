@@ -5,9 +5,7 @@ import cpw.mods.fml.common.registry.EntityRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 import io.cyb3rwarri0r8.commumod.Commumod;
 import io.cyb3rwarri0r8.commumod.lib.PurifierRecipes;
-import io.cyb3rwarri0r8.commumod.lib.Reference;
 import net.minecraft.block.Block;
-import net.minecraft.entity.EntityList;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
@@ -128,23 +126,23 @@ public class RegisterHelper {
     public static void registerEntity(Class entityClass, String name)
     {
 
-        int entityID = EntityRegistry.findGlobalUniqueEntityId();
         long seed = name.hashCode();
         Random rand = new Random(seed);
-        int primaryColor = rand.nextInt() * 16777215;
-        int secondaryColor = rand.nextInt() * 16777215;
+//        int primaryColor = rand.nextInt() * 16777215;
+//        int secondaryColor = rand.nextInt() * 16777215;
+        int entityID = rand.nextInt() * 54;
 
-        EntityRegistry.registerGlobalEntityID(entityClass, name, entityID);
         EntityRegistry.registerModEntity(entityClass, name, entityID, Commumod.instance, 64, 1, true);
-        EntityList.entityEggs.put(Integer.valueOf(entityID), new EntityList.EntityEggInfo(entityID, primaryColor, secondaryColor));
 
     }
 
+    // ********************************************************************************************
     public static void addPurifying(Item input, ItemStack output, float xp)
     {
         PurifierRecipes.smelting().addRecipe(input, output, xp);
     }
 
+    // ********************************************************************************************
     public static void addBlockRecipe(Item item, ItemStack output)
     {
         GameRegistry.addRecipe(output,
@@ -157,6 +155,7 @@ public class RegisterHelper {
 
     }
 
+    // *********************************************************************************************
     public static void addStickRecipe(Item item, ItemStack output)
     {
         GameRegistry.addRecipe(output,

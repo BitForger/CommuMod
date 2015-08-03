@@ -45,7 +45,7 @@ public class EntityMiner extends EntityMob {
         getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(20.0D);
         getEntityAttribute(SharedMonsterAttributes.followRange).setBaseValue(32.0D);
         getEntityAttribute(SharedMonsterAttributes.knockbackResistance).setBaseValue(0.0D);
-        getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(1.2D);
+        getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.6D);
         getEntityAttribute(SharedMonsterAttributes.attackDamage).setBaseValue(2.0D);
     }
 
