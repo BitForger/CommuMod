@@ -1,6 +1,7 @@
 package io.cyb3rwarri0r8.commumod.entity;
 
 
+import cpw.mods.fml.common.FMLLog;
 import io.cyb3rwarri0r8.commumod.items.food_items.foodItems;
 import io.cyb3rwarri0r8.commumod.items.ModItems;
 import net.minecraft.entity.EntityLivingBase;
@@ -16,9 +17,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.world.EnumDifficulty;
 import net.minecraft.world.World;
 
-/**
- * Created by noah on 5/27/14.
- */
+
 public class EntityMiner extends EntityMob {
     public EntityMiner(World par1World) {
         super(par1World);
@@ -45,7 +44,7 @@ public class EntityMiner extends EntityMob {
         getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(20.0D);
         getEntityAttribute(SharedMonsterAttributes.followRange).setBaseValue(32.0D);
         getEntityAttribute(SharedMonsterAttributes.knockbackResistance).setBaseValue(0.0D);
-        getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.6D);
+        getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.03D);
         getEntityAttribute(SharedMonsterAttributes.attackDamage).setBaseValue(2.0D);
     }
 
@@ -88,7 +87,7 @@ public class EntityMiner extends EntityMob {
 
     protected void dropRareDrop(int par1)
     {
-        switch (this.rand.nextInt(3))
+        switch (this.rand.nextInt(4))
         {
             case 0:
                 this.dropItem(Items.diamond, 1);
@@ -98,6 +97,9 @@ public class EntityMiner extends EntityMob {
                 break;
             case 2:
                 this.dropItem(Items.diamond_sword, 1);
+                break;
+            case 3:
+                this.dropItem(ModItems.aradactiteAxe, 1);
         }
     }
 

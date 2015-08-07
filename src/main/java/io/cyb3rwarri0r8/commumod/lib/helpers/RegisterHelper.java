@@ -6,6 +6,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import io.cyb3rwarri0r8.commumod.Commumod;
 import io.cyb3rwarri0r8.commumod.lib.PurifierRecipes;
 import net.minecraft.block.Block;
+import net.minecraft.entity.Entity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
@@ -123,14 +124,14 @@ public class RegisterHelper {
 
     // ********************************************************************************************
 
-    public static void registerEntity(Class entityClass, String name)
+    public static void registerEntity(Class<?extends Entity> entityClass, String name)
     {
 
         long seed = name.hashCode();
         Random rand = new Random(seed);
 //        int primaryColor = rand.nextInt() * 16777215;
 //        int secondaryColor = rand.nextInt() * 16777215;
-        int entityID = rand.nextInt() * 54;
+        int entityID = rand.nextInt(10) * 54;
 
         EntityRegistry.registerModEntity(entityClass, name, entityID, Commumod.instance, 64, 1, true);
 

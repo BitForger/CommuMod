@@ -9,6 +9,7 @@ import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import io.cyb3rwarri0r8.commumod.blocks.ModBlocks;
 import io.cyb3rwarri0r8.commumod.client.CreativeTabsCommuMod;
+import io.cyb3rwarri0r8.commumod.entity.EntityMiner;
 import io.cyb3rwarri0r8.commumod.entity.ModEntities;
 import io.cyb3rwarri0r8.commumod.fluids.ModFluids;
 import io.cyb3rwarri0r8.commumod.items.ModItems;
@@ -18,6 +19,7 @@ import io.cyb3rwarri0r8.commumod.lib.Reference;
 import io.cyb3rwarri0r8.commumod.lib.handler.ConfigHandler;
 import io.cyb3rwarri0r8.commumod.lib.handler.ModBucketHandler;
 import io.cyb3rwarri0r8.commumod.lib.handler.ModEventHandler;
+import io.cyb3rwarri0r8.commumod.lib.helpers.RegisterHelper;
 import io.cyb3rwarri0r8.commumod.lib.proxy.proxyCommon;
 import io.cyb3rwarri0r8.commumod.world.modWorld;
 import net.minecraft.creativetab.CreativeTabs;
@@ -57,6 +59,7 @@ public class Commumod
         ModEntities.init();
         ConfigHandler.init(configFile.getConfigFile());
 
+        RegisterHelper.registerEntity(EntityMiner.class, "miner");
         proxy.registerRenderers();
         proxy.registerEntitySpawn();
         proxyCommon.registerTileEntities();

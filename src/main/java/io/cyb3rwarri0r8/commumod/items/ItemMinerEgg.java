@@ -65,6 +65,7 @@ public class ItemMinerEgg extends ItemMonsterPlacer {
         System.out.println("Spawn egg constructor for "+entityToSpawnName);
     }
 
+
     /**
      * Callback for item usage. If the item does something special on right clicking,
      * he will have one of those. Return
