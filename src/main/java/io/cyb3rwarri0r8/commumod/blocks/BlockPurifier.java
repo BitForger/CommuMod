@@ -124,20 +124,20 @@ public class BlockPurifier extends BlockContainer
             switch (BlockPurifier.SwitchEnumFacing.field_180356_a[enumfacing.ordinal()])
             {
                 case 1:
-                    worldIn.spawnParticle(EnumParticleTypes.SMOKE_NORMAL, d0 - d3, d1, d2 + d4, 0.0D, 0.0D, 0.0D, new int[0]);
-                    worldIn.spawnParticle(EnumParticleTypes.FLAME, d0 - d3, d1, d2 + d4, 0.0D, 0.0D, 0.0D, new int[0]);
+                    worldIn.spawnParticle(EnumParticleTypes.SMOKE_NORMAL, d0 - d3, d1, d2 + d4, 0.0D, 0.0D, 0.0D);
+                    worldIn.spawnParticle(EnumParticleTypes.FLAME, d0 - d3, d1, d2 + d4, 0.0D, 0.0D, 0.0D);
                     break;
                 case 2:
-                    worldIn.spawnParticle(EnumParticleTypes.SMOKE_NORMAL, d0 + d3, d1, d2 + d4, 0.0D, 0.0D, 0.0D, new int[0]);
-                    worldIn.spawnParticle(EnumParticleTypes.FLAME, d0 + d3, d1, d2 + d4, 0.0D, 0.0D, 0.0D, new int[0]);
+                    worldIn.spawnParticle(EnumParticleTypes.SMOKE_NORMAL, d0 + d3, d1, d2 + d4, 0.0D, 0.0D, 0.0D);
+                    worldIn.spawnParticle(EnumParticleTypes.FLAME, d0 + d3, d1, d2 + d4, 0.0D, 0.0D, 0.0D);
                     break;
                 case 3:
-                    worldIn.spawnParticle(EnumParticleTypes.SMOKE_NORMAL, d0 + d4, d1, d2 - d3, 0.0D, 0.0D, 0.0D, new int[0]);
-                    worldIn.spawnParticle(EnumParticleTypes.FLAME, d0 + d4, d1, d2 - d3, 0.0D, 0.0D, 0.0D, new int[0]);
+                    worldIn.spawnParticle(EnumParticleTypes.SMOKE_NORMAL, d0 + d4, d1, d2 - d3, 0.0D, 0.0D, 0.0D);
+                    worldIn.spawnParticle(EnumParticleTypes.FLAME, d0 + d4, d1, d2 - d3, 0.0D, 0.0D, 0.0D);
                     break;
                 case 4:
-                    worldIn.spawnParticle(EnumParticleTypes.SMOKE_NORMAL, d0 + d4, d1, d2 + d3, 0.0D, 0.0D, 0.0D, new int[0]);
-                    worldIn.spawnParticle(EnumParticleTypes.FLAME, d0 + d4, d1, d2 + d3, 0.0D, 0.0D, 0.0D, new int[0]);
+                    worldIn.spawnParticle(EnumParticleTypes.SMOKE_NORMAL, d0 + d4, d1, d2 + d3, 0.0D, 0.0D, 0.0D);
+                    worldIn.spawnParticle(EnumParticleTypes.FLAME, d0 + d4, d1, d2 + d3, 0.0D, 0.0D, 0.0D);
             }
         }
     }
@@ -194,7 +194,7 @@ public class BlockPurifier extends BlockContainer
     @Override
     public TileEntity createNewTileEntity(World worldIn, int meta)
     {
-        return (TileEntity) new TileEntityPurifier();
+        return new TileEntityPurifier();
     }
 
     public IBlockState onBlockPlaced(World worldIn, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer)
@@ -291,7 +291,7 @@ public class BlockPurifier extends BlockContainer
 
     protected BlockState createBlockState()
     {
-        return new BlockState(this, new IProperty[] {FACING});
+        return new BlockState(this, FACING);
     }
 
     @SideOnly(Side.CLIENT)
@@ -308,7 +308,6 @@ public class BlockPurifier extends BlockContainer
             }
             catch (NoSuchFieldError var4)
             {
-                ;
             }
 
             try
@@ -317,7 +316,6 @@ public class BlockPurifier extends BlockContainer
             }
             catch (NoSuchFieldError var3)
             {
-                ;
             }
 
             try
@@ -326,7 +324,6 @@ public class BlockPurifier extends BlockContainer
             }
             catch (NoSuchFieldError var2)
             {
-                ;
             }
 
             try
@@ -335,7 +332,6 @@ public class BlockPurifier extends BlockContainer
             }
             catch (NoSuchFieldError var1)
             {
-                ;
             }
         }
     }

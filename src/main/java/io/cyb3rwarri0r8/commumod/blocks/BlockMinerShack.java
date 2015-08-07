@@ -20,8 +20,9 @@ package io.cyb3rwarri0r8.commumod.blocks;
  *
  */
 
+import io.cyb3rwarri0r8.commumod.Commumod;
 import io.cyb3rwarri0r8.commumod.lib.Reference;
-import io.cyb3rwarri0r8.commumod.main;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -42,7 +43,7 @@ public class BlockMinerShack extends Block {
     public BlockMinerShack(Material material)
     {
         super(material);
-        setCreativeTab(main.modTab);
+        setCreativeTab(Commumod.modTab);
         setUnlocalizedName("minerShack");
         Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(Item.getItemFromBlock(ModBlocks.minerShack), 0, new ModelResourceLocation(Reference.MODID + ":" + getUnlocalizedName().substring(5), "inventory"));
 
@@ -56,173 +57,173 @@ public class BlockMinerShack extends Block {
         super.onBlockPlacedBy(world, blockPos, blockState, entity, itemStack);
         world.setBlockToAir(blockPos);
         // build walls
-        world.setBlockState(blockPos, b.cobblestone.getDefaultState());
-        world.setBlockState(blockPos.add(0, 1, 0), b.cobblestone.getDefaultState());
-        world.setBlockState(blockPos.add(0, 2, 0), b.cobblestone.getDefaultState());
-        world.setBlockState(blockPos.add(0, 3, 0), b.cobblestone.getDefaultState());
+        world.setBlockState(blockPos, Blocks.cobblestone.getDefaultState());
+        world.setBlockState(blockPos.add(0, 1, 0), Blocks.cobblestone.getDefaultState());
+        world.setBlockState(blockPos.add(0, 2, 0), Blocks.cobblestone.getDefaultState());
+        world.setBlockState(blockPos.add(0, 3, 0), Blocks.cobblestone.getDefaultState());
 
         // ---------------------------------------
-        world.setBlockState(blockPos.add(1, 0, 0), b.cobblestone.getDefaultState());
-        world.setBlockState(blockPos.add(1, 1, 0), b.cobblestone.getDefaultState());
-        world.setBlockState(blockPos.add(1, 2, 0), b.cobblestone.getDefaultState());
-        world.setBlockState(blockPos.add(1, 3, 0), b.cobblestone.getDefaultState());
+        world.setBlockState(blockPos.add(1, 0, 0), Blocks.cobblestone.getDefaultState());
+        world.setBlockState(blockPos.add(1, 1, 0), Blocks.cobblestone.getDefaultState());
+        world.setBlockState(blockPos.add(1, 2, 0), Blocks.cobblestone.getDefaultState());
+        world.setBlockState(blockPos.add(1, 3, 0), Blocks.cobblestone.getDefaultState());
 
         // --------------------------------------------
-        world.setBlockState(blockPos.add(2, 0, 0), b.cobblestone.getDefaultState());
-        world.setBlockState(blockPos.add(2, 1, 0), b.cobblestone.getDefaultState());
-        world.setBlockState(blockPos.add(2, 2, 0), b.cobblestone.getDefaultState());
-        world.setBlockState(blockPos.add(2, 3, 0), b.cobblestone.getDefaultState());
+        world.setBlockState(blockPos.add(2, 0, 0), Blocks.cobblestone.getDefaultState());
+        world.setBlockState(blockPos.add(2, 1, 0), Blocks.cobblestone.getDefaultState());
+        world.setBlockState(blockPos.add(2, 2, 0), Blocks.cobblestone.getDefaultState());
+        world.setBlockState(blockPos.add(2, 3, 0), Blocks.cobblestone.getDefaultState());
 
         // --------------------------------------------
-        world.setBlockState(blockPos.add(3,0,0), b.cobblestone.getDefaultState());
-        world.setBlockState(blockPos.add(3, 1, 0), b.cobblestone.getDefaultState());
-        world.setBlockState(blockPos.add(3, 2, 0), b.cobblestone.getDefaultState());
-        world.setBlockState(blockPos.add(3, 3, 0), b.cobblestone.getDefaultState());
+        world.setBlockState(blockPos.add(3,0,0), Blocks.cobblestone.getDefaultState());
+        world.setBlockState(blockPos.add(3, 1, 0), Blocks.cobblestone.getDefaultState());
+        world.setBlockState(blockPos.add(3, 2, 0), Blocks.cobblestone.getDefaultState());
+        world.setBlockState(blockPos.add(3, 3, 0), Blocks.cobblestone.getDefaultState());
 
         // --------------------------------------------
-        world.setBlockState(blockPos.add(4, 0, 0), b.cobblestone.getDefaultState());
-        world.setBlockState(blockPos.add(4, 1, 0), b.cobblestone.getDefaultState());
-        world.setBlockState(blockPos.add(4, 2, 0), b.cobblestone.getDefaultState());
-        world.setBlockState(blockPos.add(4, 3, 0), b.cobblestone.getDefaultState());
+        world.setBlockState(blockPos.add(4, 0, 0), Blocks.cobblestone.getDefaultState());
+        world.setBlockState(blockPos.add(4, 1, 0), Blocks.cobblestone.getDefaultState());
+        world.setBlockState(blockPos.add(4, 2, 0), Blocks.cobblestone.getDefaultState());
+        world.setBlockState(blockPos.add(4, 3, 0), Blocks.cobblestone.getDefaultState());
 
         // --------------------------------------------
         // +++++++++++++++++Wall+++++++++++++++++++++++
         // --------------------------------------------
-        world.setBlockState(blockPos.add(0, 0, 1), b.cobblestone.getDefaultState());
-        world.setBlockState(blockPos.add(0, 1, 1), b.cobblestone.getDefaultState());
-        world.setBlockState(blockPos.add(0, 2, 1), b.cobblestone.getDefaultState());
-        world.setBlockState(blockPos.add(0, 3, 1), b.cobblestone.getDefaultState());
+        world.setBlockState(blockPos.add(0, 0, 1), Blocks.cobblestone.getDefaultState());
+        world.setBlockState(blockPos.add(0, 1, 1), Blocks.cobblestone.getDefaultState());
+        world.setBlockState(blockPos.add(0, 2, 1), Blocks.cobblestone.getDefaultState());
+        world.setBlockState(blockPos.add(0, 3, 1), Blocks.cobblestone.getDefaultState());
 
         // ---------------------------------------
-        world.setBlockState(blockPos.add(0, 0, 1), b.cobblestone.getDefaultState());
-        world.setBlockState(blockPos.add(0, 1, 1), b.cobblestone.getDefaultState());
-        world.setBlockState(blockPos.add(0,2,1), b.cobblestone.getDefaultState());
-        world.setBlockState(blockPos.add(0,3,1), b.cobblestone.getDefaultState());
+        world.setBlockState(blockPos.add(0, 0, 1), Blocks.cobblestone.getDefaultState());
+        world.setBlockState(blockPos.add(0, 1, 1), Blocks.cobblestone.getDefaultState());
+        world.setBlockState(blockPos.add(0,2,1), Blocks.cobblestone.getDefaultState());
+        world.setBlockState(blockPos.add(0,3,1), Blocks.cobblestone.getDefaultState());
 
         // --------------------------------------------
-        world.setBlockState(blockPos.add(0,0,2), b.cobblestone.getDefaultState());
-        world.setBlockState(blockPos.add(0,1,2), b.cobblestone.getDefaultState());
-        world.setBlockState(blockPos.add(0,2,2), b.cobblestone.getDefaultState());
-        world.setBlockState(blockPos.add(0,3,2), b.cobblestone.getDefaultState());
+        world.setBlockState(blockPos.add(0,0,2), Blocks.cobblestone.getDefaultState());
+        world.setBlockState(blockPos.add(0,1,2), Blocks.cobblestone.getDefaultState());
+        world.setBlockState(blockPos.add(0,2,2), Blocks.cobblestone.getDefaultState());
+        world.setBlockState(blockPos.add(0,3,2), Blocks.cobblestone.getDefaultState());
 
         // --------------------------------------------
-        world.setBlockState(blockPos.add(0,0,3), b.cobblestone.getDefaultState());
-        world.setBlockState(blockPos.add(0,1,3), b.cobblestone.getDefaultState());
-        world.setBlockState(blockPos.add(0,2,3), b.cobblestone.getDefaultState());
-        world.setBlockState(blockPos.add(0,3,3), b.cobblestone.getDefaultState());
+        world.setBlockState(blockPos.add(0,0,3), Blocks.cobblestone.getDefaultState());
+        world.setBlockState(blockPos.add(0,1,3), Blocks.cobblestone.getDefaultState());
+        world.setBlockState(blockPos.add(0,2,3), Blocks.cobblestone.getDefaultState());
+        world.setBlockState(blockPos.add(0,3,3), Blocks.cobblestone.getDefaultState());
 
         // --------------------------------------------
-        world.setBlockState(blockPos.add(0,0,4), b.cobblestone.getDefaultState());
-        world.setBlockState(blockPos.add(0,1,4), b.cobblestone.getDefaultState());
-        world.setBlockState(blockPos.add(0,2,4), b.cobblestone.getDefaultState());
-        world.setBlockState(blockPos.add(0,3,4), b.cobblestone.getDefaultState());
+        world.setBlockState(blockPos.add(0,0,4), Blocks.cobblestone.getDefaultState());
+        world.setBlockState(blockPos.add(0,1,4), Blocks.cobblestone.getDefaultState());
+        world.setBlockState(blockPos.add(0,2,4), Blocks.cobblestone.getDefaultState());
+        world.setBlockState(blockPos.add(0,3,4), Blocks.cobblestone.getDefaultState());
         // --------------------------------------------
         // +++++++++++++++++Wall+++++++++++++++++++++++
         // --------------------------------------------
-        world.setBlockState(blockPos.add(0,0,5), b.cobblestone.getDefaultState());
-        world.setBlockState(blockPos.add(0,1,5), b.cobblestone.getDefaultState());
-        world.setBlockState(blockPos.add(0,2,5), b.cobblestone.getDefaultState());
-        world.setBlockState(blockPos.add(0,3,5), b.cobblestone.getDefaultState());
+        world.setBlockState(blockPos.add(0,0,5), Blocks.cobblestone.getDefaultState());
+        world.setBlockState(blockPos.add(0,1,5), Blocks.cobblestone.getDefaultState());
+        world.setBlockState(blockPos.add(0,2,5), Blocks.cobblestone.getDefaultState());
+        world.setBlockState(blockPos.add(0,3,5), Blocks.cobblestone.getDefaultState());
 
         // --------------------------------------------
-        world.setBlockState(blockPos.add(0,0,6), b.cobblestone.getDefaultState());
-        world.setBlockState(blockPos.add(0,1,6), b.cobblestone.getDefaultState());
-        world.setBlockState(blockPos.add(0,2,6), b.cobblestone.getDefaultState());
-        world.setBlockState(blockPos.add(0,3,6), b.cobblestone.getDefaultState());
+        world.setBlockState(blockPos.add(0,0,6), Blocks.cobblestone.getDefaultState());
+        world.setBlockState(blockPos.add(0,1,6), Blocks.cobblestone.getDefaultState());
+        world.setBlockState(blockPos.add(0,2,6), Blocks.cobblestone.getDefaultState());
+        world.setBlockState(blockPos.add(0,3,6), Blocks.cobblestone.getDefaultState());
 
         // --------------------------------------------
-        world.setBlockState(blockPos.add(1,0,6), b.cobblestone.getDefaultState());
-        world.setBlockState(blockPos.add(1,1,6), b.cobblestone.getDefaultState());
-        world.setBlockState(blockPos.add(1,2,6), b.cobblestone.getDefaultState());
-        world.setBlockState(blockPos.add(1,3,6), b.cobblestone.getDefaultState());
+        world.setBlockState(blockPos.add(1,0,6), Blocks.cobblestone.getDefaultState());
+        world.setBlockState(blockPos.add(1,1,6), Blocks.cobblestone.getDefaultState());
+        world.setBlockState(blockPos.add(1,2,6), Blocks.cobblestone.getDefaultState());
+        world.setBlockState(blockPos.add(1,3,6), Blocks.cobblestone.getDefaultState());
 
         // ------------------------------------------------
-        world.setBlockState(blockPos.add(2,0,6), b.cobblestone.getDefaultState());
-        world.setBlockState(blockPos.add(2,1,6), b.cobblestone.getDefaultState());
-        world.setBlockState(blockPos.add(2,2,6), b.cobblestone.getDefaultState());
-        world.setBlockState(blockPos.add(2,3,6), b.cobblestone.getDefaultState());
+        world.setBlockState(blockPos.add(2,0,6), Blocks.cobblestone.getDefaultState());
+        world.setBlockState(blockPos.add(2,1,6), Blocks.cobblestone.getDefaultState());
+        world.setBlockState(blockPos.add(2,2,6), Blocks.cobblestone.getDefaultState());
+        world.setBlockState(blockPos.add(2,3,6), Blocks.cobblestone.getDefaultState());
 
         // ------------------------------------------------
-        world.setBlockState(blockPos.add(3,0,6), b.cobblestone.getDefaultState());
-        world.setBlockState(blockPos.add(3,1,6), b.cobblestone.getDefaultState());
-        world.setBlockState(blockPos.add(3,2,6), b.cobblestone.getDefaultState());
-        world.setBlockState(blockPos.add(3,3,6), b.cobblestone.getDefaultState());
+        world.setBlockState(blockPos.add(3,0,6), Blocks.cobblestone.getDefaultState());
+        world.setBlockState(blockPos.add(3,1,6), Blocks.cobblestone.getDefaultState());
+        world.setBlockState(blockPos.add(3,2,6), Blocks.cobblestone.getDefaultState());
+        world.setBlockState(blockPos.add(3,3,6), Blocks.cobblestone.getDefaultState());
 
         // ------------------------------------------------
-        world.setBlockState(blockPos.add(4,0,0), b.cobblestone.getDefaultState());
-        world.setBlockState(blockPos.add(4,0,0), b.cobblestone.getDefaultState());
-        world.setBlockState(blockPos.add(4,0,0), b.cobblestone.getDefaultState());
-        world.setBlockState(blockPos.add(4,0,0), b.cobblestone.getDefaultState());
+        world.setBlockState(blockPos.add(4,0,0), Blocks.cobblestone.getDefaultState());
+        world.setBlockState(blockPos.add(4,0,0), Blocks.cobblestone.getDefaultState());
+        world.setBlockState(blockPos.add(4,0,0), Blocks.cobblestone.getDefaultState());
+        world.setBlockState(blockPos.add(4,0,0), Blocks.cobblestone.getDefaultState());
 
         // ------------------------------------------------
-        world.setBlockState(blockPos.add(4,0,6), b.cobblestone.getDefaultState());
-        world.setBlockState(blockPos.add(4,1,6), b.cobblestone.getDefaultState());
-        world.setBlockState(blockPos.add(4,2,6), b.cobblestone.getDefaultState());
-        world.setBlockState(blockPos.add(4,3,6), b.cobblestone.getDefaultState());
+        world.setBlockState(blockPos.add(4,0,6), Blocks.cobblestone.getDefaultState());
+        world.setBlockState(blockPos.add(4,1,6), Blocks.cobblestone.getDefaultState());
+        world.setBlockState(blockPos.add(4,2,6), Blocks.cobblestone.getDefaultState());
+        world.setBlockState(blockPos.add(4,3,6), Blocks.cobblestone.getDefaultState());
 
         // ------------------------------------------------
         // ++++++++++++++++++Wall++++++++++++++++++++++++++
         // ------------------------------------------------
-        world.setBlockState(blockPos.add(5,0,0), b.cobblestone.getDefaultState());
-        world.setBlockState(blockPos.add(5,1,0), b.cobblestone.getDefaultState());
-        world.setBlockState(blockPos.add(5,2,0), b.cobblestone.getDefaultState());
-        world.setBlockState(blockPos.add(5,3,0), b.cobblestone.getDefaultState());
+        world.setBlockState(blockPos.add(5,0,0), Blocks.cobblestone.getDefaultState());
+        world.setBlockState(blockPos.add(5,1,0), Blocks.cobblestone.getDefaultState());
+        world.setBlockState(blockPos.add(5,2,0), Blocks.cobblestone.getDefaultState());
+        world.setBlockState(blockPos.add(5,3,0), Blocks.cobblestone.getDefaultState());
         // ------------------------------------------------
-        world.setBlockState(blockPos.add(5,0,1), b.cobblestone.getDefaultState());
-        world.setBlockState(blockPos.add(5,1,1), b.cobblestone.getDefaultState());
-        world.setBlockState(blockPos.add(5,2,1), b.cobblestone.getDefaultState());
-        world.setBlockState(blockPos.add(5,3,1), b.cobblestone.getDefaultState());
+        world.setBlockState(blockPos.add(5,0,1), Blocks.cobblestone.getDefaultState());
+        world.setBlockState(blockPos.add(5,1,1), Blocks.cobblestone.getDefaultState());
+        world.setBlockState(blockPos.add(5,2,1), Blocks.cobblestone.getDefaultState());
+        world.setBlockState(blockPos.add(5,3,1), Blocks.cobblestone.getDefaultState());
         // ------------------------------------------------
-        world.setBlockState(blockPos.add(5,0,2), b.cobblestone.getDefaultState());
-        world.setBlockState(blockPos.add(5,1,2), b.cobblestone.getDefaultState());
-        world.setBlockState(blockPos.add(5,2,2), b.cobblestone.getDefaultState());
-        world.setBlockState(blockPos.add(5,3,2), b.cobblestone.getDefaultState());
+        world.setBlockState(blockPos.add(5,0,2), Blocks.cobblestone.getDefaultState());
+        world.setBlockState(blockPos.add(5,1,2), Blocks.cobblestone.getDefaultState());
+        world.setBlockState(blockPos.add(5,2,2), Blocks.cobblestone.getDefaultState());
+        world.setBlockState(blockPos.add(5,3,2), Blocks.cobblestone.getDefaultState());
         // ------------------------------------------------
-        world.setBlockState(blockPos.add(5,0,3), b.spruce_door.getDefaultState());
+        world.setBlockState(blockPos.add(5,0,3), Blocks.spruce_door.getDefaultState());
 //        world.setBlockState(x + 5, y + 1, z + 3, b.cobblestone.getDefaultState());
-        world.setBlockState(blockPos.add(5,2,3), b.cobblestone.getDefaultState());
-        world.setBlockState(blockPos.add(5,3,3), b.cobblestone.getDefaultState());
+        world.setBlockState(blockPos.add(5,2,3), Blocks.cobblestone.getDefaultState());
+        world.setBlockState(blockPos.add(5,3,3), Blocks.cobblestone.getDefaultState());
         // ------------------------------------------------
-        world.setBlockState(blockPos.add(5,0,4), b.spruce_door.getDefaultState());
+        world.setBlockState(blockPos.add(5,0,4), Blocks.spruce_door.getDefaultState());
 //        world.setBlockState(x + 5, y + 1, z + 4, b.cobblestone.getDefaultState());
-        world.setBlockState(blockPos.add(5,2,4), b.cobblestone.getDefaultState());
-        world.setBlockState(blockPos.add(5,3,4), b.cobblestone.getDefaultState());
+        world.setBlockState(blockPos.add(5,2,4), Blocks.cobblestone.getDefaultState());
+        world.setBlockState(blockPos.add(5,3,4), Blocks.cobblestone.getDefaultState());
         // ------------------------------------------------
-        world.setBlockState(blockPos.add(5,0,5), b.cobblestone.getDefaultState());
-        world.setBlockState(blockPos.add(5,1,5), b.cobblestone.getDefaultState());
-        world.setBlockState(blockPos.add(5,2,5), b.cobblestone.getDefaultState());
-        world.setBlockState(blockPos.add(5,3,5), b.cobblestone.getDefaultState());
+        world.setBlockState(blockPos.add(5,0,5), Blocks.cobblestone.getDefaultState());
+        world.setBlockState(blockPos.add(5,1,5), Blocks.cobblestone.getDefaultState());
+        world.setBlockState(blockPos.add(5,2,5), Blocks.cobblestone.getDefaultState());
+        world.setBlockState(blockPos.add(5,3,5), Blocks.cobblestone.getDefaultState());
         // ------------------------------------------------
-        world.setBlockState(blockPos.add(5,0,6), b.cobblestone.getDefaultState());
-        world.setBlockState(blockPos.add(5,1,6), b.cobblestone.getDefaultState());
-        world.setBlockState(blockPos.add(5,2,6), b.cobblestone.getDefaultState());
-        world.setBlockState(blockPos.add(5,3,6), b.cobblestone.getDefaultState());
+        world.setBlockState(blockPos.add(5,0,6), Blocks.cobblestone.getDefaultState());
+        world.setBlockState(blockPos.add(5,1,6), Blocks.cobblestone.getDefaultState());
+        world.setBlockState(blockPos.add(5,2,6), Blocks.cobblestone.getDefaultState());
+        world.setBlockState(blockPos.add(5,3,6), Blocks.cobblestone.getDefaultState());
         // ------------------------------------------------
         // +++++++++++++++Ceiling++++++++++++++++++++++++++
         // ------------------------------------------------
-        world.setBlockState(blockPos.add(1,3,1), b.cobblestone.getDefaultState());
-        world.setBlockState(blockPos.add(1,3,2), b.cobblestone.getDefaultState());
-        world.setBlockState(blockPos.add(1,3,3), b.cobblestone.getDefaultState());
-        world.setBlockState(blockPos.add(1,3,4), b.cobblestone.getDefaultState());
-        world.setBlockState(blockPos.add(1,3,5), b.cobblestone.getDefaultState());
+        world.setBlockState(blockPos.add(1,3,1), Blocks.cobblestone.getDefaultState());
+        world.setBlockState(blockPos.add(1,3,2), Blocks.cobblestone.getDefaultState());
+        world.setBlockState(blockPos.add(1,3,3), Blocks.cobblestone.getDefaultState());
+        world.setBlockState(blockPos.add(1,3,4), Blocks.cobblestone.getDefaultState());
+        world.setBlockState(blockPos.add(1,3,5), Blocks.cobblestone.getDefaultState());
         // ------------------------------------------------
-        world.setBlockState(blockPos.add(2,3,1), b.cobblestone.getDefaultState());
-        world.setBlockState(blockPos.add(2,3,2), b.cobblestone.getDefaultState());
-        world.setBlockState(blockPos.add(2,3,3), b.cobblestone.getDefaultState());
-        world.setBlockState(blockPos.add(2,3,4), b.cobblestone.getDefaultState());
-        world.setBlockState(blockPos.add(2,3,5), b.cobblestone.getDefaultState());
+        world.setBlockState(blockPos.add(2,3,1), Blocks.cobblestone.getDefaultState());
+        world.setBlockState(blockPos.add(2,3,2), Blocks.cobblestone.getDefaultState());
+        world.setBlockState(blockPos.add(2,3,3), Blocks.cobblestone.getDefaultState());
+        world.setBlockState(blockPos.add(2,3,4), Blocks.cobblestone.getDefaultState());
+        world.setBlockState(blockPos.add(2,3,5), Blocks.cobblestone.getDefaultState());
         // ------------------------------------------------
-        world.setBlockState(blockPos.add(3,3,1), b.cobblestone.getDefaultState());
-        world.setBlockState(blockPos.add(3,3,2), b.cobblestone.getDefaultState());
-        world.setBlockState(blockPos.add(3,3,3), b.cobblestone.getDefaultState());
-        world.setBlockState(blockPos.add(3,3,4), b.cobblestone.getDefaultState());
-        world.setBlockState(blockPos.add(3,3,5), b.cobblestone.getDefaultState());
+        world.setBlockState(blockPos.add(3,3,1), Blocks.cobblestone.getDefaultState());
+        world.setBlockState(blockPos.add(3,3,2), Blocks.cobblestone.getDefaultState());
+        world.setBlockState(blockPos.add(3,3,3), Blocks.cobblestone.getDefaultState());
+        world.setBlockState(blockPos.add(3,3,4), Blocks.cobblestone.getDefaultState());
+        world.setBlockState(blockPos.add(3,3,5), Blocks.cobblestone.getDefaultState());
         // ------------------------------------------------
-        world.setBlockState(blockPos.add(4,3,1), b.cobblestone.getDefaultState());
-        world.setBlockState(blockPos.add(4,3,2), b.cobblestone.getDefaultState());
-        world.setBlockState(blockPos.add(4,3,3), b.cobblestone.getDefaultState());
-        world.setBlockState(blockPos.add(4,3,4), b.cobblestone.getDefaultState());
-        world.setBlockState(blockPos.add(4,3,5), b.cobblestone.getDefaultState());
+        world.setBlockState(blockPos.add(4,3,1), Blocks.cobblestone.getDefaultState());
+        world.setBlockState(blockPos.add(4,3,2), Blocks.cobblestone.getDefaultState());
+        world.setBlockState(blockPos.add(4,3,3), Blocks.cobblestone.getDefaultState());
+        world.setBlockState(blockPos.add(4,3,4), Blocks.cobblestone.getDefaultState());
+        world.setBlockState(blockPos.add(4,3,5), Blocks.cobblestone.getDefaultState());
 
     }
 }

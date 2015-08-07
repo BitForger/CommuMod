@@ -328,14 +328,7 @@ public class BlockPureWater extends BlockFluidClassic
             return true;
         }
 
-        if (this.density > density)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        return this.density > density;
     }
 
     protected int getLargerQuanta(IBlockAccess world, BlockPos pos, int compare)

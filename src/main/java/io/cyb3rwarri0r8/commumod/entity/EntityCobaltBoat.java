@@ -113,7 +113,7 @@ public class EntityCobaltBoat extends Entity {
     public EntityCobaltBoat(World p_i1705_1_, double p_i1705_2_, double p_i1705_4_, double p_i1705_6_)
     {
         this(p_i1705_1_);
-        this.setPosition(p_i1705_2_, p_i1705_4_ + (double)this.getYOffset(), p_i1705_6_);
+        this.setPosition(p_i1705_2_, p_i1705_4_ + this.getYOffset(), p_i1705_6_);
         this.motionX = 0.0D;
         this.motionY = 0.0D;
         this.motionZ = 0.0D;

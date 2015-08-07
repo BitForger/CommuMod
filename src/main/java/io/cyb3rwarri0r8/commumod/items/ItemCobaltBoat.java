@@ -20,7 +20,7 @@ package io.cyb3rwarri0r8.commumod.items;
  */
 
 import io.cyb3rwarri0r8.commumod.entity.EntityCobaltBoat;
-import io.cyb3rwarri0r8.commumod.main;
+import io.cyb3rwarri0r8.commumod.Commumod;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.entity.Entity;
@@ -41,7 +41,7 @@ public class ItemCobaltBoat extends Item {
     public ItemCobaltBoat()
     {
         this.maxStackSize = 1;
-        this.setCreativeTab(main.modTab);
+        this.setCreativeTab(Commumod.modTab);
         setUnlocalizedName("cobaltBoat");
         Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(this, 0, new ModelResourceLocation("commumod:textures/items/cobaltBoat", "inventory"));
     }
@@ -55,7 +55,7 @@ public class ItemCobaltBoat extends Item {
         float f1 = p_77659_3_.prevRotationPitch + (p_77659_3_.rotationPitch - p_77659_3_.prevRotationPitch) * f;
         float f2 = p_77659_3_.prevRotationYaw + (p_77659_3_.rotationYaw - p_77659_3_.prevRotationYaw) * f;
         double d0 = p_77659_3_.prevPosX + (p_77659_3_.posX - p_77659_3_.prevPosX) * (double)f;
-        double d1 = p_77659_3_.prevPosY + (p_77659_3_.posY - p_77659_3_.prevPosY) * (double)f + 1.62D - (double)p_77659_3_.posY;
+        double d1 = p_77659_3_.prevPosY + (p_77659_3_.posY - p_77659_3_.prevPosY) * (double)f + 1.62D - p_77659_3_.posY;
         double d2 = p_77659_3_.prevPosZ + (p_77659_3_.posZ - p_77659_3_.prevPosZ) * (double)f;
         Vec3 vec3 = new Vec3(d0, d1, d2);
         float f3 = MathHelper.cos(-f2 * 0.017453292F - (float) Math.PI);

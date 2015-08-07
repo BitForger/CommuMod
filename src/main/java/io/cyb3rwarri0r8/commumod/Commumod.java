@@ -54,7 +54,7 @@ import net.minecraftforge.fml.relauncher.Side;
 
 
 
-public class main
+public class Commumod
 {
     @SidedProxy(clientSide=Reference.CLIENT_PROXY, serverSide=Reference.COMMON_PROXY)
     public static proxyCommon proxy;
@@ -66,7 +66,7 @@ public class main
 
 
     @Mod.Instance(Reference.MODID)
-    public static main instance;
+    public static Commumod instance;
 
     public static RegisterItemRenders itemRenders;
 

@@ -22,7 +22,7 @@ package io.cyb3rwarri0r8.commumod.blocks;
 
 import io.cyb3rwarri0r8.commumod.entity.EntityHydrogenTNTPrimed;
 import io.cyb3rwarri0r8.commumod.lib.Reference;
-import io.cyb3rwarri0r8.commumod.main;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockTNT;
 import net.minecraft.block.material.Material;
@@ -97,7 +97,7 @@ public class BlockHydrogenTNT extends BlockTNT {
      */
     public void onBlockDestroyedByPlayer(World worldIn, BlockPos pos, IBlockState state)
     {
-        this.func_180692_a(worldIn, pos, state, (EntityLivingBase)null);
+        this.func_180692_a(worldIn, pos, state, null);
     }
 
     public void func_180692_a(World worldIn, BlockPos p_180692_2_, IBlockState p_180692_3_, EntityLivingBase p_180692_4_)
@@ -183,6 +183,6 @@ public class BlockHydrogenTNT extends BlockTNT {
 
     protected BlockState createBlockState()
     {
-        return new BlockState(this, new IProperty[] {EXPLODE_PROP});
+        return new BlockState(this, EXPLODE_PROP);
     }
 }

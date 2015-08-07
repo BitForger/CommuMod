@@ -21,11 +21,9 @@ package io.cyb3rwarri0r8.commumod.blocks;
  */
 
 import io.cyb3rwarri0r8.commumod.entity.EntitySuperbiumTNTPrimed;
-import io.cyb3rwarri0r8.commumod.main;
+import io.cyb3rwarri0r8.commumod.Commumod;
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockTNT;
 import net.minecraft.block.material.Material;
-import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyBool;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
@@ -55,7 +53,7 @@ public class BlockSuperbiumTNT extends Block {
     public BlockSuperbiumTNT()
     {
         super(Material.tnt);
-        setCreativeTab(main.modTab);
+        setCreativeTab(Commumod.modTab);
         setUnlocalizedName("superbiumTNT");
         this.setDefaultState(this.getDefaultState());
         setStepSound(soundTypeGrass);
@@ -112,7 +110,7 @@ public class BlockSuperbiumTNT extends Block {
      */
     public void onBlockDestroyedByPlayer(World p_149664_1_, BlockPos blockPos, IBlockState blockState)
     {
-        this.func_180692_a(p_149664_1_, blockPos, blockState, (EntityLivingBase) null);
+        this.func_180692_a(p_149664_1_, blockPos, blockState, null);
     }
 
     public void func_180692_a(World worldIn, BlockPos p_180692_2_, IBlockState p_180692_3_, EntityLivingBase p_180692_4_)

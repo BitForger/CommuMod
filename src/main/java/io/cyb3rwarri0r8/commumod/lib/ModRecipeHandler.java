@@ -51,6 +51,6 @@ public class ModRecipeHandler {
                 Leash.remove();
 
 
-        };
+        }
     }
 }

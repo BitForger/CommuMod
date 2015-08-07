@@ -21,8 +21,7 @@ package io.cyb3rwarri0r8.commumod.items;
  */
 
 import io.cyb3rwarri0r8.commumod.entity.EntityAxe;
-import io.cyb3rwarri0r8.commumod.lib.Reference;
-import io.cyb3rwarri0r8.commumod.main;
+import io.cyb3rwarri0r8.commumod.Commumod;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.entity.player.EntityPlayer;
@@ -42,7 +41,7 @@ public class ItemSuperbiumAxe extends ItemAxe {
         super(material);
         setUnlocalizedName("superbiumAxe");
         Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(this, 0, new ModelResourceLocation("commumod:textures/items/superbiumAxe", "inventory"));
-        setCreativeTab(main.modTab);
+        setCreativeTab(Commumod.modTab);
 
     }
 

@@ -21,6 +21,7 @@ package io.cyb3rwarri0r8.commumod.lib.helpers;
  *
  */
 
+import io.cyb3rwarri0r8.commumod.Commumod;
 import io.cyb3rwarri0r8.commumod.lib.PurifierRecipes;
 import net.minecraft.block.Block;
 import net.minecraft.entity.EntityList;
@@ -153,7 +154,7 @@ public class RegisterHelper {
         int secondaryColor = rand.nextInt() * 16777215;
 
         EntityRegistry.registerGlobalEntityID(entityClass, name, entityID);
-        EntityRegistry.registerModEntity(entityClass, name, entityID, io.cyb3rwarri0r8.commumod.main.instance, 64, 1, true);
+        EntityRegistry.registerModEntity(entityClass, name, entityID, Commumod.instance, 64, 1, true);
         EntityList.entityEggs.put(Integer.valueOf(entityID), new EntityList.EntityEggInfo(entityID, primaryColor, secondaryColor));
 
     }

@@ -96,7 +96,7 @@ public class EntityMiner extends EntityMob {
 
             BlockPos blockPos = new BlockPos(this.posX, this.posY, this.posZ);
             this.worldObj.spawnEntityInWorld(entityminer);
-            this.worldObj.playAuxSFXAtEntity((EntityPlayer)null, 1016, blockPos, 0);
+            this.worldObj.playAuxSFXAtEntity(null, 1016, blockPos, 0);
         }
     }
 

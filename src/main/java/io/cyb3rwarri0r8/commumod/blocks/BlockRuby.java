@@ -19,8 +19,9 @@ package io.cyb3rwarri0r8.commumod.blocks;
  *
  */
 
+import io.cyb3rwarri0r8.commumod.Commumod;
 import io.cyb3rwarri0r8.commumod.lib.Reference;
-import io.cyb3rwarri0r8.commumod.main;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.Minecraft;
@@ -38,7 +39,7 @@ public class BlockRuby extends Block
         setUnlocalizedName("rubyBlock");
         Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(Item.getItemFromBlock(ModBlocks.rubyBlock), 0, new ModelResourceLocation(Reference.MODID + ":" + getUnlocalizedName().substring(5), "inventory"));
 
-        setCreativeTab(main.modTab);
+        setCreativeTab(Commumod.modTab);
         setStepSound(soundTypePiston);
         setHardness(3.0F);
         setResistance(15F);

@@ -72,7 +72,7 @@ public class WorldGenMod implements IWorldGenerator
 
             BlockPos blockPos = new BlockPos(randPosX, randPosY, randPosZ);
 
-            new WorldGenMinable((IBlockState) ModBlocks.superbiumOre.getDefaultState(), 7).generate(world, rand, blockPos);
+            new WorldGenMinable(ModBlocks.superbiumOre.getDefaultState(), 7).generate(world, rand, blockPos);
         }
 
         for (int j = 0; j < 4; j++) {
@@ -82,7 +82,7 @@ public class WorldGenMod implements IWorldGenerator
 
             BlockPos blockPos = new BlockPos(randPosX, randPosY, randPosZ);
 
-            new WorldGenMinable((IBlockState) ModBlocks.aradactiteOre.getDefaultState(), 15).generate(world, rand, blockPos);
+            new WorldGenMinable(ModBlocks.aradactiteOre.getDefaultState(), 15).generate(world, rand, blockPos);
         }
 
         for (int r = 0; r < 4; r++)
@@ -93,7 +93,7 @@ public class WorldGenMod implements IWorldGenerator
 
             BlockPos blockPos = new BlockPos(randPosX, randPosY, randPosZ);
 
-            new WorldGenMinable((IBlockState) ModBlocks.rubyOre.getDefaultState(), 12).generate(world, rand, blockPos);
+            new WorldGenMinable(ModBlocks.rubyOre.getDefaultState(), 12).generate(world, rand, blockPos);
         }
 
         for (int f = 0; f < 4; f++)
@@ -104,7 +104,7 @@ public class WorldGenMod implements IWorldGenerator
 
             BlockPos blockPos = new BlockPos(randPosX, randPosY, randPosZ);
 
-            new WorldGenMinable((IBlockState) ModBlocks.cobaltOre.getDefaultState(), 13).generate(world, rand, blockPos);
+            new WorldGenMinable(ModBlocks.cobaltOre.getDefaultState(), 13).generate(world, rand, blockPos);
         }
 
     }

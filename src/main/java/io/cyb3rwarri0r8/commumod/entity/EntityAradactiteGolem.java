@@ -156,7 +156,7 @@ public class EntityAradactiteGolem extends EntityGolem {
         if (this.motionX * this.motionX + this.motionZ * this.motionZ > 2.500000277905201E-7D && this.rand.nextInt(5) == 0)
         {
             int i = MathHelper.floor_double(this.posX);
-            int j = MathHelper.floor_double(this.posY - 0.20000000298023224D - (double)this.getYOffset());
+            int j = MathHelper.floor_double(this.posY - 0.20000000298023224D - this.getYOffset());
             int k = MathHelper.floor_double(this.posZ);
             IBlockState iblockstate = this.worldObj.getBlockState(new BlockPos(i, j, k));
             Block block = iblockstate.getBlock();

@@ -19,20 +19,12 @@ package io.cyb3rwarri0r8.commumod.entity.render;
  *
  */
 
-import io.cyb3rwarri0r8.commumod.entity.EntityAradactiteGolem;
-import io.cyb3rwarri0r8.commumod.lib.Reference;
 import io.cyb3rwarri0r8.commumod.entity.model.ModelAradactiteGolem;
-import net.minecraft.client.renderer.OpenGlHelper;
+import io.cyb3rwarri0r8.commumod.lib.Reference;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
-import net.minecraft.client.renderer.texture.TextureMap;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityLiving;
-import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.init.Blocks;
 import net.minecraft.util.ResourceLocation;
-import org.lwjgl.opengl.GL11;
-import org.lwjgl.opengl.GL12;
 
 /**
  * Created by noah on 10/1/14.
@@ -56,7 +48,7 @@ public class RenderAradactiteGolem extends RenderLiving {
      */
     @Override
     protected ResourceLocation getEntityTexture(Entity p_110775_1_) {
-        return this.getEntityTexture((EntityAradactiteGolem)p_110775_1_);
+        return this.getEntityTexture(p_110775_1_);
     }
 
 

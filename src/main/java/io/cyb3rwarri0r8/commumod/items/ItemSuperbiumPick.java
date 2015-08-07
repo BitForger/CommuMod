@@ -19,8 +19,7 @@ package io.cyb3rwarri0r8.commumod.items;
  *
  */
 
-import io.cyb3rwarri0r8.commumod.lib.Reference;
-import io.cyb3rwarri0r8.commumod.main;
+import io.cyb3rwarri0r8.commumod.Commumod;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.entity.player.EntityPlayer;
@@ -35,7 +34,7 @@ public class ItemSuperbiumPick extends ItemPickaxe {
     {
         super(material);
         setUnlocalizedName("superbiumPick");
-        setCreativeTab(main.modTab);
+        setCreativeTab(Commumod.modTab);
         Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(this, 0, new ModelResourceLocation("commumod:textures/items/superbiumPick", "inventory"));
     }
 

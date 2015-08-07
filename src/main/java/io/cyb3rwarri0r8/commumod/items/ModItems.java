@@ -24,7 +24,7 @@ package io.cyb3rwarri0r8.commumod.items;
 import io.cyb3rwarri0r8.commumod.blocks.ModBlocks;
 import io.cyb3rwarri0r8.commumod.entity.EntityCobaltBoat;
 import io.cyb3rwarri0r8.commumod.lib.helpers.RegisterHelper;
-import io.cyb3rwarri0r8.commumod.main;
+import io.cyb3rwarri0r8.commumod.Commumod;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
@@ -313,7 +313,7 @@ public class ModItems {
 
         cobaltBoat = new ItemCobaltBoat().setUnlocalizedName("cobaltBoat");
         RegisterHelper.registerItem(cobaltBoat);
-        EntityRegistry.registerModEntity(EntityCobaltBoat.class, "cobaltBoat", EntityRegistry.findGlobalUniqueEntityId(), main.instance, 80, 3, false);
+        EntityRegistry.registerModEntity(EntityCobaltBoat.class, "cobaltBoat", EntityRegistry.findGlobalUniqueEntityId(), Commumod.instance, 80, 3, false);
         GameRegistry.addRecipe(new ItemStack(cobaltBoat, 1),
                 "X X",
                 "XXX",

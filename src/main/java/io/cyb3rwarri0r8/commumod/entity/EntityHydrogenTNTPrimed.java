@@ -146,14 +146,14 @@ public class EntityHydrogenTNTPrimed extends EntityTNTPrimed
                         int lol = 0;
                         int lol2 = 0;
                         int blockStateId = Block.getStateId(worldObj.getBlockState(blockPos));
-                        IBlockState state = (IBlockState) Block.getStateById(blockStateId);
+                        IBlockState state = Block.getStateById(blockStateId);
                         List<EntityMob> entities = this.worldObj.getEntitiesWithinAABB(EntityMob.class, AxisAlignedBB.fromBounds(this.posX - 5, this.posY - 5, this.posZ - 5, this.posX + 5, this.posY + 5, this.posZ + 5));
                         worldObj.setBlockState(blockPos, state);
 
                         for(int i = 0; i <= entities.size() - 1; i++)
                         {
 
-                            EntityMob entityMob = (EntityMob) entities.get(i);
+                            EntityMob entityMob = entities.get(i);
                             entityMob.attackEntityFrom(DamageSource.causePlayerDamage(this.worldObj.getClosestPlayer(this.posX, this.posY, this.posZ, 0.0D)),2000F);
                         }
 

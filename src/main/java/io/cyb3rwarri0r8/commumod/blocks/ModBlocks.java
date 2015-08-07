@@ -22,7 +22,7 @@ package io.cyb3rwarri0r8.commumod.blocks;
 
 import io.cyb3rwarri0r8.commumod.items.ModItems;
 import io.cyb3rwarri0r8.commumod.lib.helpers.RegisterHelper;
-import io.cyb3rwarri0r8.commumod.main;
+import io.cyb3rwarri0r8.commumod.Commumod;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
@@ -119,7 +119,7 @@ public class ModBlocks {
         cobaltOre = new BlockCobaltOre(Material.rock);
         RegisterHelper.registerBlock(cobaltOre);
 
-        purifier_idle = new BlockPurifier(false).setUnlocalizedName("purifierIdle").setCreativeTab(main.modTab);
+        purifier_idle = new BlockPurifier(false).setUnlocalizedName("purifierIdle").setCreativeTab(Commumod.modTab);
         RegisterHelper.registerBlock(purifier_idle);
 
 

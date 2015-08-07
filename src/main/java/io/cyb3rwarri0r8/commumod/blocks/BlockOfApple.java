@@ -19,12 +19,9 @@ package io.cyb3rwarri0r8.commumod.blocks;
  *
  */
 
-import io.cyb3rwarri0r8.commumod.lib.Reference;
-import io.cyb3rwarri0r8.commumod.main;
+import io.cyb3rwarri0r8.commumod.Commumod;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 
 import java.util.Random;
@@ -38,7 +35,7 @@ public class BlockOfApple extends Block {
         setUnlocalizedName("appleBlock");
 
 
-        setCreativeTab(main.modTab);
+        setCreativeTab(Commumod.modTab);
         setStepSound(soundTypeGrass);
     }
 
