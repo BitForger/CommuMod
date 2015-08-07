@@ -1,63 +1,75 @@
 package io.cyb3rwarri0r8.commumod.blocks;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
+
+/*
+ *  CommuMod - A Minecraft Modification
+ *  Copyright (C) ${YEAR} Cyb3rWarri0r8
+ *
+ *  This program is free software: you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or
+ *  any later version.
+ *
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ */
+
 import io.cyb3rwarri0r8.commumod.entity.EntitySuperbiumTNTPrimed;
-import io.cyb3rwarri0r8.commumod.lib.Reference;
-import io.cyb3rwarri0r8.commumod.Commumod;
+import io.cyb3rwarri0r8.commumod.main;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockTNT;
 import net.minecraft.block.material.Material;
-import net.minecraft.client.renderer.texture.IIconRegister;
+import net.minecraft.block.properties.IProperty;
+import net.minecraft.block.properties.PropertyBool;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.item.EntityTNTPrimed;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.projectile.EntityArrow;
 import net.minecraft.init.Items;
-import net.minecraft.util.IIcon;
+import net.minecraft.item.Item;
+import net.minecraft.util.BlockPos;
+import net.minecraft.util.EnumFacing;
 import net.minecraft.world.Explosion;
 import net.minecraft.world.World;
 
 import java.util.Random;
 
-/**
- * Created by noah on 6/7/14.
- */
+
 public class BlockSuperbiumTNT extends Block {
 
-    @SideOnly(Side.CLIENT)
-    private IIcon field_150116_a;
-    @SideOnly(Side.CLIENT)
-    private IIcon field_150115_b;
+
+
+    public static final PropertyBool EXPLODE_PROP = PropertyBool.create("explode");
+
 
     private static final String __OBFID = "CL_00000324";
 
     public BlockSuperbiumTNT()
     {
         super(Material.tnt);
-        setCreativeTab(Commumod.modTab);
-        setBlockName("superbiumTNT");
-        setBlockTextureName(Reference.MODID + ":" + getUnlocalizedName().substring(5));
+        setCreativeTab(main.modTab);
+        setUnlocalizedName("superbiumTNT");
+        this.setDefaultState(this.getDefaultState());
         setStepSound(soundTypeGrass);
-    }
-
-    /**
-     * Gets the block's texture. Args: side, meta
-     */
-    @SideOnly(Side.CLIENT)
-    public IIcon getIcon(int p_149691_1_, int p_149691_2_)
-    {
-        return p_149691_1_ == 0 ? this.field_150115_b : (p_149691_1_ == 1 ? this.field_150116_a : this.blockIcon);
     }
 
     /**
      * Called whenever the block is added into the world. Args: world, x, y, z
      */
-    public void onBlockAdded(World p_149726_1_, int p_149726_2_, int p_149726_3_, int p_149726_4_) {
-        super.onBlockAdded(p_149726_1_, p_149726_2_, p_149726_3_, p_149726_4_);
+    public void onBlockAdded(World p_149726_1_, BlockPos blockPos, IBlockState blockState) {
+        super.onBlockAdded(p_149726_1_, blockPos, blockState);
 
-        if (p_149726_1_.isBlockIndirectlyGettingPowered(p_149726_2_, p_149726_3_, p_149726_4_)) {
-            this.onBlockDestroyedByPlayer(p_149726_1_, p_149726_2_, p_149726_3_, p_149726_4_, 1);
-            p_149726_1_.setBlockToAir(p_149726_2_, p_149726_3_, p_149726_4_);
+        if (p_149726_1_.isBlockPowered(blockPos)) {
+            this.onBlockDestroyedByPlayer(p_149726_1_, blockPos, blockState.withProperty(EXPLODE_PROP, true));
+            p_149726_1_.setBlockToAir(blockPos);
         }
     }
 
@@ -65,12 +77,12 @@ public class BlockSuperbiumTNT extends Block {
      * Lets the block know when one of its neighbor changes. Doesn't know which neighbor changed (coordinates passed are
      * their own) Args: x, y, z, neighbor Block
      */
-    public void onNeighborBlockChange(World p_149695_1_, int p_149695_2_, int p_149695_3_, int p_149695_4_, Block p_149695_5_)
+    public void onNeighborBlockChange(World p_149695_1_, BlockPos blockPos, IBlockState blockState, Block neighborBlock)
     {
-        if (p_149695_1_.isBlockIndirectlyGettingPowered(p_149695_2_, p_149695_3_, p_149695_4_))
+        if (p_149695_1_.isBlockPowered(blockPos))
         {
-            this.onBlockDestroyedByPlayer(p_149695_1_, p_149695_2_, p_149695_3_, p_149695_4_, 1);
-            p_149695_1_.setBlockToAir(p_149695_2_, p_149695_3_, p_149695_4_);
+            this.onBlockDestroyedByPlayer(p_149695_1_, blockPos, blockState.withProperty(EXPLODE_PROP, true));
+            p_149695_1_.setBlockToAir(blockPos);
         }
     }
 
@@ -98,20 +110,20 @@ public class BlockSuperbiumTNT extends Block {
     /**
      * Called right before the block is destroyed by a player.  Args: world, x, y, z, metaData
      */
-    public void onBlockDestroyedByPlayer(World p_149664_1_, int p_149664_2_, int p_149664_3_, int p_149664_4_, int p_149664_5_)
+    public void onBlockDestroyedByPlayer(World p_149664_1_, BlockPos blockPos, IBlockState blockState)
     {
-        this.func_150114_a(p_149664_1_, p_149664_2_, p_149664_3_, p_149664_4_, p_149664_5_, (EntityLivingBase)null);
+        this.func_180692_a(p_149664_1_, blockPos, blockState, (EntityLivingBase) null);
     }
 
-    public void func_150114_a(World p_150114_1_, int p_150114_2_, int p_150114_3_, int p_150114_4_, int p_150114_5_, EntityLivingBase p_150114_6_)
+    public void func_180692_a(World worldIn, BlockPos p_180692_2_, IBlockState p_180692_3_, EntityLivingBase p_180692_4_)
     {
-        if (!p_150114_1_.isRemote)
+        if (!worldIn.isRemote)
         {
-            if ((p_150114_5_ & 1) == 1)
+            if ((Boolean) p_180692_3_.getValue(EXPLODE_PROP))
             {
-                EntitySuperbiumTNTPrimed entitysuperbiumtntprimed = new EntitySuperbiumTNTPrimed(p_150114_1_, (double)((float)p_150114_2_ + 0.5F), (double)((float)p_150114_3_ + 0.5F), (double)((float)p_150114_4_ + 0.5F), p_150114_6_);
-                p_150114_1_.spawnEntityInWorld(entitysuperbiumtntprimed);
-                p_150114_1_.playSoundAtEntity(entitysuperbiumtntprimed, "game.tnt.primed", 1.0F, 1.0F);
+                EntityTNTPrimed entitytntprimed = new EntityTNTPrimed(worldIn, (double)((float)p_180692_2_.getX() + 0.5F), (double)((float)p_180692_2_.getY() + 0.5F), (double)((float)p_180692_2_.getZ() + 0.5F), p_180692_4_);
+                worldIn.spawnEntityInWorld(entitytntprimed);
+                worldIn.playSoundAtEntity(entitytntprimed, "game.tnt.primed", 1.0F, 1.0F);
             }
         }
     }
@@ -119,25 +131,37 @@ public class BlockSuperbiumTNT extends Block {
     /**
      * Called upon block activation (right click on the block.)
      */
-    public boolean onBlockActivated(World p_149727_1_, int p_149727_2_, int p_149727_3_, int p_149727_4_, EntityPlayer p_149727_5_, int p_149727_6_, float p_149727_7_, float p_149727_8_, float p_149727_9_)
+    public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumFacing side, float hitX, float hitY, float hitZ)
     {
-        if (p_149727_5_.getCurrentEquippedItem() != null && p_149727_5_.getCurrentEquippedItem().getItem() == Items.flint_and_steel)
+        if (playerIn.getCurrentEquippedItem() != null)
         {
-            this.func_150114_a(p_149727_1_, p_149727_2_, p_149727_3_, p_149727_4_, 1, p_149727_5_);
-            p_149727_1_.setBlockToAir(p_149727_2_, p_149727_3_, p_149727_4_);
-            p_149727_5_.getCurrentEquippedItem().damageItem(1, p_149727_5_);
-            return true;
+            Item item = playerIn.getCurrentEquippedItem().getItem();
+
+            if (item == Items.flint_and_steel || item == Items.fire_charge)
+            {
+                this.func_180692_a(worldIn, pos, state.withProperty(EXPLODE_PROP, true), playerIn);
+                worldIn.setBlockToAir(pos);
+
+                if (item == Items.flint_and_steel)
+                {
+                    playerIn.getCurrentEquippedItem().damageItem(1, playerIn);
+                }
+                else if (!playerIn.capabilities.isCreativeMode)
+                {
+                    --playerIn.getCurrentEquippedItem().stackSize;
+                }
+
+                return true;
+            }
         }
-        else
-        {
-            return super.onBlockActivated(p_149727_1_, p_149727_2_, p_149727_3_, p_149727_4_, p_149727_5_, p_149727_6_, p_149727_7_, p_149727_8_, p_149727_9_);
-        }
+
+        return super.onBlockActivated(worldIn, pos, state, playerIn, side, hitX, hitY, hitZ);
     }
 
     /**
      * Triggered whenever an entity collides with this block (enters into the block). Args: world, x, y, z, entity
      */
-    public void onEntityCollidedWithBlock(World p_149670_1_, int p_149670_2_, int p_149670_3_, int p_149670_4_, Entity p_149670_5_)
+    public void onEntityCollidedWithBlock(World p_149670_1_, BlockPos blockPos, IBlockState blockState, Entity p_149670_5_)
     {
         if (p_149670_5_ instanceof EntityArrow && !p_149670_1_.isRemote)
         {
@@ -145,8 +169,8 @@ public class BlockSuperbiumTNT extends Block {
 
             if (entityarrow.isBurning())
             {
-                this.func_150114_a(p_149670_1_, p_149670_2_, p_149670_3_, p_149670_4_, 1, entityarrow.shootingEntity instanceof EntityLivingBase ? (EntityLivingBase)entityarrow.shootingEntity : null);
-                p_149670_1_.setBlockToAir(p_149670_2_, p_149670_3_, p_149670_4_);
+                this.func_180692_a(p_149670_1_, blockPos, blockState, entityarrow.shootingEntity instanceof EntityLivingBase ? (EntityLivingBase) entityarrow.shootingEntity : null);
+                p_149670_1_.setBlockToAir(blockPos);
             }
         }
     }
@@ -159,13 +183,7 @@ public class BlockSuperbiumTNT extends Block {
         return false;
     }
 
-    @SideOnly(Side.CLIENT)
-    public void registerBlockIcons(IIconRegister p_149651_1_)
-    {
-        this.blockIcon = p_149651_1_.registerIcon(Reference.MODID + ":" + getUnlocalizedName().substring(5) + "_side");
-        this.field_150116_a = p_149651_1_.registerIcon(Reference.MODID + ":" + getUnlocalizedName().substring(5) + "_top");
-        this.field_150115_b = p_149651_1_.registerIcon(Reference.MODID + ":" + getUnlocalizedName().substring(5) + "_bottom");
-    }
+
 
 
 }

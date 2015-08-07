@@ -1,7 +1,25 @@
 package io.cyb3rwarri0r8.commumod.entity;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
+
+/*
+ *  CommuMod - A Minecraft Modification
+ *  Copyright (C) ${YEAR} Cyb3rWarri0r8
+ *
+ *  This program is free software: you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or
+ *  any later version.
+ *
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ */
+
 import net.minecraft.block.Block;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.item.EntityItem;
@@ -9,7 +27,11 @@ import net.minecraft.entity.item.EntityTNTPrimed;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.util.BlockPos;
+import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 import java.util.Random;
 
@@ -30,7 +52,7 @@ public class EntitySuperbiumTNTPrimed extends EntityTNTPrimed{
         super(par1World);
         this.preventEntitySpawning = true;
         this.setSize(0.98F, 0.98F);
-        this.yOffset = this.height / 2.0F;
+
     }
 
     public EntitySuperbiumTNTPrimed(World par1World, double par2, double par4, double par6, EntityLivingBase par8EntityLivingBase)
@@ -99,7 +121,7 @@ public class EntitySuperbiumTNTPrimed extends EntityTNTPrimed{
         }
         else
         {
-            this.worldObj.spawnParticle("smoke", this.posX, this.posY + 0.5D, this.posZ, 0.0D, 0.0D, 0.0D);
+            this.worldObj.spawnParticle(EnumParticleTypes.SMOKE_NORMAL, this.posX, this.posY, this.posZ, 0.0D, 0.0D, 0.0D);
         }
     }
 
@@ -107,20 +129,25 @@ public class EntitySuperbiumTNTPrimed extends EntityTNTPrimed{
     {
         float f = 0.0F;
         this.worldObj.createExplosion(this, this.posX, this.posY, this.posZ, f, true);
+        BlockPos blockPos = new BlockPos(this.posX, this.posY, this.posZ);
         for(int posX2 = (int)posX- 5; posX2 < (int)posX + 5; posX2++)
         {
             for(int posY2 = (int)posY - 5; posY2 < (int)posY + 0; posY2++)
             {
                 for(int posZ2 = (int)posZ - 5; posZ2 < (int)posZ + 5; posZ2++)
                 {
-                    if(worldObj.getBlock(posX2, posY2, posZ2) != Blocks.bedrock && worldObj.getBlock(posX2, posY2, posZ2) != Blocks.end_portal_frame && worldObj.getBlock(posX2, posY2, posZ2) != Blocks.end_portal)
+                    BlockPos blockPos1 = new BlockPos(posX2,posY2,posZ2);
+                    if(worldObj.getBlockState(blockPos1).getBlock() != Blocks.bedrock && worldObj.getBlockState(blockPos1).getBlock() != Blocks.end_portal_frame && worldObj.getBlockState(blockPos1).getBlock() != Blocks.end_portal)
                     {
-                        Block getblock = worldObj.getBlock(posX2, posY2, posZ2);
-                        worldObj.setBlockToAir(posX2, posY2, posZ2);
+
+                        Block getblock = worldObj.getBlockState(blockPos1).getBlock();
+                        worldObj.setBlockToAir(blockPos1);
                         Random random = new Random();
-                        int lol = 0;
-                        int lol2 = 0;
-                        EntityItem entityitem = new EntityItem(worldObj, posX2, posY2, posZ2, new ItemStack(getblock.getItemDropped(lol, random, lol2)));
+                        Double lol = 0.0;
+                        Double lol2 = 0.0;
+                        Double lol3 = random.nextDouble();
+                        BlockPos blockPos2 = new BlockPos(lol, lol3, lol2);
+                        EntityItem entityitem = new EntityItem(worldObj, posX2, posY2, posZ2, new ItemStack(getblock.getItemDropped(worldObj.getBlockState(blockPos2),random,0)));
                         worldObj.spawnEntityInWorld(entityitem);
                     }
                 }

@@ -7,4 +7,4 @@ general:
         
 notify:
     webhooks:
-        - url: https://webhooks.gitter.im/e/ee60bf64c3680d058064
+        - url: https://webhooks.gitter.im/e/6bae975df1afe91d26fe

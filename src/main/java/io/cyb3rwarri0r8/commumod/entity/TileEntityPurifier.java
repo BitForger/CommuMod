@@ -1,8 +1,25 @@
 package io.cyb3rwarri0r8.commumod.entity;
 
-import cpw.mods.fml.common.registry.GameRegistry;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
+
+/*
+ *  CommuMod - A Minecraft Modification
+ *  Copyright (C) ${YEAR} Cyb3rWarri0r8
+ *
+ *  This program is free software: you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or
+ *  any later version.
+ *
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ */
+
 import io.cyb3rwarri0r8.commumod.blocks.BlockPurifier;
 import io.cyb3rwarri0r8.commumod.lib.PurifierRecipes;
 import net.minecraft.block.Block;
@@ -15,7 +32,12 @@ import net.minecraft.item.*;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraftforge.common.util.ForgeDirection;
+import net.minecraft.util.BlockPos;
+import net.minecraft.util.EnumFacing;
+import net.minecraft.util.IChatComponent;
+import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 /**
  * Created by noah on 9/10/14.
@@ -35,33 +57,21 @@ public class TileEntityPurifier extends TileEntity implements ISidedInventory
 
     private String furnaceName;
 
+    public BlockPos blockPos;
+
     public void furnaceName(String string)
     {
         this.furnaceName = string;
     }
 
-    @Override
-    public int[] getAccessibleSlotsFromSide(int p_94128_1_) {
-        return p_94128_1_ == 0 ? slotsBottom : (p_94128_1_ == 1 ? slotsTop : slotsSides);
-    }
 
-    @Override
-    public boolean canInsertItem(int p_102007_1_, ItemStack p_102007_2_, int p_102007_3_)
-    {
-        return this.isItemValidForSlot(p_102007_1_, p_102007_2_);
-    }
-
-    @Override
-    public boolean canExtractItem(int p_102008_1_, ItemStack p_102008_2_, int p_102008_3_) {
-        return p_102008_3_ != 0 || p_102008_1_ != 1 || p_102008_2_.getItem() == Items.bucket;
-    }
-
+    /**
+     * Returns the number of slots in the inventory.
+     */
     @Override
     public int getSizeInventory() {
-        return this.furnaceItemStacks.length;
+        return 0;
     }
-
-
 
     @Override
     public ItemStack getStackInSlot(int slot) {
@@ -122,12 +132,12 @@ public class TileEntityPurifier extends TileEntity implements ISidedInventory
 
     }
 
-    @Override
+
     public String getInventoryName() {
         return this.hasCustomInventoryName() ? this.furnaceName : "Purifier";
     }
 
-    @Override
+
     public boolean hasCustomInventoryName() {
         return this.furnaceName != null && this.furnaceName.length() > 0;
     }
@@ -139,20 +149,27 @@ public class TileEntityPurifier extends TileEntity implements ISidedInventory
         return 64;
     }
 
+    /**
+     * Do not make give this method the name canInteractWith because it clashes with Container
+     *
+     * @param playerIn
+     */
     @Override
-    public boolean isUseableByPlayer(EntityPlayer p_70300_1_) {
-        return this.worldObj.getTileEntity(this.xCoord, this.yCoord, this.zCoord) != this ? false : p_70300_1_.getDistanceSq((double)this.xCoord + 0.5D, (double)this.yCoord + 0.5D, (double)this.zCoord + 0.5D) <= 64.0D;
+    public boolean isUseableByPlayer(EntityPlayer playerIn) {
+        return true;
+    }
+
+
+    @Override
+    public void openInventory(EntityPlayer playerIn) {
+
     }
 
     @Override
-    public void openInventory() {
+    public void closeInventory(EntityPlayer playerIn) {
 
     }
 
-    @Override
-    public void closeInventory() {
-
-    }
 
     public void readFromNBT(NBTTagCompound tagCompound)
     {
@@ -229,69 +246,6 @@ public class TileEntityPurifier extends TileEntity implements ISidedInventory
         return this.furnaceBurnTime > 0;
     }
 
-    public void updateEntity()
-    {
-        boolean flag = this.furnaceBurnTime > 0;
-        boolean flag1 = false;
-
-        if (this.furnaceBurnTime > 0)
-        {
-            --this.furnaceBurnTime;
-        }
-
-        if (!this.worldObj.isRemote)
-        {
-            if (this.furnaceBurnTime != 0 || this.furnaceItemStacks[1] != null && this.furnaceItemStacks[0] != null)
-            {
-                if (this.furnaceBurnTime == 0 && this.canSmelt())
-                {
-                    this.currentBurnTime = this.furnaceBurnTime = getBurnTime(this.furnaceItemStacks[1]);
-
-                    if (this.furnaceBurnTime > 0)
-                    {
-                        flag1 = true;
-
-                        if (this.furnaceItemStacks[1] != null)
-                        {
-                            --this.furnaceItemStacks[1].stackSize;
-
-                            if (this.furnaceItemStacks[1].stackSize == 0)
-                            {
-                                this.furnaceItemStacks[1] = furnaceItemStacks[1].getItem().getContainerItem(furnaceItemStacks[1]);
-                            }
-                        }
-                    }
-                }
-
-                if (this.isBurning() && this.canSmelt())
-                {
-                    ++this.furnaceCookTime;
-
-                    if (this.furnaceCookTime == 200)
-                    {
-                        this.furnaceCookTime = 0;
-                        this.smeltItem();
-                        flag1 = true;
-                    }
-                }
-                else
-                {
-                    this.furnaceCookTime = 0;
-                }
-            }
-
-            if (flag != this.furnaceBurnTime > 0)
-            {
-                flag1 = true;
-                BlockPurifier.updateBlockState(this.furnaceBurnTime > 0, this.worldObj, this.xCoord, this.yCoord, this.zCoord);
-            }
-        }
-
-        if (flag1)
-        {
-            this.markDirty();
-        }
-    }
 
     private boolean canSmelt()
     {
@@ -373,7 +327,7 @@ public class TileEntityPurifier extends TileEntity implements ISidedInventory
 
             if (item instanceof ItemTool && ((ItemTool)item).getToolMaterialName().equals("WOOD")) return 200;
             if (item instanceof ItemSword && ((ItemSword)item).getToolMaterialName().equals("WOOD")) return 200;
-            if (item instanceof ItemHoe && ((ItemHoe)item).getToolMaterialName().equals("WOOD")) return 200;
+            if (item instanceof ItemHoe && ((ItemHoe)item).getMaterialName().equals("WOOD")) return 200;
             if (item == Items.stick) return 100;
             if (item == Items.coal) return 1600;
             if (item == Items.lava_bucket) return 20000;
@@ -400,5 +354,81 @@ public class TileEntityPurifier extends TileEntity implements ISidedInventory
         return p_94041_1_ == 2 ? false : (p_94041_1_ == 1 ? isItemFuel(p_94041_2_) : true);
     }
 
+    @Override
+    public int getField(int id) {
+        return 0;
+    }
 
+    @Override
+    public void setField(int id, int value) {
+
+    }
+
+    @Override
+    public int getFieldCount() {
+        return 0;
+    }
+
+    @Override
+    public void clear() {
+
+    }
+
+
+
+    @Override
+    public int[] getSlotsForFace(EnumFacing side) {
+        return new int[0];
+    }
+
+    /**
+     * Returns true if automation can insert the given item in the given slot from the given side. Args: slot, item,
+     * side
+     *
+     * @param index
+     * @param itemStackIn
+     * @param direction
+     */
+    @Override
+    public boolean canInsertItem(int index, ItemStack itemStackIn, EnumFacing direction) {
+        return false;
+    }
+
+    /**
+     * Returns true if automation can extract the given item in the given slot from the given side. Args: slot, item,
+     * side
+     *
+     * @param index
+     * @param stack
+     * @param direction
+     */
+    @Override
+    public boolean canExtractItem(int index, ItemStack stack, EnumFacing direction) {
+        return false;
+    }
+
+    /**
+     * Gets the name of this command sender (usually username, but possibly "Rcon")
+     */
+    @Override
+    public String getName() {
+        return null;
+    }
+
+    /**
+     * Returns true if this thing is named
+     */
+    @Override
+    public boolean hasCustomName() {
+        return false;
+    }
+
+    @Override
+    public IChatComponent getDisplayName() {
+        return null;
+    }
+
+    public void setCustomInventoryName(String customInventoryName) {
+        this.furnaceName = customInventoryName;
+    }
 }

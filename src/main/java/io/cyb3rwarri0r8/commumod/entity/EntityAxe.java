@@ -1,5 +1,24 @@
 package io.cyb3rwarri0r8.commumod.entity;
 
+/*
+ *  CommuMod - A Minecraft Modification
+ *  Copyright (C) ${YEAR} Cyb3rWarri0r8
+ *
+ *  This program is free software: you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or
+ *  any later version.
+ *
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ */
+
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.projectile.EntityThrowable;
 import net.minecraft.util.MovingObjectPosition;
@@ -41,23 +60,23 @@ public class EntityAxe extends EntityThrowable {
 */
             switch(mop.sideHit)
             {
-                case 0: //BOTTOM
-                    mop.blockY--;
+                case DOWN: //BOTTOM
+                    mop.getBlockPos().add(0,-1,0);
                     break;
-                case 1: //TOP
-                    mop.blockY++;
+                case UP: //TOP
+                    mop.getBlockPos().add(0,1,0);
                     break;
-                case 2: //EAST
-                    mop.blockZ--;
+                case EAST: //EAST
+                    mop.getBlockPos().add(0,0,-1);
                     break;
-                case 3: //WEST
-                    mop.blockZ++;
+                case WEST: //WEST
+                    mop.getBlockPos().add(0,0,1);
                     break;
-                case 4: //NORTH
-                    mop.blockX--;
+                case NORTH: //NORTH
+                    mop.getBlockPos().add(-1,0,0);
                     break;
-                case 5: //SOUTH
-                    mop.blockX++;
+                case SOUTH: //SOUTH
+                    mop.getBlockPos().add(1,0,0);
                     break;
             }
 /* This method creates the explosion!
@@ -67,7 +86,7 @@ public class EntityAxe extends EntityThrowable {
 * around after exploding, the last parameter
 * is if it  should spawn smoke particles
 */
-            this.worldObj.newExplosion(this, mop.blockX, mop.blockY, mop.blockZ, 4.0F, false, false);
+            this.worldObj.newExplosion(this, mop.getBlockPos().getX(), mop.getBlockPos().getY(), mop.getBlockPos().getZ(), 4.0F, false, false);
         }
 //If the Server is online and works, kill this entity
         if (!this.worldObj.isRemote)

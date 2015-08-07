@@ -1,0 +1,8 @@
+{
+  "parent": "block/cube_bottom_top",
+  "textures": {
+    "bottom": "blocks/hydrogenTNT_bottom",
+    "top": "blocks/hydrogenTNT_top",
+    "side": "blocks/hydrogenTNT_side"
+  }
+}

@@ -1,6 +1,25 @@
 package io.cyb3rwarri0r8.commumod.entity;
 
 
+/*
+ *  CommuMod - A Minecraft Modification
+ *  Copyright (C) ${YEAR} Cyb3rWarri0r8
+ *
+ *  This program is free software: you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or
+ *  any later version.
+ *
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ */
+
 import io.cyb3rwarri0r8.commumod.items.food_items.foodItems;
 import io.cyb3rwarri0r8.commumod.items.ModItems;
 import net.minecraft.entity.EntityLivingBase;
@@ -13,6 +32,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.BlockPos;
 import net.minecraft.world.EnumDifficulty;
 import net.minecraft.world.World;
 
@@ -62,7 +82,7 @@ public class EntityMiner extends EntityMob {
     {
         super.onKillEntity(par1EntityLivingBase);
 
-        if ((this.worldObj.difficultySetting == EnumDifficulty.NORMAL || this.worldObj.difficultySetting == EnumDifficulty.HARD || this.worldObj.difficultySetting == EnumDifficulty.EASY || this.worldObj.difficultySetting == EnumDifficulty.PEACEFUL) && par1EntityLivingBase instanceof EntityVillager)
+        if ((this.worldObj.getDifficulty().equals(EnumDifficulty.NORMAL) || this.worldObj.getDifficulty().equals(EnumDifficulty.HARD) || this.worldObj.getDifficulty().equals(EnumDifficulty.EASY) || this.worldObj.getDifficulty().equals(EnumDifficulty.PEACEFUL)) && par1EntityLivingBase instanceof EntityVillager)
         {
             if (this.rand.nextBoolean())
             {
@@ -72,11 +92,11 @@ public class EntityMiner extends EntityMob {
             EntityMiner entityminer = new EntityMiner(this.worldObj);
             entityminer.copyLocationAndAnglesFrom(par1EntityLivingBase);
             this.worldObj.removeEntity(par1EntityLivingBase);
-            entityminer.onSpawnWithEgg((IEntityLivingData)null);
+//            entityminer.on((IEntityLivingData) null);
 
-
+            BlockPos blockPos = new BlockPos(this.posX, this.posY, this.posZ);
             this.worldObj.spawnEntityInWorld(entityminer);
-            this.worldObj.playAuxSFXAtEntity((EntityPlayer)null, 1016, (int)this.posX, (int)this.posY, (int)this.posZ, 0);
+            this.worldObj.playAuxSFXAtEntity((EntityPlayer)null, 1016, blockPos, 0);
         }
     }
 

@@ -1,24 +1,48 @@
 package io.cyb3rwarri0r8.commumod.blocks;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
-import io.cyb3rwarri0r8.commumod.Commumod;
+
+/*
+ *  CommuMod - A Minecraft Modification
+ *  Copyright (C) ${YEAR} Cyb3rWarri0r8
+ *
+ *  This program is free software: you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or
+ *  any later version.
+ *
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ */
+
 import io.cyb3rwarri0r8.commumod.entity.TileEntityPurifier;
-import io.cyb3rwarri0r8.commumod.lib.Reference;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
-import net.minecraft.client.renderer.texture.IIconRegister;
+import net.minecraft.block.properties.IProperty;
+import net.minecraft.block.properties.PropertyDirection;
+import net.minecraft.block.state.BlockState;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Blocks;
+import net.minecraft.inventory.Container;
+import net.minecraft.inventory.InventoryHelper;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.IIcon;
-import net.minecraft.util.MathHelper;
+import net.minecraft.tileentity.TileEntityFurnace;
+import net.minecraft.util.BlockPos;
+import net.minecraft.util.EnumFacing;
+import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 import java.util.Random;
 
@@ -27,237 +51,292 @@ import java.util.Random;
  */
 public class BlockPurifier extends BlockContainer
 {
-    @SideOnly(Side.CLIENT)
-    private IIcon top;
+    public static final PropertyDirection FACING = PropertyDirection.create("facing", EnumFacing.Plane.HORIZONTAL);
+    private final boolean isBurning;
+    private static boolean field_149934_M;
 
-    @SideOnly(Side.CLIENT)
-    private IIcon front;
 
-    private static boolean isBurning;
-
-    private final boolean isIsBurning;
-    private final Random rand = new Random();
-
-    public BlockPurifier(boolean isActive)
+    protected BlockPurifier(boolean p_i45407_1_)
     {
         super(Material.rock);
-        isIsBurning = isActive;
+        this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH));
+        this.isBurning = p_i45407_1_;
+    }
+
+    /**
+     * Get the Item that this Block should drop when harvested.
+     *
+     * @param fortune the level of the Fortune enchantment on the player's tool
+     */
+    public Item getItemDropped(IBlockState state, Random rand, int fortune)
+    {
+        return Item.getItemFromBlock(Blocks.furnace);
+    }
+
+    public void onBlockAdded(World worldIn, BlockPos pos, IBlockState state)
+    {
+        this.func_176445_e(worldIn, pos, state);
+    }
+
+    private void func_176445_e(World worldIn, BlockPos p_176445_2_, IBlockState p_176445_3_)
+    {
+        if (!worldIn.isRemote)
+        {
+            Block block = worldIn.getBlockState(p_176445_2_.north()).getBlock();
+            Block block1 = worldIn.getBlockState(p_176445_2_.south()).getBlock();
+            Block block2 = worldIn.getBlockState(p_176445_2_.west()).getBlock();
+            Block block3 = worldIn.getBlockState(p_176445_2_.east()).getBlock();
+            EnumFacing enumfacing = (EnumFacing)p_176445_3_.getValue(FACING);
+
+            if (enumfacing == EnumFacing.NORTH && block.isFullBlock() && !block1.isFullBlock())
+            {
+                enumfacing = EnumFacing.SOUTH;
+            }
+            else if (enumfacing == EnumFacing.SOUTH && block1.isFullBlock() && !block.isFullBlock())
+            {
+                enumfacing = EnumFacing.NORTH;
+            }
+            else if (enumfacing == EnumFacing.WEST && block2.isFullBlock() && !block3.isFullBlock())
+            {
+                enumfacing = EnumFacing.EAST;
+            }
+            else if (enumfacing == EnumFacing.EAST && block3.isFullBlock() && !block2.isFullBlock())
+            {
+                enumfacing = EnumFacing.WEST;
+            }
+
+            worldIn.setBlockState(p_176445_2_, p_176445_3_.withProperty(FACING, enumfacing), 2);
+        }
     }
 
     @SideOnly(Side.CLIENT)
-    public void registerBlockIcons(IIconRegister register)
+    public void randomDisplayTick(World worldIn, BlockPos pos, IBlockState state, Random rand)
     {
-        this.blockIcon = register.registerIcon(Reference.MODID + ":purifierSide");
-        this.front = register.registerIcon(this.isIsBurning ? Reference.MODID+":purifierFront_on" : Reference.MODID+":purifierFront_off");
-        this.top = register.registerIcon(Reference.MODID + ":purifierTop");
-    }
-
-    public IIcon getIcon(int side, int meta)
-    {
-
-        return side == 1 ? this.top : (side == 0 ? this.top : (side != meta ? this.blockIcon : this.front));
-
-    }
-
-    public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int par6, float par7, float par8, float par9)
-    {
-
-        player.openGui(Commumod.instance, 0, world, x, y, z);
-        return true;
-    }
-
-    public Item getItemDropped(int par1, Random rand, int par3)
-    {
-        return Item.getItemFromBlock(ModBlocks.purifier_idle);
-    }
-
-    public Item getItem(World world, int par2, int par3, int par4)
-    {
-        return Item.getItemFromBlock(ModBlocks.purifier_idle);
-    }
-
-    @SideOnly(Side.CLIENT)
-    public void onBlockAdded(World world, int x, int y, int z)
-    {
-        super.onBlockAdded(world, x, y, z);
-        this.direction(world, x, y, z);
-    }
-
-    private void direction(World world, int x, int y, int z) {
-        if ( !world.isRemote )
+        if (this.isBurning)
         {
-            Block direction = world.getBlock(x, y, z - 1);
-            Block direction1 = world.getBlock(x, y, z + 1);
-            Block direction2 = world.getBlock(x - 1, y, z);
-            Block direction3 = world.getBlock(x + 1, y, z);
+            EnumFacing enumfacing = (EnumFacing)state.getValue(FACING);
+            double d0 = (double)pos.getX() + 0.5D;
+            double d1 = (double)pos.getY() + rand.nextDouble() * 6.0D / 16.0D;
+            double d2 = (double)pos.getZ() + 0.5D;
+            double d3 = 0.52D;
+            double d4 = rand.nextDouble() * 0.6D - 0.3D;
 
-            byte byte0 = 3;
-
-            if (direction.func_149730_j() && direction.func_149730_j())
+            switch (BlockPurifier.SwitchEnumFacing.field_180356_a[enumfacing.ordinal()])
             {
-                byte0 = 3;
+                case 1:
+                    worldIn.spawnParticle(EnumParticleTypes.SMOKE_NORMAL, d0 - d3, d1, d2 + d4, 0.0D, 0.0D, 0.0D, new int[0]);
+                    worldIn.spawnParticle(EnumParticleTypes.FLAME, d0 - d3, d1, d2 + d4, 0.0D, 0.0D, 0.0D, new int[0]);
+                    break;
+                case 2:
+                    worldIn.spawnParticle(EnumParticleTypes.SMOKE_NORMAL, d0 + d3, d1, d2 + d4, 0.0D, 0.0D, 0.0D, new int[0]);
+                    worldIn.spawnParticle(EnumParticleTypes.FLAME, d0 + d3, d1, d2 + d4, 0.0D, 0.0D, 0.0D, new int[0]);
+                    break;
+                case 3:
+                    worldIn.spawnParticle(EnumParticleTypes.SMOKE_NORMAL, d0 + d4, d1, d2 - d3, 0.0D, 0.0D, 0.0D, new int[0]);
+                    worldIn.spawnParticle(EnumParticleTypes.FLAME, d0 + d4, d1, d2 - d3, 0.0D, 0.0D, 0.0D, new int[0]);
+                    break;
+                case 4:
+                    worldIn.spawnParticle(EnumParticleTypes.SMOKE_NORMAL, d0 + d4, d1, d2 + d3, 0.0D, 0.0D, 0.0D, new int[0]);
+                    worldIn.spawnParticle(EnumParticleTypes.FLAME, d0 + d4, d1, d2 + d3, 0.0D, 0.0D, 0.0D, new int[0]);
             }
-            if (direction1.func_149730_j() && direction1.func_149730_j())
-            {
-                byte0 = 2;
-            }
-            if (direction2.func_149730_j() && direction2.func_149730_j())
-            {
-                byte0 = 5;
-            }
-            if (direction3.func_149730_j() && direction3.func_149730_j())
-            {
-                byte0 = 4;
-            }
-            world.setBlockMetadataWithNotify(x, y, z, byte0, 2);
         }
     }
 
-    public void onBlockPlacedBy(World world, int x, int y, int z, EntityLivingBase entity, ItemStack itemStack)
+    @Override
+    public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumFacing side, float hitX, float hitY, float hitZ)
     {
-        int direction = MathHelper.floor_double((double) (entity.rotationYaw * 4.0F / 360.0F) + 0.5D ) & 3;
-
-        if( direction == 0)
+        if (worldIn.isRemote)
         {
-            world.setBlockMetadataWithNotify(x, y, z, 2, 2);
-
-        }
-        if( direction == 1)
-        {
-            world.setBlockMetadataWithNotify(x, y, z, 5, 2);
-        }
-        if( direction == 2)
-        {
-            world.setBlockMetadataWithNotify(x, y, z, 3, 2);
-
-        }
-        if( direction == 3)
-        {
-            world.setBlockMetadataWithNotify(x, y, z, 4, 2);
-
-        }
-        if (itemStack.hasDisplayName())
-        {
-            ((TileEntityPurifier) world.getTileEntity(x, y, z)).furnaceName(itemStack.getDisplayName());
-        }
-
-    }
-
-    public static void updateBlockState(boolean burning, World world, int x, int y, int z)
-    {
-        int direction = world.getBlockMetadata(x, y, z);
-        TileEntity tileEntity = world.getTileEntity(x, y, z);
-        isBurning = true;
-
-        if (burning)
-        {
-            world.setBlock(x, y, z, ModBlocks.purifier_active);
+            return true;
         }
         else
         {
-            world.setBlock(x, y, z, ModBlocks.purifier_idle);
-        }
+            TileEntity tileentity = worldIn.getTileEntity(pos);
 
-        isBurning = false;
+            if (tileentity instanceof TileEntityPurifier)
+            {
+                playerIn.displayGUIChest((TileEntityFurnace)tileentity);
+            }
 
-        world.setBlockMetadataWithNotify(x, y, z, direction, 2);
-
-        if(tileEntity != null)
-        {
-            tileEntity.validate();
-            world.setTileEntity(x, y, z, tileEntity);
+            return true;
         }
     }
 
-    public void breakBlock(World world, int x, int y, int z, Block block, int meta)
+    public static void func_176446_a(boolean p_176446_0_, World worldIn, BlockPos p_176446_2_)
     {
-        if (!isBurning)
+        IBlockState iblockstate = worldIn.getBlockState(p_176446_2_);
+        TileEntity tileentity = worldIn.getTileEntity(p_176446_2_);
+        field_149934_M = true;
+
+        if (p_176446_0_)
         {
-            TileEntityPurifier tileEntityPurifier = (TileEntityPurifier)world.getTileEntity(x, y, z);
+            worldIn.setBlockState(p_176446_2_, ModBlocks.purifier_active.getDefaultState().withProperty(FACING, iblockstate.getValue(FACING)), 3);
+            worldIn.setBlockState(p_176446_2_, ModBlocks.purifier_active.getDefaultState().withProperty(FACING, iblockstate.getValue(FACING)), 3);
+        }
+        else
+        {
+            worldIn.setBlockState(p_176446_2_, ModBlocks.purifier_idle.getDefaultState().withProperty(FACING, iblockstate.getValue(FACING)), 3);
+            worldIn.setBlockState(p_176446_2_, ModBlocks.purifier_idle.getDefaultState().withProperty(FACING, iblockstate.getValue(FACING)), 3);
+        }
 
-            if (tileEntityPurifier != null)
+        field_149934_M = false;
+
+        if (tileentity != null)
+        {
+            tileentity.validate();
+            worldIn.setTileEntity(p_176446_2_, tileentity);
+        }
+    }
+
+    /**
+     * Returns a new instance of a block's tile entity class. Called on placing the block.
+     */
+    @Override
+    public TileEntity createNewTileEntity(World worldIn, int meta)
+    {
+        return (TileEntity) new TileEntityPurifier();
+    }
+
+    public IBlockState onBlockPlaced(World worldIn, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer)
+    {
+        return this.getDefaultState().withProperty(FACING, placer.getHorizontalFacing().getOpposite());
+    }
+
+    public void onBlockPlacedBy(World worldIn, BlockPos pos, IBlockState state, EntityLivingBase placer, ItemStack stack)
+    {
+        worldIn.setBlockState(pos, state.withProperty(FACING, placer.getHorizontalFacing().getOpposite()), 2);
+
+        if (stack.hasDisplayName())
+        {
+            TileEntity tileentity = worldIn.getTileEntity(pos);
+
+            if (tileentity instanceof TileEntityPurifier)
             {
-                for (int i1 = 0; i1 < tileEntityPurifier.getSizeInventory(); ++i1)
-                {
-                    ItemStack itemstack = tileEntityPurifier.getStackInSlot(i1);
+                ((TileEntityPurifier)tileentity).setCustomInventoryName(stack.getDisplayName());
+            }
+        }
+    }
 
-                    if (itemstack != null)
-                    {
-                        float f = this.rand.nextFloat() * 0.8F + 0.1F;
-                        float f1 = this.rand.nextFloat() * 0.8F + 0.1F;
-                        float f2 = this.rand.nextFloat() * 0.8F + 0.1F;
+    public void breakBlock(World worldIn, BlockPos pos, IBlockState state)
+    {
+        if (!field_149934_M)
+        {
+            TileEntity tileentity = worldIn.getTileEntity(pos);
 
-                        while (itemstack.stackSize > 0)
-                        {
-                            int j1 = this.rand.nextInt(21) + 10;
-
-                            if (j1 > itemstack.stackSize)
-                            {
-                                j1 = itemstack.stackSize;
-                            }
-
-                            itemstack.stackSize -= j1;
-                            EntityItem entityitem = new EntityItem(world, (double)((float)x + f), (double)((float)y + f1), (double)((float)z + f2), new ItemStack(itemstack.getItem(), j1, itemstack.getItemDamage()));
-
-                            if (itemstack.hasTagCompound())
-                            {
-                                entityitem.getEntityItem().setTagCompound((NBTTagCompound)itemstack.getTagCompound().copy());
-                            }
-
-                            float f3 = 0.05F;
-                            entityitem.motionX = (double)((float)this.rand.nextGaussian() * f3);
-                            entityitem.motionY = (double)((float)this.rand.nextGaussian() * f3 + 0.2F);
-                            entityitem.motionZ = (double)((float)this.rand.nextGaussian() * f3);
-                            world.spawnEntityInWorld(entityitem);
-                        }
-                    }
-                }
-
-                world.func_147453_f(x, y, z, block);
+            if (tileentity instanceof TileEntityPurifier)
+            {
+                InventoryHelper.dropInventoryItems(worldIn, pos, (TileEntityPurifier) tileentity);
+                worldIn.updateComparatorOutputLevel(pos, this);
             }
         }
 
-        super.breakBlock(world, x, y, z, block, meta);
+        super.breakBlock(worldIn, pos, state);
+    }
+
+    public boolean hasComparatorInputOverride()
+    {
+        return true;
+    }
+
+    public int getComparatorInputOverride(World worldIn, BlockPos pos)
+    {
+        return Container.calcRedstone(worldIn.getTileEntity(pos));
     }
 
     @SideOnly(Side.CLIENT)
-    public void randomDisplayTick(World world, int x, int y, int z, Random rand)
+    public Item getItem(World worldIn, BlockPos pos)
     {
-        if (this.isIsBurning)
-        {
-            int l = world.getBlockMetadata(x, y, z);
-            float f = (float)x + 0.5F;
-            float f1 = (float)y + 0.0F + rand.nextFloat() * 6.0F / 16.0F;
-            float f2 = (float)z + 0.5F;
-            float f3 = 0.52F;
-            float f4 = rand.nextFloat() * 0.6F - 0.3F;
-
-            if (l == 4)
-            {
-                world.spawnParticle("smoke", (double)(f - f3), (double)f1, (double)(f2 + f4), 0.0D, 0.0D, 0.0D);
-                world.spawnParticle("flame", (double)(f - f3), (double)f1, (double)(f2 + f4), 0.0D, 0.0D, 0.0D);
-            }
-            else if (l == 5)
-            {
-                world.spawnParticle("smoke", (double)(f + f3), (double)f1, (double)(f2 + f4), 0.0D, 0.0D, 0.0D);
-                world.spawnParticle("flame", (double)(f + f3), (double)f1, (double)(f2 + f4), 0.0D, 0.0D, 0.0D);
-            }
-            else if (l == 2)
-            {
-                world.spawnParticle("smoke", (double)(f + f4), (double)f1, (double)(f2 - f3), 0.0D, 0.0D, 0.0D);
-                world.spawnParticle("flame", (double)(f + f4), (double)f1, (double)(f2 - f3), 0.0D, 0.0D, 0.0D);
-            }
-            else if (l == 3)
-            {
-                world.spawnParticle("smoke", (double)(f + f4), (double)f1, (double)(f2 + f3), 0.0D, 0.0D, 0.0D);
-                world.spawnParticle("flame", (double)(f + f4), (double)f1, (double)(f2 + f3), 0.0D, 0.0D, 0.0D);
-            }
-        }
+        return Item.getItemFromBlock(Blocks.furnace);
     }
 
+    /**
+     * The type of render function that is called for this block
+     */
+    public int getRenderType()
+    {
+        return 3;
+    }
 
-    @Override
-    public TileEntity createNewTileEntity(World p_149915_1_, int p_149915_2_) {
-        return new TileEntityPurifier();
+    /**
+     * Possibly modify the given BlockState before rendering it on an Entity (Minecarts, Endermen, ...)
+     */
+    @SideOnly(Side.CLIENT)
+    public IBlockState getStateForEntityRender(IBlockState state)
+    {
+        return this.getDefaultState().withProperty(FACING, EnumFacing.SOUTH);
+    }
+
+    /**
+     * Convert the given metadata into a BlockState for this Block
+     */
+    public IBlockState getStateFromMeta(int meta)
+    {
+        EnumFacing enumfacing = EnumFacing.getFront(meta);
+
+        if (enumfacing.getAxis() == EnumFacing.Axis.Y)
+        {
+            enumfacing = EnumFacing.NORTH;
+        }
+
+        return this.getDefaultState().withProperty(FACING, enumfacing);
+    }
+
+    /**
+     * Convert the BlockState into the correct metadata value
+     */
+    public int getMetaFromState(IBlockState state)
+    {
+        return ((EnumFacing)state.getValue(FACING)).getIndex();
+    }
+
+    protected BlockState createBlockState()
+    {
+        return new BlockState(this, new IProperty[] {FACING});
+    }
+
+    @SideOnly(Side.CLIENT)
+
+    static final class SwitchEnumFacing
+    {
+        static final int[] field_180356_a = new int[EnumFacing.values().length];
+
+        static
+        {
+            try
+            {
+                field_180356_a[EnumFacing.WEST.ordinal()] = 1;
+            }
+            catch (NoSuchFieldError var4)
+            {
+                ;
+            }
+
+            try
+            {
+                field_180356_a[EnumFacing.EAST.ordinal()] = 2;
+            }
+            catch (NoSuchFieldError var3)
+            {
+                ;
+            }
+
+            try
+            {
+                field_180356_a[EnumFacing.NORTH.ordinal()] = 3;
+            }
+            catch (NoSuchFieldError var2)
+            {
+                ;
+            }
+
+            try
+            {
+                field_180356_a[EnumFacing.SOUTH.ordinal()] = 4;
+            }
+            catch (NoSuchFieldError var1)
+            {
+                ;
+            }
+        }
     }
 }
