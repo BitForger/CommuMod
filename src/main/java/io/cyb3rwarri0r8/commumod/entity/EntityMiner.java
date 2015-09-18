@@ -26,9 +26,8 @@ public class EntityMiner extends EntityMob {
         this.tasks.addTask(3, new EntityAILookIdle(this));
         this.tasks.addTask(4, new EntityAIWander(this, 1.0D));
         this.tasks.addTask(5, new EntityAIAttackOnCollide(this, 1.0D, true));
-        this.tasks.addTask(6, new EntityAIMoveTowardsTarget(this, 1.0D, 2.0F));
-        this.addRandomArmor();
-        this.setSprinting(false);
+        this.tasks.addTask(6, new EntityAIMoveTowardsTarget(this, 1.0D, 0.67F));
+
     }
 
     public boolean isAIEnabled()
@@ -42,18 +41,18 @@ public class EntityMiner extends EntityMob {
     protected void applyEntityAttributes() {
         super.applyEntityAttributes();
         getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(20.0D);
-        getEntityAttribute(SharedMonsterAttributes.followRange).setBaseValue(32.0D);
+        getEntityAttribute(SharedMonsterAttributes.followRange).setBaseValue(16.0D);
         getEntityAttribute(SharedMonsterAttributes.knockbackResistance).setBaseValue(0.0D);
-        getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.03D);
+//        getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.67D);
         getEntityAttribute(SharedMonsterAttributes.attackDamage).setBaseValue(2.0D);
     }
 
     protected void entityInit()
     {
         super.entityInit();
-        this.getDataWatcher().addObject(12, Byte.valueOf((byte)0));
-        this.getDataWatcher().addObject(13, Byte.valueOf((byte)0));
-        this.getDataWatcher().addObject(14, Byte.valueOf((byte)0));
+        this.getDataWatcher().addObject(12, (byte) 0);
+        this.getDataWatcher().addObject(13, (byte) 0);
+        this.getDataWatcher().addObject(14, (byte) 0);
     }
 
 
