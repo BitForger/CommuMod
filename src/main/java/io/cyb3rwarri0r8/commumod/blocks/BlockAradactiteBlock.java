@@ -19,8 +19,8 @@ package io.cyb3rwarri0r8.commumod.blocks;
  *
  */
 
+import io.cyb3rwarri0r8.commumod.Commumod;
 import io.cyb3rwarri0r8.commumod.lib.Reference;
-
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.Minecraft;
@@ -37,7 +37,7 @@ public class BlockAradactiteBlock extends Block {
         this.setUnlocalizedName("aradactiteBlock");
         Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(Item.getItemFromBlock(ModBlocks.aradactiteBlock), 0, new ModelResourceLocation(Reference.MODID + ":" + getUnlocalizedName().substring(5), "inventory"));
 
-        this.setCreativeTab(main.modTab);
+        this.setCreativeTab(Commumod.modTab);
         this.setStepSound(soundTypePiston);
         setHardness(3.5F);
         setResistance(5.5F);
