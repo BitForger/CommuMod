@@ -37,7 +37,7 @@ public class BlockCobaltOre extends Block
     {
         super(material);
         setUnlocalizedName("cobaltOre");
-        Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(Item.getItemFromBlock(ModBlocks.cobaltOre), 0, new ModelResourceLocation(Reference.MODID + ":" + getUnlocalizedName().substring(5), "inventory"));
+        Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(Item.getItemFromBlock(Commumod.cobaltOre), 0, new ModelResourceLocation(Reference.MODID + ":" + getUnlocalizedName().substring(5), "inventory"));
 
         setCreativeTab(Commumod.modTab);
         setStepSound(soundTypePiston);

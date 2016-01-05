@@ -309,7 +309,7 @@ public class ModItems {
          */
         cobaltIngot = new ItemCobaltIngot();
         RegisterHelper.registerItem(cobaltIngot);
-        GameRegistry.addSmelting(ModBlocks.cobaltOre, new ItemStack(ModItems.cobaltIngot, 1), 10F);
+        GameRegistry.addSmelting(Item.getItemFromBlock(Commumod.cobaltOre), new ItemStack(cobaltIngot, 1), 1F);
 
         cobaltBoat = new ItemCobaltBoat().setUnlocalizedName("cobaltBoat");
         RegisterHelper.registerItem(cobaltBoat);

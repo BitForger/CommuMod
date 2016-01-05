@@ -19,6 +19,7 @@ package io.cyb3rwarri0r8.commumod.lib;
  *
  */
 
+import io.cyb3rwarri0r8.commumod.Commumod;
 import io.cyb3rwarri0r8.commumod.blocks.ModBlocks;
 import io.cyb3rwarri0r8.commumod.fluids.ModFluids;
 import io.cyb3rwarri0r8.commumod.items.ModItems;
@@ -111,7 +112,7 @@ public class RegisterItemRenders {
     public static Item[] blocks = {
             Item.getItemFromBlock(ModBlocks.aradactiteBlock),
             Item.getItemFromBlock(ModBlocks.aradactiteOre),
-            Item.getItemFromBlock(ModBlocks.cobaltOre),
+            Item.getItemFromBlock(Commumod.cobaltOre),
             Item.getItemFromBlock(ModBlocks.hydrogenTNT),
             Item.getItemFromBlock(ModBlocks.minerShack),
             Item.getItemFromBlock(ModFluids.pureWaterBlock),

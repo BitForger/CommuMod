@@ -33,7 +33,8 @@ public class ItemCobaltIngot extends Item {
     {
         super();
         setUnlocalizedName("cobaltIngot");
-        Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(this, 0, new ModelResourceLocation("commumod:textures/items/cobaltIngot", "inventory"));
+        Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(this, 0,
+                new ModelResourceLocation("commumod:textures/items/cobaltIngot", "inventory"));
         setCreativeTab(Commumod.modTab);
     }
 }

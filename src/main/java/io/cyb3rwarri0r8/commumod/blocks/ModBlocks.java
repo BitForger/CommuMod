@@ -58,7 +58,7 @@ public class ModBlocks {
     public static Block purifier_active;
 
     //Cobalt
-    public static Block cobaltOre;
+//    public static Block cobaltOre;
 
     public static Block appleBlock;
 
@@ -116,8 +116,8 @@ public class ModBlocks {
 
 
 
-        cobaltOre = new BlockCobaltOre(Material.rock);
-        RegisterHelper.registerBlock(cobaltOre);
+
+//        RegisterHelper.registerBlock(cobaltOre);
 
         purifier_idle = new BlockPurifier(false).setUnlocalizedName("purifierIdle").setCreativeTab(Commumod.modTab);
         RegisterHelper.registerBlock(purifier_idle);

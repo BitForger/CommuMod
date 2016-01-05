@@ -99,7 +99,7 @@ public class EntityCobaltBoat extends Entity {
      */
     public AxisAlignedBB getBoundingBox()
     {
-        return this.getBoundingBox();
+        return this.getEntityBoundingBox();
     }
 
     /**

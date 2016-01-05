@@ -21,6 +21,7 @@ package io.cyb3rwarri0r8.commumod;
  *
  */
 
+import io.cyb3rwarri0r8.commumod.blocks.BlockCobaltOre;
 import io.cyb3rwarri0r8.commumod.blocks.BlockHydrogenTNT;
 import io.cyb3rwarri0r8.commumod.blocks.BlockSuperbiumTNT;
 import io.cyb3rwarri0r8.commumod.blocks.ModBlocks;
@@ -35,8 +36,11 @@ import io.cyb3rwarri0r8.commumod.lib.RegisterItemRenders;
 import io.cyb3rwarri0r8.commumod.lib.handler.ConfigHandler;
 import io.cyb3rwarri0r8.commumod.lib.handler.ModBucketHandler;
 import io.cyb3rwarri0r8.commumod.lib.handler.ModEventHandler;
+import io.cyb3rwarri0r8.commumod.lib.helpers.RegisterHelper;
 import io.cyb3rwarri0r8.commumod.lib.proxy.proxyCommon;
 import io.cyb3rwarri0r8.commumod.world.modWorld;
+import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.config.Configuration;
@@ -88,13 +92,16 @@ public class Commumod
 
     }
 
-
+    public static Block cobaltOre;
     @Mod.EventHandler
     public void init(FMLInitializationEvent event)
     {
+
         // Superbium TNT
         ModBlocks.superbiumTNT = new BlockSuperbiumTNT();
         ModBlocks.hydrogenTNT = new BlockHydrogenTNT();
+        cobaltOre = new BlockCobaltOre(Material.rock);
+        RegisterHelper.registerBlock(cobaltOre);
 
         ModRecipeHandler.removeRecipes();
 

@@ -23,6 +23,7 @@ package io.cyb3rwarri0r8.commumod.lib.helpers;
 
 import io.cyb3rwarri0r8.commumod.Commumod;
 import io.cyb3rwarri0r8.commumod.lib.PurifierRecipes;
+import io.cyb3rwarri0r8.commumod.lib.Reference;
 import net.minecraft.block.Block;
 import net.minecraft.entity.EntityList;
 import net.minecraft.item.Item;
@@ -44,7 +45,7 @@ public class RegisterHelper {
 
     public static void registerItem(Item item)
     {
-        GameRegistry.registerItem(item, item.getUnlocalizedName().substring(5));
+        GameRegistry.registerItem(item, item.getUnlocalizedName().substring(5), Reference.MODID);
     }
 
     // ********************************************************************************************

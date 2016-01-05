@@ -21,6 +21,7 @@ package io.cyb3rwarri0r8.commumod.world;
  *
  */
 
+import io.cyb3rwarri0r8.commumod.Commumod;
 import io.cyb3rwarri0r8.commumod.blocks.ModBlocks;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.BlockPos;
@@ -104,7 +105,7 @@ public class WorldGenMod implements IWorldGenerator
 
             BlockPos blockPos = new BlockPos(randPosX, randPosY, randPosZ);
 
-            new WorldGenMinable(ModBlocks.cobaltOre.getDefaultState(), 13).generate(world, rand, blockPos);
+            new WorldGenMinable(Commumod.cobaltOre.getDefaultState(), 13).generate(world, rand, blockPos);
         }
 
     }

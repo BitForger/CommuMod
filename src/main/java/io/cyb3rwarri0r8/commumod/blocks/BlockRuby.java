@@ -37,8 +37,10 @@ public class BlockRuby extends Block
     {
         super(material);
         setUnlocalizedName("rubyBlock");
-        Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(Item.getItemFromBlock(ModBlocks.rubyBlock), 0, new ModelResourceLocation(Reference.MODID + ":" + getUnlocalizedName().substring(5), "inventory"));
-
+        Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(
+                Item.getItemFromBlock(ModBlocks.rubyBlock),
+                0, new ModelResourceLocation(Reference.MODID + ":" + getUnlocalizedName().substring(5),
+                        "inventory"));
         setCreativeTab(Commumod.modTab);
         setStepSound(soundTypePiston);
         setHardness(3.0F);

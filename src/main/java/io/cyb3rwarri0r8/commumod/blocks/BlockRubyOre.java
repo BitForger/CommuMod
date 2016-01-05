@@ -38,16 +38,27 @@ import java.util.Random;
 public class BlockRubyOre extends Block {
     public BlockRubyOre(Material material){
         super(material);
+
         setUnlocalizedName("rubyOre");
-        Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(Item.getItemFromBlock(ModBlocks.rubyOre), 0, new ModelResourceLocation(Reference.MODID + ":" + getUnlocalizedName().substring(5), "inventory"));
+
+        Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(
+                Item.getItemFromBlock(ModBlocks.rubyOre), 0,
+                new ModelResourceLocation(Reference.MODID + ":" + getUnlocalizedName().substring(5),
+                        "inventory"));
+
         setCreativeTab(Commumod.modTab);
+
         setStepSound(soundTypePiston);
+
         setHardness(3.0F);
+
         setResistance(5.0F);
+
         setHarvestLevel("pickaxe",0);
 
 
     }
+
 
 
     public Item getItemDropped(int meta, Random random, int fortune){
