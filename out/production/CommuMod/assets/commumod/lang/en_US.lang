@@ -1,0 +1,72 @@
+tile.superbiumOre.name=Superbium Ore
+tile.superbiumBlock.name=Superbium Block
+item.superbiumIngot.name=Superbium Ingot
+item.superbiumDust.name=Superbium Dust
+item.superbiumPick.name=Superium Pickaxe
+item.superbiumAxe.name=Superbium Axe
+item.superbiumShovel.name=Superbium Shovel
+item.superbiumHoe.name=Superbium Hoe
+item.superbiumSword.name=Superbium Sword
+item.superbiumHelmet.name=Superbium Helmet
+item.superbiumChestplate.name=Superbium Chestplate
+item.superbiumLeggings.name=Superbium Leggings
+item.superbiumBoots.name=Superbium Boots
+
+
+tile.aradactiteOre.name=Aradactite Ore
+tile.aradactiteBlock.name=Aradactite Block
+item.aradactiteIngot.name=Aradactite Ingot
+item.aradactiteDust.name=Aradactite Dust
+item.aradactitePick.name=Aradactite Pickaxe
+item.aradactiteAxe.name=Aradactite Axe
+item.aradactiteShovel.name=Aradactite Shovel
+item.aradactiteHoe.name=Aradactite Hoe
+item.aradactiteSword.name=Aradactite Sword
+item.aradactiteHelmet.name=Aradactite Helmet
+item.aradactiteChestplate.name=Aradactite Chestplate
+item.aradactiteLeggings.name=Aradactite Leggings
+item.aradactiteBoots.name=Aradactite Boots
+
+itemGroup.modTab=CommuMod
+item.cobaltIngot.name=Cobalt Ingot
+item.enderDust.name=Ender Dust
+
+entity.miner.name=Miner
+entity.superbiumGolem.name=Superbium Golem
+entity.aradactiteGolem.name=Aradactite Golem
+
+item.superCarrot.name=Super Carrot
+
+tile.superbiumTNT.name=Superbium TNT
+entity.superbiumTNT.name=Superbium TNT
+tile.superbiumTorch.name=Superbium Torch
+
+tile.hydrogenTNT.name=Hydrogen TNT
+tile.appleBlock.name=Apple Block
+
+item.pureWaterBucket.name=Pure Water Bucket
+item.cobaltBoat.name=Cobalt Boat
+tile.minerShack.name=Instant Miner Shack
+tile.pureWater.name=Pure Water
+item.rubyPickaxe.name=Ruby Pickaxe
+item.rubyShovel.name=Ruby Shovel
+item.rubyHoe.name=Ruby Hoe
+item.rubyAxe.name=Ruby Axe
+item.rubySword.name=Ruby Sword
+tile.rubyOre.name=Ruby Ore
+tile.rubyBlock.name=Ruby Block
+item.rubyHelmet.name=Ruby Helmet
+item.rubyChestplate.name=Ruby Chestplate
+item.rubyLeggings.name=Ruby Leggings
+item.rubyBoots.name=Ruby Boots
+item.ticTac.name=TicTac
+
+tile.cobaltOre.name=Cobalt Ore
+
+tile.purifierIdle.name=Purifier
+
+item.retawBucket.name=Retaw Bucket
+tile.retaw.name=Retaw
+item.ticTacCase.name=TicTac Pack
+
+item.plastic.name=Plastic Chip

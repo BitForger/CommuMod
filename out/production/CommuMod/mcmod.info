@@ -1,0 +1,22 @@
+[
+{
+  "modid": "commumod",
+  "name": "Community Mod",
+  "description": "A smash up of different ideas in one mod.",
+  "version": "v2.0.0",
+  "mcversion": "1.7.10",
+  "url": "http://cyb3rwarri0r8.github.io/CommuMod/",
+  "updateUrl": "",
+  "authorList": [
+  "Cyb3rWarri0r8"
+  ],
+  "credits": "UltraX7",
+  "logoFile": "",
+  "screenshots": [
+  ],
+  "parent":"",
+  "dependencies": [
+  "NotEnoughItems", "CodeChickenCore", "CoFHLib"
+  ]
+}
+]
