@@ -51,9 +51,6 @@ import net.minecraftforge.fml.relauncher.Side;
 
 
 @Mod(modid = Reference.MODID, version = Reference.VERSION, guiFactory = Reference.GUI_FACTORY_CLASS)
-
-
-
 public class Commumod
 {
     @SidedProxy(clientSide=Reference.CLIENT_PROXY, serverSide=Reference.COMMON_PROXY)
