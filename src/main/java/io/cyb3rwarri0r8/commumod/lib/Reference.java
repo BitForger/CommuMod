@@ -27,6 +27,7 @@ public class Reference {
     public static final String GUI_FACTORY_CLASS="io.cyb3rwarri0r8.commumod.client.gui.ModGuiFactory";
     public static final String COMMON_PROXY="io.cyb3rwarri0r8.commumod.lib.proxy.proxyCommon";
     public static final String CLIENT_PROXY="io.cyb3rwarri0r8.commumod.lib.proxy.proxyClient";
+    public static final String UPDATE_JSON="https://gist.githubusercontent.com/Cyb3rWarri0r8/bc388f17e518a76e3b17/raw/b80000ac385138de0e94863650e216509b8f96fe/update.json";
 
 
 }

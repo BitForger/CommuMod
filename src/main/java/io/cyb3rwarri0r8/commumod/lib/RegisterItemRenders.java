@@ -92,7 +92,7 @@ public class RegisterItemRenders {
             foodItems.superCarrot,
             foodItems.ticTac,
             foodItems.ticTacCase,
-            //TODO Figure out how to add textures to armor
+            //FIXED Figure out how to add textures to armor
             ModItems.aradactiteHelmet,
             ModItems.aradactiteChestplate,
             ModItems.aradactiteLeggings,

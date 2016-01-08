@@ -54,7 +54,7 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 
 
-@Mod(modid = Reference.MODID, version = Reference.VERSION, guiFactory = Reference.GUI_FACTORY_CLASS)
+@Mod(modid = Reference.MODID, version = Reference.VERSION, guiFactory = Reference.GUI_FACTORY_CLASS, updateJSON = "https://gist.githubusercontent.com/Cyb3rWarri0r8/bc388f17e518a76e3b17/raw/b80000ac385138de0e94863650e216509b8f96fe/update.json")
 public class Commumod
 {
     @SidedProxy(clientSide=Reference.CLIENT_PROXY, serverSide=Reference.COMMON_PROXY)
@@ -100,6 +100,7 @@ public class Commumod
         // Superbium TNT
         ModBlocks.superbiumTNT = new BlockSuperbiumTNT();
         ModBlocks.hydrogenTNT = new BlockHydrogenTNT();
+        // Cobalt Ore
         cobaltOre = new BlockCobaltOre(Material.rock);
         RegisterHelper.registerBlock(cobaltOre);
 

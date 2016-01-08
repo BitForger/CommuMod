@@ -5,8 +5,8 @@
   "description": "A smash up of different ideas in one mod.",
   "version": "v2.0.0",
   "mcversion": "1.7.10",
-  "url": "http://cyb3rwarri0r8.github.io/CommuMod/",
-  "updateUrl": "",
+  "url": "http://kaminocoding.github.io/CommuMod",
+  "updateUrl": "https://gist.githubusercontent.com/Cyb3rWarri0r8/bc388f17e518a76e3b17/raw/b80000ac385138de0e94863650e216509b8f96fe/update.json",
   "authorList": [
   "Cyb3rWarri0r8"
   ],
@@ -15,8 +15,6 @@
   "screenshots": [
   ],
   "parent":"",
-  "dependencies": [
-  "NotEnoughItems", "CodeChickenCore", "CoFHLib"
-  ]
+  "dependencies": []
 }
 ]

@@ -20,26 +20,24 @@
 import java.util.regex.Matcher
 import java.util.regex.Pattern
 
-//buildscript {
-//    repositories {
-//        mavenCentral()
-//        maven {
-//            name = "forge"
-//            url = "http://files.minecraftforge.net/maven"
-//        }
-//        maven {
-//            name = "sonatype"
-//            url = "https://oss.sonatype.org/content/repositories/snapshots/"
-//        }
-//    }
-//    dependencies {
-//        classpath 'net.minecraftforge.gradle:ForgeGradle:1.2-SNAPSHOT'
-//    }
-//}
-
-plugins {
-    id "net.minecraftforge.gradle.forge" version "2.0.2"
+buildscript {
+    repositories {
+        mavenCentral()
+        maven {
+            name = "forge"
+            url = "http://files.minecraftforge.net/maven"
+        }
+        maven {
+            name = "sonatype"
+            url = "https://oss.sonatype.org/content/repositories/snapshots/"
+        }
+    }
+    dependencies {
+        classpath 'net.minecraftforge.gradle:ForgeGradle:2.0-SNAPSHOT'
+    }
 }
+
+apply plugin : 'net.minecraftforge.gradle.forge'
 
 version = "2.0"
 group= "io.cyb3rwarri0r8.commumod" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
@@ -49,7 +47,7 @@ def mod_id = "commumod"
 def mod_name = "CommuMod"
 def mod_desc = "A smash up of different ideas in one mod."
 def mod_url = "http://kaminocoding.github.io/CommuMod"
-def mc_version = version
+def mc_version = minecraft.version
 def mod_version = "2.0"
 
 minecraft {
@@ -334,9 +332,7 @@ task getModData << {
 
 processResources
         {
-            Matcher matcherVersion
-
-
+            Matcher matcher
 
             def configFile = file("config.xml")
             def configText = configFile.getText()
@@ -348,25 +344,25 @@ processResources
 
             if(isDev) {
                 def pattern = Pattern.compile("<version>(\\d+)\\.(\\d+)\\.(\\d+)\\.(\\d+)</version>")
-                matcherVersion = pattern.matcher(configText)
-                matcherVersion.find()
+                matcher = pattern.matcher(configText)
+                matcher.find()
 
-                def major = Integer.parseInt(matcherVersion.group(1))
-                def minor = Integer.parseInt(matcherVersion.group(2))
-                def patch = Integer.parseInt(matcherVersion.group(3))
-                def build = Integer.parseInt(matcherVersion.group(4))
+                def major = Integer.parseInt(matcher.group(1))
+                def minor = Integer.parseInt(matcher.group(2))
+                def patch = Integer.parseInt(matcher.group(3))
+                def build = Integer.parseInt(matcher.group(4))
 
 
                 project.version = major + "." + minor + "." + patch + "." + build
             }
             else {
                 def pattern = Pattern.compile("<version>(\\d+)\\.(\\d+)\\.(\\d+)</version>")
-                matcherVersion = pattern.matcher(configText)
-                matcherVersion.find()
+                matcher = pattern.matcher(configText)
+                matcher.find()
 
-                def major = Integer.parseInt(matcherVersion.group(1))
-                def minor = Integer.parseInt(matcherVersion.group(2))
-                def patch = Integer.parseInt(matcherVersion.group(3))
+                def major = Integer.parseInt(matcher.group(1))
+                def minor = Integer.parseInt(matcher.group(2))
+                def patch = Integer.parseInt(matcher.group(3))
 
                 project.version = major + "." + minor + "." + patch
             }
