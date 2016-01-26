@@ -33,6 +33,8 @@ import net.minecraftforge.fml.common.FMLLog;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.Random;
 
 
@@ -147,16 +149,13 @@ public class RegisterHelper {
 
     // ********************************************************************************************
 
-    public static void registerEntity(Class entityClass, String name)
+    public static void registerEntity(Class entityClass, String name, int id)
     {
-        //TODO Fix the wrong registering of eggs to entities
-        int entityID = EntityRegistry.findGlobalUniqueEntityId();
-        long seed = name.hashCode();
-        Random rand = new Random(seed);
-        int primaryColor = rand.nextInt() * 16777215;
-        int secondaryColor = rand.nextInt() * 16777215;
-
-        EntityRegistry.registerModEntity(entityClass, name, entityID, Commumod.instance, 5, 1, true, primaryColor, secondaryColor);
+            long seed = name.hashCode();
+            Random rand = new Random(seed);
+            int primaryColor = rand.nextInt() * 16777215;
+            int secondaryColor = rand.nextInt() * 16777215;
+            EntityRegistry.registerModEntity(entityClass, name, id, Commumod.instance, 5, 1, true, primaryColor, secondaryColor);
     }
 
     public static void addPurifying(Item input, ItemStack output, float xp)

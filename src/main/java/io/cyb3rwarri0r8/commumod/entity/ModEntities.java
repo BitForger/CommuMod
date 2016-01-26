@@ -20,12 +20,30 @@ package io.cyb3rwarri0r8.commumod.entity;
  */
 
 import io.cyb3rwarri0r8.commumod.lib.helpers.RegisterHelper;
+import net.minecraft.entity.Entity;
+
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 
 public class ModEntities {
+
+    public static Class[] entities = {
+            EntityMiner.class,
+            EntitySuperbiumGolem.class,
+            EntityAradactiteGolem.class
+    };
+
+    public static String[] names = {
+            "entityMiner",
+            "entitySuperbiumGolem",
+            "entityAradactiteGolem"
+    };
+
     public static void init()
     {
-        RegisterHelper.registerEntity(EntityMiner.class, "miner");
-        RegisterHelper.registerEntity(EntitySuperbiumGolem.class, "superbiumGolem");
-        RegisterHelper.registerEntity(EntityAradactiteGolem.class, "aradactiteGolem");
+
+        RegisterHelper.registerEntity(EntityMiner.class, "miner", 0);
+        RegisterHelper.registerEntity(EntitySuperbiumGolem.class, "superbiumGolem", 1);
+        RegisterHelper.registerEntity(EntityAradactiteGolem.class, "aradactiteGolem", 2);
     }
 }

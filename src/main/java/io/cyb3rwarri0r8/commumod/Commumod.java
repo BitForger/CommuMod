@@ -2,7 +2,7 @@ package io.cyb3rwarri0r8.commumod;
 
 /*
  *  CommuMod - A Minecraft Modification
- *  Copyright (C) ${YEAR} Cyb3rWarri0r8
+ *  Copyright (C) 2016 Cyb3rWarri0r8
  *
  *  This program is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -81,7 +81,7 @@ public class Commumod
         /*
          * Run all proxy file initiation
          */
-        proxy.registerRenderers();
+        // proxy.registerRenderers();
         proxy.registerEntitySpawn();
         proxyCommon.registerTileEntities();
         proxy.registerNetwork();
@@ -128,11 +128,12 @@ public class Commumod
             RegisterItemRenders.registerBlockItemsToRender();
         }
 
+        proxy.registerRenderers();
 
     }
 
     @Mod.EventHandler
-    public void load(FMLPostInitializationEvent event)
+    public void postinit(FMLPostInitializationEvent event)
     {
 
 
