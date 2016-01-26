@@ -1,7 +1,5 @@
 package io.cyb3rwarri0r8.commumod;
 
-
-
 /*
  *  CommuMod - A Minecraft Modification
  *  Copyright (C) ${YEAR} Cyb3rWarri0r8
@@ -54,7 +52,7 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 
 
-@Mod(modid = Reference.MODID, version = Reference.VERSION, guiFactory = Reference.GUI_FACTORY_CLASS, updateJSON = "https://gist.githubusercontent.com/Cyb3rWarri0r8/bc388f17e518a76e3b17/raw/b80000ac385138de0e94863650e216509b8f96fe/update.json")
+@Mod(modid = Reference.MODID, name = "CommuMod", useMetadata = true, version = Reference.VERSION, updateJSON = "https://raw.githubusercontent.com/KaminoCoding/Update-Files/master/Commumod-Update.json", guiFactory = Reference.GUI_FACTORY_CLASS )
 public class Commumod
 {
     @SidedProxy(clientSide=Reference.CLIENT_PROXY, serverSide=Reference.COMMON_PROXY)

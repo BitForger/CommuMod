@@ -36,9 +36,6 @@ import net.minecraft.util.BlockPos;
 import net.minecraft.world.EnumDifficulty;
 import net.minecraft.world.World;
 
-/**
- * Created by noah on 5/27/14.
- */
 public class EntityMiner extends EntityMob {
     public EntityMiner(World par1World) {
         super(par1World);
@@ -120,6 +117,7 @@ public class EntityMiner extends EntityMob {
                 this.dropItem(Items.diamond_sword, 1);
         }
     }
+
 
     protected String getLivingSound()
     {

@@ -23,6 +23,7 @@ package io.cyb3rwarri0r8.commumod.lib.handler;
 import io.cyb3rwarri0r8.commumod.items.ModItems;
 
 
+import io.cyb3rwarri0r8.commumod.lib.Reference;
 import io.cyb3rwarri0r8.commumod.world.VanillaOreOverrideDecorator;
 import net.minecraft.entity.player.EntityPlayer;
 
@@ -30,12 +31,8 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.living.LivingEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.event.terraingen.OreGenEvent;
+import net.minecraftforge.fml.client.event.ConfigChangedEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-
-
-/**
- * Created by noah on 10/23/14.
- */
 public class ModEventHandler
 {
     @SubscribeEvent
@@ -95,6 +92,15 @@ public class ModEventHandler
         }
         else{
             event.displayname = event.username + " " + ConfigHandler.everyoneElsesNickname;
+        }
+    }
+
+    @SubscribeEvent
+    public void onConfigurationChangedEvent(ConfigChangedEvent.OnConfigChangedEvent event)
+    {
+        if (event.modID.equalsIgnoreCase(Reference.MODID))
+        {
+            ConfigHandler.loadConfiguration();
         }
     }
 

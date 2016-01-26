@@ -27,9 +27,6 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 import java.io.File;
 
-/**
- * Created by noah on 8/30/14.
- */
 public class ConfigHandler
 {
     public static Configuration configuration;
@@ -49,13 +46,13 @@ public class ConfigHandler
 
 //        boolean configValue = false;
         if(configuration == null){
-            configuration = new Configuration(configFile);
+            configuration = new Configuration(configFile, true);
             loadConfiguration();
         }
     }
 
 
-    private static void loadConfiguration() {
+    public static void loadConfiguration() {
     //TODO Flush the configuration file
 
         IronOreGenAmount = configuration.getInt("Iron Ore Generation Amount", Configuration.CATEGORY_GENERAL, 5, 0, 50, "This will change the amount of Iron Ore spawned into the world. The higher the amount the longer it will take to generate.");
@@ -74,12 +71,12 @@ public class ConfigHandler
 
     }
 
-    @SubscribeEvent
+    /*@SubscribeEvent
     public void onConfigurationChangedEvent(ConfigChangedEvent.OnConfigChangedEvent event)
     {
         if (event.modID.equalsIgnoreCase(Reference.MODID))
         {
             loadConfiguration();
         }
-    }
+    }*/
 }

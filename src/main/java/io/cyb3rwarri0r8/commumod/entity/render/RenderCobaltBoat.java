@@ -30,9 +30,6 @@ import net.minecraft.util.MathHelper;
 import net.minecraft.util.ResourceLocation;
 import org.lwjgl.opengl.GL11;
 
-/**
- * Created by noah on 10/11/14.
- */
 
 public class RenderCobaltBoat extends Render {
     private static final ResourceLocation boatTextures = new ResourceLocation(Reference.MODID + ":" + "textures/models/cobaltBoat.png");

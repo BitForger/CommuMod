@@ -39,7 +39,7 @@ buildscript {
 
 apply plugin : 'net.minecraftforge.gradle.forge'
 
-version = "2.0"
+version
 group= "io.cyb3rwarri0r8.commumod" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "commumod"
 
@@ -49,6 +49,7 @@ def mod_desc = "A smash up of different ideas in one mod."
 def mod_url = "http://kaminocoding.github.io/CommuMod"
 def mc_version = minecraft.version
 def mod_version = "2.0"
+def mcversion = "1.8"
 
 minecraft {
     version = "1.8-11.14.4.1563"
@@ -59,7 +60,8 @@ minecraft {
 
     replace "@ID@", mod_id
     replace "@NAME@", mod_name
-    replace "@VERSION@", project.version
+    replace "${version}", project.version
+    replace "${mcversion}", minecraft.version
     
     // the mappings can be changed at any time, and must be in the following format.
     // snapshot_YYYYMMDD   snapshot are built nightly.
@@ -353,7 +355,7 @@ processResources
                 def build = Integer.parseInt(matcher.group(4))
 
 
-                project.version = major + "." + minor + "." + patch + "." + build
+                project.version = mcversion + "-" + major + "." + minor + "." + patch + "." + build
             }
             else {
                 def pattern = Pattern.compile("<version>(\\d+)\\.(\\d+)\\.(\\d+)</version>")
@@ -364,7 +366,7 @@ processResources
                 def minor = Integer.parseInt(matcher.group(2))
                 def patch = Integer.parseInt(matcher.group(3))
 
-                project.version = major + "." + minor + "." + patch
+                project.version = mcversion + "-" + major + "." + minor + "." + patch
             }
 
 
@@ -375,24 +377,19 @@ processResources
             // replace stuff in mcmod.info, nothing else
             from(sourceSets.main.resources.srcDirs) {
                 include 'mcmod.info'
-
                 // replace version and mcversion
-
-
-                expand('id': mod_id, 'name': mod_name, 'description': mod_desc, 'url': mod_url, 'version': project.version, 'mcversion': mc_version)
+                expand 'id': mod_id, 'name': mod_name, 'description': mod_desc, 'url': mod_url, 'version': project.version, 'mcversion': mc_version
             }
 
             // copy everything else, thats not the mcmod.info
             from(sourceSets.main.resources.srcDirs) {
                 exclude 'mcmod.info'
-
-
             }
         }
 
 
 
 
-sourceSets {
+/*sourceSets {
     main { output.resourcesDir = output.classesDir }
-}
+}*/

@@ -31,9 +31,9 @@ itemGroup.modTab=CommuMod
 item.cobaltIngot.name=Cobalt Ingot
 item.enderDust.name=Ender Dust
 
-entity.miner.name=Miner
-entity.superbiumGolem.name=Superbium Golem
-entity.aradactiteGolem.name=Aradactite Golem
+entity.commumod.miner.name=Miner
+entity.commumod.superbiumGolem.name=Superbium Golem
+entity.commumod.aradactiteGolem.name=Aradactite Golem
 
 item.superCarrot.name=Super Carrot
 

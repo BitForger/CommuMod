@@ -2,7 +2,7 @@ package io.cyb3rwarri0r8.commumod.lib.proxy;
 
 
 
-/**
+/*
  *  CommuMod - A Minecraft Modification
  *  Copyright (C) ${YEAR} Cyb3rWarri0r8
  *
@@ -22,33 +22,18 @@ package io.cyb3rwarri0r8.commumod.lib.proxy;
  */
 
 import io.cyb3rwarri0r8.commumod.entity.*;
-import io.cyb3rwarri0r8.commumod.items.ModItems;
 import io.cyb3rwarri0r8.commumod.entity.render.*;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.ModelBiped;
-import net.minecraft.client.renderer.entity.RenderItem;
-import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.client.renderer.entity.RenderSnowball;
-import net.minecraft.client.renderer.texture.TextureManager;
-import net.minecraft.client.resources.IResource;
-import net.minecraft.client.resources.IResourceManager;
 import net.minecraft.init.Items;
-import net.minecraft.item.ItemSnowball;
-import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
 
-import java.io.IOException;
-import java.util.List;
-import java.util.Set;
-
-/**
- * Created by noah on 5/27/14.
- */
 public class proxyClient extends proxyCommon {
 
     @Override
     public void registerRenderers(){
-        RenderingRegistry.registerEntityRenderingHandler(EntityMiner.class, new renderMiner(Minecraft.getMinecraft().getRenderManager(), new ModelBiped(), 0.5F));
+        RenderingRegistry.registerEntityRenderingHandler(EntityMiner.class, new RenderMiner(Minecraft.getMinecraft().getRenderManager(), new ModelBiped(), 0.5F));
         //TODO Fix the renderingRegistry errors with the superbiumAxe
         RenderingRegistry.registerEntityRenderingHandler(EntityAxe.class, new RenderSnowball(Minecraft.getMinecraft().getRenderManager(), Items.snowball, Minecraft.getMinecraft().getRenderItem()));
         RenderingRegistry.registerEntityRenderingHandler(EntitySuperbiumGolem.class, new RenderSuperbiumGolem(Minecraft.getMinecraft().getRenderManager()));

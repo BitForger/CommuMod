@@ -26,9 +26,7 @@ import net.minecraft.entity.Entity;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-/**
- * Created by noah on 10/12/14.
- */
+
 @SideOnly(Side.CLIENT)
 public class ModelCobaltBoat extends ModelBase {
     public ModelRenderer[] boatSides = new ModelRenderer[5];

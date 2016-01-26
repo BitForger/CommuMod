@@ -38,9 +38,6 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import java.util.List;
 
-/**
- * Created by noah on 10/11/14.
- */
 public class EntityCobaltBoat extends Entity {
 
     /** true if no player in boat */

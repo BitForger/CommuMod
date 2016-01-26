@@ -25,9 +25,11 @@ import io.cyb3rwarri0r8.commumod.Commumod;
 import io.cyb3rwarri0r8.commumod.lib.PurifierRecipes;
 import io.cyb3rwarri0r8.commumod.lib.Reference;
 import net.minecraft.block.Block;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityList;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.fml.common.FMLLog;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
@@ -139,7 +141,7 @@ public class RegisterHelper {
             );
         } else
         {
-            System.out.println("Error: Invalid Armor type!");
+            FMLLog.severe("Error: Invalid Armor type: ", armortype);
         }
     }
 
@@ -147,17 +149,14 @@ public class RegisterHelper {
 
     public static void registerEntity(Class entityClass, String name)
     {
-
+        //TODO Fix the wrong registering of eggs to entities
         int entityID = EntityRegistry.findGlobalUniqueEntityId();
         long seed = name.hashCode();
         Random rand = new Random(seed);
         int primaryColor = rand.nextInt() * 16777215;
         int secondaryColor = rand.nextInt() * 16777215;
 
-        EntityRegistry.registerGlobalEntityID(entityClass, name, entityID);
-        EntityRegistry.registerModEntity(entityClass, name, entityID, Commumod.instance, 64, 1, true);
-        EntityList.entityEggs.put(Integer.valueOf(entityID), new EntityList.EntityEggInfo(entityID, primaryColor, secondaryColor));
-
+        EntityRegistry.registerModEntity(entityClass, name, entityID, Commumod.instance, 5, 1, true, primaryColor, secondaryColor);
     }
 
     public static void addPurifying(Item input, ItemStack output, float xp)

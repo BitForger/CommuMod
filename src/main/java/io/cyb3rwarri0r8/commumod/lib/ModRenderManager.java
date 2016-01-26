@@ -1,10 +1,6 @@
 package io.cyb3rwarri0r8.commumod.lib;
 
-import net.minecraft.client.renderer.entity.RenderItem;
-import net.minecraft.client.renderer.entity.RenderManager;
-import net.minecraft.client.renderer.texture.TextureManager;
-
-/**
+/*
  *  CommuMod - A Minecraft Modification
  *  Copyright (C) ${YEAR} Cyb3rWarri0r8
  *
@@ -22,6 +18,11 @@ import net.minecraft.client.renderer.texture.TextureManager;
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
+
+import net.minecraft.client.renderer.entity.RenderItem;
+import net.minecraft.client.renderer.entity.RenderManager;
+import net.minecraft.client.renderer.texture.TextureManager;
+
 public class ModRenderManager extends RenderManager {
     public ModRenderManager(TextureManager p_i46180_1_, RenderItem p_i46180_2_) {
         super(p_i46180_1_, p_i46180_2_);

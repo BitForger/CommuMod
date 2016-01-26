@@ -33,9 +33,6 @@ import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
-/**
- * Created by noah on 5/27/14.
- */
 public abstract class proxyCommon{
 
 
