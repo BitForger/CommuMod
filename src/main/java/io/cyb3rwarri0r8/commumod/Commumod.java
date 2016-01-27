@@ -85,7 +85,7 @@ public class Commumod
         proxy.registerEntitySpawn();
         proxyCommon.registerTileEntities();
         proxy.registerNetwork();
-        proxy.preinit();
+
 
 
     }
@@ -129,7 +129,7 @@ public class Commumod
         }
 
         proxy.registerRenderers();
-
+        proxy.preinit();
     }
 
     @Mod.EventHandler

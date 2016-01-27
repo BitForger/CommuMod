@@ -26,9 +26,6 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.ResourceLocation;
 
-/**
- * Created by noah on 10/1/14.
- */
 public class RenderAradactiteGolem extends RenderLiving {
     private static final ResourceLocation aradactiteGolemTextures = new ResourceLocation(Reference.MODID + ":" + "textures/entity/aradactiteGolem.png");
     /** aradactite Golem's Model. */

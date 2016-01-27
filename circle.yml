@@ -1,8 +1,7 @@
 machine:
     java:
-        version: 
-            - oraclejdk7
-            - oraclejdk8
+        version: oraclejdk8
+
 general:
     artifacts:
         - "build/libs"

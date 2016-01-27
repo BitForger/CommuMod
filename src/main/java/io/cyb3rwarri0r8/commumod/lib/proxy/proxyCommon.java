@@ -54,7 +54,7 @@ public abstract class proxyCommon{
     }
 
     public void registerEntitySpawn(){
-        BiomeGenBase[] allBiomes = Iterators.toArray(Iterators.filter(Iterators.forArray(BiomeGenBase.getBiomeGenArray()), Predicates.notNull()), BiomeGenBase.class);
+//        BiomeGenBase[] allBiomes = Iterators.toArray(Iterators.filter(Iterators.forArray(BiomeGenBase.getBiomeGenArray()), Predicates.notNull()), BiomeGenBase.class);
         System.out.println("Registering natural spawns");
         EntityRegistry.addSpawn(EntityMiner.class, 10, 3, 10, EnumCreatureType.CREATURE, BiomeGenBase.extremeHills);
         EntityRegistry.addSpawn(EntityMiner.class, 40, 3, 10, EnumCreatureType.CREATURE, BiomeGenBase.extremeHillsEdge);

@@ -44,9 +44,6 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-/**
- * Created by noah on 10/1/14.
- */
 public class EntityAradactiteGolem extends EntityGolem {
     /** deincrements, and a distance-to-home check is done at 0 */
     private int homeCheckTimer;
