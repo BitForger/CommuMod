@@ -25,9 +25,6 @@ import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 
-/**
- * Created by noah on 10/1/14.
- */
 public class ModelAradactiteGolem extends ModelBase {
     /** The head model for the aradactite golem. */
     public ModelRenderer aradactiteGolemHead;

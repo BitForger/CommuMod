@@ -45,13 +45,11 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import static net.minecraft.util.EnumParticleTypes.BLOCK_CRACK;
 
-/**
- * Created by noah on 8/29/14.
- */
 public class EntitySuperbiumGolem extends EntityGolem {
 
     private int attackTimer;
     private int holdRoseTick;
+    Village village;
 
     public EntitySuperbiumGolem(World worldIn) {
         super(worldIn);
@@ -126,5 +124,103 @@ public class EntitySuperbiumGolem extends EntityGolem {
                 this.spawnRunningParticles();
             }
         }
+    }
+
+    @Override
+    public boolean canAttackClass(Class p_70686_1_) {
+        return  this.isPlayerCreated() && EntityPlayer.class.isAssignableFrom(p_70686_1_) ? false : super.canAttackClass(p_70686_1_);
+    }
+
+    @Override
+    public void writeEntityToNBT(NBTTagCompound tagCompound) {
+        super.writeEntityToNBT(tagCompound);
+        tagCompound.setBoolean("PlayerCreated", this.isPlayerCreated());
+    }
+
+    @Override
+    public void readEntityFromNBT(NBTTagCompound tagCompund) {
+        super.readEntityFromNBT(tagCompund);
+        this.setPlayerCreated(tagCompund.getBoolean("PlayerCreated"));
+    }
+
+    @Override
+    public boolean attackEntityAsMob(Entity p_70652_1_) {
+        this.attackTimer = 10;
+        this.worldObj.setEntityState(this, (byte)4);
+        boolean flag = p_70652_1_.attackEntityFrom(DamageSource.causeMobDamage(this), (float)(7 + this.rand.nextInt(15)));
+
+        if ( flag ) {
+            p_70652_1_.motionY += 0.4000000059604645D;
+        }
+
+        return flag;
+    }
+
+    @SideOnly(Side.CLIENT)
+    public void handleHealthUpdate(byte b) {
+        if (b == 4) {
+            this.attackTimer = 10;
+        }
+        else if ( b == 11 ) {
+            this.holdRoseTick = 400;
+        }
+        else super.handleHealthUpdate(b);
+    }
+
+    @SideOnly(Side.CLIENT)
+    public int getAttackTimer() {
+        return this.attackTimer;
+    }
+
+    public void setHoldingRose(boolean bool) {
+        this.holdRoseTick = bool ? 400 : 0;
+        this.worldObj.setEntityState(this, (byte)11);
+    }
+
+    @Override
+    protected void dropFewItems(boolean p_70628_1_, int p_70628_2_) {
+        int j = this.rand.nextInt(3);
+        int k;
+
+        for ( k = 0; k < j; ++k){
+            this.dropItemWithOffset(Item.getItemFromBlock(Blocks.red_flower), 1, 0.0F);
+        }
+
+        k = 3 + this.rand.nextInt(3);
+
+        for (int l = 0; l < k; ++l) {
+            this.dropItem(ModItems.superbiumIngot, 1);
+        }
+    }
+
+    public int getHoldRoseTick() {
+        return this.holdRoseTick;
+    }
+
+    public boolean isPlayerCreated() {
+        return (this.dataWatcher.getWatchableObjectByte(16) & 1) != 0;
+    }
+
+    public void setPlayerCreated(boolean bool) {
+        byte b0 = this.dataWatcher.getWatchableObjectByte(16);
+        if (bool) {
+            this.dataWatcher.updateObject(16, Byte.valueOf((byte)(b0 | 1)));
+        }
+        else {
+            this.dataWatcher.updateObject(16, Byte.valueOf((byte)(b0 | -2)));
+        }
+    }
+
+    @Override
+    public void onDeath(DamageSource cause) {
+        if (!this.isPlayerCreated() && this.attackingPlayer != null) {
+            this.village.setReputationForPlayer(this.attackingPlayer.getCommandSenderEntity().getName(), +5);
+        }
+        super.onDeath(cause);
+    }
+
+    @Override
+    protected boolean canDespawn() {
+        return false;
     }
 }

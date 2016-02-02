@@ -25,6 +25,7 @@ import io.cyb3rwarri0r8.commumod.lib.Reference;
 import net.minecraft.client.model.ModelBiped;
 import net.minecraft.client.renderer.entity.RenderBiped;
 import net.minecraft.client.renderer.entity.RenderManager;
+import net.minecraft.entity.Entity;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderMiner extends RenderBiped {
@@ -32,7 +33,11 @@ public class RenderMiner extends RenderBiped {
     public ModelMiner modelMiner;
     public RenderMiner(RenderManager renderManager, ModelBiped modelBiped, float f) {
         super(renderManager, modelBiped, f);
-
+        this.modelMiner = (ModelMiner)this.mainModel;
     }
 
+    @Override
+    protected ResourceLocation getEntityTexture(Entity entity) {
+        return textureLocation;
+    }
 }

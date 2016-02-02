@@ -155,7 +155,7 @@ public class RegisterHelper {
             Random rand = new Random(seed);
             int primaryColor = rand.nextInt() * 16777215;
             int secondaryColor = rand.nextInt() * 16777215;
-            EntityRegistry.registerModEntity(entityClass, name, id, Commumod.instance, 5, 1, true, primaryColor, secondaryColor);
+            EntityRegistry.registerModEntity(entityClass, name, id, Commumod.instance, 50, 1, false, primaryColor, secondaryColor);
     }
 
     public static void addPurifying(Item input, ItemStack output, float xp)
