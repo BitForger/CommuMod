@@ -1,3 +1,22 @@
+/*
+ *  CommuMod - A Minecraft Modification
+ *  Copyright (C) ${YEAR} Cyb3rWarri0r8
+ *
+ *  This program is free software: you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or
+ *  any later version.
+ *
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ */
+
 import java.util.regex.Matcher
 import java.util.regex.Pattern
 
@@ -14,106 +33,60 @@ buildscript {
         }
     }
     dependencies {
-        classpath 'net.minecraftforge.gradle:ForgeGradle:1.2-SNAPSHOT'
+        classpath 'net.minecraftforge.gradle:ForgeGradle:2.0-SNAPSHOT'
     }
 }
 
-/*repositories{
-
-}*/
-
-
-apply plugin: 'forge'
+apply plugin : 'net.minecraftforge.gradle.forge'
 
 version
 group= "io.cyb3rwarri0r8.commumod" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "commumod"
 
+def mod_id = "commumod"
+def mod_name = "CommuMod"
+def mod_desc = "A smash up of different ideas in one mod."
+def mod_url = "http://kaminocoding.github.io/CommuMod"
+def mc_version = minecraft.version
+def mod_version = "2.0"
+def mcversion = "1.8"
+
 minecraft {
-    version = "1.7.10-10.13.4.1448-1.7.10"
-    assetDir = "eclipse/assets"
+    version = "1.8-11.14.4.1563"
+    runDir = "run"
+
+
+
+
+    replace "@ID@", mod_id
+    replace "@NAME@", mod_name
+    replace "${version}":project.version
+    replace "${mcversion}":minecraft.version
+    
+    // the mappings can be changed at any time, and must be in the following format.
+    // snapshot_YYYYMMDD   snapshot are built nightly.
+    // stable_#            stables are built at the discretion of the MCP team.
+    // Use non-default mappings at your own risk. they may not allways work.
+    // simply re-run your setup task after changing the mappings to update your workspace.
+    mappings = "snapshot_20141130"
 }
 
 dependencies {
-	/*compile "codechicken:NotEnoughItems:1.7.10-1.0.3.74:dev"
-	compile "codechicken:CodeChickenLib:1.7.10-1.1.1.99:dev"
-	compile "codechicken:CodeChickenCore:1.7.10-1.0.4.29:dev"*/
+    // you may put jars on which you depend on in ./libs
+    // or you may define them like so..
+    //compile "some.group:artifact:version:classifier"
+    //compile "some.group:artifact:version"
+      
+    // real examples
+    //compile 'com.mod-buildcraft:buildcraft:6.0.8:dev'  // adds buildcraft to the dev env
+    //compile 'com.googlecode.efficient-java-matrix-library:ejml:0.24' // adds ejml to the dev env
+
+    // for more info...
+    // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
+    // http://www.gradle.org/docs/current/userguide/dependency_management.html
+
 }
 
-processResources
-{
-    Matcher matcherVersion
-
-    def configFile = file("config.xml")
-    def configText = configFile.getText()
-
-    def patternDev = Pattern.compile("<isDev>(\\w+)</isDev>")
-    def matcherDev = patternDev.matcher(configText)
-    matcherDev.find()
-    def isDev = Boolean.parseBoolean(matcherDev.group(1))
-
-    if(isDev) {
-        def pattern = Pattern.compile("<version>(\\d+)\\.(\\d+)\\.(\\d+)\\.(\\d+)</version>")
-        matcherVersion = pattern.matcher(configText)
-        matcherVersion.find()
-
-        def major = Integer.parseInt(matcherVersion.group(1))
-        def minor = Integer.parseInt(matcherVersion.group(2))
-        def patch = Integer.parseInt(matcherVersion.group(3))
-        def build = Integer.parseInt(matcherVersion.group(4))
-
-
-        project.version = major + "." + minor + "." + patch + "." + build
-    }
-    else {
-        def pattern = Pattern.compile("<version>(\\d+)\\.(\\d+)\\.(\\d+)</version>")
-        matcherVersion = pattern.matcher(configText)
-        matcherVersion.find()
-
-        def major = Integer.parseInt(matcherVersion.group(1))
-        def minor = Integer.parseInt(matcherVersion.group(2))
-        def patch = Integer.parseInt(matcherVersion.group(3))
-
-        project.version = major + "." + minor + "." + patch
-    }
-
-
-    // this will ensure that this task is redone when the versions change.
-    inputs.property "version", project.version
-    inputs.property "mcversion", project.minecraft.version
-
-    // replace stuff in mcmod.info, nothing else
-    from(sourceSets.main.resources.srcDirs) {
-        include 'mcmod.info'
-
-        // replace version and mcversion
-        expand 'version':project.version, 'mcversion':project.minecraft.version
-    }
-
-    // copy everything else, thats not the mcmod.info
-    from(sourceSets.main.resources.srcDirs) {
-        exclude 'mcmod.info'
-    }
-}
-
-
-/*task incrementVersionName << {
-    println(":incrementVersionName - Incrementing Version Name...")
-    def manifestFile = file("config.xml")
-    def patternVersionNumber = Pattern.compile("versionName=\"(\\d+)\\.(\\d+)\\.(\\d+)\"")
-    def manifestText = manifestFile.getText()
-    def matcherVersionNumber = patternVersionNumber.matcher(manifestText)
-    matcherVersionNumber.find()
-    def majorVersion = Integer.parseInt(matcherVersionNumber.group(1))
-    def minorVersion = Integer.parseInt(matcherVersionNumber.group(2))
-    def pointVersion = Integer.parseInt(matcherVersionNumber.group(3))
-    def mVersionName = majorVersion + "." + minorVersion + "." + pointVersion
-    def mNextVersionName = majorVersion + "." + minorVersion + "." + (pointVersion + 1)
-    def manifestContent = matcherVersionNumber.replaceAll("versionName=\"" + mNextVersionName + "\"")
-    println(":incrementVersionName - current versionName=" + mVersionName);
-    println(":incrementVersionName - new versionName=" + mNextVersionName);
-    manifestFile.write(manifestContent)
-}*/
 
 task incrementPatch << {
     String oldVersion
@@ -137,9 +110,10 @@ task incrementPatch << {
         def major = Integer.parseInt(matcherVersion.group(1))
         def minor = Integer.parseInt(matcherVersion.group(2))
         def patch = Integer.parseInt(matcherVersion.group(3))
-        def devVersion = Integer.parseInt(matcherVersion.group(4))
+        def build = Integer.parseInt(matcherVersion.group(4))
 
-        oldVersion = major + "." + minor + "." + patch + "." + devVersion
+
+        oldVersion = major + "." + minor + "." + patch + "." + build
         newVersion = major + "." + minor + "." + (patch + 1)
     }
     else {
@@ -181,7 +155,7 @@ task incrementMinor << {
     def isDev = Boolean.parseBoolean(matcherDev.group(1))
 
     if(isDev) {
-        def pattern = Pattern.compile("<version>(\\d+)\\.(\\d+)\\.(\\d+)</version>")
+        def pattern = Pattern.compile("<version>(\\d+)\\.(\\d+)\\.(\\d+)\\.(\\d+)</version>")
         matcherVersion = pattern.matcher(configText)
         matcherVersion.find()
 
@@ -189,6 +163,7 @@ task incrementMinor << {
         def minor = Integer.parseInt(matcherVersion.group(2))
         def patch = Integer.parseInt(matcherVersion.group(3))
         def build = Integer.parseInt(matcherVersion.group(4))
+
 
         oldVersion = major + "." + minor + "." + patch + "." + build
         newVersion = major + "." + (minor + 1) + ".0"
@@ -240,6 +215,7 @@ task incrementMajor << {
         def minor = Integer.parseInt(matcherVersion.group(2))
         def patch = Integer.parseInt(matcherVersion.group(3))
         def build = Integer.parseInt(matcherVersion.group(4))
+
 
         oldVersion = major + "." + minor + "." + patch + "." + build
         newVersion = (major + 1) + ".0.0"
@@ -296,6 +272,7 @@ task setDevVersion << {
 
         oldVersion = major + "." + minor + "." + patch + "." + build
         newVersion = major + "." + minor + "." + patch + "." + (build + 1)
+
     }
     else {
         println(":setDevVersion - Setting to Dev Version")
@@ -308,20 +285,22 @@ task setDevVersion << {
         def minor = Integer.parseInt(matcherVersion.group(2))
         def patch = Integer.parseInt(matcherVersion.group(3))
 
-
         oldVersion = major + "." + minor + "." + patch
-        newVersion = major + "." + minor + "." + patch + "." +"1"
+        newVersion = major + "." + minor + "." + patch + "." + "1"
     }
 
     println(":incrementPatch - Current Version: " + oldVersion)
     println(":incrementPatch - New Version:     " + newVersion)
     project.version = newVersion
+    mod_version = project.version
 
     def configVersion = matcherVersion.replaceAll("<version>"+ newVersion +"</version>")
     matcherDev = patternDev.matcher(configVersion)
     matcherDev.find()
     def configIsDev = matcherDev.replaceAll("<isDev>true</isDev>")
     configFile.write(configIsDev)
+    mod_version = configVersion
+
 }
 
 task getModData << {
@@ -353,14 +332,64 @@ task getModData << {
     project.group = configGroup
 }
 
+processResources
+        {
+            Matcher matcher
+
+            def configFile = file("config.xml")
+            def configText = configFile.getText()
+
+            def patternDev = Pattern.compile("<isDev>(\\w+)</isDev>")
+            def matcherDev = patternDev.matcher(configText)
+            matcherDev.find()
+            def isDev = Boolean.parseBoolean(matcherDev.group(1))
+
+            if(isDev) {
+                def pattern = Pattern.compile("<version>(\\d+)\\.(\\d+)\\.(\\d+)\\.(\\d+)</version>")
+                matcher = pattern.matcher(configText)
+                matcher.find()
+
+                def major = Integer.parseInt(matcher.group(1))
+                def minor = Integer.parseInt(matcher.group(2))
+                def patch = Integer.parseInt(matcher.group(3))
+                def build = Integer.parseInt(matcher.group(4))
 
 
-build.mustRunAfter getModData
-build.dependsOn getModData
+                project.version = mcversion + "-" + major + "." + minor + "." + patch + "." + build
+            }
+            else {
+                def pattern = Pattern.compile("<version>(\\d+)\\.(\\d+)\\.(\\d+)</version>")
+                matcher = pattern.matcher(configText)
+                matcher.find()
 
-//build.mustRunAfter setDevVersion
-//build.dependsOn setDevVersion
+                def major = Integer.parseInt(matcher.group(1))
+                def minor = Integer.parseInt(matcher.group(2))
+                def patch = Integer.parseInt(matcher.group(3))
 
-sourceSets {
+                project.version = mcversion + "-" + major + "." + minor + "." + patch
+            }
+
+
+            // this will ensure that this task is redone when the versions change.
+            inputs.property "version", project.version
+            inputs.property "mcversion", project.minecraft.version
+
+            // replace stuff in mcmod.info, nothing else
+            from(sourceSets.main.resources.srcDirs) {
+                include 'mcmod.info'
+                // replace version and mcversion
+                expand 'id': mod_id, 'name': mod_name, 'description': mod_desc, 'url': mod_url, 'version': project.version, 'mcversion': mc_version
+            }
+
+            // copy everything else, thats not the mcmod.info
+            from(sourceSets.main.resources.srcDirs) {
+                exclude 'mcmod.info'
+            }
+        }
+
+
+
+
+/*sourceSets {
     main { output.resourcesDir = output.classesDir }
-}
+}*/

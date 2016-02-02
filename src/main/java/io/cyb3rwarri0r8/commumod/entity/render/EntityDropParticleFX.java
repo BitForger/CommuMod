@@ -1,30 +1,37 @@
 package io.cyb3rwarri0r8.commumod.entity.render;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
+
+/*
+ *  CommuMod - A Minecraft Modification
+ *  Copyright (C) ${YEAR} Cyb3rWarri0r8
+ *
+ *  This program is free software: you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or
+ *  any later version.
+ *
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ */
+
 import io.cyb3rwarri0r8.commumod.lib.helpers.MathHelper;
 import net.minecraft.block.BlockLiquid;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.properties.PropertyInteger;
+import net.minecraft.block.state.BlockState;
 import net.minecraft.client.particle.EntityFX;
+import net.minecraft.util.BlockPos;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
-/**
- * CommuMod - A Minecraft Modification
- * Copyright (C) 2014 Cyb3rWarri0r8
- * <p/>
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * any later version.
- * <p/>
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- * <p/>
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- */
+
 @SideOnly(Side.CLIENT)
 public class EntityDropParticleFX extends EntityFX {
 
@@ -82,26 +89,29 @@ public class EntityDropParticleFX extends EntityFX {
             this.motionX *= 0.699999988079071D;
             this.motionZ *= 0.699999988079071D;
         }
+        BlockPos blockPos = new BlockPos(this.posX, this.posY, this.posZ);
         if (this.particleGravity > 0) {
-            Material material = this.worldObj.getBlock(MathHelper.floor(this.posX), MathHelper.floor(this.posY), MathHelper.floor(this.posZ)).getMaterial();
+            Material material = this.worldObj.getBlockState(blockPos).getBlock().getMaterial();
 
             if (material.isLiquid() || material.isSolid()) {
+                int liquidStateId = BlockLiquid.getStateId(worldObj.getBlockState(blockPos));
+                BlockState state = (BlockState) BlockLiquid.getStateById(liquidStateId);
                 double d0 = MathHelper.floor(this.posY)
                         + 1
-                        - BlockLiquid.getLiquidHeightPercent(this.worldObj.getBlockMetadata(MathHelper.floor(this.posX), MathHelper.floor(this.posY),
-                        MathHelper.floor(this.posZ)));
+                        - BlockLiquid.getLiquidHeightPercent((Integer) state.getBaseState().getValue(BlockLiquid.LEVEL));
                 if (this.posY < d0) {
                     this.setDead();
                 }
             }
         } else {
-            Material material = this.worldObj.getBlock(MathHelper.ceil(this.posX), MathHelper.ceil(this.posY), MathHelper.ceil(this.posZ)).getMaterial();
+            Material material = this.worldObj.getBlockState(blockPos).getBlock().getMaterial();
 
             if (material.isLiquid() || material.isSolid()) {
+                int liquidStateId = BlockLiquid.getStateId(worldObj.getBlockState(blockPos));
+                BlockState state = (BlockState) BlockLiquid.getStateById(liquidStateId);
                 double d0 = MathHelper.ceil(this.posY)
                         + 1
-                        - BlockLiquid.getLiquidHeightPercent(this.worldObj.getBlockMetadata(MathHelper.ceil(this.posX), MathHelper.ceil(this.posY),
-                        MathHelper.ceil(this.posZ)));
+                        - BlockLiquid.getLiquidHeightPercent((Integer) state.getBaseState().getValue(BlockLiquid.LEVEL));
                 if (this.posY > d0) {
                     this.setDead();
                 }

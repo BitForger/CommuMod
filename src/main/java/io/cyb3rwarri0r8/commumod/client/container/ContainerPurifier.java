@@ -1,16 +1,34 @@
 package io.cyb3rwarri0r8.commumod.client.container;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
+
+/*
+ *  CommuMod - A Minecraft Modification
+ *  Copyright (C) ${YEAR} Cyb3rWarri0r8
+ *
+ *  This program is free software: you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or
+ *  any later version.
+ *
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ */
+
 import io.cyb3rwarri0r8.commumod.entity.TileEntityPurifier;
 import io.cyb3rwarri0r8.commumod.lib.PurifierRecipes;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
-import net.minecraft.inventory.Container;
-import net.minecraft.inventory.ICrafting;
-import net.minecraft.inventory.Slot;
-import net.minecraft.inventory.SlotFurnace;
+import net.minecraft.inventory.*;
+
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 /**
  * Created by noah on 9/23/14.
@@ -26,7 +44,7 @@ public class ContainerPurifier extends Container{
         this.tileEntity = tileEntity;
         this.addSlotToContainer(new Slot(tileEntity, 0, 56, 17));
         this.addSlotToContainer(new Slot(tileEntity, 1, 56, 53));
-        this.addSlotToContainer(new SlotFurnace(player.player,tileEntity,2,116,35));
+        this.addSlotToContainer(new SlotFurnaceOutput(player.player,tileEntity,2,116,35));
         int i;
         for ( i = 0; i < 3; i++)
         {
@@ -146,7 +164,7 @@ public class ContainerPurifier extends Container{
             }
             if(itemStack1.stackSize == 0)
             {
-                slot.putStack((ItemStack) null);
+                slot.putStack(null);
             }else{
                 slot.onSlotChanged();
             }

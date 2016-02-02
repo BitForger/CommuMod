@@ -1,7 +1,25 @@
 package io.cyb3rwarri0r8.commumod.entity;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
+
+/*
+ *  CommuMod - A Minecraft Modification
+ *  Copyright (C) ${YEAR} Cyb3rWarri0r8
+ *
+ *  This program is free software: you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or
+ *  any later version.
+ *
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ */
+
 import io.cyb3rwarri0r8.commumod.items.ModItems;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -13,16 +31,13 @@ import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.util.AxisAlignedBB;
-import net.minecraft.util.DamageSource;
-import net.minecraft.util.MathHelper;
+import net.minecraft.util.*;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 import java.util.List;
 
-/**
- * Created by noah on 10/11/14.
- */
 public class EntityCobaltBoat extends Entity {
 
     /** true if no player in boat */
@@ -48,7 +63,7 @@ public class EntityCobaltBoat extends Entity {
         this.speedMultiplier = 0.07D;
         this.preventEntitySpawning = true;
         this.setSize(1.5F, 0.6F);
-        this.yOffset = this.height / 2.0F;
+        this.setSize(1.5F, 0.6F);
     }
 
     /**
@@ -73,7 +88,7 @@ public class EntityCobaltBoat extends Entity {
      */
     public AxisAlignedBB getCollisionBox(Entity p_70114_1_)
     {
-        return p_70114_1_.boundingBox;
+        return p_70114_1_.getBoundingBox();
     }
 
     /**
@@ -81,7 +96,7 @@ public class EntityCobaltBoat extends Entity {
      */
     public AxisAlignedBB getBoundingBox()
     {
-        return this.boundingBox;
+        return this.getEntityBoundingBox();
     }
 
     /**
@@ -95,7 +110,7 @@ public class EntityCobaltBoat extends Entity {
     public EntityCobaltBoat(World p_i1705_1_, double p_i1705_2_, double p_i1705_4_, double p_i1705_6_)
     {
         this(p_i1705_1_);
-        this.setPosition(p_i1705_2_, p_i1705_4_ + (double)this.yOffset, p_i1705_6_);
+        this.setPosition(p_i1705_2_, p_i1705_4_ + this.getYOffset(), p_i1705_6_);
         this.motionX = 0.0D;
         this.motionY = 0.0D;
         this.motionZ = 0.0D;
@@ -115,9 +130,9 @@ public class EntityCobaltBoat extends Entity {
     /**
      * Called when the entity is attacked.
      */
-    public boolean attackEntityFrom(DamageSource p_70097_1_, float p_70097_2_)
+    public boolean attackEntityFrom(DamageSource source, float amount)
     {
-        if (this.isEntityInvulnerable())
+        if (this.isEntityInvulnerable(source))
         {
             return false;
         }
@@ -125,9 +140,9 @@ public class EntityCobaltBoat extends Entity {
         {
             this.setForwardDirection(-this.getForwardDirection());
             this.setTimeSinceHit(10);
-            this.setDamageTaken(this.getDamageTaken() + p_70097_2_ * 10.0F);
+            this.setDamageTaken(this.getDamageTaken() + amount * 10.0F);
             this.setBeenAttacked();
-            boolean flag = p_70097_1_.getEntity() instanceof EntityPlayer && ((EntityPlayer)p_70097_1_.getEntity()).capabilities.isCreativeMode;
+            boolean flag = source.getEntity() instanceof EntityPlayer && ((EntityPlayer)source.getEntity()).capabilities.isCreativeMode;
 
             if (flag || this.getDamageTaken() > 40.0F)
             {
@@ -138,7 +153,7 @@ public class EntityCobaltBoat extends Entity {
 
                 if (!flag)
                 {
-                    this.func_145778_a(ModItems.cobaltBoat, 1, 0.0F);
+                    this.dropItemWithOffset(ModItems.cobaltBoat, 1, 0.0F);
                 }
 
                 this.setDead();
@@ -243,9 +258,9 @@ public class EntityCobaltBoat extends Entity {
 
         for (int i = 0; i < b0; ++i)
         {
-            double d1 = this.boundingBox.minY + (this.boundingBox.maxY - this.boundingBox.minY) * (double)(i + 0) / (double)b0 - 0.125D;
-            double d3 = this.boundingBox.minY + (this.boundingBox.maxY - this.boundingBox.minY) * (double)(i + 1) / (double)b0 - 0.125D;
-            AxisAlignedBB axisalignedbb = AxisAlignedBB.getBoundingBox(this.boundingBox.minX, d1, this.boundingBox.minZ, this.boundingBox.maxX, d3, this.boundingBox.maxZ);
+            double d1 = this.getBoundingBox().minY + (this.getBoundingBox().maxY - this.getBoundingBox().minY) * (double)(i + 0) / (double)b0 - 0.125D;
+            double d3 = this.getBoundingBox().minY + (this.getBoundingBox().maxY - this.getBoundingBox().minY) * (double)(i + 1) / (double)b0 - 0.125D;
+            AxisAlignedBB axisalignedbb = AxisAlignedBB.fromBounds(this.getBoundingBox().minX, d1, this.getBoundingBox().minZ, this.getBoundingBox().maxX, d3, this.getBoundingBox().maxZ);
 
             if (this.worldObj.isAABBInMaterial(axisalignedbb, Material.water))
             {
@@ -274,13 +289,13 @@ public class EntityCobaltBoat extends Entity {
                 {
                     d8 = this.posX - d2 * d5 * 0.8D + d4 * d6;
                     d9 = this.posZ - d4 * d5 * 0.8D - d2 * d6;
-                    this.worldObj.spawnParticle("splash", d8, this.posY - 0.125D, d9, this.motionX, this.motionY, this.motionZ);
+                    this.worldObj.spawnParticle(EnumParticleTypes.WATER_SPLASH, d8, this.posY - 0.125D, d9, this.motionX, this.motionY, this.motionZ);
                 }
                 else
                 {
                     d8 = this.posX + d2 + d4 * d5 * 0.7D;
                     d9 = this.posZ + d4 - d2 * d5 * 0.7D;
-                    this.worldObj.spawnParticle("splash", d8, this.posY - 0.125D, d9, this.motionX, this.motionY, this.motionZ);
+                    this.worldObj.spawnParticle(EnumParticleTypes.WATER_SPLASH, d8, this.posY - 0.125D, d9, this.motionX, this.motionY, this.motionZ);
                 }
             }
         }
@@ -382,19 +397,22 @@ public class EntityCobaltBoat extends Entity {
                 int i1 = MathHelper.floor_double(this.posX + ((double)(l % 2) - 0.5D) * 0.8D);
                 j = MathHelper.floor_double(this.posZ + ((double)(l / 2) - 0.5D) * 0.8D);
 
+
                 for (int j1 = 0; j1 < 2; ++j1)
                 {
+
                     int k = MathHelper.floor_double(this.posY) + j1;
-                    Block block = this.worldObj.getBlock(i1, k, j);
+                    BlockPos blockPos = new BlockPos(i1, k, j);
+                    Block block = this.worldObj.getBlockState(blockPos).getBlock();
 
                     if (block == Blocks.snow_layer)
                     {
-                        this.worldObj.setBlockToAir(i1, k, j);
+                        this.worldObj.setBlockToAir(blockPos);
                         this.isCollidedHorizontally = false;
                     }
                     else if (block == Blocks.waterlily)
                     {
-                        this.worldObj.func_147480_a(i1, k, j, true);
+                        this.worldObj.destroyBlock(blockPos, true);
                         this.isCollidedHorizontally = false;
                     }
                 }
@@ -440,7 +458,7 @@ public class EntityCobaltBoat extends Entity {
 
             if (!this.worldObj.isRemote)
             {
-                List<?> list = this.worldObj.getEntitiesWithinAABBExcludingEntity(this, this.boundingBox.expand(0.20000000298023224D, 0.0D, 0.20000000298023224D));
+                List<?> list = this.worldObj.getEntitiesWithinAABBExcludingEntity(this, this.getBoundingBox().expand(0.20000000298023224D, 0.0D, 0.20000000298023224D));
 
                 if (list != null && !list.isEmpty())
                 {
@@ -511,40 +529,36 @@ public class EntityCobaltBoat extends Entity {
      * Takes in the distance the entity has fallen this tick and whether its on the ground to update the fall distance
      * and deal fall damage if landing on the ground.  Args: distanceFallenThisTick, onGround
      */
-    protected void updateFallState(double p_70064_1_, boolean p_70064_3_)
+    protected void func_180433_a(double p_180433_1_, boolean p_180433_3_, Block p_180433_4_, BlockPos p_180433_5_)
     {
-        int i = MathHelper.floor_double(this.posX);
-        int j = MathHelper.floor_double(this.posY);
-        int k = MathHelper.floor_double(this.posZ);
-
-        if (p_70064_3_)
+        if (p_180433_3_)
         {
             if (this.fallDistance > 3.0F)
             {
-                this.fall(this.fallDistance);
+                this.fall(this.fallDistance, 1.0F);
 
                 if (!this.worldObj.isRemote && !this.isDead)
                 {
                     this.setDead();
-                    int l;
+                    int i;
 
-                    for (l = 0; l < 3; ++l)
+                    for (i = 0; i < 3; ++i)
                     {
-                        this.func_145778_a(Item.getItemFromBlock(Blocks.planks), 1, 0.0F);
+                        this.dropItemWithOffset(Item.getItemFromBlock(Blocks.planks), 1, 0.0F);
                     }
 
-                    for (l = 0; l < 2; ++l)
+                    for (i = 0; i < 2; ++i)
                     {
-                        this.func_145778_a(Items.stick, 1, 0.0F);
+                        this.dropItemWithOffset(Items.stick, 1, 0.0F);
                     }
                 }
 
                 this.fallDistance = 0.0F;
             }
         }
-        else if (this.worldObj.getBlock(i, j - 1, k).getMaterial() != Material.water && p_70064_1_ < 0.0D)
+        else if (this.worldObj.getBlockState((new BlockPos(this)).down()).getBlock().getMaterial() != Material.water && p_180433_1_ < 0.0D)
         {
-            this.fallDistance = (float)((double)this.fallDistance - p_70064_1_);
+            this.fallDistance = (float)((double)this.fallDistance - p_180433_1_);
         }
     }
 

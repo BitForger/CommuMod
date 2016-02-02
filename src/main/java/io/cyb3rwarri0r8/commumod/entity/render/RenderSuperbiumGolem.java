@@ -1,11 +1,31 @@
 package io.cyb3rwarri0r8.commumod.entity.render;
 
 
+/*
+ *  CommuMod - A Minecraft Modification
+ *  Copyright (C) ${YEAR} Cyb3rWarri0r8
+ *
+ *  This program is free software: you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or
+ *  any later version.
+ *
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ */
+
 import io.cyb3rwarri0r8.commumod.entity.EntitySuperbiumGolem;
 import io.cyb3rwarri0r8.commumod.lib.Reference;
 import io.cyb3rwarri0r8.commumod.entity.model.ModelSuperbiumGolem;
 import net.minecraft.client.renderer.OpenGlHelper;
 import net.minecraft.client.renderer.entity.RenderLiving;
+import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.client.renderer.texture.TextureMap;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
@@ -15,18 +35,14 @@ import net.minecraft.util.ResourceLocation;
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.GL12;
 
-/**
- * Created by noah on 8/29/14.
- */
 public class RenderSuperbiumGolem extends RenderLiving {
     private static final ResourceLocation superbiumGolemTextures = new ResourceLocation(Reference.MODID + ":" + "textures/entity/superbiumGolem.png");
-    /** Superbium Golem's Model. */
+    /* Superbium Golem's Model. */
     private final ModelSuperbiumGolem superbiumGolemModel;
-    private static final String __OBFID = "CL_00001031";
 
-    public RenderSuperbiumGolem()
+    public RenderSuperbiumGolem(RenderManager renderManager)
     {
-        super(new ModelSuperbiumGolem(), 0.5F);
+        super(renderManager, new ModelSuperbiumGolem(), 0.5F);
         this.superbiumGolemModel = (ModelSuperbiumGolem)this.mainModel;
     }
 
@@ -38,7 +54,7 @@ public class RenderSuperbiumGolem extends RenderLiving {
      */
     public void doRender(EntitySuperbiumGolem p_76986_1_, double p_76986_2_, double p_76986_4_, double p_76986_6_, float p_76986_8_, float p_76986_9_)
     {
-        super.doRender((EntityLiving)p_76986_1_, p_76986_2_, p_76986_4_, p_76986_6_, p_76986_8_, p_76986_9_);
+        super.doRender(p_76986_1_, p_76986_2_, p_76986_4_, p_76986_6_, p_76986_8_, p_76986_9_);
     }
 
     /**
@@ -64,7 +80,7 @@ public class RenderSuperbiumGolem extends RenderLiving {
 
     protected void renderEquippedItems(EntitySuperbiumGolem p_77029_1_, float p_77029_2_)
     {
-        super.renderEquippedItems(p_77029_1_, p_77029_2_);
+//        super.renderEquippedItems(p_77029_1_, p_77029_2_);
 
         if (p_77029_1_.getHoldRoseTick() != 0)
         {
@@ -81,22 +97,13 @@ public class RenderSuperbiumGolem extends RenderLiving {
             OpenGlHelper.setLightmapTextureCoords(OpenGlHelper.lightmapTexUnit, (float) j / 1.0F, (float) k / 1.0F);
             GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
             this.bindTexture(TextureMap.locationBlocksTexture);
-            this.field_147909_c.renderBlockAsItem(Blocks.red_flower, 0, 1.0F);
+//            this.(Blocks.red_flower, 0, 1.0F);
             GL11.glPopMatrix();
             GL11.glDisable(GL12.GL_RESCALE_NORMAL);
         }
     }
 
-    /**
-     * Actually renders the given argument. This is a synthetic bridge method, always casting down its argument and then
-     * handing it off to a worker function which does the actual work. In all probabilty, the class Render is generic
-     * (Render<T extends Entity) and this method has signature public void func_76986_a(T entity, double d, double d1,
-     * double d2, float f, float f1). But JAD is pre 1.5 so doesn't do that.
-     */
-    public void doRender(EntityLiving p_76986_1_, double p_76986_2_, double p_76986_4_, double p_76986_6_, float p_76986_8_, float p_76986_9_)
-    {
-        this.doRender((EntitySuperbiumGolem)p_76986_1_, p_76986_2_, p_76986_4_, p_76986_6_, p_76986_8_, p_76986_9_);
-    }
+
 
     protected void renderEquippedItems(EntityLivingBase p_77029_1_, float p_77029_2_)
     {
@@ -108,16 +115,6 @@ public class RenderSuperbiumGolem extends RenderLiving {
         this.rotateCorpse((EntitySuperbiumGolem)p_77043_1_, p_77043_2_, p_77043_3_, p_77043_4_);
     }
 
-    /**
-     * Actually renders the given argument. This is a synthetic bridge method, always casting down its argument and then
-     * handing it off to a worker function which does the actual work. In all probabilty, the class Render is generic
-     * (Render<T extends Entity) and this method has signature public void func_76986_a(T entity, double d, double d1,
-     * double d2, float f, float f1). But JAD is pre 1.5 so doesn't do that.
-     */
-    public void doRender(EntityLivingBase p_76986_1_, double p_76986_2_, double p_76986_4_, double p_76986_6_, float p_76986_8_, float p_76986_9_)
-    {
-        this.doRender((EntitySuperbiumGolem)p_76986_1_, p_76986_2_, p_76986_4_, p_76986_6_, p_76986_8_, p_76986_9_);
-    }
 
     /**
      * Returns the location of an entity's texture. Doesn't seem to be called unless you call Render.bindEntityTexture.
@@ -127,14 +124,4 @@ public class RenderSuperbiumGolem extends RenderLiving {
         return this.getEntityTexture((EntitySuperbiumGolem)p_110775_1_);
     }
 
-    /**
-     * Actually renders the given argument. This is a synthetic bridge method, always casting down its argument and then
-     * handing it off to a worker function which does the actual work. In all probabilty, the class Render is generic
-     * (Render<T extends Entity) and this method has signature public void func_76986_a(T entity, double d, double d1,
-     * double d2, float f, float f1). But JAD is pre 1.5 so doesn't do that.
-     */
-    public void doRender(Entity p_76986_1_, double p_76986_2_, double p_76986_4_, double p_76986_6_, float p_76986_8_, float p_76986_9_)
-    {
-        this.doRender((EntitySuperbiumGolem)p_76986_1_, p_76986_2_, p_76986_4_, p_76986_6_, p_76986_8_, p_76986_9_);
-    }
 }

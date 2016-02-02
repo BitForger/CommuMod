@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "normal": [
+      { "model": "hydrogenTNT" },
+      { "model": "hydrogenTNT", "y": 90 },
+      { "model": "hydrogenTNT", "y": 180 },
+      { "model": "hydrogenTNT", "y": 270 }
+    ]
+  }
+}

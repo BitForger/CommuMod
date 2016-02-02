@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "normal": [
+      { "model": "superbiumTNT" },
+      { "model": "superbiumTNT", "y": 90 },
+      { "model": "superbiumTNT", "y": 180 },
+      { "model": "superbiumTNT", "y": 270 }
+    ]
+  }
+}

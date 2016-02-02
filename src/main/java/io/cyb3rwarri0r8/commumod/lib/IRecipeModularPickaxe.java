@@ -1,6 +1,25 @@
 package io.cyb3rwarri0r8.commumod.lib;
 
 
+/*
+ *  CommuMod - A Minecraft Modification
+ *  Copyright (C) ${YEAR} Cyb3rWarri0r8
+ *
+ *  This program is free software: you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or
+ *  any later version.
+ *
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ */
+
 import io.cyb3rwarri0r8.commumod.items.ModItems;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -10,23 +29,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.world.World;
 
-/**
- * CommuMod - A Minecraft Modification
- * Copyright (C) 2015 Cyb3rWarri0r8
- * <p/>
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * any later version.
- * <p/>
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- * <p/>
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- */
 public class IRecipeModularPickaxe implements IRecipe{
 
     @Override
@@ -37,20 +39,22 @@ public class IRecipeModularPickaxe implements IRecipe{
         ItemStack stick1 = crafting.getStackInRowAndColumn(1,1);
         ItemStack stick2 = crafting.getStackInRowAndColumn(1,2);
 
-        if(stick1.getItem() == ModItems.diamondToolRod | stick1.getItem() == ModItems.goldToolRod | stick1.getItem() == ModItems.ironToolRod | stick1.getItem() == ModItems.stoneToolRod
-                && stick2.getItem() == ModItems.diamondToolRod | stick2.getItem() == ModItems.stoneToolRod | stick2.getItem() == ModItems.ironToolRod | stick2.getItem() == ModItems.goldToolRod)
+        if((stick1.getItem() == ModItems.diamondToolRod && stick2.getItem() == ModItems.diamondToolRod)
+        || (stick1.getItem() == ModItems.ironToolRod    && stick2.getItem() == ModItems.ironToolRod)
+        || (stick1.getItem() == ModItems.goldToolRod    && stick2.getItem() == ModItems.goldToolRod)
+        || (stick1.getItem() == ModItems.stoneToolRod   && stick2.getItem() == ModItems.stoneToolRod))
         {
-            if(item1.getItem() == Items.iron_ingot | item1.getItem() == Items.emerald | item1.getItem() == Items.diamond | item1.getItem() == Item.getItemFromBlock(Blocks.gold_block) | item1.getItem() == Item.getItemFromBlock(Blocks.stone)
-                    && item2.getItem() == Items.iron_ingot | item2.getItem() == Items.emerald | item2.getItem() == Items.diamond | item2.getItem() == Item.getItemFromBlock(Blocks.gold_block) | item2.getItem() == Item.getItemFromBlock(Blocks.stone)
-                    && item3.getItem() == Items.iron_ingot | item3.getItem() == Items.emerald | item3.getItem() == Items.diamond | item3.getItem() == Item.getItemFromBlock(Blocks.gold_block) | item3.getItem() == Item.getItemFromBlock(Blocks.stone))
+            if((item1.getItem() == Items.iron_ingot                          && item2.getItem() == Items.iron_ingot                          && item3.getItem() == Items.iron_ingot)
+            || (item1.getItem() == Items.emerald                             && item2.getItem() == Items.emerald                             && item3.getItem() == Items.emerald)
+            || (item1.getItem() == Items.diamond                             && item2.getItem() == Items.diamond                             && item3.getItem() == Items.diamond)
+            || (item1.getItem() == Item.getItemFromBlock(Blocks.gold_block)  && item2.getItem() == Item.getItemFromBlock(Blocks.gold_block)  && item3.getItem() == Item.getItemFromBlock(Blocks.gold_block)
+            || (item1.getItem() == Item.getItemFromBlock(Blocks.cobblestone) && item2.getItem() == Item.getItemFromBlock(Blocks.cobblestone) && item3.getItem() == Item.getItemFromBlock(Blocks.cobblestone))))
+
             {
                 return true;
-            }else {
-                return false;
             }
-        }else{
-            return false;
         }
+        return false;
     }
 
     @Override
@@ -99,6 +103,16 @@ public class IRecipeModularPickaxe implements IRecipe{
     @Override
     public ItemStack getRecipeOutput() {
         return new ItemStack(ModItems.modularPickaxe);
+    }
+
+    @Override
+    public ItemStack[] getRemainingItems(InventoryCrafting p_179532_1_) {
+        return new ItemStack[0];
+    }
+
+
+    public ItemStack[] func_179532_b(InventoryCrafting p_179532_1_) {
+        return new ItemStack[0];
     }
 
 }
