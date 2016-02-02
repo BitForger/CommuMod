@@ -37,9 +37,6 @@ import net.minecraftforge.fluids.FluidContainerRegistry;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
-/**
- * Created by noah on 10/27/14.
- */
 public class ModFluids {
 
     public static Fluid pureWater;

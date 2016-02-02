@@ -25,9 +25,7 @@ import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.util.MovingObjectPosition.MovingObjectType;
 import net.minecraft.world.World;
 
-/**
- * Created by noah on 6/13/14.
- */
+
 public class EntityAxe extends EntityThrowable {
     public EntityAxe(World world, double par2, double par4, double par6)
     {
@@ -86,7 +84,7 @@ public class EntityAxe extends EntityThrowable {
 * around after exploding, the last parameter
 * is if it  should spawn smoke particles
 */
-            this.worldObj.newExplosion(this, mop.getBlockPos().getX(), mop.getBlockPos().getY(), mop.getBlockPos().getZ(), 4.0F, false, false);
+            this.worldObj.newExplosion(this, mop.getBlockPos().getX(), mop.getBlockPos().getY(), mop.getBlockPos().getZ(), 4.0F, true, true);
         }
 //If the Server is online and works, kill this entity
         if (!this.worldObj.isRemote)

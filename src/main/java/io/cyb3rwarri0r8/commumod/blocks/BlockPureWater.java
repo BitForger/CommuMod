@@ -35,9 +35,6 @@ import net.minecraftforge.fluids.FluidStack;
 import java.util.Random;
 
 
-/**
- * Created by noah on 10/27/14.
- */
 public class BlockPureWater extends BlockFluidClassic
 {
 

@@ -29,9 +29,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.client.FMLClientHandler;
 import net.minecraftforge.fml.common.FMLCommonHandler;
 
-/**
- * Created by noah on 10/31/14.
- */
+
 public final class ServerHelper {
     private ServerHelper() {
     }

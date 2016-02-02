@@ -20,32 +20,18 @@ package io.cyb3rwarri0r8.commumod.fluids;
  *
  */
 
-import io.cyb3rwarri0r8.commumod.entity.render.EntityDropParticleFX;
-
 import io.cyb3rwarri0r8.commumod.lib.helpers.StringHelper;
 import net.minecraft.block.material.Material;
-import net.minecraft.block.state.IBlockState;
-import net.minecraft.client.particle.EntityFX;
-
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EnumCreatureType;
-
 import net.minecraft.util.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
-
 import net.minecraftforge.fluids.BlockFluidClassic;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidStack;
-import net.minecraftforge.fml.client.FMLClientHandler;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
-
-import java.util.Random;
 
 public abstract class ModFluidBase extends BlockFluidClassic{
     String name = "";
-    String modName = "cofh";
+    String modName = "commumod";
     protected float particleRed = 1.0F;
     protected float particleGreen = 1.0F;
     protected float particleBlue = 1.0F;

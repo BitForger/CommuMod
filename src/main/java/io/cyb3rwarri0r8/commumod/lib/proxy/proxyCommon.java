@@ -19,14 +19,11 @@ package io.cyb3rwarri0r8.commumod.lib.proxy;
  *
  */
 
-import com.google.common.base.Predicates;
-import com.google.common.collect.Iterators;
-
-import io.cyb3rwarri0r8.commumod.lib.handler.ModGuiHandler;
+import io.cyb3rwarri0r8.commumod.Commumod;
 import io.cyb3rwarri0r8.commumod.entity.EntityMiner;
 import io.cyb3rwarri0r8.commumod.entity.TileEntityPurifier;
 import io.cyb3rwarri0r8.commumod.lib.Reference;
-import io.cyb3rwarri0r8.commumod.Commumod;
+import io.cyb3rwarri0r8.commumod.lib.handler.ModGuiHandler;
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
