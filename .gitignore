@@ -6,6 +6,18 @@ CommuMod.iws
 
 eclipse/
 
+out/
+
+run/
+
+/build/taskLogs
+/build/sources
+/build/resources
+/build/dependency-cache
+/build/classes
+/build/tmp
+/build/retromapping
+
 *.txt
 
 *.log
