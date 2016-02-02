@@ -29,9 +29,6 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
-/**
- * Created by noah on 5/29/14.
- */
 public class foodItems {
 
     public static Item superCarrot = new FoodSuperCarrot(5, 5, false);

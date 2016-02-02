@@ -22,6 +22,6 @@
 	<modid>commumod</modid>
     <mcversion>1.8</mcversion>
 	<group>io.cyb3rwarri0r8.commumod</group>
-	<version>2.0.0.153</version>
-	<isDev>true</isDev>
+	<version>2.0.0</version>
+	<isDev>false</isDev>
 </config>

@@ -29,9 +29,7 @@ import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.world.World;
 
-/**
- * Created by noah on 5/29/14.
- */
+
 public class FoodSuperCarrot extends ItemFood {
 
     public FoodSuperCarrot(int hunger, float saturation, boolean isWolffood) {
@@ -40,6 +38,7 @@ public class FoodSuperCarrot extends ItemFood {
         Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(this, 0, new ModelResourceLocation("commumod:textures/items/superCarrot", "inventory"));
         setCreativeTab(Commumod.modTab);
         setPotionEffect(Potion.heal.id, 5, 5, 5);
+        this.setAlwaysEdible();
     }
 
     protected void onFoodEaten(ItemStack item, World world, EntityPlayer player)
