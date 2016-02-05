@@ -410,6 +410,6 @@ processResources
 
 
 
-sourceSets {
+/*sourceSets {
     main { output.resourcesDir = output.classesDir }
-}
+}*/
