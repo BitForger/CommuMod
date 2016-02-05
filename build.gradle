@@ -46,14 +46,39 @@ task sourceJar1(type: Jar) {
     classifier "source"
 }
 
+def String aKey
+def String sKey
+
+task getKeys {
+    String accesskey
+    String secretkey
+    Matcher matcherKey
+
+    println(":getKeys - Getting Keys for archive upload")
+    def credFile = file(".aws/credentials.xml")
+    def credText = credFile.getText()
+
+    def patternaKey = Pattern.compile("<accessKey>(\\w+)</accessKey>")
+    def patternsKey = Pattern.compile("<secretKey>(\\w+)</secretKey>")
+
+    def matcheraKey = patternaKey.matcher(credText)
+    def matchersKey = patternsKey.matcher(credText)
+
+    matcheraKey.find()
+    matchersKey.find()
+
+    aKey = matcheraKey.toString()
+    sKey = matchersKey.toString()
+}
+
 
 uploadArchives {
     repositories {
         ivy {
             url "s3://commumod-artifacts/CommuMod-Builds"
             credentials(AwsCredentials) {
-                accessKey "AKIAIRNTGC2426HU7OUA"
-                secretKey "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"
+                accessKey aKey
+                secretKey sKey
             }
         }
     }

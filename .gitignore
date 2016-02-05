@@ -17,7 +17,7 @@ run/
 /build/classes
 /build/tmp
 /build/retromapping
-
+/build/libs/*
 *.txt
 
 *.log
