@@ -20,6 +20,7 @@
 import java.util.regex.Matcher
 import java.util.regex.Pattern
 
+
 buildscript {
     repositories {
         mavenCentral()
@@ -38,6 +39,25 @@ buildscript {
 }
 
 apply plugin : 'net.minecraftforge.gradle.forge'
+
+
+task sourceJar1(type: Jar) {
+    from sourceSets.main.java
+    classifier "source"
+}
+
+
+uploadArchives {
+    repositories {
+        ivy {
+            url "s3://commumod-artifacts/CommuMod-Builds"
+            credentials(AwsCredentials) {
+                accessKey "AKIAIRNTGC2426HU7OUA"
+                secretKey "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"
+            }
+        }
+    }
+}
 
 version
 group= "io.cyb3rwarri0r8.commumod" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
@@ -390,6 +410,6 @@ processResources
 
 
 
-/*sourceSets {
+sourceSets {
     main { output.resourcesDir = output.classesDir }
-}*/
+}
