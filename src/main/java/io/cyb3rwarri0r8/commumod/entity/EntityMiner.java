@@ -27,6 +27,7 @@ import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.*;
 import net.minecraft.entity.monster.EntityMob;
+import net.minecraft.entity.monster.IMob;
 import net.minecraft.entity.passive.EntityVillager;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
@@ -42,36 +43,34 @@ public class EntityMiner extends EntityMob {
         this.tasks.addTask(1, new EntityAISwimming(this));
         this.tasks.addTask(2, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0F));
         this.tasks.addTask(3, new EntityAILookIdle(this));
-        this.tasks.addTask(4, new EntityAIWander(this, 1.0D));
+        this.tasks.addTask(4, new EntityAIWander(this, 0.67D));
         this.tasks.addTask(5, new EntityAIAttackOnCollide(this, 1.0D, true));
         this.tasks.addTask(6, new EntityAIMoveTowardsTarget(this, 1.0D, 2.0F));
-        this.addRandomArmor();
-        this.setSprinting(false);
-    }
 
-    public boolean isAIEnabled()
-    {
-        return true;
+        this.targetTasks.addTask( 1, new EntityAIHurtByTarget( this, true ) );
+        this.targetTasks.addTask( 2, new EntityAINearestAttackableTarget( this, EntitySuperbiumGolem.class, 1, false, true, IMob.mobSelector ) );
+        this.targetTasks.addTask( 2, new EntityAINearestAttackableTarget( this, EntityAradactiteGolem.class, 1, false, true, IMob.mobSelector ) );
+//        this.addRandomArmor();
+//        this.setSprinting(false);
     }
-
 
 
     @Override
     protected void applyEntityAttributes() {
         super.applyEntityAttributes();
         getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(20.0D);
-        getEntityAttribute(SharedMonsterAttributes.followRange).setBaseValue(32.0D);
+        getEntityAttribute(SharedMonsterAttributes.followRange).setBaseValue(16.0D);
         getEntityAttribute(SharedMonsterAttributes.knockbackResistance).setBaseValue(0.0D);
-        getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(1.2D);
+//        getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.67D);
         getEntityAttribute(SharedMonsterAttributes.attackDamage).setBaseValue(2.0D);
     }
 
     protected void entityInit()
     {
         super.entityInit();
-        this.getDataWatcher().addObject(12, Byte.valueOf((byte)0));
-        this.getDataWatcher().addObject(13, Byte.valueOf((byte)0));
-        this.getDataWatcher().addObject(14, Byte.valueOf((byte)0));
+        this.getDataWatcher().addObject(12, ( byte ) 0 );
+        this.getDataWatcher().addObject(13, ( byte ) 0 );
+        this.getDataWatcher().addObject(14, ( byte ) 0 );
     }
 
 
