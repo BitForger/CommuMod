@@ -46,29 +46,39 @@ task sourceJar1(type: Jar) {
     classifier "source"
 }
 
-def String aKey
-def String sKey
+def aKey
+def sKey
 
-task getKeys {
-    String accesskey
-    String secretkey
-    Matcher matcherKey
+task getAccessKey {
+    String awskey
+    Matcher matcher
 
     println(":getKeys - Getting Keys for archive upload")
     def credFile = file(".aws/credentials.xml")
     def credText = credFile.getText()
 
     def patternaKey = Pattern.compile("<accessKey>(\\w+)</accessKey>")
-    def patternsKey = Pattern.compile("<secretKey>(\\w+)</secretKey>")
-
     def matcheraKey = patternaKey.matcher(credText)
-    def matchersKey = patternsKey.matcher(credText)
-
     matcheraKey.find()
-    matchersKey.find()
+    awskey = matcheraKey.group(1).toString()
 
-    aKey = matcheraKey.toString()
-    sKey = matchersKey.toString()
+    aKey = awskey
+}
+
+task getSecretKey {
+    String secretKey
+    Matcher matcher
+
+    println(":getSecretKey - Getting secret key")
+    def credFile = file(".aws/credentials.xml")
+    def credText = credFile.getText()
+
+    def pattern = Pattern.compile("<secretKey>(\\p{all}+)</secretKey")
+    def matcherkey = pattern.matcher(credText)
+    matcherkey.find()
+
+    secretKey = matcherkey.group(1).toString()
+    sKey = secretKey
 }
 
 
@@ -83,6 +93,8 @@ uploadArchives {
         }
     }
 }
+uploadArchives.mustRunAfter getAccessKey
+uploadArchives.mustRunAfter getSecretKey
 
 version
 group= "io.cyb3rwarri0r8.commumod" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
