@@ -20,7 +20,6 @@ package io.cyb3rwarri0r8.commumod.entity;
  *
  */
 
-import io.cyb3rwarri0r8.commumod.blocks.BlockPurifier;
 import io.cyb3rwarri0r8.commumod.lib.PurifierRecipes;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -39,9 +38,6 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-/**
- * Created by noah on 9/10/14.
- */
 public class TileEntityPurifier extends TileEntity implements ISidedInventory
 {
 

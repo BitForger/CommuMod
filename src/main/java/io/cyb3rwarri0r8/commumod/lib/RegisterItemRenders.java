@@ -131,8 +131,13 @@ public class RegisterItemRenders {
 
     public static HashMap<Item,String> map = new HashMap<Item, String>();
 
-    public RegisterItemRenders(){
+    public RegisterItemRenders() {
 
+    }
+
+    public static void init(  ) {
+        registerBlockItemsToRender();
+        registerItemsToRender();
     }
 
     public static void registerItemsToRender(){

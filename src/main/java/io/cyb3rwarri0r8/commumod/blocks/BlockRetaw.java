@@ -61,8 +61,10 @@ public class BlockRetaw extends ModFluidBase
         setTickRate(20);
     }
 
-
-
+    @Override
+    public int getRenderType() {
+        return 1;
+    }
 
     @Override
     public boolean canDisplace(IBlockAccess world, BlockPos blockPos) {

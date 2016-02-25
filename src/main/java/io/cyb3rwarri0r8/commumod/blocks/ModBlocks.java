@@ -32,9 +32,6 @@ import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
-/**
- * Created by noah on 5/14/14.
- */
 public class ModBlocks {
     public static Block superbiumOre;
     public static Block superbiumBlock;

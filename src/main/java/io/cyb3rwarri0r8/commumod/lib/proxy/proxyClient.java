@@ -35,7 +35,7 @@ public class proxyClient extends proxyCommon {
     @Override
     public void registerRenderers(){
         RenderingRegistry.registerEntityRenderingHandler(EntityMiner.class, new RenderMiner(Minecraft.getMinecraft().getRenderManager(), new ModelMiner(0.5F, true), 0.5F));
-        //TODO Fix the renderingRegistry errors with the superbiumAxe
+        //FIXME
         RenderingRegistry.registerEntityRenderingHandler(EntityAxe.class, new RenderSnowball(Minecraft.getMinecraft().getRenderManager(), Items.snowball, Minecraft.getMinecraft().getRenderItem()));
         RenderingRegistry.registerEntityRenderingHandler(EntitySuperbiumGolem.class, new RenderSuperbiumGolem(Minecraft.getMinecraft().getRenderManager()));
         RenderingRegistry.registerEntityRenderingHandler(EntityAradactiteGolem.class, new RenderAradactiteGolem(Minecraft.getMinecraft().getRenderManager()));

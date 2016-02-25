@@ -24,9 +24,6 @@ import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialLiquid;
 import net.minecraftforge.fluids.Fluid;
 
-/**
- * Created by noah on 10/29/14.
- */
 public class FluidRetaw extends Fluid {
 
     public static final int LEVELS = 8;
@@ -37,7 +34,6 @@ public class FluidRetaw extends Fluid {
         setUnlocalizedName(string);
         setViscosity(300);
         setDensity(-500);
-
-
     }
+
 }

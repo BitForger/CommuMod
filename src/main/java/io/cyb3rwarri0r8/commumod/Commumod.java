@@ -67,7 +67,7 @@ public class Commumod
     @Mod.Instance(Reference.MODID)
     public static Commumod instance;
 
-    public static RegisterItemRenders itemRenders;
+
 
 
     @Mod.EventHandler
@@ -124,8 +124,7 @@ public class Commumod
 //        RegisterItemRenders.addItemsToMap();
 
         if (event.getSide() == Side.CLIENT){
-            RegisterItemRenders.registerItemsToRender();
-            RegisterItemRenders.registerBlockItemsToRender();
+           RegisterItemRenders.init();
         }
 
         proxy.registerRenderers();
