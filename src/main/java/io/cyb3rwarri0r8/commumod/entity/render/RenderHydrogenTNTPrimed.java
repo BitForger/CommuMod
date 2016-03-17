@@ -1,121 +1,20 @@
 package io.cyb3rwarri0r8.commumod.entity.render;
 
 /*
- *  CommuMod - A Minecraft Modification
- *  Copyright (C) ${YEAR} Cyb3rWarri0r8
- *
- *  This program is free software: you can redistribute it and/or modify
- *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation, either version 3 of the License, or
- *  any later version.
- *
- *  This program is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *  GNU General Public License for more details.
- *
- *  You should have received a copy of the GNU General Public License
- *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
- *
+ * CommuMod - A Minecraft Modification
+ * Copyright (c) 2016. noahk (Cyb3rWarri0r8/Endergriefer153/Starwarsman)
  */
 
-import io.cyb3rwarri0r8.commumod.entity.EntityHydrogenTNTPrimed;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.BlockRendererDispatcher;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.client.renderer.entity.RenderTNTPrimed;
-import net.minecraft.client.renderer.texture.TextureMap;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.item.EntityTNTPrimed;
-import net.minecraft.init.Blocks;
-import net.minecraft.util.MathHelper;
-import net.minecraft.util.ResourceLocation;
 
-/**
- * Created by noah on 10/26/14.
- */
+
 public class RenderHydrogenTNTPrimed extends RenderTNTPrimed
 {
     public RenderHydrogenTNTPrimed(RenderManager p_i46134_1_)
     {
         super(p_i46134_1_);
         this.shadowSize = 0.5F;
-    }
-
-    /**
-     * Actually renders the given argument. This is a synthetic bridge method, always casting down its argument and then
-     * handing it off to a worker function which does the actual work. In all probabilty, the class Render is generic
-     * (Render<T extends Entity) and this method has signature public void func_76986_a(T entity, double d, double d1,
-     * double d2, float f, float f1). But JAD is pre 1.5 so doesn't do that.
-     */
-    public void doRender(EntityHydrogenTNTPrimed p_76986_1_, double p_76986_2_, double p_76986_4_, double p_76986_6_, float p_76986_8_, float p_76986_9_)
-    {
-        BlockRendererDispatcher blockrendererdispatcher = Minecraft.getMinecraft().getBlockRendererDispatcher();
-        GlStateManager.pushMatrix();
-        GlStateManager.translate((float)p_76986_2_, (float)p_76986_4_ + 0.5F, (float)p_76986_6_);
-        float f2;
-
-        if ((float)p_76986_1_.fuse - p_76986_9_ + 1.0F < 10.0F)
-        {
-            f2 = 1.0F - ((float)p_76986_1_.fuse - p_76986_9_ + 1.0F) / 10.0F;
-            f2 = MathHelper.clamp_float(f2, 0.0F, 1.0F);
-            f2 *= f2;
-            f2 *= f2;
-            float f3 = 1.0F + f2 * 0.3F;
-            GlStateManager.scale(f3, f3, f3);
-        }
-
-        f2 = (1.0F - ((float)p_76986_1_.fuse - p_76986_9_ + 1.0F) / 100.0F) * 0.8F;
-        this.bindEntityTexture(p_76986_1_);
-        GlStateManager.translate(-0.5F, -0.5F, 0.5F);
-        blockrendererdispatcher.renderBlockBrightness(Blocks.tnt.getDefaultState(), p_76986_1_.getBrightness(p_76986_9_));
-        GlStateManager.translate(0.0F, 0.0F, 1.0F);
-
-        if (p_76986_1_.fuse / 5 % 2 == 0)
-        {
-            GlStateManager.disableAlpha();
-            GlStateManager.disableLighting();
-            GlStateManager.enableBlend();
-            GlStateManager.blendFunc(770, 772);
-            GlStateManager.color(1.0F, 1.0F, 1.0F, f2);
-            GlStateManager.doPolygonOffset(-3.0F, -3.0F);
-            GlStateManager.enablePolygonOffset();
-            blockrendererdispatcher.renderBlockBrightness(Blocks.tnt.getDefaultState(), 1.0F);
-            GlStateManager.doPolygonOffset(0.0F, 0.0F);
-            GlStateManager.disablePolygonOffset();
-            GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
-            GlStateManager.disableBlend();
-            GlStateManager.enableLighting();
-            GlStateManager.enableAlpha();
-        }
-
-        GlStateManager.popMatrix();
-        super.doRender(p_76986_1_, p_76986_2_, p_76986_4_, p_76986_6_, p_76986_8_, p_76986_9_);
-    }
-
-    protected ResourceLocation func_180563_a(EntityTNTPrimed p_180563_1_)
-    {
-        return TextureMap.locationBlocksTexture;
-    }
-
-    /**
-     * Returns the location of an entity's texture. Doesn't seem to be called unless you call Render.bindEntityTexture.
-     */
-    protected ResourceLocation getEntityTexture(Entity p_110775_1_)
-    {
-        return this.func_180563_a((EntityHydrogenTNTPrimed) p_110775_1_);
-    }
-
-    /**
-     * Actually renders the given argument. This is a synthetic bridge method, always casting down its argument and then
-     * handing it off to a worker function which does the actual work. In all probabilty, the class Render is generic
-     * (Render<T extends Entity) and this method has signature public void func_76986_a(T entity, double d, double d1,
-     * double d2, float f, float f1). But JAD is pre 1.5 so doesn't do that.
-     */
-    public void doRender(Entity p_76986_1_, double p_76986_2_, double p_76986_4_, double p_76986_6_, float p_76986_8_, float p_76986_9_)
-    {
-        this.doRender((EntityHydrogenTNTPrimed)p_76986_1_, p_76986_2_, p_76986_4_, p_76986_6_, p_76986_8_, p_76986_9_);
     }
 
 }

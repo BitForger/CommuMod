@@ -1,22 +1,8 @@
 package io.cyb3rwarri0r8.commumod.items;
 
 /*
- *  CommuMod - A Minecraft Modification
- *  Copyright (C) ${YEAR} Cyb3rWarri0r8
- *
- *  This program is free software: you can redistribute it and/or modify
- *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation, either version 3 of the License, or
- *  any later version.
- *
- *  This program is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *  GNU General Public License for more details.
- *
- *  You should have received a copy of the GNU General Public License
- *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
- *
+ * CommuMod - A Minecraft Modification
+ * Copyright (c) 2016. noahk (Cyb3rWarri0r8/Endergriefer153/Starwarsman)
  */
 
 import io.cyb3rwarri0r8.commumod.entity.EntityCobaltBoat;
@@ -77,7 +63,7 @@ public class ItemCobaltBoat extends Item {
             Vec3 vec32 = p_77659_3_.getLook(f);
             boolean flag = false;
             float f9 = 1.0F;
-            List<?> list = p_77659_2_.getEntitiesWithinAABBExcludingEntity(p_77659_3_, p_77659_3_.getBoundingBox().addCoord(vec32.xCoord * d3, vec32.yCoord * d3, vec32.zCoord * d3).expand((double)f9, (double)f9, (double)f9));
+            List<?> list = p_77659_2_.getEntitiesWithinAABBExcludingEntity(p_77659_3_, p_77659_3_.getEntityBoundingBox().addCoord(vec32.xCoord * d3, vec32.yCoord * d3, vec32.zCoord * d3).expand((double)f9, (double)f9, (double)f9));
             int i;
 
             for (i = 0; i < list.size(); ++i)
@@ -87,7 +73,7 @@ public class ItemCobaltBoat extends Item {
                 if (entity.canBeCollidedWith())
                 {
                     float f10 = entity.getCollisionBorderSize();
-                    AxisAlignedBB axisalignedbb = entity.getBoundingBox().expand((double)f10, (double)f10, (double)f10);
+                    AxisAlignedBB axisalignedbb = entity.getEntityBoundingBox().expand((double)f10, (double)f10, (double)f10);
 
                     if (axisalignedbb.isVecInside(vec3))
                     {

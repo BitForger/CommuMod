@@ -2,22 +2,8 @@ package io.cyb3rwarri0r8.commumod.entity;
 
 
 /*
- *  CommuMod - A Minecraft Modification
- *  Copyright (C) ${YEAR} Cyb3rWarri0r8
- *
- *  This program is free software: you can redistribute it and/or modify
- *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation, either version 3 of the License, or
- *  any later version.
- *
- *  This program is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *  GNU General Public License for more details.
- *
- *  You should have received a copy of the GNU General Public License
- *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
- *
+ * CommuMod - A Minecraft Modification
+ * Copyright (c) 2016. noahk (Cyb3rWarri0r8/Endergriefer153/Starwarsman)
  */
 
 import io.cyb3rwarri0r8.commumod.items.ModItems;
@@ -207,20 +193,20 @@ public class EntityAradactiteGolem extends EntityGolem {
     }
 
     @SideOnly(Side.CLIENT)
-    public void handleHealthUpdate(byte p_70103_1_)
+    public void handleStatusUpdate(byte id)
     {
-        if (p_70103_1_ == 4)
+        if (id == 4)
         {
             this.attackTimer = 10;
 //            this.playSound("mob.superbiumgolem.throw", 1.0F, 1.0F);
         }
-        else if (p_70103_1_ == 11)
+        else if (id == 11)
         {
             this.holdRoseTick = 400;
         }
         else
         {
-            super.handleHealthUpdate(p_70103_1_);
+            super.handleStatusUpdate(id);
         }
     }
 

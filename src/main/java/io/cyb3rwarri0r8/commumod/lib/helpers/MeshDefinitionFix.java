@@ -16,6 +16,11 @@ package io.cyb3rwarri0r8.commumod.lib.helpers;/*
 * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+/*
+ * CommuMod - A Minecraft Modification
+ * Copyright (c) 2016. noahk (Cyb3rWarri0r8/Endergriefer153/Starwarsman)
+ */
+
 import net.minecraft.client.renderer.ItemMeshDefinition;
 import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.item.ItemStack;

@@ -2,22 +2,8 @@ package io.cyb3rwarri0r8.commumod.client.container;
 
 
 /*
- *  CommuMod - A Minecraft Modification
- *  Copyright (C) ${YEAR} Cyb3rWarri0r8
- *
- *  This program is free software: you can redistribute it and/or modify
- *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation, either version 3 of the License, or
- *  any later version.
- *
- *  This program is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *  GNU General Public License for more details.
- *
- *  You should have received a copy of the GNU General Public License
- *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
- *
+ * CommuMod - A Minecraft Modification
+ * Copyright (c) 2016. noahk (Cyb3rWarri0r8/Endergriefer153/Starwarsman)
  */
 
 import io.cyb3rwarri0r8.commumod.entity.TileEntityPurifier;
@@ -30,9 +16,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-/**
- * Created by noah on 9/23/14.
- */
 public class ContainerPurifier extends Container{
 
     private TileEntityPurifier tileEntity;
@@ -59,36 +42,24 @@ public class ContainerPurifier extends Container{
         }
     }
 
-    public void addCraftingToCrafters(ICrafting crafting)
-    {
-        super.addCraftingToCrafters(crafting);
-        crafting.sendProgressBarUpdate(this, 0, this.tileEntity.furnaceCookTime);
-        crafting.sendProgressBarUpdate(this, 1, this.tileEntity.furnaceBurnTime);
-        crafting.sendProgressBarUpdate(this, 2, this.tileEntity.currentBurnTime);
-
-    }
 
     public void detectAndSendChanges()
     {
         super.detectAndSendChanges();
-        for(int i = 0; i < this.crafters.size(); i++)
-        {
-            ICrafting craft = (ICrafting) this.crafters.get(i);
-            if(this.lastCookTime != this.tileEntity.furnaceCookTime)
-            {
-                craft.sendProgressBarUpdate(this,0,this.tileEntity.furnaceCookTime);
-            }
-            if(this.lastBurnTime != this.tileEntity.furnaceBurnTime)
-            {
-                craft.sendProgressBarUpdate(this,1,this.tileEntity.furnaceBurnTime);
-            }
+	    for ( ICrafting crafter : this.crafters ) {
+		    ICrafting craft = ( ICrafting ) crafter;
+		    if ( this.lastCookTime != this.tileEntity.furnaceCookTime ) {
+			    craft.sendProgressBarUpdate( this, 0, this.tileEntity.furnaceCookTime );
+		    }
+		    if ( this.lastBurnTime != this.tileEntity.furnaceBurnTime ) {
+			    craft.sendProgressBarUpdate( this, 1, this.tileEntity.furnaceBurnTime );
+		    }
 
-            if(this.lastItemBurnTime != this.tileEntity.currentBurnTime)
-            {
-                craft.sendProgressBarUpdate(this,2,this.tileEntity.currentBurnTime);
-            }
+		    if ( this.lastItemBurnTime != this.tileEntity.currentBurnTime ) {
+			    craft.sendProgressBarUpdate( this, 2, this.tileEntity.currentBurnTime );
+		    }
 
-        }
+	    }
 
         this.lastBurnTime = this.tileEntity.furnaceBurnTime;
         this.lastCookTime = this.tileEntity.furnaceCookTime;

@@ -1,27 +1,12 @@
 package io.cyb3rwarri0r8.commumod.lib.helpers;
 
-
-
 /*
- *  CommuMod - A Minecraft Modification
- *  Copyright (C) ${YEAR} Cyb3rWarri0r8
- *
- *  This program is free software: you can redistribute it and/or modify
- *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation, either version 3 of the License, or
- *  any later version.
- *
- *  This program is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *  GNU General Public License for more details.
- *
- *  You should have received a copy of the GNU General Public License
- *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
- *
+ * CommuMod - A Minecraft Modification
+ * Copyright (c) 2016. noahk (Cyb3rWarri0r8/Endergriefer153/Starwarsman)
  */
 
 import io.cyb3rwarri0r8.commumod.Commumod;
+import io.cyb3rwarri0r8.commumod.lib.EventToolRecipeFailed;
 import io.cyb3rwarri0r8.commumod.lib.PurifierRecipes;
 import io.cyb3rwarri0r8.commumod.lib.Reference;
 import net.minecraft.block.Block;
@@ -29,7 +14,12 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityList;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.network.play.server.S42PacketCombatEvent;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.FMLLog;
+import net.minecraftforge.fml.common.event.FMLConstructionEvent;
+import net.minecraftforge.fml.common.eventhandler.Event;
+import net.minecraftforge.fml.common.eventhandler.EventBus;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
@@ -49,61 +39,58 @@ public class RegisterHelper {
 
     public static void registerItem(Item item)
     {
-        GameRegistry.registerItem(item, item.getUnlocalizedName().substring(5), Reference.MODID);
+        GameRegistry.registerItem(item, item.getUnlocalizedName().substring(5));
+        FMLLog.info( item.getUnlocalizedName().substring( 5 ) );
     }
 
     // ********************************************************************************************
 
     public static void regToolRecipe(Item item, Item x, Item y, String toolType)
     {
-        if (toolType.equals("pickaxe"))
-        {
-            GameRegistry.addRecipe(new ItemStack(item), 
-                    "XXX",
-                    " Y ",
-                    " Y ",
-                    'X', x, 'Y', y
-            );
-        }
-        else if (toolType.equals("axe"))
-        {
-            GameRegistry.addRecipe(new ItemStack(item), 
-                    "XX ",
-                    "XY ",
-                    " Y ",
-                    'X', x, 'Y', y
-            );
-        }
-        else if (toolType.equals("shovel"))
-        {
-            GameRegistry.addRecipe(new ItemStack(item), 
-                    "X",
-                    "Y",
-                    "Y",
-                    'X', x, 'Y', y
-            );
-        }
-        else if (toolType.equals("hoe"))
-        {
-            GameRegistry.addRecipe(new ItemStack(item), 
-                    "XX",
-                    " Y",
-                    " Y",
-                    'X', x, 'Y', y
-            );
-        }
-        else if (toolType.equals("sword"))
-        {
-            GameRegistry.addRecipe(new ItemStack(item), 
-                    "X",
-                    "X",
-                    "Y",
-                    'X', x, 'Y', y
-            );
-        }
-        else
-        {
-            System.out.println("Error: Cannot register recipe!");
+        switch ( toolType ) {
+            case "pickaxe":
+                GameRegistry.addRecipe( new ItemStack( item ),
+                        "XXX",
+                        " Y ",
+                        " Y ",
+                        'X', x, 'Y', y
+                );
+                break;
+            case "axe":
+                GameRegistry.addRecipe( new ItemStack( item ),
+                        "XX ",
+                        "XY ",
+                        " Y ",
+                        'X', x, 'Y', y
+                );
+                break;
+            case "shovel":
+                GameRegistry.addRecipe( new ItemStack( item ),
+                        "X",
+                        "Y",
+                        "Y",
+                        'X', x, 'Y', y
+                );
+                break;
+            case "hoe":
+                GameRegistry.addRecipe( new ItemStack( item ),
+                        "XX",
+                        " Y",
+                        " Y",
+                        'X', x, 'Y', y
+                );
+                break;
+            case "sword":
+                GameRegistry.addRecipe( new ItemStack( item ),
+                        "X",
+                        "X",
+                        "Y",
+                        'X', x, 'Y', y
+                );
+                break;
+            default:
+                System.out.println( "Error: Cannot register recipe!" );
+                break;
         }
     }
 
@@ -111,45 +98,47 @@ public class RegisterHelper {
 
     public static void regArmorRecipe(Item item, Item x, String armortype)
     {
-        if (armortype.equals("helmet"))
-        {
-            GameRegistry.addRecipe(new ItemStack(item), 
-                    "XXX",
-                    "X X",
-                    'X', x
-            );
-        }else if (armortype.equals("chestplate"))
-        {
-            GameRegistry.addRecipe(new ItemStack(item), 
-                    "X X",
-                    "XXX",
-                    "XXX",
-                    'X', x
-            );
-        }else if (armortype.equals("leggings"))
-        {
-            GameRegistry.addRecipe(new ItemStack(item), 
-                    "XXX",
-                    "X X",
-                    "X X",
-                    'X', x
-            );
-        } else if (armortype.equals("boots"))
-        {
-            GameRegistry.addRecipe(new ItemStack(item), 
-                    "X X",
-                    "X X",
-                    'X', x
-            );
-        } else
-        {
-            FMLLog.severe("Error: Invalid Armor type: ", armortype);
+        switch ( armortype ) {
+            case "helmet":
+                GameRegistry.addRecipe( new ItemStack( item ),
+                        "XXX",
+                        "X X",
+                        'X', x
+                );
+                break;
+            case "chestplate":
+                GameRegistry.addRecipe( new ItemStack( item ),
+                        "X X",
+                        "XXX",
+                        "XXX",
+                        'X', x
+                );
+                break;
+            case "leggings":
+                GameRegistry.addRecipe( new ItemStack( item ),
+                        "XXX",
+                        "X X",
+                        "X X",
+                        'X', x
+                );
+                break;
+            case "boots":
+                GameRegistry.addRecipe( new ItemStack( item ),
+                        "X X",
+                        "X X",
+                        'X', x
+                );
+                break;
+            default:
+                FMLLog.severe( "Error: Invalid Armor type: ", armortype );
+	            MinecraftForge.EVENT_BUS.post( new EventToolRecipeFailed() );
+                break;
         }
     }
 
     // ********************************************************************************************
 
-    public static void registerEntity(Class entityClass, String name, int id)
+    public static void registerEntity( Class entityClass, String name, int id )
     {
             long seed = name.hashCode();
             Random rand = new Random(seed);

@@ -2,27 +2,10 @@ package io.cyb3rwarri0r8.commumod.fluids;
 
 
 /*
- *  CommuMod - A Minecraft Modification
- *  Copyright (C) ${YEAR} Cyb3rWarri0r8
- *
- *  This program is free software: you can redistribute it and/or modify
- *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation, either version 3 of the License, or
- *  any later version.
- *
- *  This program is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *  GNU General Public License for more details.
- *
- *  You should have received a copy of the GNU General Public License
- *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
- *
+ * CommuMod - A Minecraft Modification
+ * Copyright (c) 2016. noahk (Cyb3rWarri0r8/Endergriefer153/Starwarsman)
  */
 
-import io.cyb3rwarri0r8.commumod.blocks.BlockPureWater;
-import io.cyb3rwarri0r8.commumod.blocks.BlockRetaw;
-import io.cyb3rwarri0r8.commumod.blocks.ModBlocks;
 import io.cyb3rwarri0r8.commumod.items.ItemPureWaterBucket;
 import io.cyb3rwarri0r8.commumod.items.ItemRetawBucket;
 import io.cyb3rwarri0r8.commumod.items.ModItems;
@@ -30,7 +13,6 @@ import io.cyb3rwarri0r8.commumod.lib.helpers.ModModelHelper;
 import io.cyb3rwarri0r8.commumod.lib.helpers.RegisterHelper;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.MapColor;
-import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialLiquid;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
@@ -112,7 +94,7 @@ public class ModFluids {
         return fluid;
     }
 
-	private static <T extends Block & IFluidBlock > T registerFluidBlock( T block) {
+	private static <T extends Block & IFluidBlock> T registerFluidBlock( T block) {
 		String fluidName = block.getFluid().getUnlocalizedName();
 		block.setUnlocalizedName(fluidName);
 		GameRegistry.registerBlock(block, fluidName);

@@ -1,20 +1,8 @@
-package io.cyb3rwarri0r8.commumod.lib.helpers;/*
-* CommuMod - A Minecraft Modification
-* Copyright (C) 2016 noahk (Cyb3rWarri0r8)
-* 
-* This program is free software: you can redistribute it and/or modify
-* it under the terms of the GNU General Public License as published by
-* the Free Software Foundation, either version 3 of the License, or
-* any later version.
-* 
-* This program is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-* GNU General Public License for more details.
-* 
-* You should have received a copy of the GNU General Public License
-* along with this program.  If not, see <http://www.gnu.org/licenses/>.
-*/
+package io.cyb3rwarri0r8.commumod.lib.helpers;
+/*
+ * CommuMod - A Minecraft Modification
+ * Copyright (c) 2016. noahk (Cyb3rWarri0r8/Endergriefer153/Starwarsman)
+ */
 
 import io.cyb3rwarri0r8.commumod.fluids.ModFluids;
 import io.cyb3rwarri0r8.commumod.lib.Reference;
@@ -39,7 +27,7 @@ public class ModModelHelper {
 	private void registerFluidModel(IFluidBlock fluidBlock) {
 		Item item = Item.getItemFromBlock((Block ) fluidBlock);
 
-		ModelBakery.addVariantName(item);
+		ModelBakery.registerItemVariants(item);
 
 		ModelResourceLocation modelResourceLocation = new ModelResourceLocation(FLUID_MODEL_PATH, fluidBlock.getFluid().getName());
 
